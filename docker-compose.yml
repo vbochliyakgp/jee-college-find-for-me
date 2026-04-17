@@ -1,0 +1,40 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    container_name: jee-backend
+    restart: unless-stopped
+    environment:
+      PORT: "8080"
+      CUTOFFS_CSV_DIR: /app/data-processing/data/cutoffs
+    expose:
+      - "8080"
+    networks:
+      - app-net
+
+  caddy:
+    image: caddy:2.8-alpine
+    container_name: jee-caddy
+    restart: unless-stopped
+    environment:
+      API_DOMAIN: ${API_DOMAIN:-localhost}
+    depends_on:
+      - backend
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy_data:/data
+      - caddy_config:/config
+    networks:
+      - app-net
+
+networks:
+  app-net:
+    driver: bridge
+
+volumes:
+  caddy_data:
+  caddy_config:

@@ -1,0 +1,14 @@
+# Replace with your real domain before deployment, e.g. api.example.com
+{$API_DOMAIN:localhost} {
+  encode gzip zstd
+
+  # Optional hardening headers
+  header {
+    -Server
+    X-Content-Type-Options "nosniff"
+    X-Frame-Options "DENY"
+    Referrer-Policy "strict-origin-when-cross-origin"
+  }
+
+  reverse_proxy backend:8080
+}
