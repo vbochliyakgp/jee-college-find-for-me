@@ -1,9 +1,9 @@
 "use client"
 
 import type React from "react"
-import { useState } from "react"
+import { useState, useTransition } from "react"
 import { useRouter } from "next/navigation"
-import { ArrowRight } from "lucide-react"
+import { ArrowRight, Loader2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -14,6 +14,7 @@ import type { ExamType, Gender, IndianState } from "@/lib/predict/types"
 
 export function HomeForm() {
   const router = useRouter()
+  const [isNavigating, startTransition] = useTransition()
 
   const [examType, setExamType] = useState<ExamType>("jee-main")
   const [score, setScore] = useState("")
@@ -59,6 +60,7 @@ export function HomeForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    if (isNavigating) return
     setSubmitAttempted(true)
     if (scoreError || categoryRankError) return
 
@@ -71,7 +73,9 @@ export function HomeForm() {
     if (examType === "jee-main" && homeState) params.set("state", homeState)
     if (needsCategoryRank && categoryRank.trim()) params.set("categoryRank", categoryRank.trim())
 
-    router.push(`/predict?${params.toString()}`)
+    startTransition(() => {
+      router.push(`/predict?${params.toString()}`)
+    })
   }
 
   return (
@@ -206,9 +210,24 @@ export function HomeForm() {
         </div>
       </div>
 
-      <Button type="submit" size="lg" className="w-full h-12 rounded-full text-base font-semibold shadow-md gap-2">
-        Predict My Colleges
-        <ArrowRight className="h-4 w-4" />
+      <Button
+        type="submit"
+        size="lg"
+        disabled={isNavigating}
+        aria-busy={isNavigating}
+        className="w-full h-12 rounded-full text-base font-semibold shadow-md gap-2"
+      >
+        {isNavigating ? (
+          <>
+            <Loader2 className="h-4 w-4 animate-spin" />
+            Searching...
+          </>
+        ) : (
+          <>
+            Predict My Colleges
+            <ArrowRight className="h-4 w-4" />
+          </>
+        )}
       </Button>
 
     </form>
