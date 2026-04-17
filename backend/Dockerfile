@@ -7,7 +7,7 @@ WORKDIR /src/backend
 RUN go mod download
 
 COPY backend/ /src/backend/
-RUN CGO_ENABLED=1 GOOS=linux GOARCH=amd64 go build -o /out/server ./cmd/server
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o /out/server ./cmd/server
 
 FROM alpine:3.20
 
