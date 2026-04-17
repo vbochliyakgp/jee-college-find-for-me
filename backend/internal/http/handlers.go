@@ -3,6 +3,8 @@ package httpapi
 import (
 	"encoding/json"
 	"errors"
+	"io"
+	"log"
 	"net/http"
 
 	"jee-college-find-for-me/complete-stack/backend/internal/models"
@@ -12,6 +14,8 @@ import (
 type Handler struct {
 	service *predict.Service
 }
+
+const maxPredictBodyBytes int64 = 64 << 10 // 64 KiB
 
 func NewHandler(service *predict.Service) *Handler {
 	return &Handler{service: service}
@@ -40,7 +44,8 @@ func (h *Handler) handleFilters(w http.ResponseWriter, r *http.Request) {
 
 	response, err := h.service.Filters(r.Context())
 	if err != nil {
-		writeError(w, http.StatusInternalServerError, err.Error())
+		log.Printf("filters failed: %v", err)
+		writeError(w, http.StatusInternalServerError, "internal server error")
 		return
 	}
 
@@ -54,7 +59,14 @@ func (h *Handler) handlePredict(w http.ResponseWriter, r *http.Request) {
 	}
 
 	var req models.PredictRequest
-	if err := json.NewDecoder(r.Body).Decode(&req); err != nil {
+	r.Body = http.MaxBytesReader(w, r.Body, maxPredictBodyBytes)
+	decoder := json.NewDecoder(r.Body)
+	decoder.DisallowUnknownFields()
+	if err := decoder.Decode(&req); err != nil {
+		writeError(w, http.StatusBadRequest, "invalid json body")
+		return
+	}
+	if err := decoder.Decode(&struct{}{}); err != io.EOF {
 		writeError(w, http.StatusBadRequest, "invalid json body")
 		return
 	}
@@ -64,6 +76,11 @@ func (h *Handler) handlePredict(w http.ResponseWriter, r *http.Request) {
 		status := http.StatusInternalServerError
 		if isValidationError(err) {
 			status = http.StatusBadRequest
+		}
+		if status >= 500 {
+			log.Printf("predict failed: %v", err)
+			writeError(w, status, "internal server error")
+			return
 		}
 		writeError(w, status, err.Error())
 		return

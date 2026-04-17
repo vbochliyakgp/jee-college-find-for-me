@@ -4,6 +4,7 @@ import (
 	"context"
 	"log"
 	"net/http"
+	"net/url"
 	"os"
 	"path/filepath"
 	"strings"
@@ -41,6 +42,9 @@ func main() {
 		Addr:              listenAddr(),
 		Handler:           withCORS(mux),
 		ReadHeaderTimeout: 5 * time.Second,
+		ReadTimeout:       10 * time.Second,
+		WriteTimeout:      20 * time.Second,
+		IdleTimeout:       60 * time.Second,
 	}
 
 	log.Printf("loaded %d rows from %d files", stats.Rows, stats.Files)
@@ -88,8 +92,14 @@ func defaultCSVDir() string {
 }
 
 func withCORS(next http.Handler) http.Handler {
+	allowedOrigins := buildAllowedOrigins()
+
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Set("Access-Control-Allow-Origin", "*")
+		origin := strings.TrimSpace(r.Header.Get("Origin"))
+		if _, ok := allowedOrigins[origin]; ok {
+			w.Header().Set("Access-Control-Allow-Origin", origin)
+		}
+		w.Header().Add("Vary", "Origin")
 		w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
 		w.Header().Set("Access-Control-Allow-Methods", "GET,POST,OPTIONS")
 		if r.Method == http.MethodOptions {
@@ -98,4 +108,35 @@ func withCORS(next http.Handler) http.Handler {
 		}
 		next.ServeHTTP(w, r)
 	})
+}
+
+func buildAllowedOrigins() map[string]struct{} {
+	allowed := map[string]struct{}{
+		"http://localhost:3000":  {},
+		"http://127.0.0.1:3000":  {},
+		"https://localhost:3000": {},
+		"https://127.0.0.1:3000": {},
+	}
+
+	rawDomain := strings.TrimSpace(os.Getenv("API_DOMAIN"))
+	if rawDomain == "" {
+		return allowed
+	}
+
+	// Accept either a bare domain (api.example.com) or full URL.
+	if parsed, err := url.Parse(rawDomain); err == nil && parsed.Scheme != "" && parsed.Host != "" {
+		allowed[parsed.Scheme+"://"+parsed.Host] = struct{}{}
+		return allowed
+	}
+
+	domain := strings.TrimPrefix(rawDomain, "http://")
+	domain = strings.TrimPrefix(domain, "https://")
+	domain = strings.TrimSuffix(domain, "/")
+	if domain == "" {
+		return allowed
+	}
+
+	allowed["https://"+domain] = struct{}{}
+	allowed["http://"+domain] = struct{}{}
+	return allowed
 }
