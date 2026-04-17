@@ -18,10 +18,26 @@ type ScoredRow struct {
 }
 
 // fetchBaseGeneralRows is the step 1 simplified fetcher.
-func (s *Service) fetchBaseGeneralRows(ctx context.Context, examType string, userRank int, minRank int, maxRank int, userGender string) ([]ScoredRow, error) {
+func (s *Service) fetchBaseGeneralRows(ctx context.Context, examType string, userRank int, minRank int, maxRank int, userGender string, userHomeState string) ([]ScoredRow, error) {
 	genderClause := `AND gender = 'Neutral'`
 	if userGender == "female" {
 		genderClause = `AND (gender = 'Neutral' OR gender = 'Female')`
+	}
+
+	var quotaClause string
+	args := []any{examType, minRank, maxRank}
+	if userHomeState == "" {
+		quotaClause = `AND quota IN ('AI', 'OS')`
+	} else {
+		quotaClause = `AND (
+			quota = 'AI' OR
+			(quota = 'HS' AND state = ?) OR
+			(quota = 'GO' AND ? = 'Goa') OR
+			(quota = 'JK' AND ? = 'Jammu and Kashmir') OR
+			(quota = 'LA' AND ? = 'Ladakh') OR
+			(quota = 'OS' AND state != ?)
+		)`
+		args = append(args, userHomeState, userHomeState, userHomeState, userHomeState, userHomeState)
 	}
 
 	query := fmt.Sprintf(`
@@ -34,12 +50,13 @@ func (s *Service) fetchBaseGeneralRows(ctx context.Context, examType string, use
 		  AND department NOT LIKE '%%Bachelor of Architecture%%'
 		  AND department NOT LIKE '%%Bachelor of Planning%%'
 		  %s
+		  %s
 		ORDER BY closing_rank ASC;
-	`, genderClause)
+	`, genderClause, quotaClause)
 
 	// Note: We are ignoring quotas (HS/OS) and genders for this MVP step.
 	// This assumes you want a completely raw baseline.
-	dbRows, err := s.db.QueryContext(ctx, query, examType, minRank, maxRank)
+	dbRows, err := s.db.QueryContext(ctx, query, args...)
 	if err != nil {
 		return nil, fmt.Errorf("query base rows: %w", err)
 	}

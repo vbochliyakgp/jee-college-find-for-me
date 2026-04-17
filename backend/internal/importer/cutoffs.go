@@ -263,21 +263,15 @@ func normalizeGender(value string) string {
 	return string(models.GenderNeutral)
 }
 
-// normalizeQuota maps raw JOSAA quota strings to the three values stored in the DB.
+// normalizeQuota keeps the raw JoSAA quota bucket used by prediction logic.
 //
-//   - "HS"  → Home State quota (NITs only; restricted to students from that state)
-//   - "AI"  → All India quota (IITs, IIITs, GFTIs; no state restriction)
-//   - "OS"  → Other State quota (NITs; for students outside the institute's state)
-//
-// All three are kept distinct so the fetcher's SQL filter and the UI can
-// display the correct label.  The old code collapsed AI into OS, which was
-// accidentally correct for filtering but showed the wrong label to users.
+// Supported core and regional buckets:
+//   - "AI", "HS", "OS"
+//   - "GO", "JK", "LA" (regional quotas that should not be collapsed into OS)
 func normalizeQuota(value string) string {
 	switch value {
-	case "HS":
-		return "HS"
-	case "AI":
-		return "AI"
+	case "HS", "AI", "OS", "GO", "JK", "LA":
+		return value
 	default:
 		return "OS"
 	}

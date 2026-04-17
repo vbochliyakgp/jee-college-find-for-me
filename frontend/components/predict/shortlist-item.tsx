@@ -17,6 +17,8 @@ export function ShortlistItem({ institute }: ShortlistItemProps) {
   const isFemalePool = dept.gender.toLowerCase() === "female"
   const hasGeneralCutoff = typeof dept.general_closing_rank === "number"
   const hasFemaleCutoff = typeof dept.female_closing_rank === "number"
+  const quota = (dept.quota ?? "").toUpperCase()
+  const isStateQuota = quota === "HS" || quota === "GO" || quota === "JK" || quota === "LA"
 
   return (
     <div className="rounded-xl border border-border/80 bg-card p-4 shadow-sm">
@@ -39,6 +41,12 @@ export function ShortlistItem({ institute }: ShortlistItemProps) {
               </>
             ) : (
               <span>Closing rank: {dept.closing_rank}</span>
+            )}
+            {isStateQuota && (
+              <>
+                <Badge variant="outline">Quota: {quota}</Badge>
+                <span>{quota} closing rank: {dept.closing_rank}</span>
+              </>
             )}
           </div>
         </div>

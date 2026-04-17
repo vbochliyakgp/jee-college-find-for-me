@@ -67,7 +67,7 @@ func (s *Service) Predict(ctx context.Context, req models.PredictRequest) (*mode
 		minRank := max(1, normalized.Rank-spread)
 		maxRank := normalized.Rank + spread
 
-		rows, err = s.fetchBaseGeneralRows(ctx, normalized.ExamType, normalized.Rank, minRank, maxRank, normalized.Gender)
+		rows, err = s.fetchBaseGeneralRows(ctx, normalized.ExamType, normalized.Rank, minRank, maxRank, normalized.Gender, normalized.HomeState)
 		if err != nil {
 			return nil, err
 		}
