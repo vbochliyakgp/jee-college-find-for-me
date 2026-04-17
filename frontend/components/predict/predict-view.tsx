@@ -112,48 +112,49 @@ export function PredictView({ initialParams, initialColleges, resolvedRank }: Pr
     .join(" · ")
 
   return (
-    <div className="container max-w-[1400px] py-6 md:py-8">
+    <div className="container max-w-[1400px] px-2 py-2 sm:px-4 md:py-8">
       {/* Results */}
       <Card className="overflow-hidden border-border/80 bg-card/95 shadow-lg shadow-primary/5 backdrop-blur">
-        <CardHeader className="gap-4 border-b border-border/70 bg-gradient-to-r from-primary/[0.07] via-background to-background pb-5">
-          <div className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-primary">
-            <Sparkles className="h-3.5 w-3.5" />
+        <CardHeader className="gap-2 border-b border-border/70 bg-gradient-to-r from-primary/[0.07] via-background to-background px-2.5 pb-2.5 pt-3 sm:gap-4 sm:px-6 sm:pb-5 sm:pt-6">
+          <div className="inline-flex w-fit items-center gap-1 rounded-full border border-primary/25 bg-primary/10 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wide text-primary sm:gap-2 sm:px-3 sm:py-1 sm:text-[11px]">
+            <Sparkles className="h-2.5 w-2.5 sm:h-3.5 sm:w-3.5" />
             Prediction shortlist
           </div>
 
           <div>
-            <CardTitle className="text-xl sm:text-2xl">Your college shortlist</CardTitle>
-            <CardDescription className="mt-1 text-xs sm:text-sm">{descriptionText}</CardDescription>
+            <CardTitle className="text-base leading-tight sm:text-2xl">Your college shortlist</CardTitle>
+            <CardDescription className="mt-0.5 text-[10px] leading-snug sm:mt-1 sm:text-sm">{descriptionText}</CardDescription>
           </div>
 
-          <div className="grid gap-2 sm:grid-cols-3">
-            <div className="rounded-xl border border-border/70 bg-background px-4 py-3">
-              <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">General rank used</p>
-              <p className="mt-1 text-2xl font-semibold tabular-nums text-primary">{resolvedRank.toLocaleString()}</p>
+          <div className="grid gap-1.5 sm:grid-cols-3 sm:gap-2">
+            <div className="rounded-md border border-border/70 bg-background px-2.5 py-1.5 sm:rounded-xl sm:px-4 sm:py-3">
+              <p className="text-[10px] font-medium uppercase tracking-wide text-muted-foreground">General rank used</p>
+              <p className="mt-0.5 text-base font-semibold tabular-nums text-primary sm:mt-1 sm:text-2xl">{resolvedRank.toLocaleString()}</p>
             </div>
-            <div className="rounded-xl border border-border/70 bg-background px-4 py-3">
-              <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">Institutes shown</p>
-              <p className="mt-1 text-2xl font-semibold tabular-nums text-foreground">{limitedColleges.length}</p>
+            <div className="rounded-md border border-border/70 bg-background px-2.5 py-1.5 sm:rounded-xl sm:px-4 sm:py-3">
+              <p className="text-[10px] font-medium uppercase tracking-wide text-muted-foreground">Institutes shown</p>
+              <p className="mt-0.5 text-base font-semibold tabular-nums text-foreground sm:mt-1 sm:text-2xl">{limitedColleges.length}</p>
             </div>
-            <div className="rounded-xl border border-border/70 bg-background px-4 py-3">
-              <p className="text-[11px] font-medium uppercase tracking-wide text-muted-foreground">Best chance count</p>
-              <p className="mt-1 text-2xl font-semibold tabular-nums text-foreground">{countByChance.easy}</p>
+            <div className="rounded-md border border-border/70 bg-background px-2.5 py-1.5 sm:rounded-xl sm:px-4 sm:py-3">
+              <p className="text-[10px] font-medium uppercase tracking-wide text-muted-foreground">Best chance count</p>
+              <p className="mt-0.5 text-base font-semibold tabular-nums text-foreground sm:mt-1 sm:text-2xl">{countByChance.easy}</p>
             </div>
           </div>
         </CardHeader>
 
-        <CardContent className="space-y-6">
-          <div className="flex flex-col gap-3 rounded-xl border border-border/70 bg-muted/25 p-3 sm:flex-row sm:items-center sm:justify-between">
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 text-xs font-medium text-muted-foreground">
-                <ListFilter className="h-3.5 w-3.5" />
+        <CardContent className="space-y-3 px-2.5 py-3 sm:space-y-6 sm:px-6 sm:py-6">
+          <div className="flex flex-col gap-1.5 rounded-lg border border-border/70 bg-muted/25 p-2 sm:gap-3 sm:rounded-xl sm:p-3">
+            <div className="min-w-0 space-y-1.5">
+              <span className="inline-flex items-center gap-1 text-[11px] font-medium text-muted-foreground sm:gap-1.5 sm:text-xs">
+                <ListFilter className="h-3 w-3 sm:h-3.5 sm:w-3.5" />
                 View
               </span>
               {showCategoryTabs && (
-                <>
+                <div className="-mx-1 flex gap-1.5 overflow-x-auto px-1 pb-1 sm:gap-2">
                   <Button
                     variant={activeMode === "combined" ? "default" : "outline"}
                     size="sm"
+                    className="h-7 shrink-0 whitespace-nowrap px-2.5 text-[11px] sm:h-9 sm:px-3 sm:text-sm"
                     onClick={() => setActiveMode("combined")}
                   >
                     Combined
@@ -161,6 +162,7 @@ export function PredictView({ initialParams, initialColleges, resolvedRank }: Pr
                   <Button
                     variant={activeMode === "without-category" ? "default" : "outline"}
                     size="sm"
+                    className="h-7 shrink-0 whitespace-nowrap px-2.5 text-[11px] sm:h-9 sm:px-3 sm:text-sm"
                     onClick={() => setActiveMode("without-category")}
                   >
                     Without Category
@@ -168,17 +170,18 @@ export function PredictView({ initialParams, initialColleges, resolvedRank }: Pr
                   <Button
                     variant={activeMode === "category-only" ? "default" : "outline"}
                     size="sm"
+                    className="h-7 shrink-0 whitespace-nowrap px-2.5 text-[11px] sm:h-9 sm:px-3 sm:text-sm"
                     onClick={() => setActiveMode("category-only")}
                   >
                     Category Only
                   </Button>
-                </>
+                </div>
               )}
             </div>
 
-            <div className="flex items-center gap-2">
+            <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:justify-between sm:gap-2">
               <Select value={maxResults} onValueChange={(v) => setMaxResults(v as "50" | "100" | "max")}>
-                <SelectTrigger className="h-9 w-[140px] bg-background">
+                <SelectTrigger className="h-8 w-full bg-background text-xs sm:h-9 sm:w-[140px] sm:text-sm">
                   <SelectValue placeholder="Max results" />
                 </SelectTrigger>
                 <SelectContent>
@@ -187,8 +190,8 @@ export function PredictView({ initialParams, initialColleges, resolvedRank }: Pr
                   <SelectItem value="max">Max</SelectItem>
                 </SelectContent>
               </Select>
-              <Button variant="outline" size="sm" className="gap-2" onClick={resetFlow}>
-                <RefreshCw className="h-4 w-4" />
+              <Button variant="outline" size="sm" className="h-8 w-full gap-1.5 px-2.5 text-xs sm:h-9 sm:w-auto sm:gap-2 sm:px-3 sm:text-sm" onClick={resetFlow}>
+                <RefreshCw className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
                 New search
               </Button>
             </div>
@@ -196,11 +199,11 @@ export function PredictView({ initialParams, initialColleges, resolvedRank }: Pr
 
           {hasResults ? (
             <>
-              <div className="flex items-center justify-between rounded-xl border border-border/70 bg-background px-3 py-2.5">
-                <p className="text-sm font-medium text-foreground">
+              <div className="flex flex-col gap-1 rounded-lg border border-border/70 bg-background px-2.5 py-1.5 sm:flex-row sm:items-center sm:justify-between sm:gap-2 sm:rounded-xl sm:px-3 sm:py-2.5">
+                <p className="text-xs font-medium text-foreground sm:text-base">
                   Showing {limitedColleges.length} institute{limitedColleges.length === 1 ? "" : "s"}.
                 </p>
-                <Badge variant="secondary" className="gap-1.5">
+                <Badge variant="secondary" className="hidden w-fit gap-1.5 sm:inline-flex">
                   <Trophy className="h-3.5 w-3.5" />
                   Ranked fit
                 </Badge>

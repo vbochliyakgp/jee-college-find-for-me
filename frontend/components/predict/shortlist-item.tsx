@@ -25,7 +25,7 @@ export function ShortlistItem({ institute }: ShortlistItemProps) {
 
   return (
     <div className="card-hover rounded-2xl border border-border/80 bg-card/95 p-4 shadow-sm sm:p-5">
-      <div className="flex items-start justify-between gap-3 sm:gap-4">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between sm:gap-4">
         <div className="min-w-0 flex-1">
           <div className="flex flex-wrap items-center gap-2">
             <Badge variant="secondary" className="font-medium">{institute.institute_type}</Badge>
@@ -56,7 +56,7 @@ export function ShortlistItem({ institute }: ShortlistItemProps) {
             {isHomeStateSelected && <Badge variant="outline">Selected via State Quota</Badge>}
           </div>
         </div>
-        <span className={`rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wide ${color}`}>{chance}</span>
+        <span className={`self-start rounded-full px-2.5 py-1 text-xs font-semibold uppercase tracking-wide ${color}`}>{chance}</span>
       </div>
     </div>
   )
