@@ -1,117 +1,60 @@
-# Go Predictor Backend (Current State)
+# Backend (Go Predictor API)
 
-This README documents only what is currently implemented.
+Go API that serves prediction data to the frontend by loading JoSAA cutoff CSVs into an in-memory SQLite database.
 
-## What is built
+## Run Locally
 
-- Go HTTP server with endpoints:
-  - `GET /health`
-  - `GET /api/meta/filters`
-  - `POST /api/predict`
-- In-memory SQLite database loaded at startup from JoSAA CSV files.
-- Base-case rank predictor with:
-  - rank-window filtering
-  - two outcomes: `dream` and `easy`
-  - branch-level rows (institute can repeat)
-  - female/neutral pool handling with merge-best behavior
+```bash
+go mod download
+go run ./cmd/server
+```
 
-## Data loading
+Default URL: `http://127.0.0.1:8080`
 
-- Source files: `data-processing/data/cutoffs/round-*-cutoffs.csv`
-- Import behavior:
-  - latest round -> `cutoff_rows` (used by prediction API)
-  - older rounds -> `cutoff_rows_round_1` ... `cutoff_rows_round_5`
-- Import normalization is applied before DB insert (gender/quota/state typing etc.).
+Health check:
 
-## Canonical conventions (single source of truth)
+```bash
+curl http://127.0.0.1:8080/health
+```
 
-Use these values consistently in DB, backend, and frontend:
+## Endpoints
 
+- `GET /health`
+- `GET /api/meta/filters`
+- `POST /api/predict`
+
+## Data Loading
+
+- Source: `../data-processing/data/cutoffs/round-*-cutoffs.csv`
+- Latest round is loaded into `cutoff_rows` (prediction source)
+- Older rounds are loaded into history tables
+- Values are normalized during import (gender/quota/state/seat formatting)
+
+## Prediction Behavior (Current)
+
+- Input requires exam type and rank (rank can come via `rank` or `score`)
+- Rank window centered around user rank
+- Rows filtered by exam type and supported seat constraints
+- Output labels use two bands:
+  - `dream`
+  - `easy`
+- Female requests can combine female and gender-neutral pools, then keep the better row per branch
+
+## Canonical Values
+
+- `examType`: `jee-main` | `jee-advanced`
 - `gender`: `Neutral` | `Female`
 - `chance`: `dream` | `easy`
-- `examType` (request): `jee-main` | `jee-advanced`
-- `quota`: `AI` | `HS` | `OS`
-- `seat_type` examples: `OPEN`, `OPEN (PwD)`, `OBC-NCL`, `SC`, `ST`, `EWS`
-- `category` (request): `General` | `OBC` | `SC` | `ST` | `EWS`
+- `category`: `General` | `OBC` | `SC` | `ST` | `EWS`
 
-Rule: normalize raw CSV values to canonical forms at import time.
+## Known Limits
 
-## Prediction pipeline (current)
+- PwD-specific prediction flow is not supported end-to-end
+- B.Arch and B.Planning are excluded
+- Output is exploratory and should not be treated as official counseling advice
 
-### 1) Request normalization
+## Testing
 
-- Required: `examType`, `rank` (rank may come via `rank` or `score` field from clients).
-- Defaults:
-  - missing/invalid gender input -> treated as neutral request flow
-  - no implicit home-state default
-
-### 2) Rank window
-
-- Base-case range is around submitted rank:
-  - `minRank = rank - rank/2` (clamped to 1)
-  - `maxRank = rank + rank/2`
-
-### 3) Row fetch constraints
-
-Rows must satisfy:
-
-- `exam_type = examType`
-- `seat_type = OPEN`
-- `closing_rank BETWEEN minRank AND maxRank`
-- excludes B.Arch and B.Planning programs
-- gender pool by user gender:
-  - neutral user -> `Neutral`
-  - female user -> `Neutral` + `Female`
-
-### 4) Chance classification
-
-For each row:
-
-- `dream` if `closing_rank < user_rank`
-- `easy` if `closing_rank >= user_rank`
-
-### 5) Female merge-best logic
-
-When female users can see both pools, duplicate branch rows can exist for same:
-
-- `(institute, department)`
-
-Dedup rule:
-
-- keep the row with higher `closing_rank` (better probability for that user)
-
-### 6) Output ordering
-
-Final rows are sorted deterministically by:
-
-1. `closing_rank` ascending
-2. `institute` ascending
-3. `department` ascending
-
-## API response shape (current)
-
-`POST /api/predict` returns:
-
-- `resolvedRank`
-- `colleges[]` (branch-level cards)
-  - each `departments[0]` includes:
-    - `department`
-    - `opening_rank`
-    - `closing_rank`
-    - `quota`
-    - `gender`
-    - `seat_type`
-    - `chance` (`dream|easy`)
-- `count`
-
-## Intentionally not implemented yet
-
-- Full category-rank decision optimization across all seat types
-- PwD/home-state benefit explanation tags in final UX
-- Multi-band outcomes (`safe/target/moderate`) beyond `dream/easy`
-- Preference modeling beyond cutoff/rank baseline
-
-## Verification
-
-- Unit tests: `internal/predict/service_test.go`
-- Backend check: `go test ./...`
+```bash
+go test ./...
+```

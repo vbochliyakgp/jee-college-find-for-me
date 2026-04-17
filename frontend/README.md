@@ -1,29 +1,50 @@
-# JEE College Find (new)
+# Frontend (Next.js)
 
-Next.js **App Router** app with **TypeScript**, **Tailwind CSS v4**, and **Bun** as the package manager.
+Next.js App Router frontend for entering rank details and viewing prediction results.
 
-## Scripts
+## Stack
+
+- Next.js (App Router) + TypeScript
+- Tailwind CSS v4
+- Bun as package manager/runtime for scripts
+
+## Local Development
 
 ```bash
 bun install
-bun run dev    # Next.js dev server with Turbopack
+bun run dev
+```
+
+Useful scripts:
+
+```bash
 bun run build
 bun run start
 bun run lint
 ```
 
-Scraped JoSAA **text → JSON/CSV** is a separate offline tool: see **`../data-processing/`** (not part of the production Next.js app).
+Default app URL: `http://localhost:3000`
 
-## Bun and Vite
+## Backend Connection
 
-- **Bun** is used to install dependencies and run scripts (`bun.lock` in this folder).
-- **Vite** is not part of the Next.js stack: Next.js bundles with **Turbopack** (dev) and its own production compiler. This repo uses `next dev --turbopack` for fast refresh—similar goals to Vite, but native to Next.
-- If you need a **Vite + React** SPA (no Next.js), create it separately, e.g. `bun create vite` in another directory.
+This app calls the Go predictor backend. Configure base URL when needed:
 
-## Data
+```bash
+GO_PREDICTOR_API_BASE_URL=http://127.0.0.1:8080
+```
 
-Raw seat matrices and cutoff exports live in **`../data-processing/data/`**. Copy built assets into `public/` or an API when the app needs them.
+## Feature Coverage (Current)
 
-## Legacy app
+- Home form for exam, rank, gender, home state, and category inputs
+- Results page with shortlist cards and category mode tabs
+- Mobile-friendly responsive UI
 
-The previous full app lives in `../old/`.
+## Not Supported Yet
+
+- PwD flow in UI and prediction journey
+- B.Arch and B.Planning focused flows
+
+## Data Notes
+
+- Raw scraped files and parsers are maintained in `../data-processing/`.
+- This frontend does not run those parsers at build/runtime.

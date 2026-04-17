@@ -1,17 +1,26 @@
 # JEE College Find For Me (Complete Stack)
 
-This repository contains a full-stack JEE counseling predictor:
+Full-stack JEE college predictor with a Go backend and Next.js frontend.
 
-- `backend/` - Go API with in-memory SQLite and CSV-powered prediction logic
-- `frontend/` - Next.js app for user input and shortlist UI
-- `data-processing/` - parsing/build scripts for JoSAA source data
+## Monorepo Apps
 
-The current product focus is a clean rank-based predictor with:
+- `backend/` - Go API that loads JoSAA cutoff CSV data into in-memory SQLite at startup.
+- `frontend/` - Next.js UI for entering rank and viewing shortlist results.
+- `data-processing/` - Offline parsers for converting scraped JoSAA text files to structured artifacts.
 
-- `dream` / `easy` classification
-- female + neutral pool handling
-- branch-level shortlist rows
-- CSV-driven data import at backend startup
+## Current Product Scope
+
+- Rank-based prediction for `jee-main` and `jee-advanced`.
+- Two outcome bands: `dream` and `easy`.
+- Branch-level shortlist rows grouped by institute.
+- Female + gender-neutral pool handling.
+- Category-based views when category rank is provided.
+
+## Current Limitations
+
+- PwD flow is not supported in the UI yet.
+- B.Arch and B.Planning programs are not supported.
+- Results are exploratory and not official counseling advice.
 
 ## Project Structure
 
@@ -24,13 +33,12 @@ complete-stack/
 
 ## Prerequisites
 
-- Go (compatible with `backend/go.mod`)
-- Bun (for `frontend/`)
-- Node.js (for `data-processing/` scripts)
+- Go (version compatible with `backend/go.mod`)
+- Bun (for `frontend/` and `data-processing/`)
 
-## 1) Backend Setup (Go API)
+## Quick Start
 
-From repository root:
+Run the backend:
 
 ```bash
 cd backend
@@ -38,17 +46,7 @@ go mod download
 go run ./cmd/server
 ```
 
-Default API URL: `http://127.0.0.1:8080`
-
-Health check:
-
-```bash
-curl http://127.0.0.1:8080/health
-```
-
-## 2) Frontend Setup (Next.js)
-
-Open a second terminal:
+Run the frontend in another terminal:
 
 ```bash
 cd frontend
@@ -56,25 +54,24 @@ bun install
 bun run dev
 ```
 
-Default UI URL: `http://localhost:3000`
+Default URLs:
 
-If backend runs on a different host/port, set:
+- Frontend: `http://localhost:3000`
+- Backend: `http://127.0.0.1:8080`
+
+If backend is hosted elsewhere, set:
 
 ```bash
 GO_PREDICTOR_API_BASE_URL=http://127.0.0.1:8080
 ```
 
-## 3) Data Processing (optional)
-
-Use this when you want to regenerate cutoff artifacts or parsers:
+Health check:
 
 ```bash
-cd data-processing
-npm install
-# run scripts from package.json as needed
+curl http://127.0.0.1:8080/health
 ```
 
-## Common Commands
+## Useful Commands
 
 Backend tests:
 
@@ -83,15 +80,20 @@ cd backend
 go test ./...
 ```
 
-Frontend production build:
+Frontend checks:
 
 ```bash
 cd frontend
 bun run build
+bun run lint
 ```
 
-## Notes
+## Data Refresh (Optional)
 
-- Backend loads CSVs into in-memory SQLite at startup.
-- Latest round data is used for prediction; older rounds are also imported for history/reference tables.
-- Canonical gender values in app flow are `Neutral` and `Female`.
+When source files change, regenerate offline artifacts:
+
+```bash
+cd data-processing
+bun install
+bun run parse:cutoffs:all
+```

@@ -1,11 +1,23 @@
-# Data processing (offline)
+# Data Processing (Offline)
 
-JoSAA **seat matrix** `.txt` → JSON and **cutoff** `.txt` → CSV. Run only when you refresh scraped files; the **Next.js app** in `../new` does not depend on this package at build or runtime.
+Offline parsing scripts for JoSAA source text files.
 
-## Usage
+This package converts:
+
+- seat matrix `.txt` files to structured JSON
+- cutoff `.txt` files to CSV used by the backend loader
+
+It is not required at frontend runtime.
+
+## Setup
 
 ```bash
-cd data-processing
+bun install
+```
+
+## Common Commands
+
+```bash
 bun run parse:iits
 bun run parse:nits
 bun run parse:iiits
@@ -13,6 +25,12 @@ bun run parse:gftis
 bun run parse:cutoffs:all
 ```
 
-Inputs and outputs live under `data/` (e.g. `data/seat-matix/`, `data/cutoffs/`).
+## Data Locations
 
-To ship processed data in the web app later, copy the generated JSON/CSV into `new/public/` or load from your API—keep this folder out of production deploys if you only need the site.
+- Inputs/outputs are under `data/`
+- Common folders include `data/seat-matix/` and `data/cutoffs/`
+
+## Integration Notes
+
+- Backend reads generated cutoff CSV files from `data/cutoffs/`
+- Keep this package as an offline maintenance tool; deploy only processed artifacts required by backend/frontend
