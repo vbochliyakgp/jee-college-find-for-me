@@ -12,12 +12,42 @@ const sans = Plus_Jakarta_Sans({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
   title: {
     default: "JEE College Find",
     template: "%s · JEE College Find",
   },
   description:
-    "Explore engineering college options from your rank — client-side demo with bundled cutoff data. No accounts or payments.",
+    "JEE college predictor for JEE Main and JEE Advanced. Compare likely colleges and branches using rank, category, gender, and quota filters.",
+  keywords: [
+    "JEE college predictor",
+    "JoSAA predictor",
+    "JEE Main college predictor",
+    "JEE Advanced college predictor",
+    "NIT predictor",
+    "IIIT predictor",
+    "IIT predictor",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "JEE College Find",
+    description:
+      "Predict colleges from your JEE rank with category, gender, and quota-aware filtering.",
+    url: "/",
+    siteName: "JEE College Find",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "JEE College Find",
+    description: "Predict colleges from your JEE rank with category, gender, and quota-aware filtering.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export default function RootLayout({

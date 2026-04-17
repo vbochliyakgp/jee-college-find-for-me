@@ -8,6 +8,10 @@ import type { InitialParams } from "@/components/predict/predict-view"
 export const metadata: Metadata = {
   title: "Predict",
   description: "Explore eligible colleges and programs from your JEE rank using the Go predictor API.",
+  robots: {
+    index: false,
+    follow: true,
+  },
 }
 
 interface PageProps {

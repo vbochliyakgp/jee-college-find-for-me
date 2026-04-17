@@ -8,7 +8,6 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Checkbox } from "@/components/ui/checkbox"
 import { cn } from "@/lib/utils"
 import { INDIAN_STATES } from "@/lib/predict/indian-states"
 import type { ExamType, Gender, IndianState } from "@/lib/predict/types"
@@ -22,20 +21,16 @@ export function HomeForm() {
   const [homeState, setHomeState] = useState<IndianState | "">("")
   const [category, setCategory] = useState("General")
   const [categoryRank, setCategoryRank] = useState("")
-  const [pwdRank, setPwdRank] = useState("")
-  const [isPWD, setIsPWD] = useState(false)
 
   // Touched tracks fields the user has interacted with at least once.
   // Errors are only shown for touched fields OR after a submit attempt.
   const [touched, setTouched] = useState({
     score: false,
     categoryRank: false,
-    pwdRank: false,
   })
   const [submitAttempted, setSubmitAttempted] = useState(false)
 
   const needsCategoryRank = category !== "General"
-  const needsPwdRank = isPWD
 
   // ── Inline derived errors ──
   const scoreError = (() => {
@@ -53,18 +48,9 @@ export function HomeForm() {
     return null
   })()
 
-  const pwdRankError = (() => {
-    if (!needsPwdRank) return null
-    if (!pwdRank.trim()) return "Enter your PwD rank (JoSAA)."
-    const val = parseInt(pwdRank.trim(), 10)
-    if (Number.isNaN(val) || val < 1 || val > 1_300_000) return "Must be 1 – 13,00,000."
-    return null
-  })()
-
   // A field shows its error when touched OR after a submit attempt
   const showScore = touched.score || submitAttempted
   const showCategoryRank = touched.categoryRank || submitAttempted
-  const showPwdRank = touched.pwdRank || submitAttempted
 
   const touch = (field: keyof typeof touched) =>
     setTouched((prev) => ({ ...prev, [field]: true }))
@@ -74,7 +60,7 @@ export function HomeForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     setSubmitAttempted(true)
-    if (scoreError || categoryRankError || pwdRankError) return
+    if (scoreError || categoryRankError) return
 
     const params = new URLSearchParams({
       exam: examType,
@@ -84,8 +70,6 @@ export function HomeForm() {
     })
     if (examType === "jee-main" && homeState) params.set("state", homeState)
     if (needsCategoryRank && categoryRank.trim()) params.set("categoryRank", categoryRank.trim())
-    if (isPWD) params.set("pwd", "true")
-    if (needsPwdRank && pwdRank.trim()) params.set("pwdRank", pwdRank.trim())
 
     router.push(`/predict?${params.toString()}`)
   }
@@ -220,37 +204,6 @@ export function HomeForm() {
             </div>
           )}
         </div>
-        <div className="flex items-center gap-2 pt-0.5">
-          <Checkbox id="home-pwd" checked={isPWD} onCheckedChange={(c) => setIsPWD(c === true)} />
-          <Label htmlFor="home-pwd" className="cursor-pointer text-sm font-normal text-muted-foreground">
-            Person with disability (PwD)
-          </Label>
-        </div>
-
-        {needsPwdRank && (
-          <div className="space-y-2 pt-1">
-            <Label className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
-              PwD rank (JoSAA)
-            </Label>
-            <p className="text-xs text-muted-foreground">
-              {category === "General"
-                ? "Your OPEN-PwD rank (for OPEN (PwD) seats)."
-                : "Your category PwD rank (e.g. OBC-NCL-PwD). Used for OPEN (PwD) and category PwD seats."}
-            </p>
-            <Input
-              placeholder={category === "General" ? "OPEN-PwD rank" : "e.g. OBC-NCL-PwD rank"}
-              value={pwdRank}
-              onChange={(e) => setPwdRank(e.target.value)}
-              onBlur={() => touch("pwdRank")}
-              inputMode="numeric"
-              className={cn(
-                "h-11",
-                showPwdRank && pwdRankError && "border-destructive focus-visible:ring-destructive",
-              )}
-            />
-            {showPwdRank && pwdRankError && <p className="text-xs text-destructive">{pwdRankError}</p>}
-          </div>
-        )}
       </div>
 
       <Button type="submit" size="lg" className="w-full h-12 rounded-full text-base font-semibold shadow-md gap-2">
