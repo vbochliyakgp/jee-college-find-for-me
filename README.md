@@ -62,7 +62,7 @@ Default URLs:
 If backend is hosted elsewhere, set:
 
 ```bash
-GO_PREDICTOR_API_BASE_URL=http://127.0.0.1:8080
+NEXT_PUBLIC_GO_PREDICTOR_API_BASE_URL=http://127.0.0.1:8080
 ```
 
 Health check:

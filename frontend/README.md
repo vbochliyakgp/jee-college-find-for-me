@@ -30,7 +30,7 @@ Default app URL: `http://localhost:3000`
 This app calls the Go predictor backend. Configure base URL when needed:
 
 ```bash
-GO_PREDICTOR_API_BASE_URL=http://127.0.0.1:8080
+NEXT_PUBLIC_GO_PREDICTOR_API_BASE_URL=http://127.0.0.1:8080
 ```
 
 ## Feature Coverage (Current)

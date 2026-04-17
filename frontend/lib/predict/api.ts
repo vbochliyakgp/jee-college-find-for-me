@@ -4,7 +4,7 @@ import type { PredictApiResponse } from "@/lib/predict/types"
 const DEFAULT_API_BASE_URL = "http://127.0.0.1:8080"
 
 function apiBaseUrl() {
-  return process.env.GO_PREDICTOR_API_BASE_URL ?? DEFAULT_API_BASE_URL
+  return process.env.NEXT_PUBLIC_GO_PREDICTOR_API_BASE_URL ?? process.env.GO_PREDICTOR_API_BASE_URL ?? DEFAULT_API_BASE_URL
 }
 
 export async function fetchPrediction(params: InitialParams): Promise<PredictApiResponse> {
