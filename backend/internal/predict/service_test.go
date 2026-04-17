@@ -376,3 +376,185 @@ func TestPredictJeeMainRegionalQuotaLAIncludedForLadakh(t *testing.T) {
 		t.Fatalf("quota = %q, want LA", q)
 	}
 }
+
+func TestPredictCategoryPathUsesCategoryRankAndSeatType(t *testing.T) {
+	database := newTestDB(t)
+
+	// Same branch exposed through OPEN and OBC-NCL seats.
+	insertRow(t, database, models.CutoffRow{
+		ExamType:      "jee-main",
+		Institute:     "Inst Cat",
+		Department:    "Mechanical Engineering",
+		InstituteType: "NIT",
+		State:         "Delhi",
+		Quota:         "OS",
+		Gender:        "Neutral",
+		SeatType:      "OPEN",
+		OpeningRank:   1,
+		ClosingRank:   9000, // dream for CRL=10000
+	})
+	insertRow(t, database, models.CutoffRow{
+		ExamType:      "jee-main",
+		Institute:     "Inst Cat",
+		Department:    "Mechanical Engineering",
+		InstituteType: "NIT",
+		State:         "Delhi",
+		Quota:         "OS",
+		Gender:        "Neutral",
+		SeatType:      "OBC-NCL",
+		OpeningRank:   1,
+		ClosingRank:   2800, // easy for catRank=2000 and inside category window
+	})
+
+	service := NewService(database)
+	resp, err := service.Predict(context.Background(), models.PredictRequest{
+		ExamType:     "jee-main",
+		Rank:         "10000",
+		Category:     "OBC",
+		CategoryRank: ptr("2000"),
+	})
+	if err != nil {
+		t.Fatalf("predict: %v", err)
+	}
+
+	if resp.Count != 1 {
+		t.Fatalf("count = %d, want 1", resp.Count)
+	}
+	foundCategoryWinner := false
+	for _, c := range resp.Colleges {
+		d := c.Departments[0]
+		if c.Institute == "Inst Cat" && d.Department == "Mechanical Engineering" {
+			foundCategoryWinner = true
+			if d.SeatType != "OBC-NCL" {
+				t.Fatalf("seat_type = %q, want OBC-NCL", d.SeatType)
+			}
+			if d.RankType != "category" {
+				t.Fatalf("rank_type = %q, want category", d.RankType)
+			}
+			if d.UsedRank != 2000 {
+				t.Fatalf("used_rank = %d, want 2000", d.UsedRank)
+			}
+			if d.Chance != ChanceEasy {
+				t.Fatalf("chance = %q, want %q", d.Chance, ChanceEasy)
+			}
+		}
+	}
+	if !foundCategoryWinner {
+		t.Fatalf("expected Inst Cat Mechanical to appear in response")
+	}
+}
+
+func TestPredictCategoryPathRequiresCategoryRank(t *testing.T) {
+	database := newTestDB(t)
+	service := NewService(database)
+
+	_, err := service.Predict(context.Background(), models.PredictRequest{
+		ExamType: "jee-main",
+		Rank:     "10000",
+		Category: "OBC",
+	})
+	if err == nil {
+		t.Fatalf("expected error when category rank is missing")
+	}
+}
+
+func TestPredictCategoryCompanionGenderRanksAndChanceOrdering(t *testing.T) {
+	database := newTestDB(t)
+
+	// Easy row (category seat) with both neutral and female pools.
+	insertRow(t, database, models.CutoffRow{
+		ExamType:      "jee-main",
+		Institute:     "Inst Easy",
+		Department:    "CS",
+		InstituteType: "NIT",
+		State:         "Delhi",
+		Quota:         "OS",
+		Gender:        "Neutral",
+		SeatType:      "OPEN",
+		OpeningRank:   1,
+		ClosingRank:   6400, // anchor baseline
+	})
+	insertRow(t, database, models.CutoffRow{
+		ExamType:      "jee-main",
+		Institute:     "Inst Easy",
+		Department:    "CS",
+		InstituteType: "NIT",
+		State:         "Delhi",
+		Quota:         "OS",
+		Gender:        "Neutral",
+		SeatType:      "OBC-NCL",
+		OpeningRank:   1,
+		ClosingRank:   2600,
+	})
+	insertRow(t, database, models.CutoffRow{
+		ExamType:      "jee-main",
+		Institute:     "Inst Easy",
+		Department:    "CS",
+		InstituteType: "NIT",
+		State:         "Delhi",
+		Quota:         "OS",
+		Gender:        "Female",
+		SeatType:      "OBC-NCL",
+		OpeningRank:   1,
+		ClosingRank:   3000,
+	})
+
+	// Dream row (category seat).
+	insertRow(t, database, models.CutoffRow{
+		ExamType:      "jee-main",
+		Institute:     "Inst Dream",
+		Department:    "ECE",
+		InstituteType: "NIT",
+		State:         "Delhi",
+		Quota:         "OS",
+		Gender:        "Neutral",
+		SeatType:      "OBC-NCL",
+		OpeningRank:   1,
+		ClosingRank:   1800,
+	})
+
+	service := NewService(database)
+	resp, err := service.Predict(context.Background(), models.PredictRequest{
+		ExamType:     "jee-main",
+		Rank:         "5000",
+		Category:     "OBC",
+		CategoryRank: ptr("2000"),
+		Gender:       "female",
+	})
+	if err != nil {
+		t.Fatalf("predict: %v", err)
+	}
+	if resp.Count < 2 {
+		t.Fatalf("count = %d, want at least 2", resp.Count)
+	}
+
+	// Dream must appear before easy in the final ordering.
+	first := resp.Colleges[0].Departments[0]
+	second := resp.Colleges[1].Departments[0]
+	if first.Chance != ChanceDream {
+		t.Fatalf("first chance = %q, want dream", first.Chance)
+	}
+	if second.Chance != ChanceEasy {
+		t.Fatalf("second chance = %q, want easy", second.Chance)
+	}
+
+	// Companion ranks should be attached for category-selected winner.
+	foundEasy := false
+	for _, c := range resp.Colleges {
+		d := c.Departments[0]
+		if c.Institute == "Inst Easy" && d.Department == "CS" {
+			foundEasy = true
+			if d.GeneralClosingRank == nil || *d.GeneralClosingRank != 6400 {
+				t.Fatalf("general_closing_rank = %v, want 6400", d.GeneralClosingRank)
+			}
+			if d.FemaleClosingRank == nil || *d.FemaleClosingRank != 3000 {
+				t.Fatalf("female_closing_rank = %v, want 3000", d.FemaleClosingRank)
+			}
+		}
+	}
+	if !foundEasy {
+		t.Fatalf("Inst Easy CS winner not found")
+	}
+}
+
+func ptr(v string) *string { return &v }

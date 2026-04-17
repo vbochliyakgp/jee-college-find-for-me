@@ -16,9 +16,12 @@ export function ShortlistItem({ institute }: ShortlistItemProps) {
   const color = chance === "dream" ? chanceBadge.low : chanceBadge.high
   const isFemalePool = dept.gender.toLowerCase() === "female"
   const hasGeneralCutoff = typeof dept.general_closing_rank === "number"
-  const hasFemaleCutoff = typeof dept.female_closing_rank === "number"
   const quota = (dept.quota ?? "").toUpperCase()
   const isStateQuota = quota === "HS" || quota === "GO" || quota === "JK" || quota === "LA"
+  const seatType = (dept.seat_type ?? "").toUpperCase()
+  const isCategorySeat = seatType !== "OPEN"
+  const isCategorySelected = dept.rank_type === "category" || dept.used_category === true
+  const isHomeStateSelected = dept.used_home_state === true || isStateQuota
 
   return (
     <div className="rounded-xl border border-border/80 bg-card p-4 shadow-sm">
@@ -29,25 +32,20 @@ export function ShortlistItem({ institute }: ShortlistItemProps) {
           <div className="mt-2 flex flex-wrap gap-2 text-sm text-muted-foreground">
             <Badge variant="secondary">{institute.institute_type}</Badge>
             <span>{institute.state}</span>
-            {isFemalePool ? (
-              <>
-                {hasGeneralCutoff && <span>General closing rank: {dept.general_closing_rank}</span>}
-                {hasFemaleCutoff ? (
-                  <span>Female closing rank: {dept.female_closing_rank}</span>
-                ) : (
-                  <span>Female closing rank: {dept.closing_rank}</span>
-                )}
-                <Badge variant="outline">Female</Badge>
-              </>
+            {hasGeneralCutoff ? (
+              <span>General closing rank: {dept.general_closing_rank}</span>
             ) : (
-              <span>Closing rank: {dept.closing_rank}</span>
+              <span>General closing: N/A</span>
             )}
+            <span>Closing for you: {dept.closing_rank}</span>
             {isStateQuota && (
               <>
                 <Badge variant="outline">Quota: {quota}</Badge>
-                <span>{quota} closing rank: {dept.closing_rank}</span>
               </>
             )}
+            {isCategorySeat && <Badge variant="outline">Seat: {seatType}</Badge>}
+            {isFemalePool && <Badge variant="outline">Gender: Female</Badge>}
+            {isHomeStateSelected && <Badge variant="outline">Selected via State Quota</Badge>}
           </div>
         </div>
         <span className={`rounded-full px-2 py-0.5 text-xs font-medium capitalize ${color}`}>{chance}</span>

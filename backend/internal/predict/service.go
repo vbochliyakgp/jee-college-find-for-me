@@ -55,6 +55,9 @@ func (s *Service) Predict(ctx context.Context, req models.PredictRequest) (*mode
 	if err != nil {
 		return nil, err
 	}
+	if normalized.Category != "General" {
+		return s.predictWithCategory(ctx, normalized)
+	}
 
 	// Try up to 5 widening windows when no rows are found.
 	// This avoids dead-end "no rows matched" for sparse rank bands.
