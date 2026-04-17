@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { RefreshCw } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import type { ExamType, Gender, GroupedCollege, IndianState } from "@/lib/predict/types"
 import { ShortlistItem } from "@/components/predict/shortlist-item"
 import { chanceBadge } from "@/lib/theme"
@@ -36,6 +37,7 @@ export function PredictView({ initialParams, initialColleges, resolvedRank }: Pr
   const { score, gender, homeState, category, isPWD, examType } = initialParams
 
   const [activeMode, setActiveMode] = useState<PredictMode>("combined")
+  const [maxResults, setMaxResults] = useState<"50" | "100" | "max">("50")
   const [modeResults, setModeResults] = useState<Record<PredictMode, GroupedCollege[]>>({
     combined: initialColleges,
     "without-category": [],
@@ -61,17 +63,44 @@ export function PredictView({ initialParams, initialColleges, resolvedRank }: Pr
   const resetFlow = () => router.push("/")
 
   const filteredColleges = modeResults[activeMode]
-  const hasResults = filteredColleges.length > 0
+
+  const limitedColleges = useMemo(() => {
+    const cap = maxResults === "max" ? Number.POSITIVE_INFINITY : Number(maxResults)
+    if (!Number.isFinite(cap) || filteredColleges.length <= cap) return filteredColleges
+
+    const withDept = filteredColleges.filter((c) => c.departments[0])
+    const below = withDept
+      .filter((c) => c.departments[0].closing_rank < resolvedRank)
+      .sort((a, b) => b.departments[0].closing_rank - a.departments[0].closing_rank)
+    const above = withDept
+      .filter((c) => c.departments[0].closing_rank >= resolvedRank)
+      .sort((a, b) => a.departments[0].closing_rank - b.departments[0].closing_rank)
+
+    const target = Math.min(cap, withDept.length)
+    const pick: GroupedCollege[] = []
+    let i = 0
+    let j = 0
+    while (pick.length < target && (i < below.length || j < above.length)) {
+      // Alternate picks around center rank to keep both sides balanced.
+      if (j < above.length) pick.push(above[j++])
+      if (pick.length >= target) break
+      if (i < below.length) pick.push(below[i++])
+    }
+
+    const selected = new Set(pick.slice(0, target))
+    return withDept.filter((c) => selected.has(c))
+  }, [filteredColleges, maxResults, resolvedRank])
+  const hasResults = limitedColleges.length > 0
 
   const countByChance = useMemo(() => {
     const counts = { dream: 0, easy: 0 }
-    for (const college of filteredColleges) {
+    for (const college of limitedColleges) {
       for (const dept of college.departments) {
         counts[dept.chance ?? "easy"] += 1
       }
     }
     return counts
-  }, [filteredColleges])
+  }, [limitedColleges])
 
   const descriptionText = [
     `Rank ${score}`,
@@ -98,37 +127,49 @@ export function PredictView({ initialParams, initialColleges, resolvedRank }: Pr
         </CardHeader>
 
         <CardContent className="space-y-6">
-          {showCategoryTabs && (
-            <div className="flex flex-wrap gap-2">
-              <Button
-                variant={activeMode === "combined" ? "default" : "outline"}
-                size="sm"
-                onClick={() => setActiveMode("combined")}
-              >
-                Combined
-              </Button>
-              <Button
-                variant={activeMode === "without-category" ? "default" : "outline"}
-                size="sm"
-                onClick={() => setActiveMode("without-category")}
-              >
-                Without Category
-              </Button>
-              <Button
-                variant={activeMode === "category-only" ? "default" : "outline"}
-                size="sm"
-                onClick={() => setActiveMode("category-only")}
-              >
-                Category Only
-              </Button>
-            </div>
-          )}
+          <div className="flex flex-wrap items-center gap-2">
+            {showCategoryTabs && (
+              <>
+                <Button
+                  variant={activeMode === "combined" ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setActiveMode("combined")}
+                >
+                  Combined
+                </Button>
+                <Button
+                  variant={activeMode === "without-category" ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setActiveMode("without-category")}
+                >
+                  Without Category
+                </Button>
+                <Button
+                  variant={activeMode === "category-only" ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setActiveMode("category-only")}
+                >
+                  Category Only
+                </Button>
+              </>
+            )}
+            <Select value={maxResults} onValueChange={(v) => setMaxResults(v as "50" | "100" | "max")}>
+              <SelectTrigger className="h-9 w-[140px]">
+                <SelectValue placeholder="Max results" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectItem value="50">50 (default)</SelectItem>
+                <SelectItem value="100">100</SelectItem>
+                <SelectItem value="max">Max</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
 
           {hasResults ? (
             <>
               <div className="flex items-center justify-between">
                 <p className="text-sm font-medium">
-                  Showing {filteredColleges.length} institute{filteredColleges.length === 1 ? "" : "s"}.
+                  Showing {limitedColleges.length} institute{limitedColleges.length === 1 ? "" : "s"}.
                 </p>
                 <Button variant="outline" size="sm" className="gap-2" onClick={resetFlow}>
                   <RefreshCw className="h-4 w-4" />
@@ -140,7 +181,7 @@ export function PredictView({ initialParams, initialColleges, resolvedRank }: Pr
                 <Badge className={chanceBadge.high}>Easy: {countByChance.easy}</Badge>
               </div>
 
-              {filteredColleges.map((institute) => {
+              {limitedColleges.map((institute) => {
                 const dept = institute.departments[0]
                 if (!dept) return null
                 return <ShortlistItem key={`${institute.institute}-${dept.department}`} institute={institute} />
