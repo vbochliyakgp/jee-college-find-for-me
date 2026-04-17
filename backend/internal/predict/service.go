@@ -63,7 +63,7 @@ func (s *Service) Predict(ctx context.Context, req models.PredictRequest) (*mode
 
 	var rows []ScoredRow
 	for i, m := range multipliers {
-		spread := max(1, int(float64(baseSpread)*m))
+		spread := max(1, baseSpread*m)
 		minRank := max(1, normalized.Rank-spread)
 		maxRank := normalized.Rank + spread
 
@@ -141,6 +141,7 @@ func (s *Service) enrichMissingNeutralClosingRanks(ctx context.Context, examType
 		institute  string
 		department string
 	}
+	const keysPerBatch = 400
 
 	keys := make([]deptKey, 0)
 	seen := make(map[deptKey]struct{})
@@ -164,41 +165,53 @@ func (s *Service) enrichMissingNeutralClosingRanks(ctx context.Context, examType
 		return nil
 	}
 
-	var whereParts []string
-	args := make([]any, 0, 1+len(keys)*2)
-	args = append(args, examType)
-	for _, key := range keys {
-		whereParts = append(whereParts, "(institute = ? AND department = ?)")
-		args = append(args, key.institute, key.department)
-	}
-
-	query := fmt.Sprintf(`
-		SELECT institute, department, MAX(closing_rank) AS neutral_closing_rank
-		FROM cutoff_rows
-		WHERE exam_type = ?
-		  AND seat_type = 'OPEN'
-		  AND gender = 'Neutral'
-		  AND (%s)
-		GROUP BY institute, department
-	`, strings.Join(whereParts, " OR "))
-
-	rows, err := s.db.QueryContext(ctx, query, args...)
-	if err != nil {
-		return fmt.Errorf("query neutral rank enrichment: %w", err)
-	}
-	defer rows.Close()
-
 	neutralRankByKey := make(map[deptKey]int, len(keys))
-	for rows.Next() {
-		var inst, dept string
-		var rank int
-		if err := rows.Scan(&inst, &dept, &rank); err != nil {
-			return fmt.Errorf("scan neutral rank enrichment: %w", err)
+	for start := 0; start < len(keys); start += keysPerBatch {
+		end := start + keysPerBatch
+		if end > len(keys) {
+			end = len(keys)
 		}
-		neutralRankByKey[deptKey{institute: inst, department: dept}] = rank
-	}
-	if err := rows.Err(); err != nil {
-		return fmt.Errorf("iterate neutral rank enrichment: %w", err)
+		batch := keys[start:end]
+
+		var whereParts []string
+		args := make([]any, 0, 1+len(batch)*2)
+		args = append(args, examType)
+		for _, key := range batch {
+			whereParts = append(whereParts, "(institute = ? AND department = ?)")
+			args = append(args, key.institute, key.department)
+		}
+
+		query := fmt.Sprintf(`
+			SELECT institute, department, MAX(closing_rank) AS neutral_closing_rank
+			FROM cutoff_rows
+			WHERE exam_type = ?
+			  AND seat_type = 'OPEN'
+			  AND gender = 'Neutral'
+			  AND (%s)
+			GROUP BY institute, department
+		`, strings.Join(whereParts, " OR "))
+
+		rows, err := s.db.QueryContext(ctx, query, args...)
+		if err != nil {
+			return fmt.Errorf("query neutral rank enrichment: %w", err)
+		}
+
+		for rows.Next() {
+			var inst, dept string
+			var rank int
+			if err := rows.Scan(&inst, &dept, &rank); err != nil {
+				_ = rows.Close()
+				return fmt.Errorf("scan neutral rank enrichment: %w", err)
+			}
+			neutralRankByKey[deptKey{institute: inst, department: dept}] = rank
+		}
+		if err := rows.Err(); err != nil {
+			_ = rows.Close()
+			return fmt.Errorf("iterate neutral rank enrichment: %w", err)
+		}
+		if err := rows.Close(); err != nil {
+			return fmt.Errorf("close neutral rank enrichment rows: %w", err)
+		}
 	}
 
 	for i := range colleges {
