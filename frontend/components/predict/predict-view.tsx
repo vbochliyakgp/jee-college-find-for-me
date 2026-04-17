@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge"
 import type { ExamType, Gender, GroupedCollege, IndianState } from "@/lib/predict/types"
 import { ShortlistItem } from "@/components/predict/shortlist-item"
 import { chanceBadge } from "@/lib/theme"
+import { fetchPredictionWithMode, type PredictMode } from "@/lib/predict/api"
 
 export interface InitialParams {
   examType: ExamType
@@ -34,36 +35,33 @@ export function PredictView({ initialParams, initialColleges, resolvedRank }: Pr
   // Read-only display values derived from initialParams
   const { score, gender, homeState, category, isPWD, examType } = initialParams
 
-  const [colleges] = useState<GroupedCollege[]>(initialColleges)
-  const [hasResults] = useState(true)
-  const [userRank, setUserRank] = useState<number | null>(resolvedRank)
-  const [showSkeleton, setShowSkeleton] = useState(true)
-  const [animatedRank, setAnimatedRank] = useState(0)
-  const [filteredColleges] = useState<GroupedCollege[]>(initialColleges)
+  const [activeMode, setActiveMode] = useState<PredictMode>("combined")
+  const [modeResults, setModeResults] = useState<Record<PredictMode, GroupedCollege[]>>({
+    combined: initialColleges,
+    "without-category": [],
+    "category-only": [],
+  })
+
+  const showCategoryTabs = category !== "General" && Boolean(initialParams.categoryRank?.trim())
 
   useEffect(() => {
-    setAnimatedRank(0)
-    setUserRank(resolvedRank)
-
-    const duration = 900
-    const steps = 18
-    const increment = Math.max(1, Math.ceil(resolvedRank / steps))
-    let current = 0
-    const timer = setInterval(() => {
-      current += increment
-      if (current >= resolvedRank) {
-        clearInterval(timer)
-        setAnimatedRank(resolvedRank)
-        setShowSkeleton(false)
-      } else {
-        setAnimatedRank(current)
-      }
-    }, duration / steps)
-
-    return () => clearInterval(timer)
-  }, [resolvedRank])
+    if (!showCategoryTabs) return
+    const extraModes: PredictMode[] = ["without-category", "category-only"]
+    for (const mode of extraModes) {
+      fetchPredictionWithMode(initialParams, mode)
+        .then((resp) => {
+          setModeResults((prev) => ({ ...prev, [mode]: resp.colleges }))
+        })
+        .catch(() => {
+          setModeResults((prev) => ({ ...prev, [mode]: [] }))
+        })
+    }
+  }, [initialParams, showCategoryTabs])
 
   const resetFlow = () => router.push("/")
+
+  const filteredColleges = modeResults[activeMode]
+  const hasResults = filteredColleges.length > 0
 
   const countByChance = useMemo(() => {
     const counts = { dream: 0, easy: 0 }
@@ -86,91 +84,87 @@ export function PredictView({ initialParams, initialColleges, resolvedRank }: Pr
 
   return (
     <div className="container max-w-[1400px] py-8">
-      {/* Skeleton while animation plays */}
-      {showSkeleton && (
-        <Card className="border-border/80 shadow-sm">
-          <CardHeader className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-            <div>
-              <CardTitle>Finding your colleges…</CardTitle>
-              <CardDescription>{descriptionText}</CardDescription>
-            </div>
-            <div className="rounded-xl border border-primary/20 bg-primary/5 px-4 py-3">
-              <div className="text-2xl font-semibold tabular-nums text-primary">{animatedRank.toLocaleString()}</div>
-              <div className="text-xs text-muted-foreground">General rank</div>
-            </div>
-          </CardHeader>
-          <CardContent>
-            <div className="space-y-3">
-              {[1, 2, 3].map((i) => (
-                <div key={i} className="h-20 animate-pulse rounded-xl bg-muted" />
-              ))}
-            </div>
-          </CardContent>
-          <CardFooter>
-            <Button variant="outline" className="w-full" onClick={resetFlow}>
-              Back
-            </Button>
-          </CardFooter>
-        </Card>
-      )}
-
       {/* Results */}
-      {hasResults && !showSkeleton && (
-        <Card className="border-border/80 shadow-sm">
-          <CardHeader className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-            <div>
-              <CardTitle>Your shortlist</CardTitle>
-              <CardDescription>{descriptionText}</CardDescription>
-            </div>
-            <div className="rounded-xl border border-primary/20 bg-primary/5 px-4 py-3">
-              <div className="text-2xl font-semibold tabular-nums text-primary">{userRank?.toLocaleString() ?? "—"}</div>
-              <div className="text-xs text-muted-foreground">General rank used</div>
-            </div>
-          </CardHeader>
+      <Card className="border-border/80 shadow-sm">
+        <CardHeader className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+          <div>
+            <CardTitle>Your shortlist</CardTitle>
+            <CardDescription>{descriptionText}</CardDescription>
+          </div>
+          <div className="rounded-xl border border-primary/20 bg-primary/5 px-4 py-3">
+            <div className="text-2xl font-semibold tabular-nums text-primary">{resolvedRank.toLocaleString()}</div>
+            <div className="text-xs text-muted-foreground">General rank used</div>
+          </div>
+        </CardHeader>
 
-          <CardContent className="space-y-6">
-            {colleges.length > 0 ? (
-              <>
-                <div className="flex items-center justify-between">
-                  <p className="text-sm font-medium">
-                    Showing {filteredColleges.length} institute{filteredColleges.length === 1 ? "" : "s"}.
-                  </p>
-                  <Button variant="outline" size="sm" className="gap-2" onClick={resetFlow}>
-                    <RefreshCw className="h-4 w-4" />
-                    New search
-                  </Button>
-                </div>
-                <div className="flex flex-wrap gap-2 text-xs">
-                  <Badge className={chanceBadge.low}>Dream: {countByChance.dream}</Badge>
-                  <Badge className={chanceBadge.high}>Easy: {countByChance.easy}</Badge>
-                </div>
+        <CardContent className="space-y-6">
+          {showCategoryTabs && (
+            <div className="flex flex-wrap gap-2">
+              <Button
+                variant={activeMode === "combined" ? "default" : "outline"}
+                size="sm"
+                onClick={() => setActiveMode("combined")}
+              >
+                Combined
+              </Button>
+              <Button
+                variant={activeMode === "without-category" ? "default" : "outline"}
+                size="sm"
+                onClick={() => setActiveMode("without-category")}
+              >
+                Without Category
+              </Button>
+              <Button
+                variant={activeMode === "category-only" ? "default" : "outline"}
+                size="sm"
+                onClick={() => setActiveMode("category-only")}
+              >
+                Category Only
+              </Button>
+            </div>
+          )}
 
-                {filteredColleges.map((institute) => {
-                  const dept = institute.departments[0]
-                  if (!dept) return null
-                  return <ShortlistItem key={`${institute.institute}-${dept.department}`} institute={institute} />
-                })}
-              </>
-            ) : (
-              <div className="py-12 text-center text-muted-foreground">
-                <p>No rows matched after expanded search attempts.</p>
-                <p className="mt-2 text-sm">
-                  Tips: verify exam type, try a nearby rank, or relax category/PwD constraints and search again.
+          {hasResults ? (
+            <>
+              <div className="flex items-center justify-between">
+                <p className="text-sm font-medium">
+                  Showing {filteredColleges.length} institute{filteredColleges.length === 1 ? "" : "s"}.
                 </p>
-                <Button variant="outline" className="mt-4" onClick={resetFlow}>
-                  Try again
+                <Button variant="outline" size="sm" className="gap-2" onClick={resetFlow}>
+                  <RefreshCw className="h-4 w-4" />
+                  New search
                 </Button>
               </div>
-            )}
-          </CardContent>
+              <div className="flex flex-wrap gap-2 text-xs">
+                <Badge className={chanceBadge.low}>Dream: {countByChance.dream}</Badge>
+                <Badge className={chanceBadge.high}>Easy: {countByChance.easy}</Badge>
+              </div>
 
-          <CardFooter className="flex flex-col gap-2 sm:flex-row">
-            <Button variant="outline" className="w-full sm:w-auto" onClick={resetFlow}>
-              New prediction
-            </Button>
-          </CardFooter>
-        </Card>
-      )}
+              {filteredColleges.map((institute) => {
+                const dept = institute.departments[0]
+                if (!dept) return null
+                return <ShortlistItem key={`${institute.institute}-${dept.department}`} institute={institute} />
+              })}
+            </>
+          ) : (
+            <div className="py-12 text-center text-muted-foreground">
+              <p>No rows matched after expanded search attempts.</p>
+              <p className="mt-2 text-sm">
+                Tips: verify exam type, try a nearby rank, or relax category/PwD constraints and search again.
+              </p>
+              <Button variant="outline" className="mt-4" onClick={resetFlow}>
+                Try again
+              </Button>
+            </div>
+          )}
+        </CardContent>
+
+        <CardFooter className="flex flex-col gap-2 sm:flex-row">
+          <Button variant="outline" className="w-full sm:w-auto" onClick={resetFlow}>
+            New prediction
+          </Button>
+        </CardFooter>
+      </Card>
     </div>
   )
 }

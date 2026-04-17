@@ -8,6 +8,12 @@ function apiBaseUrl() {
 }
 
 export async function fetchPrediction(params: InitialParams): Promise<PredictApiResponse> {
+  return fetchPredictionWithMode(params, "combined")
+}
+
+export type PredictMode = "combined" | "without-category" | "category-only"
+
+export async function fetchPredictionWithMode(params: InitialParams, mode: PredictMode): Promise<PredictApiResponse> {
   const response = await fetch(`${apiBaseUrl()}/api/predict`, {
     method: "POST",
     headers: {
@@ -17,6 +23,7 @@ export async function fetchPrediction(params: InitialParams): Promise<PredictApi
     body: JSON.stringify({
       examType: params.examType,
       rank: params.score,
+      mode,
       gender: params.gender,
       homeState: params.homeState,
       category: params.category,

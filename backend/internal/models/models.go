@@ -66,6 +66,7 @@ type PredictRequest struct {
 	ExamType     string  `json:"examType"` // jee-main or jee-advanced.
 	Score        string  `json:"score"`    // Legacy rank input alias kept for client compatibility.
 	Rank         string  `json:"rank"` // CRL; same meaning as score (new clients send rank)
+	Mode         string  `json:"mode,omitempty"` // optional view mode: combined, without-category, category-only.
 	Category     string  `json:"category"`     // General/OBC/SC/ST/EWS.
 	CategoryRank *string `json:"categoryRank"` // Optional category rank string.
 	IsPWD        bool    `json:"isPWD"`        // Whether candidate is PwD.

@@ -12,6 +12,7 @@ import (
 type normalizedRequest struct {
 	ExamType     string
 	Rank         int
+	Mode         string
 	Gender       string
 	Category     string
 	CategoryRank *int
@@ -68,10 +69,17 @@ func validateRequest(req models.PredictRequest) (*normalizedRequest, error) {
 	}
 
 	homeState := strings.TrimSpace(req.HomeState)
+	mode := strings.ToLower(strings.TrimSpace(req.Mode))
+	switch mode {
+	case "", "combined", "without-category", "category-only":
+	default:
+		return nil, &ValidationError{Message: "mode must be combined, without-category, or category-only"}
+	}
 
 	return &normalizedRequest{
 		ExamType:     examType,
 		Rank:         rank,
+		Mode:         mode,
 		Gender:       gender,
 		Category:     category,
 		CategoryRank: categoryRank,

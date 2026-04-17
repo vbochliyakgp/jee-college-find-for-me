@@ -23,7 +23,7 @@ type candidateKey struct {
 	department string
 }
 
-func (s *Service) predictWithCategory(ctx context.Context, normalized *normalizedRequest) (*models.PredictResponse, error) {
+func (s *Service) predictWithCategory(ctx context.Context, normalized *normalizedRequest, includeOpen bool) (*models.PredictResponse, error) {
 	if normalized.CategoryRank == nil {
 		return nil, &ValidationError{Message: "categoryRank is required when category is not General"}
 	}
@@ -47,9 +47,13 @@ func (s *Service) predictWithCategory(ctx context.Context, normalized *normalize
 		minCat := max(1, *normalized.CategoryRank-catSpread)
 		maxCat := *normalized.CategoryRank + catSpread
 
-		openRows, err := s.fetchRowsBySeatType(ctx, normalized.ExamType, "OPEN", minCRL, maxCRL, normalized.Gender, normalized.HomeState)
-		if err != nil {
-			return nil, err
+		openRows := []models.CutoffRow{}
+		if includeOpen {
+			var err error
+			openRows, err = s.fetchRowsBySeatType(ctx, normalized.ExamType, "OPEN", minCRL, maxCRL, normalized.Gender, normalized.HomeState)
+			if err != nil {
+				return nil, err
+			}
 		}
 		categoryRows, err := s.fetchRowsBySeatType(ctx, normalized.ExamType, categorySeat, minCat, maxCat, normalized.Gender, normalized.HomeState)
 		if err != nil {
@@ -57,9 +61,11 @@ func (s *Service) predictWithCategory(ctx context.Context, normalized *normalize
 		}
 
 		winners = make(map[candidateKey]scoredCandidate)
-		for _, row := range openRows {
-			candidate := scoreCandidate(row, normalized.Rank, "general")
-			mergeBestCandidate(winners, candidate)
+		if includeOpen {
+			for _, row := range openRows {
+				candidate := scoreCandidate(row, normalized.Rank, "general")
+				mergeBestCandidate(winners, candidate)
+			}
 		}
 		for _, row := range categoryRows {
 			candidate := scoreCandidate(row, *normalized.CategoryRank, "category")
