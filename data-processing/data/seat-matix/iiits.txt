@@ -1,0 +1,449 @@
+Institute Name	Program Name	State/All India Seats	Seat Pool	OPEN	OPEN-PwD	GEN-EWS	GEN-EWS-PwD	SC	SC-PwD	ST	ST-PwD	OBC-NCL	OBC-NCL-PwD	Total (includes Female Supernumerary)	
+Program-Total
+Seat Capacity 	Female Supernumerary
+Atal Bihari Vajpayee Indian Institute of Information Technology & Management Gwalior 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	32 	1 	4 	0 	10 	1 	4 	1 	18 	1 	72 	
+90 	0
+Female-only (including Supernumerary) 	7 	1 	1 	0 	3 	0 	1 	0 	5 	0 	18
+(including "0" Supernumerary)
+Atal Bihari Vajpayee Indian Institute of Information Technology & Management Gwalior 	Mathematics and Scientific Computing (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	21 	1 	2 	0 	7 	0 	4 	0 	12 	1 	48 	
+60 	0
+Female-only (including Supernumerary) 	5 	0 	1 	0 	1 	1 	1 	0 	3 	0 	12
+(including "0" Supernumerary)
+Atal Bihari Vajpayee Indian Institute of Information Technology & Management Gwalior 	Electrical and Electronics Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	21 	1 	2 	0 	6 	1 	4 	0 	12 	1 	48 	
+60 	0
+Female-only (including Supernumerary) 	5 	0 	1 	0 	2 	0 	1 	0 	3 	0 	12
+(including "0" Supernumerary)
+Atal Bihari Vajpayee Indian Institute of Information Technology & Management Gwalior 	Integrated B. Tech.(IT) and M. Tech (IT) (5 Years, Integrated B. Tech. and M. Tech.) 	All India 	Gender-Neutral 	32 	1 	4 	0 	10 	1 	5 	0 	18 	1 	72 	
+90 	0
+Female-only (including Supernumerary) 	7 	1 	1 	0 	3 	0 	1 	0 	5 	0 	18
+(including "0" Supernumerary)
+Atal Bihari Vajpayee Indian Institute of Information Technology & Management Gwalior 	Integrated B. Tech.(IT) and MBA (5 Years, Integrated B. Tech. and MBA) 	All India 	Gender-Neutral 	21 	1 	2 	0 	7 	0 	3 	1 	13 	0 	48 	
+60 	0
+Female-only (including Supernumerary) 	5 	0 	1 	0 	2 	0 	1 	0 	2 	1 	12
+(including "0" Supernumerary)
+Indian Institute of Information Technology (IIIT)Kota, Rajasthan 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	55 	3 	13 	1 	21 	1 	10 	1 	37 	2 	144 	
+144 	36
+Female-only (including Supernumerary) 	13 	1 	4 	0 	5 	0 	3 	0 	9 	1 	36
+(including "36" Supernumerary)
+Indian Institute of Information Technology (IIIT)Kota, Rajasthan 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	28 	1 	7 	0 	10 	1 	5 	0 	19 	1 	72 	
+72 	18
+Female-only (including Supernumerary) 	7 	0 	2 	0 	3 	0 	1 	0 	5 	0 	18
+(including "18" Supernumerary)
+Indian Institute of Information Technology (IIIT)Kota, Rajasthan 	Artificial Intelligence and Data Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	18 	2 	5 	0 	7 	0 	4 	0 	11 	1 	48 	
+48 	12
+Female-only (including Supernumerary) 	5 	0 	1 	0 	2 	0 	1 	0 	3 	0 	12
+(including "12" Supernumerary)
+Indian Institute of Information Technology Guwahati 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	53 	3 	13 	1 	20 	1 	9 	1 	35 	2 	138 	
+138 	27
+Female-only (including Supernumerary) 	10 	1 	3 	0 	4 	0 	2 	0 	7 	0 	27
+(including "27" Supernumerary)
+Indian Institute of Information Technology Guwahati 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	28 	2 	8 	0 	10 	1 	6 	0 	19 	1 	75 	
+75 	14
+Female-only (including Supernumerary) 	6 	0 	1 	0 	2 	0 	1 	0 	4 	0 	14
+(including "14" Supernumerary)
+Indian Institute of Information Technology(IIIT) Kalyani, West Bengal 	Computer Science and Engineering (Cyber Security) (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	8 	0 	2 	0 	3 	0 	2 	0 	5 	0 	20 	
+20 	2
+Female-only (including Supernumerary) 	1 	0 	0 	0 	0 	0 	0 	0 	1 	0 	2
+(including "2" Supernumerary)
+Indian Institute of Information Technology(IIIT) Kalyani, West Bengal 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	45 	2 	12 	0 	17 	1 	9 	0 	30 	2 	118 	
+118 	10
+Female-only (including Supernumerary) 	3 	0 	1 	0 	2 	0 	1 	0 	3 	0 	10
+(including "10" Supernumerary)
+Indian Institute of Information Technology(IIIT) Kalyani, West Bengal 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	23 	1 	6 	0 	9 	0 	5 	0 	15 	1 	60 	
+60 	5
+Female-only (including Supernumerary) 	2 	0 	1 	0 	1 	0 	0 	0 	1 	0 	5
+(including "5" Supernumerary)
+Indian Institute of Information Technology(IIIT) Kalyani, West Bengal 	Computer Science and Engineering ( Artificial Intelligence & Data Science) (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	8 	0 	2 	0 	3 	0 	2 	0 	5 	0 	20 	
+20 	2
+Female-only (including Supernumerary) 	1 	0 	0 	0 	0 	0 	0 	0 	1 	0 	2
+(including "2" Supernumerary)
+Indian Institute of Information Technology(IIIT) Kilohrad, Sonepat, Haryana 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	46 	3 	11 	1 	17 	1 	8 	1 	30 	2 	120 	
+120 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Indian Institute of Information Technology(IIIT) Kilohrad, Sonepat, Haryana 	CSE ( Data Science & Analytics) (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	23 	1 	6 	0 	9 	0 	5 	0 	16 	0 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Indian Institute of Information Technology(IIIT) Kilohrad, Sonepat, Haryana 	Information Technology (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	23 	1 	6 	0 	8 	1 	4 	0 	16 	1 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Indian Institute of Information Technology(IIIT) Una, Himachal Pradesh 	Computer Science and Engineering (Cyber Security) (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	12 	1 	3 	0 	4 	0 	2 	0 	8 	0 	30 	
+30 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Indian Institute of Information Technology(IIIT) Una, Himachal Pradesh 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	58 	2 	14 	1 	22 	2 	10 	1 	38 	2 	150 	
+150 	6
+Female-only (including Supernumerary) 	2 	0 	1 	0 	1 	0 	0 	0 	2 	0 	6
+(including "6" Supernumerary)
+Indian Institute of Information Technology(IIIT) Una, Himachal Pradesh 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	28 	2 	7 	1 	11 	0 	5 	1 	19 	1 	75 	
+75 	3
+Female-only (including Supernumerary) 	1 	0 	0 	0 	1 	0 	0 	0 	1 	0 	3
+(including "3" Supernumerary)
+Indian Institute of Information Technology(IIIT) Una, Himachal Pradesh 	Computer Science and Engineering (Data Science) (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	12 	0 	3 	0 	4 	0 	3 	0 	8 	0 	30 	
+30 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Indian Institute of Information Technology (IIIT), Sri City, Chittoor 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	87 	5 	22 	1 	33 	2 	17 	1 	59 	3 	230 	
+230 	46
+Female-only (including Supernumerary) 	18 	1 	5 	0 	7 	0 	3 	0 	12 	0 	46
+(including "46" Supernumerary)
+Indian Institute of Information Technology (IIIT), Sri City, Chittoor 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	31 	1 	8 	0 	11 	1 	6 	0 	21 	1 	80 	
+80 	16
+Female-only (including Supernumerary) 	7 	0 	2 	0 	2 	0 	1 	0 	4 	0 	16
+(including "16" Supernumerary)
+Indian Institute of Information Technology (IIIT), Sri City, Chittoor 	Artificial Intelligence and Data Science (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	21 	1 	6 	0 	8 	0 	4 	0 	14 	1 	55 	
+55 	11
+Female-only (including Supernumerary) 	5 	0 	1 	0 	1 	0 	1 	0 	3 	0 	11
+(including "11" Supernumerary)
+Indian Institute of Information Technology(IIIT), Vadodara, Gujrat 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	58 	3 	15 	1 	22 	1 	10 	1 	40 	2 	153 	
+153 	38
+Female-only (including Supernumerary) 	14 	1 	4 	0 	6 	0 	3 	0 	9 	1 	38
+(including "38" Supernumerary)
+Indian Institute of Information Technology(IIIT), Vadodara, Gujrat 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	36 	2 	8 	1 	13 	1 	7 	1 	26 	1 	96 	
+96 	24
+Female-only (including Supernumerary) 	10 	0 	2 	0 	4 	0 	2 	0 	6 	0 	24
+(including "24" Supernumerary)
+Indian Institute of Information Technology(IIIT), Vadodara, Gujrat 	Information Technology (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	14 	1 	3 	0 	6 	0 	2 	0 	9 	1 	36 	
+36 	8
+Female-only (including Supernumerary) 	3 	0 	1 	0 	1 	0 	1 	0 	2 	0 	8
+(including "8" Supernumerary)
+Indian Institute of Information Technology(IIIT), Vadodara, Gujrat 	Artificial Intelligence (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	18 	1 	5 	0 	7 	0 	4 	0 	12 	1 	48 	
+48 	12
+Female-only (including Supernumerary) 	5 	0 	1 	0 	2 	0 	1 	0 	3 	0 	12
+(including "12" Supernumerary)
+Indian Institute of Information Technology, Allahabad 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	40 	2 	10 	1 	15 	1 	8 	0 	27 	1 	105 	
+132 	0
+Female-only (including Supernumerary) 	10 	1 	3 	0 	4 	0 	2 	0 	7 	0 	27
+(including "0" Supernumerary)
+Indian Institute of Information Technology, Allahabad 	Information Technology (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	83 	4 	20 	1 	30 	2 	15 	1 	55 	3 	214 	
+267 	0
+Female-only (including Supernumerary) 	21 	1 	5 	0 	8 	0 	4 	0 	13 	1 	53
+(including "0" Supernumerary)
+Indian Institute of Information Technology, Allahabad 	Information Technology-Business Informatics (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	12 	1 	3 	0 	5 	0 	2 	0 	8 	1 	32 	
+40 	0
+Female-only (including Supernumerary) 	3 	0 	1 	0 	1 	0 	1 	0 	2 	0 	8
+(including "0" Supernumerary)
+Indian Institute of Information Technology, Design & Manufacturing, Kancheepuram 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	26 	1 	6 	1 	9 	1 	5 	0 	18 	1 	68 	
+68 	17
+Female-only (including Supernumerary) 	6 	1 	2 	0 	3 	0 	1 	0 	4 	0 	17
+(including "17" Supernumerary)
+Indian Institute of Information Technology, Design & Manufacturing, Kancheepuram 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	39 	2 	9 	1 	14 	1 	6 	1 	27 	1 	101 	
+101 	25
+Female-only (including Supernumerary) 	10 	1 	2 	0 	4 	0 	2 	0 	6 	0 	25
+(including "25" Supernumerary)
+Indian Institute of Information Technology, Design & Manufacturing, Kancheepuram 	Engineering Physics (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	6 	0 	2 	0 	2 	0 	1 	0 	4 	0 	15 	
+15 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Indian Institute of Information Technology, Design & Manufacturing, Kancheepuram 	Mechanical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	27 	1 	6 	1 	10 	0 	4 	1 	18 	1 	69 	
+69 	17
+Female-only (including Supernumerary) 	6 	1 	2 	0 	3 	0 	1 	0 	4 	0 	17
+(including "17" Supernumerary)
+Indian Institute of Information Technology, Design & Manufacturing, Kancheepuram 	Design Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	7 	1 	2 	0 	3 	0 	2 	0 	5 	0 	20 	
+20 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Indian Institute of Information Technology, Design & Manufacturing, Kancheepuram 	Smart Manufacturing (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	18 	1 	5 	0 	7 	0 	4 	0 	12 	1 	48 	
+48 	12
+Female-only (including Supernumerary) 	4 	1 	1 	0 	2 	0 	1 	0 	3 	0 	12
+(including "12" Supernumerary)
+Indian Institute of Information Technology, Design & Manufacturing, Kancheepuram 	Computer Science and Engineering with Major in Artificial Intelligence (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	14 	1 	4 	0 	5 	0 	3 	0 	9 	1 	37 	
+37 	9
+Female-only (including Supernumerary) 	4 	0 	1 	0 	1 	0 	1 	0 	2 	0 	9
+(including "9" Supernumerary)
+Indian Institute of Information Technology, Design & Manufacturing, Kancheepuram 	Computer Science and Engineering (5 Years, Bachelor and Master of Technology (Dual Degree)) 	All India 	Gender-Neutral 	21 	1 	5 	0 	7 	1 	4 	0 	14 	1 	54 	
+54 	14
+Female-only (including Supernumerary) 	6 	0 	1 	0 	2 	0 	1 	0 	4 	0 	14
+(including "14" Supernumerary)
+Indian Institute of Information Technology, Design & Manufacturing, Kancheepuram 	B.Tech. in Electronics and Communication Engineering and M.Tech. in Communication Systems (5 Years, Bachelor and Master of Technology (Dual Degree)) 	All India 	Gender-Neutral 	7 	0 	2 	0 	2 	0 	1 	0 	4 	0 	16 	
+16 	4
+Female-only (including Supernumerary) 	2 	0 	0 	0 	1 	0 	0 	0 	1 	0 	4
+(including "4" Supernumerary)
+Indian Institute of Information Technology, Design & Manufacturing, Kancheepuram 	B.Tech. in Electronics and Communication Engineering and M.Tech. in Microelectronics and VLSI Systems (5 Years, Bachelor and Master of Technology (Dual Degree)) 	All India 	Gender-Neutral 	6 	1 	2 	0 	2 	0 	1 	0 	5 	0 	17 	
+17 	4
+Female-only (including Supernumerary) 	2 	0 	0 	0 	1 	0 	0 	0 	1 	0 	4
+(including "4" Supernumerary)
+Indian Institute of Information Technology, Design & Manufacturing, Kancheepuram 	B.Tech in Mechanical Engineering and M.Tech in AI and Robotics (5 Years, B.Tech. + M.Tech./MS (Dual Degree)) 	All India 	Gender-Neutral 	14 	1 	4 	0 	5 	0 	3 	0 	9 	1 	37 	
+37 	9
+Female-only (including Supernumerary) 	4 	0 	1 	0 	1 	0 	1 	0 	2 	0 	9
+(including "9" Supernumerary)
+Pt. Dwarka Prasad Mishra Indian Institute of Information Technology, Design & Manufacture Jabalpur 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	84 	5 	21 	1 	32 	1 	16 	1 	56 	3 	220 	
+275 	0
+Female-only (including Supernumerary) 	21 	1 	5 	1 	8 	1 	4 	0 	14 	0 	55
+(including "0" Supernumerary)
+Pt. Dwarka Prasad Mishra Indian Institute of Information Technology, Design & Manufacture Jabalpur 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	43 	2 	10 	1 	16 	1 	7 	0 	29 	1 	110 	
+137 	0
+Female-only (including Supernumerary) 	10 	1 	3 	0 	4 	0 	2 	0 	6 	1 	27
+(including "0" Supernumerary)
+Pt. Dwarka Prasad Mishra Indian Institute of Information Technology, Design & Manufacture Jabalpur 	Mechanical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	21 	1 	5 	0 	8 	0 	4 	1 	14 	1 	55 	
+69 	0
+Female-only (including Supernumerary) 	5 	1 	1 	0 	2 	0 	1 	0 	4 	0 	14
+(including "0" Supernumerary)
+Pt. Dwarka Prasad Mishra Indian Institute of Information Technology, Design & Manufacture Jabalpur 	Smart Manufacturing (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	21 	1 	6 	0 	7 	1 	4 	0 	14 	1 	55 	
+69 	0
+Female-only (including Supernumerary) 	6 	0 	1 	0 	2 	0 	1 	0 	4 	0 	14
+(including "0" Supernumerary)
+INDIAN INSTITUTE OF INFORMATION TECHNOLOGY SENAPATI MANIPUR 	Electronics and Communication Engineering with specialization in VLSI and Embedded Systems (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	51 	0 	10 	0 	15 	0 	7 	0 	27 	0 	110 	
+110 	22
+Female-only (including Supernumerary) 	9 	0 	2 	0 	3 	0 	2 	0 	6 	0 	22
+(including "22" Supernumerary)
+INDIAN INSTITUTE OF INFORMATION TECHNOLOGY SENAPATI MANIPUR 	Computer Science and Engineering with specialization in Artificial Intelligence and Data Science (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	51 	0 	10 	0 	15 	0 	7 	0 	27 	0 	110 	
+110 	22
+Female-only (including Supernumerary) 	9 	0 	2 	0 	3 	0 	2 	0 	6 	0 	22
+(including "22" Supernumerary)
+INDIAN INSTITUTE OF INFORMATION TECHNOLOGY SENAPATI MANIPUR 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	51 	0 	10 	0 	15 	0 	7 	0 	27 	0 	110 	
+110 	22
+Female-only (including Supernumerary) 	9 	0 	2 	0 	3 	0 	2 	0 	6 	0 	22
+(including "22" Supernumerary)
+INDIAN INSTITUTE OF INFORMATION TECHNOLOGY SENAPATI MANIPUR 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	51 	0 	10 	0 	15 	0 	7 	0 	27 	0 	110 	
+110 	22
+Female-only (including Supernumerary) 	9 	0 	2 	0 	3 	0 	2 	0 	6 	0 	22
+(including "22" Supernumerary)
+INDIAN INSTITUTE OF INFORMATION TECHNOLOGY SENAPATI MANIPUR 	Computer Science and Engineering with specialization in Quantum Technologies (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	25 	0 	5 	0 	8 	0 	4 	0 	13 	0 	55 	
+55 	11
+Female-only (including Supernumerary) 	5 	0 	1 	0 	1 	0 	1 	0 	3 	0 	11
+(including "11" Supernumerary)
+INDIAN INSTITUTE OF INFORMATION TECHNOLOGY SENAPATI MANIPUR 	Computer Science and Engineering with specialization in Cyber Security (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	25 	0 	5 	0 	8 	0 	4 	0 	13 	0 	55 	
+55 	11
+Female-only (including Supernumerary) 	5 	0 	1 	0 	1 	0 	1 	0 	3 	0 	11
+(including "11" Supernumerary)
+Indian Institute of Information Technology Tiruchirappalli 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	19 	1 	5 	0 	7 	0 	4 	0 	13 	1 	50 	
+75 	0
+Female-only (including Supernumerary) 	10 	0 	2 	0 	4 	0 	1 	1 	6 	1 	25
+(including "0" Supernumerary)
+Indian Institute of Information Technology Tiruchirappalli 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	19 	1 	4 	1 	7 	1 	4 	0 	13 	0 	50 	
+75 	0
+Female-only (including Supernumerary) 	9 	1 	3 	0 	4 	0 	2 	0 	6 	0 	25
+(including "0" Supernumerary)
+Indian Institute of Information Technology Tiruchirappalli 	Computer Science and Engineering ( Artificial Intelligence & Data Science) (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	14 	1 	4 	0 	6 	0 	3 	0 	9 	1 	38 	
+38 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Indian Institute of Information Technology Tiruchirappalli 	Electronics and Communication Engineering (VLSI Design) (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	15 	0 	4 	0 	5 	0 	3 	0 	9 	1 	37 	
+37 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Indian Institute of Information Technology Lucknow 	Computer Science and Business (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	18 	1 	5 	0 	7 	0 	4 	0 	12 	1 	48 	
+60 	0
+Female-only (including Supernumerary) 	5 	0 	1 	0 	2 	0 	1 	0 	2 	1 	12
+(including "0" Supernumerary)
+Indian Institute of Information Technology Lucknow 	Information Technology (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	18 	1 	5 	0 	7 	0 	4 	0 	12 	1 	48 	
+60 	0
+Female-only (including Supernumerary) 	4 	1 	1 	0 	2 	0 	1 	0 	3 	0 	12
+(including "0" Supernumerary)
+Indian Institute of Information Technology Lucknow 	Computer Science (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	18 	1 	5 	0 	7 	0 	4 	0 	12 	1 	48 	
+60 	0
+Female-only (including Supernumerary) 	5 	0 	0 	1 	2 	0 	1 	0 	3 	0 	12
+(including "0" Supernumerary)
+Indian Institute of Information Technology Lucknow 	Computer Science and Artificial Intelligence (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	18 	1 	5 	0 	7 	0 	4 	0 	12 	1 	48 	
+60 	0
+Female-only (including Supernumerary) 	5 	0 	1 	0 	1 	1 	1 	0 	3 	0 	12
+(including "0" Supernumerary)
+Indian Institute of Information Technology(IIIT) Dharwad 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	77 	4 	19 	1 	29 	1 	14 	1 	51 	3 	200 	
+200 	40
+Female-only (including Supernumerary) 	16 	0 	4 	0 	6 	0 	3 	0 	11 	0 	40
+(including "40" Supernumerary)
+Indian Institute of Information Technology(IIIT) Dharwad 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	33 	2 	8 	1 	12 	0 	6 	0 	22 	1 	85 	
+85 	17
+Female-only (including Supernumerary) 	6 	0 	2 	0 	3 	0 	1 	0 	5 	0 	17
+(including "17" Supernumerary)
+Indian Institute of Information Technology(IIIT) Dharwad 	Data Science and Artificial Intelligence (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	46 	3 	11 	0 	17 	1 	9 	0 	31 	2 	120 	
+120 	24
+Female-only (including Supernumerary) 	10 	0 	2 	0 	4 	0 	2 	0 	6 	0 	24
+(including "24" Supernumerary)
+Indian Institute of Information Technology Design & Manufacturing Kurnool, Andhra Pradesh 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	21 	1 	5 	0 	8 	0 	4 	0 	16 	1 	56 	
+70 	0
+Female-only (including Supernumerary) 	5 	1 	1 	0 	2 	0 	1 	0 	4 	0 	14
+(including "0" Supernumerary)
+Indian Institute of Information Technology Design & Manufacturing Kurnool, Andhra Pradesh 	Electronics and Communication Engineering with specialization in Design and Manufacturing (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	18 	1 	5 	0 	7 	1 	3 	0 	12 	1 	48 	
+60 	7
+Female-only (including Supernumerary) 	7 	0 	2 	0 	3 	0 	1 	0 	5 	1 	19
+(including "7" Supernumerary)
+Indian Institute of Information Technology Design & Manufacturing Kurnool, Andhra Pradesh 	Mechanical Engineering with specialization in Design and Manufacturing (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	19 	1 	5 	0 	7 	0 	3 	0 	13 	0 	48 	
+60 	7
+Female-only (including Supernumerary) 	7 	0 	2 	0 	2 	1 	2 	0 	5 	0 	19
+(including "7" Supernumerary)
+Indian Institute of Information Technology Design & Manufacturing Kurnool, Andhra Pradesh 	Artificial Intelligence and Data Science (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	19 	1 	4 	0 	7 	0 	4 	0 	13 	0 	48 	
+60 	3
+Female-only (including Supernumerary) 	6 	1 	1 	0 	2 	0 	1 	0 	4 	0 	15
+(including "3" Supernumerary)
+Indian Institute of Information Technology Design & Manufacturing Kurnool, Andhra Pradesh 	Computer Science and Engineering (5 Years, Bachelor and Master of Technology (Dual Degree)) 	All India 	Gender-Neutral 	6 	1 	2 	0 	2 	0 	1 	0 	4 	0 	16 	
+20 	0
+Female-only (including Supernumerary) 	2 	0 	0 	0 	1 	0 	0 	0 	1 	0 	4
+(including "0" Supernumerary)
+Indian Institute of Information Technology Design & Manufacturing Kurnool, Andhra Pradesh 	Mechanical Engineering (5 Years, Bachelor and Master of Technology (Dual Degree)) 	All India 	Gender-Neutral 	7 	0 	1 	0 	3 	0 	1 	0 	3 	1 	16 	
+20 	3
+Female-only (including Supernumerary) 	2 	0 	1 	0 	1 	0 	1 	0 	2 	0 	7
+(including "3" Supernumerary)
+Indian Institute of Information Technology Design & Manufacturing Kurnool, Andhra Pradesh 	Electronics and Communication Engineering (5 Years, Bachelor and Master of Technology (Dual Degree)) 	All India 	Gender-Neutral 	7 	0 	1 	0 	2 	1 	1 	0 	4 	0 	16 	
+20 	1
+Female-only (including Supernumerary) 	2 	0 	1 	0 	1 	0 	0 	0 	1 	0 	5
+(including "1" Supernumerary)
+Indian Institute of Information Technology(IIIT) Kottayam 	Computer Science and Engineering with specialization in Artificial Intelligence and Data Science (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	26 	1 	5 	0 	8 	0 	4 	0 	14 	1 	59 	
+59 	13
+Female-only (including Supernumerary) 	6 	0 	1 	0 	2 	0 	1 	0 	3 	0 	13
+(including "13" Supernumerary)
+Indian Institute of Information Technology(IIIT) Kottayam 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	123 	6 	24 	1 	37 	2 	18 	1 	66 	3 	281 	
+281 	59
+Female-only (including Supernumerary) 	26 	1 	5 	0 	8 	0 	4 	0 	14 	1 	59
+(including "59" Supernumerary)
+Indian Institute of Information Technology(IIIT) Kottayam 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	26 	1 	5 	0 	8 	0 	4 	0 	14 	1 	59 	
+59 	13
+Female-only (including Supernumerary) 	6 	0 	1 	0 	2 	0 	1 	0 	3 	0 	13
+(including "13" Supernumerary)
+Indian Institute of Information Technology(IIIT) Kottayam 	Computer Science and Engineering with specialization in Cyber Security (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	26 	1 	5 	0 	8 	0 	4 	0 	14 	1 	59 	
+59 	13
+Female-only (including Supernumerary) 	6 	0 	1 	0 	2 	0 	1 	0 	3 	0 	13
+(including "13" Supernumerary)
+Indian Institute of Information Technology (IIIT) Ranchi 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	47 	2 	11 	1 	17 	1 	9 	0 	30 	2 	120 	
+120 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Indian Institute of Information Technology (IIIT) Ranchi 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	35 	2 	9 	0 	12 	1 	7 	0 	23 	1 	90 	
+90 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Indian Institute of Information Technology (IIIT) Ranchi 	B.Tech in Mathematics and Computing (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	20 	1 	5 	0 	7 	0 	4 	0 	13 	0 	50 	
+50 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Indian Institute of Information Technology (IIIT) Ranchi 	Electronics and Communication Engineering (with Specialization of Embedded Systems and Internet of Things) (4 Years, B. Tech / B. Tech (Hons.)) 	All India 	Gender-Neutral 	12 	1 	3 	0 	4 	0 	2 	0 	7 	1 	30 	
+30 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Indian Institute of Information Technology (IIIT) Ranchi 	Computer Science and Engineering (with Specialization of Data Science and Artificial Intelligence) (4 Years, B. Tech / B. Tech (Hons.)) 	All India 	Gender-Neutral 	12 	1 	3 	0 	4 	0 	2 	0 	8 	0 	30 	
+30 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Indian Institute of Information Technology (IIIT) Nagpur 	Computer Science Engineering (Artificial lntelligence and Machine Learning) (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	32 	1 	6 	0 	9 	1 	5 	0 	17 	1 	72 	
+72 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Indian Institute of Information Technology (IIIT) Nagpur 	Computer Science Engineering (Data Science and Analytics) (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	32 	1 	6 	0 	9 	1 	5 	0 	17 	1 	72 	
+72 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Indian Institute of Information Technology (IIIT) Nagpur 	Computer Science Engineering (Human Computer lnteraction and Gaming Technology) (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	32 	1 	6 	0 	9 	1 	5 	0 	17 	1 	72 	
+72 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Indian Institute of Information Technology (IIIT) Nagpur 	Electronics and Communication Engineering (Internet of Things) (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	32 	1 	6 	0 	9 	1 	5 	0 	17 	1 	72 	
+72 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Indian Institute of Information Technology (IIIT) Nagpur 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	94 	5 	17 	1 	28 	2 	14 	1 	51 	3 	216 	
+216 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Indian Institute of Information Technology (IIIT) Nagpur 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	64 	3 	11 	1 	19 	1 	9 	1 	33 	2 	144 	
+144 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Indian Institute of Information Technology (IIIT) Pune 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	100 	5 	25 	1 	37 	2 	19 	1 	66 	4 	260 	
+326 	0
+Female-only (including Supernumerary) 	25 	1 	7 	0 	9 	1 	5 	0 	17 	1 	66
+(including "0" Supernumerary)
+Indian Institute of Information Technology (IIIT) Pune 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	37 	2 	8 	0 	14 	1 	7 	0 	25 	1 	95 	
+119 	0
+Female-only (including Supernumerary) 	9 	1 	2 	0 	4 	0 	2 	0 	6 	0 	24
+(including "0" Supernumerary)
+Indian Institute of Information Technology Bhagalpur 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	58 	3 	14 	1 	21 	1 	10 	1 	39 	2 	150 	
+150 	15
+Female-only (including Supernumerary) 	6 	0 	2 	0 	2 	0 	1 	0 	4 	0 	15
+(including "15" Supernumerary)
+Indian Institute of Information Technology Bhagalpur 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	29 	2 	7 	0 	10 	1 	5 	0 	20 	1 	75 	
+75 	8
+Female-only (including Supernumerary) 	3 	0 	1 	0 	2 	0 	1 	0 	1 	0 	8
+(including "8" Supernumerary)
+Indian Institute of Information Technology Bhagalpur 	Mechatronics and Automation Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	25 	1 	4 	1 	8 	1 	5 	0 	14 	1 	60 	
+60 	6
+Female-only (including Supernumerary) 	2 	0 	1 	0 	1 	0 	0 	0 	2 	0 	6
+(including "6" Supernumerary)
+Indian Institute of Information Technology Bhagalpur 	Mathematics and Computing (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	11 	1 	1 	0 	4 	0 	2 	0 	8 	0 	27 	
+27 	3
+Female-only (including Supernumerary) 	0 	0 	1 	0 	0 	0 	1 	0 	1 	0 	3
+(including "3" Supernumerary)
+Indian Institute of Information Technology Bhopal 	Computer Science and Engineering (Cyber Security) (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	24 	1 	6 	0 	8 	1 	4 	0 	15 	1 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Indian Institute of Information Technology Bhopal 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	70 	4 	17 	1 	26 	1 	12 	1 	46 	2 	180 	
+180 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Indian Institute of Information Technology Bhopal 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	39 	2 	10 	0 	14 	1 	7 	1 	24 	2 	100 	
+100 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Indian Institute of Information Technology Bhopal 	B.Tech in Mathematics and Computing (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	12 	1 	3 	0 	4 	0 	2 	0 	7 	1 	30 	
+30 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Indian Institute of Information Technology Bhopal 	Computer Science and Engineering (Cyber Physical System) (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	24 	1 	6 	0 	8 	1 	4 	0 	15 	1 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Indian Institute of Information Technology Bhopal 	Computer Science and Engineering (Data Science) (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	24 	1 	6 	0 	8 	1 	4 	0 	15 	1 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Indian Institute of Information Technology Bhopal 	Computer Science and Engineering (Artificial Intelligence) (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	24 	1 	6 	0 	8 	1 	4 	0 	15 	1 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Indian Institute of Information Technology Bhopal 	Physics and Computational Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	12 	1 	3 	0 	4 	0 	2 	0 	7 	1 	30 	
+30 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Indian Institute of Information Technology Bhopal 	Information Technology (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	49 	2 	12 	1 	17 	1 	9 	0 	32 	2 	125 	
+125 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Indian Institute of Information Technology Surat 	Computer Science and Engineering (Cyber Security) (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	11 	1 	3 	0 	5 	0 	2 	0 	8 	0 	30 	
+30 	6
+Female-only (including Supernumerary) 	2 	0 	1 	0 	1 	0 	0 	0 	2 	0 	6
+(including "6" Supernumerary)
+Indian Institute of Information Technology Surat 	Computer Science and Engineering (Artificial Intelligence and Machine Learning) (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	11 	1 	3 	0 	5 	0 	2 	0 	8 	0 	30 	
+30 	6
+Female-only (including Supernumerary) 	2 	0 	1 	0 	1 	0 	0 	0 	2 	0 	6
+(including "6" Supernumerary)
+Indian Institute of Information Technology Surat 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	38 	2 	10 	0 	14 	1 	8 	0 	26 	1 	100 	
+100 	20
+Female-only (including Supernumerary) 	8 	0 	2 	0 	3 	0 	2 	0 	5 	0 	20
+(including "20" Supernumerary)
+Indian Institute of Information Technology Surat 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	28 	2 	8 	0 	10 	1 	6 	0 	19 	1 	75 	
+75 	15
+Female-only (including Supernumerary) 	6 	0 	2 	0 	2 	0 	1 	0 	4 	0 	15
+(including "15" Supernumerary)
+Indian Institute of Information Technology, Agartala 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	30 	2 	7 	1 	12 	0 	6 	0 	21 	1 	80 	
+80 	20
+Female-only (including Supernumerary) 	7 	1 	2 	0 	3 	0 	2 	0 	5 	0 	20
+(including "20" Supernumerary)
+Indian institute of information technology, Raichur, Karnataka 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	24 	1 	5 	1 	9 	1 	5 	0 	17 	1 	64 	
+80 	0
+Female-only (including Supernumerary) 	7 	0 	2 	0 	2 	0 	1 	0 	4 	0 	16
+(including "0" Supernumerary)
+Indian institute of information technology, Raichur, Karnataka 	Mathematics and Computing (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	18 	1 	5 	0 	6 	1 	4 	0 	12 	1 	48 	
+60 	0
+Female-only (including Supernumerary) 	5 	0 	1 	0 	2 	0 	1 	0 	3 	0 	12
+(including "0" Supernumerary)
+Indian institute of information technology, Raichur, Karnataka 	Artificial Intelligence and Data Science (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	24 	1 	5 	1 	9 	1 	5 	0 	17 	1 	64 	
+80 	0
+Female-only (including Supernumerary) 	7 	0 	2 	0 	2 	0 	1 	0 	4 	0 	16
+(including "0" Supernumerary)
+Indian Institute of Information Technology, Vadodara International Campus Diu (IIITVICD) 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	34 	2 	8 	1 	13 	1 	6 	0 	22 	2 	89 	
+89 	19
+Female-only (including Supernumerary) 	7 	0 	2 	0 	3 	0 	2 	0 	5 	0 	19
+(including "19" Supernumerary)
+Indian Institute of Information Technology, Vadodara International Campus Diu (IIITVICD) 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	18 	1 	5 	0 	7 	0 	4 	0 	12 	1 	48 	
+48 	12
+Female-only (including Supernumerary) 	5 	0 	1 	0 	2 	0 	1 	0 	3 	0 	12
+(including "12" Supernumerary)
+Indian Institute of Information Technology, Vadodara International Campus Diu (IIITVICD) 	Artificial Intelligence (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	18 	1 	5 	0 	7 	0 	4 	0 	12 	1 	48 	
+48 	12
+Female-only (including Supernumerary) 	5 	0 	1 	0 	2 	0 	1 	0 	3 	0 	12
+(including "12" Supernumerary)
+ 	 	 	Total Seats 	3959 	184 	920 	33 	1404 	66 	713 	24 	2513 	124 	9940 	
+9087 	853

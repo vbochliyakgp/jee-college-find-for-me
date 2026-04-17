@@ -1,0 +1,1069 @@
+Institute Name	Program Name	State/All India Seats	Seat Pool	OPEN	OPEN-PwD	GEN-EWS	GEN-EWS-PwD	SC	SC-PwD	ST	ST-PwD	OBC-NCL	OBC-NCL-PwD	Total (includes Female Supernumerary)	
+Program-Total
+Seat Capacity 	Female Supernumerary
+Assam University, Silchar 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	10 	1 	3 	0 	4 	0 	2 	0 	7 	0 	27 	
+29 	0
+Female-only (including Supernumerary) 	1 	0 	0 	0 	0 	0 	0 	0 	1 	0 	2
+(including "0" Supernumerary)
+Assam University, Silchar 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	ASSAM 	Gender-Neutral 	10 	1 	3 	0 	4 	0 	3 	0 	7 	0 	28 	
+31 	0
+Female-only (including Supernumerary) 	1 	0 	0 	0 	1 	0 	0 	0 	1 	0 	3
+(including "0" Supernumerary)
+Assam University, Silchar 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	10 	1 	3 	0 	4 	0 	2 	0 	7 	0 	27 	
+29 	0
+Female-only (including Supernumerary) 	1 	0 	0 	0 	0 	0 	0 	0 	1 	0 	2
+(including "0" Supernumerary)
+Assam University, Silchar 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	ASSAM 	Gender-Neutral 	10 	1 	3 	0 	4 	0 	3 	0 	7 	0 	28 	
+31 	0
+Female-only (including Supernumerary) 	1 	0 	0 	0 	1 	0 	0 	0 	1 	0 	3
+(including "0" Supernumerary)
+Assam University, Silchar 	Agricultural Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	10 	1 	3 	0 	4 	0 	2 	0 	7 	0 	27 	
+29 	0
+Female-only (including Supernumerary) 	1 	0 	0 	0 	0 	0 	0 	0 	1 	0 	2
+(including "0" Supernumerary)
+Assam University, Silchar 	Agricultural Engineering (4 Years, Bachelor of Technology) 	ASSAM 	Gender-Neutral 	10 	1 	3 	0 	4 	0 	3 	0 	7 	0 	28 	
+31 	0
+Female-only (including Supernumerary) 	1 	0 	0 	0 	1 	0 	0 	0 	1 	0 	3
+(including "0" Supernumerary)
+Birla Institute of Technology, Mesra, Ranchi 	Bio Technology (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	7 	1 	2 	0 	3 	0 	1 	0 	4 	0 	18 	
+18 	1
+Female-only (including Supernumerary) 	1 	0 	0 	0 	0 	0 	0 	0 	0 	0 	1
+(including "1" Supernumerary)
+Birla Institute of Technology, Mesra, Ranchi 	Bio Technology (4 Years, Bachelor of Technology) 	JHARKHAND 	Gender-Neutral 	6 	1 	2 	0 	2 	0 	4 	1 	0 	0 	16 	
+16 	2
+Female-only (including Supernumerary) 	2 	0 	0 	0 	0 	0 	0 	0 	0 	0 	2
+(including "2" Supernumerary)
+Birla Institute of Technology, Mesra, Ranchi 	Chemical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	30 	1 	8 	0 	10 	1 	6 	0 	18 	1 	75 	
+75 	6
+Female-only (including Supernumerary) 	6 	0 	0 	0 	0 	0 	0 	0 	0 	0 	6
+(including "6" Supernumerary)
+Birla Institute of Technology, Mesra, Ranchi 	Chemical Engineering (4 Years, Bachelor of Technology) 	JHARKHAND 	Gender-Neutral 	29 	1 	7 	1 	6 	1 	18 	1 	0 	0 	64 	
+64 	6
+Female-only (including Supernumerary) 	6 	0 	0 	0 	0 	0 	0 	0 	0 	0 	6
+(including "6" Supernumerary)
+Birla Institute of Technology, Mesra, Ranchi 	Civil Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	15 	1 	4 	0 	5 	0 	3 	0 	8 	1 	37 	
+37 	3
+Female-only (including Supernumerary) 	3 	0 	0 	0 	0 	0 	0 	0 	0 	0 	3
+(including "3" Supernumerary)
+Birla Institute of Technology, Mesra, Ranchi 	Civil Engineering (4 Years, Bachelor of Technology) 	JHARKHAND 	Gender-Neutral 	15 	1 	2 	1 	3 	1 	8 	1 	0 	0 	32 	
+32 	3
+Female-only (including Supernumerary) 	3 	0 	0 	0 	0 	0 	0 	0 	0 	0 	3
+(including "3" Supernumerary)
+Birla Institute of Technology, Mesra, Ranchi 	Artificial Intelligence and Machine Learning (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	15 	1 	4 	0 	5 	0 	3 	0 	8 	1 	37 	
+37 	3
+Female-only (including Supernumerary) 	3 	0 	0 	0 	0 	0 	0 	0 	0 	0 	3
+(including "3" Supernumerary)
+Birla Institute of Technology, Mesra, Ranchi 	Artificial Intelligence and Machine Learning (4 Years, Bachelor of Technology) 	JHARKHAND 	Gender-Neutral 	15 	1 	2 	1 	3 	1 	8 	1 	0 	0 	32 	
+32 	3
+Female-only (including Supernumerary) 	3 	0 	0 	0 	0 	0 	0 	0 	0 	0 	3
+(including "3" Supernumerary)
+Birla Institute of Technology, Mesra, Ranchi 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	41 	2 	11 	0 	16 	1 	8 	0 	27 	1 	107 	
+107 	9
+Female-only (including Supernumerary) 	9 	0 	0 	0 	0 	0 	0 	0 	0 	0 	9
+(including "9" Supernumerary)
+Birla Institute of Technology, Mesra, Ranchi 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	JHARKHAND 	Gender-Neutral 	39 	2 	10 	1 	10 	1 	28 	1 	0 	0 	92 	
+92 	9
+Female-only (including Supernumerary) 	9 	0 	0 	0 	0 	0 	0 	0 	0 	0 	9
+(including "9" Supernumerary)
+Birla Institute of Technology, Mesra, Ranchi 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	41 	2 	11 	0 	16 	1 	8 	0 	27 	1 	107 	
+107 	9
+Female-only (including Supernumerary) 	9 	0 	0 	0 	0 	0 	0 	0 	0 	0 	9
+(including "9" Supernumerary)
+Birla Institute of Technology, Mesra, Ranchi 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	JHARKHAND 	Gender-Neutral 	39 	2 	10 	1 	10 	1 	28 	1 	0 	0 	92 	
+92 	9
+Female-only (including Supernumerary) 	9 	0 	0 	0 	0 	0 	0 	0 	0 	0 	9
+(including "9" Supernumerary)
+Birla Institute of Technology, Mesra, Ranchi 	Mechanical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	27 	1 	8 	0 	10 	1 	6 	0 	18 	1 	72 	
+72 	6
+Female-only (including Supernumerary) 	6 	0 	0 	0 	0 	0 	0 	0 	0 	0 	6
+(including "6" Supernumerary)
+Birla Institute of Technology, Mesra, Ranchi 	Mechanical Engineering (4 Years, Bachelor of Technology) 	JHARKHAND 	Gender-Neutral 	26 	1 	7 	1 	6 	1 	18 	1 	0 	0 	61 	
+61 	6
+Female-only (including Supernumerary) 	6 	0 	0 	0 	0 	0 	0 	0 	0 	0 	6
+(including "6" Supernumerary)
+Birla Institute of Technology, Mesra, Ranchi 	Production and Industrial Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	15 	1 	4 	0 	5 	0 	3 	0 	8 	1 	37 	
+37 	3
+Female-only (including Supernumerary) 	3 	0 	0 	0 	0 	0 	0 	0 	0 	0 	3
+(including "3" Supernumerary)
+Birla Institute of Technology, Mesra, Ranchi 	Production and Industrial Engineering (4 Years, Bachelor of Technology) 	JHARKHAND 	Gender-Neutral 	15 	1 	2 	1 	3 	1 	8 	1 	0 	0 	32 	
+32 	3
+Female-only (including Supernumerary) 	3 	0 	0 	0 	0 	0 	0 	0 	0 	0 	3
+(including "3" Supernumerary)
+Birla Institute of Technology, Mesra, Ranchi 	Electrical and Electronics Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	20 	1 	6 	0 	8 	1 	4 	0 	14 	1 	55 	
+55 	4
+Female-only (including Supernumerary) 	4 	0 	0 	0 	0 	0 	0 	0 	0 	0 	4
+(including "4" Supernumerary)
+Birla Institute of Technology, Mesra, Ranchi 	Electrical and Electronics Engineering (4 Years, Bachelor of Technology) 	JHARKHAND 	Gender-Neutral 	20 	1 	5 	1 	5 	1 	13 	1 	0 	0 	47 	
+47 	5
+Female-only (including Supernumerary) 	5 	0 	0 	0 	0 	0 	0 	0 	0 	0 	5
+(including "5" Supernumerary)
+Birla Institute of Technology, Mesra, Ranchi 	Food Engineering and Technology (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	8 	1 	2 	0 	3 	0 	1 	0 	4 	0 	19 	
+19 	1
+Female-only (including Supernumerary) 	1 	0 	0 	0 	0 	0 	0 	0 	0 	0 	1
+(including "1" Supernumerary)
+Birla Institute of Technology, Mesra, Ranchi 	Food Engineering and Technology (4 Years, Bachelor of Technology) 	JHARKHAND 	Gender-Neutral 	6 	1 	2 	0 	2 	0 	4 	1 	0 	0 	16 	
+16 	2
+Female-only (including Supernumerary) 	2 	0 	0 	0 	0 	0 	0 	0 	0 	0 	2
+(including "2" Supernumerary)
+Birla Institute of Technology, Mesra, Ranchi 	Architecture (5 Years, Bachelor of Architecture) 	All India 	Gender-Neutral 	4 	0 	1 	0 	2 	0 	1 	0 	2 	0 	10 	
+10 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Birla Institute of Technology, Mesra, Ranchi 	Architecture (5 Years, Bachelor of Architecture) 	JHARKHAND 	Gender-Neutral 	4 	0 	1 	0 	1 	0 	2 	0 	0 	0 	8 	
+8 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Birla Institute of Technology, Mesra, Ranchi 	Mathematics and Computing (5 Years, Integrated Master of Science) 	All India 	Gender-Neutral 	15 	1 	4 	0 	5 	0 	3 	0 	10 	0 	38 	
+38 	3
+Female-only (including Supernumerary) 	3 	0 	0 	0 	0 	0 	0 	0 	0 	0 	3
+(including "3" Supernumerary)
+Birla Institute of Technology, Mesra, Ranchi 	Mathematics and Computing (5 Years, Integrated Master of Science) 	JHARKHAND 	Gender-Neutral 	16 	1 	2 	1 	3 	1 	8 	1 	0 	0 	33 	
+33 	3
+Female-only (including Supernumerary) 	3 	0 	0 	0 	0 	0 	0 	0 	0 	0 	3
+(including "3" Supernumerary)
+Birla Institute of Technology, Mesra, Ranchi 	Physics (5 Years, Integrated Master of Science) 	All India 	Gender-Neutral 	9 	0 	2 	0 	3 	0 	1 	0 	4 	0 	19 	
+19 	1
+Female-only (including Supernumerary) 	1 	0 	0 	0 	0 	0 	0 	0 	0 	0 	1
+(including "1" Supernumerary)
+Birla Institute of Technology, Mesra, Ranchi 	Physics (5 Years, Integrated Master of Science) 	JHARKHAND 	Gender-Neutral 	8 	0 	2 	0 	2 	0 	4 	0 	0 	0 	16 	
+16 	2
+Female-only (including Supernumerary) 	2 	0 	0 	0 	0 	0 	0 	0 	0 	0 	2
+(including "2" Supernumerary)
+Birla Institute of Technology, Mesra, Ranchi 	Quantitative Economics & Data Science (5 Years, Integrated Master of Science) 	All India 	Gender-Neutral 	9 	0 	2 	0 	3 	0 	1 	0 	4 	0 	19 	
+19 	1
+Female-only (including Supernumerary) 	1 	0 	0 	0 	0 	0 	0 	0 	0 	0 	1
+(including "1" Supernumerary)
+Birla Institute of Technology, Mesra, Ranchi 	Quantitative Economics & Data Science (5 Years, Integrated Master of Science) 	JHARKHAND 	Gender-Neutral 	8 	0 	2 	0 	2 	0 	4 	0 	0 	0 	16 	
+16 	2
+Female-only (including Supernumerary) 	2 	0 	0 	0 	0 	0 	0 	0 	0 	0 	2
+(including "2" Supernumerary)
+Gurukula Kangri Vishwavidyalaya, Haridwar 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	77 	4 	19 	1 	29 	1 	14 	1 	52 	2 	200 	
+200 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Gurukula Kangri Vishwavidyalaya, Haridwar 	Electrical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	45 	2 	11 	1 	16 	1 	8 	0 	29 	2 	115 	
+115 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Gurukula Kangri Vishwavidyalaya, Haridwar 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	44 	2 	11 	0 	17 	1 	8 	1 	30 	1 	115 	
+115 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Gurukula Kangri Vishwavidyalaya, Haridwar 	Mechanical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	45 	2 	10 	1 	16 	1 	8 	1 	29 	2 	115 	
+115 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Indian Institute of Carpet Technology, Bhadohi 	Carpet and Textile Technology (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	11 	1 	3 	0 	5 	0 	2 	0 	7 	1 	30 	
+30 	6
+Female-only (including Supernumerary) 	3 	0 	0 	0 	1 	0 	0 	0 	2 	0 	6
+(including "6" Supernumerary)
+Institute of Infrastructure, Technology, Research and Management-Ahmedabad 	Civil Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	21 	1 	5 	0 	8 	0 	4 	0 	14 	1 	54 	
+54 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Institute of Infrastructure, Technology, Research and Management-Ahmedabad 	Electrical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	19 	1 	4 	1 	7 	0 	3 	0 	13 	0 	48 	
+48 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Institute of Infrastructure, Technology, Research and Management-Ahmedabad 	Mechanical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	19 	1 	5 	0 	6 	1 	4 	0 	11 	1 	48 	
+48 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Institute of Infrastructure, Technology, Research and Management-Ahmedabad 	Computer Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	15 	1 	4 	0 	7 	0 	2 	1 	11 	1 	42 	
+42 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+School of Studies of Engineering and Technology, Guru Ghasidas Vishwavidyalaya, Bilaspur 	Chemical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	24 	1 	6 	0 	8 	1 	4 	0 	15 	1 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+School of Studies of Engineering and Technology, Guru Ghasidas Vishwavidyalaya, Bilaspur 	Civil Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	24 	1 	6 	0 	8 	1 	4 	0 	15 	1 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+School of Studies of Engineering and Technology, Guru Ghasidas Vishwavidyalaya, Bilaspur 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	37 	1 	8 	1 	12 	1 	6 	0 	23 	1 	90 	
+90 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+School of Studies of Engineering and Technology, Guru Ghasidas Vishwavidyalaya, Bilaspur 	Electrical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	24 	1 	6 	0 	8 	1 	4 	0 	15 	1 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+School of Studies of Engineering and Technology, Guru Ghasidas Vishwavidyalaya, Bilaspur 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	37 	1 	8 	1 	12 	1 	6 	0 	23 	1 	90 	
+90 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+School of Studies of Engineering and Technology, Guru Ghasidas Vishwavidyalaya, Bilaspur 	Mechanical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	24 	1 	6 	0 	8 	1 	4 	0 	15 	1 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+School of Studies of Engineering and Technology, Guru Ghasidas Vishwavidyalaya, Bilaspur 	Animation and VFX (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	24 	1 	6 	0 	8 	1 	4 	0 	15 	1 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+School of Studies of Engineering and Technology, Guru Ghasidas Vishwavidyalaya, Bilaspur 	Information Technology (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	37 	1 	8 	1 	12 	1 	6 	0 	23 	1 	90 	
+90 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+School of Studies of Engineering and Technology, Guru Ghasidas Vishwavidyalaya, Bilaspur 	Industrial and Production Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	24 	1 	6 	0 	8 	1 	4 	0 	15 	1 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+School of Studies of Engineering and Technology, Guru Ghasidas Vishwavidyalaya, Bilaspur 	Artificial Intelligence and Data Science (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	24 	1 	6 	0 	8 	1 	4 	0 	15 	1 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+J.K. Institute of Applied Physics & Technology, Department of Electronics & Communication, University of Allahabad- Allahabad 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	22 	1 	6 	0 	7 	1 	4 	0 	14 	1 	56 	
+56 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+J.K. Institute of Applied Physics & Technology, Department of Electronics & Communication, University of Allahabad- Allahabad 	Computer Science and Engineering with Major in Artificial Intelligence (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	11 	1 	3 	0 	5 	0 	2 	0 	7 	1 	30 	
+30 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+National Institute of Electronics and Information Technology, Aurangabad (Maharashtra) 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	24 	1 	6 	0 	8 	1 	4 	0 	15 	1 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+National Institute of Electronics and Information Technology, Aurangabad (Maharashtra) 	Electronic Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	24 	1 	6 	0 	8 	1 	4 	0 	15 	1 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+National Institute of Advanced Manufacturing Technology, Ranchi 	Mechanical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	24 	1 	6 	0 	9 	1 	5 	0 	16 	1 	63 	
+77 	1
+Female-only (including Supernumerary) 	6 	0 	1 	1 	2 	0 	1 	0 	4 	0 	15
+(including "1" Supernumerary)
+National Institute of Advanced Manufacturing Technology, Ranchi 	Production and Industrial Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	22 	1 	6 	0 	8 	0 	4 	0 	14 	1 	56 	
+70 	0
+Female-only (including Supernumerary) 	6 	0 	1 	0 	2 	0 	1 	0 	4 	0 	14
+(including "0" Supernumerary)
+National Institute of Advanced Manufacturing Technology, Ranchi 	Computer Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	18 	1 	5 	0 	6 	1 	3 	1 	12 	1 	48 	
+56 	4
+Female-only (including Supernumerary) 	5 	0 	1 	0 	2 	0 	1 	0 	3 	0 	12
+(including "4" Supernumerary)
+National Institute of Advanced Manufacturing Technology, Ranchi 	Metallurgy and Materials Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	25 	1 	6 	0 	9 	1 	5 	0 	17 	1 	65 	
+82 	1
+Female-only (including Supernumerary) 	6 	0 	2 	1 	3 	0 	1 	0 	5 	0 	18
+(including "1" Supernumerary)
+Sant Longowal Institute of Engineering and Technology 	Chemical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	20 	1 	3 	1 	7 	0 	3 	0 	11 	1 	47 	
+47 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Sant Longowal Institute of Engineering and Technology 	Civil Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	15 	1 	4 	0 	4 	1 	3 	0 	10 	0 	38 	
+38 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Sant Longowal Institute of Engineering and Technology 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	38 	2 	9 	0 	13 	1 	7 	0 	24 	1 	95 	
+95 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Sant Longowal Institute of Engineering and Technology 	Electrical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	19 	1 	5 	0 	7 	0 	3 	0 	11 	1 	47 	
+47 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Sant Longowal Institute of Engineering and Technology 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	20 	1 	4 	0 	7 	0 	3 	0 	11 	1 	47 	
+47 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Sant Longowal Institute of Engineering and Technology 	Mechanical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	42 	2 	9 	0 	13 	1 	6 	1 	24 	1 	99 	
+99 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Sant Longowal Institute of Engineering and Technology 	Instrumentation and Control Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	20 	1 	3 	1 	7 	0 	3 	0 	11 	1 	47 	
+47 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Sant Longowal Institute of Engineering and Technology 	Food Technology (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	19 	1 	5 	0 	6 	0 	3 	1 	11 	1 	47 	
+47 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Sant Longowal Institute of Engineering and Technology 	Artificial Intelligence and Data Science (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	15 	1 	4 	0 	4 	1 	3 	0 	10 	0 	38 	
+38 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Sant Longowal Institute of Engineering and Technology 	Computer Science and Engineering (5 Years, Bachelor and Master of Technology (Dual Degree)) 	All India 	Gender-Neutral 	11 	1 	3 	0 	5 	0 	2 	0 	7 	1 	30 	
+30 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Sant Longowal Institute of Engineering and Technology 	Electrical Engineering (5 Years, Bachelor and Master of Technology (Dual Degree)) 	All India 	Gender-Neutral 	12 	0 	2 	1 	5 	0 	2 	0 	8 	0 	30 	
+30 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Sant Longowal Institute of Engineering and Technology 	Mechanical Engineering (5 Years, Bachelor and Master of Technology (Dual Degree)) 	All India 	Gender-Neutral 	11 	1 	3 	0 	4 	0 	2 	1 	8 	0 	30 	
+30 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Sant Longowal Institute of Engineering and Technology 	Chemistry (5 Years, Integrated Master of Science) 	All India 	Gender-Neutral 	4 	0 	1 	0 	2 	0 	1 	0 	2 	0 	10 	
+10 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Sant Longowal Institute of Engineering and Technology 	Physics (5 Years, Integrated Master of Science) 	All India 	Gender-Neutral 	3 	1 	1 	0 	1 	0 	1 	0 	3 	0 	10 	
+10 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Sant Longowal Institute of Engineering and Technology 	Mathematics (5 Years, Integrated Master of Science) 	All India 	Gender-Neutral 	4 	0 	1 	0 	1 	0 	1 	0 	3 	0 	10 	
+10 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Mizoram University, Aizawl 	Civil Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	7 	1 	2 	0 	3 	0 	4 	0 	0 	0 	17 	
+17 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Mizoram University, Aizawl 	Electrical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	7 	1 	2 	0 	3 	0 	4 	0 	0 	0 	17 	
+17 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Mizoram University, Aizawl 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	7 	1 	2 	0 	3 	0 	4 	0 	0 	0 	17 	
+17 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Mizoram University, Aizawl 	Information Technology (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	7 	1 	2 	0 	3 	0 	4 	0 	0 	0 	17 	
+17 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Mizoram University, Aizawl 	Computer Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	7 	1 	2 	0 	3 	0 	4 	0 	0 	0 	17 	
+17 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Mizoram University, Aizawl 	Architecture (5 Years, Bachelor of Architecture) 	All India 	Gender-Neutral 	4 	1 	2 	0 	2 	0 	2 	0 	0 	0 	11 	
+11 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+School of Engineering, Tezpur University, Napaam, Tezpur 	Civil Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	10 	0 	2 	0 	3 	1 	2 	0 	7 	0 	25 	
+25 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+School of Engineering, Tezpur University, Napaam, Tezpur 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	10 	0 	1 	1 	4 	0 	2 	0 	7 	0 	25 	
+25 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+School of Engineering, Tezpur University, Napaam, Tezpur 	Electrical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	5 	1 	1 	0 	2 	0 	0 	0 	4 	0 	13 	
+13 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+School of Engineering, Tezpur University, Napaam, Tezpur 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	10 	0 	2 	0 	4 	0 	2 	0 	6 	1 	25 	
+25 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+School of Engineering, Tezpur University, Napaam, Tezpur 	Mechanical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	10 	0 	2 	0 	4 	0 	1 	1 	7 	0 	25 	
+25 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+School of Engineering, Tezpur University, Napaam, Tezpur 	Food Engineering and Technology (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	8 	0 	2 	0 	3 	0 	2 	0 	4 	1 	20 	
+20 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+School of Engineering, Tezpur University, Napaam, Tezpur 	Bachelor of Design (4 Years, Bachelor of Design) 	All India 	Gender-Neutral 	1 	0 	0 	0 	0 	0 	0 	0 	1 	0 	2 	
+2 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+School of Engineering, Tezpur University, Napaam, Tezpur 	B.Tech. (Civil Engineering) - MBA (5 Years, Bachelor of Technology and MBA (Dual Degree)) 	All India 	Gender-Neutral 	2 	0 	1 	0 	1 	0 	0 	0 	1 	0 	5 	
+5 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+School of Engineering, Tezpur University, Napaam, Tezpur 	B.Tech. (Computer Science and Engineering) - MBA (5 Years, Bachelor of Technology and MBA (Dual Degree)) 	All India 	Gender-Neutral 	2 	0 	0 	0 	1 	0 	1 	0 	1 	0 	5 	
+5 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+School of Engineering, Tezpur University, Napaam, Tezpur 	B.Tech. (Elctrical Engineering) - MBA (5 Years, Bachelor of Technology and MBA (Dual Degree)) 	All India 	Gender-Neutral 	2 	0 	1 	0 	0 	0 	1 	0 	1 	0 	5 	
+5 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+School of Engineering, Tezpur University, Napaam, Tezpur 	B.Tech. (Electronics and Communication Engineering) - MBA (5 Years, Bachelor of Technology and MBA (Dual Degree)) 	All India 	Gender-Neutral 	1 	1 	1 	0 	1 	0 	0 	0 	1 	0 	5 	
+5 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+School of Engineering, Tezpur University, Napaam, Tezpur 	B.Tech. (Food Engineering and Technology) - MBA (5 Years, Bachelor of Technology and MBA (Dual Degree)) 	All India 	Gender-Neutral 	2 	0 	0 	0 	1 	0 	0 	0 	2 	0 	5 	
+5 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+School of Engineering, Tezpur University, Napaam, Tezpur 	B.Tech. (Mechanical Engineering) - MBA (5 Years, Bachelor of Technology and MBA (Dual Degree)) 	All India 	Gender-Neutral 	2 	0 	0 	0 	1 	0 	0 	0 	1 	1 	5 	
+5 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+School of Planning & Architecture, Bhopal 	Planning (4 Years, Bachelor of Planning) 	All India 	Gender-Neutral 	14 	1 	4 	0 	6 	0 	3 	0 	9 	1 	38 	
+38 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+School of Planning & Architecture, Bhopal 	Architecture (5 Years, Bachelor of Architecture) 	All India 	Gender-Neutral 	37 	2 	9 	0 	13 	1 	7 	0 	24 	1 	94 	
+94 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+School of Planning & Architecture, New Delhi 	Planning (4 Years, Bachelor of Planning) 	All India 	Gender-Neutral 	16 	1 	4 	0 	7 	0 	3 	0 	11 	1 	43 	
+43 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+School of Planning & Architecture, New Delhi 	Architecture (5 Years, Bachelor of Architecture) 	All India 	Gender-Neutral 	50 	3 	12 	1 	19 	1 	9 	1 	34 	2 	132 	
+132 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+School of Planning & Architecture: Vijayawada 	Planning (4 Years, Bachelor of Planning) 	All India 	Gender-Neutral 	14 	1 	4 	0 	6 	0 	3 	0 	9 	1 	38 	
+38 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+School of Planning & Architecture: Vijayawada 	Architecture (5 Years, Bachelor of Architecture) 	All India 	Gender-Neutral 	37 	2 	8 	1 	13 	1 	7 	0 	24 	1 	94 	
+94 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Shri Mata Vaishno Devi University, Katra, Jammu & Kashmir 	Bio Technology (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	3 	0 	1 	0 	2 	0 	1 	0 	3 	0 	10 	
+10 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Shri Mata Vaishno Devi University, Katra, Jammu & Kashmir 	Civil Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	11 	1 	3 	0 	5 	0 	2 	0 	8 	0 	30 	
+30 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Shri Mata Vaishno Devi University, Katra, Jammu & Kashmir 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	36 	1 	8 	1 	12 	1 	7 	0 	23 	1 	90 	
+90 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Shri Mata Vaishno Devi University, Katra, Jammu & Kashmir 	Electrical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	11 	1 	3 	0 	5 	0 	2 	0 	7 	1 	30 	
+30 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Shri Mata Vaishno Devi University, Katra, Jammu & Kashmir 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	36 	1 	9 	0 	12 	1 	7 	0 	23 	1 	90 	
+90 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Shri Mata Vaishno Devi University, Katra, Jammu & Kashmir 	B.Tech in Mathematics and Computing (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	11 	1 	3 	0 	5 	0 	2 	0 	7 	1 	30 	
+30 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Shri Mata Vaishno Devi University, Katra, Jammu & Kashmir 	Mechanical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	6 	0 	2 	0 	2 	0 	1 	0 	4 	0 	15 	
+15 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Shri Mata Vaishno Devi University, Katra, Jammu & Kashmir 	Robotics and AI (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	11 	1 	3 	0 	5 	0 	1 	1 	8 	0 	30 	
+30 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Shri Mata Vaishno Devi University, Katra, Jammu & Kashmir 	Architecture (5 Years, Bachelor of Architecture) 	All India 	Gender-Neutral 	3 	0 	1 	0 	2 	0 	1 	0 	3 	0 	10 	
+10 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+International Institute of Information Technology, Naya Raipur 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	12 	1 	3 	0 	4 	0 	2 	0 	8 	1 	31 	
+31 	8
+Female-only (including Supernumerary) 	4 	0 	1 	0 	1 	0 	0 	0 	2 	0 	8
+(including "8" Supernumerary)
+International Institute of Information Technology, Naya Raipur 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	12 	1 	3 	1 	5 	0 	2 	0 	8 	0 	32 	
+32 	8
+Female-only (including Supernumerary) 	3 	0 	1 	0 	1 	0 	1 	0 	2 	0 	8
+(including "8" Supernumerary)
+International Institute of Information Technology, Naya Raipur 	Data Science and Artificial Intelligence (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	12 	0 	3 	0 	4 	1 	3 	0 	9 	0 	32 	
+32 	8
+Female-only (including Supernumerary) 	3 	0 	0 	0 	2 	0 	1 	0 	2 	0 	8
+(including "8" Supernumerary)
+University of Hyderabad 	Computer Science and Engineering (5 Years, Bachelor and Master of Technology (Dual Degree)) 	All India 	Gender-Neutral 	18 	1 	5 	0 	8 	0 	4 	0 	13 	1 	50 	
+50 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+University of Hyderabad 	Materials Engineering (5 Years, Integrated Master of Technology) 	All India 	Gender-Neutral 	23 	1 	6 	0 	8 	1 	5 	0 	15 	1 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Punjab Engineering College, Chandigarh 	Aerospace Engineering (4 Years, Bachelor of Technology) 	CHANDIGARH (UT) 	Gender-Neutral 	9 	0 	1 	0 	2 	0 	0 	0 	0 	0 	12 	
+12 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Punjab Engineering College, Chandigarh 	Aerospace Engineering (4 Years, Bachelor of Technology) 	Other than CHANDIGARH (UT) 	Gender-Neutral 	8 	0 	2 	0 	2 	0 	1 	0 	0 	0 	13 	
+13 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Punjab Engineering College, Chandigarh 	Civil Engineering (4 Years, Bachelor of Technology) 	CHANDIGARH (UT) 	Gender-Neutral 	37 	2 	5 	1 	8 	1 	0 	0 	0 	0 	54 	
+54 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Punjab Engineering College, Chandigarh 	Civil Engineering (4 Years, Bachelor of Technology) 	Other than CHANDIGARH (UT) 	Gender-Neutral 	36 	2 	6 	0 	9 	0 	3 	0 	0 	0 	56 	
+56 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Punjab Engineering College, Chandigarh 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	CHANDIGARH (UT) 	Gender-Neutral 	37 	2 	5 	1 	8 	1 	0 	0 	0 	0 	54 	
+54 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Punjab Engineering College, Chandigarh 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	Other than CHANDIGARH (UT) 	Gender-Neutral 	36 	2 	6 	0 	8 	1 	2 	1 	0 	0 	56 	
+56 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Punjab Engineering College, Chandigarh 	Electrical Engineering (4 Years, Bachelor of Technology) 	CHANDIGARH (UT) 	Gender-Neutral 	37 	2 	6 	0 	8 	1 	0 	0 	0 	0 	54 	
+54 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Punjab Engineering College, Chandigarh 	Electrical Engineering (4 Years, Bachelor of Technology) 	Other than CHANDIGARH (UT) 	Gender-Neutral 	36 	2 	5 	1 	8 	1 	3 	0 	0 	0 	56 	
+56 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Punjab Engineering College, Chandigarh 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	CHANDIGARH (UT) 	Gender-Neutral 	37 	2 	6 	0 	8 	1 	0 	0 	0 	0 	54 	
+54 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Punjab Engineering College, Chandigarh 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	Other than CHANDIGARH (UT) 	Gender-Neutral 	36 	2 	5 	1 	8 	1 	3 	0 	0 	0 	56 	
+56 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Punjab Engineering College, Chandigarh 	Electronics Engineering (VLSI Design and Technology) (4 Years, Bachelor of Technology) 	CHANDIGARH (UT) 	Gender-Neutral 	10 	0 	1 	0 	2 	0 	0 	0 	0 	0 	13 	
+13 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Punjab Engineering College, Chandigarh 	Electronics Engineering (VLSI Design and Technology) (4 Years, Bachelor of Technology) 	Other than CHANDIGARH (UT) 	Gender-Neutral 	9 	0 	2 	0 	2 	0 	1 	0 	0 	0 	14 	
+14 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Punjab Engineering College, Chandigarh 	Mathematics and Computing (4 Years, Bachelor of Technology) 	CHANDIGARH (UT) 	Gender-Neutral 	10 	0 	1 	0 	2 	0 	0 	0 	0 	0 	13 	
+13 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Punjab Engineering College, Chandigarh 	Mathematics and Computing (4 Years, Bachelor of Technology) 	Other than CHANDIGARH (UT) 	Gender-Neutral 	9 	0 	2 	0 	2 	0 	1 	0 	0 	0 	14 	
+14 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Punjab Engineering College, Chandigarh 	Mechanical Engineering (4 Years, Bachelor of Technology) 	CHANDIGARH (UT) 	Gender-Neutral 	37 	2 	6 	0 	9 	0 	0 	0 	0 	0 	54 	
+54 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Punjab Engineering College, Chandigarh 	Mechanical Engineering (4 Years, Bachelor of Technology) 	Other than CHANDIGARH (UT) 	Gender-Neutral 	36 	2 	6 	0 	9 	0 	3 	0 	0 	0 	56 	
+56 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Punjab Engineering College, Chandigarh 	Metallurgical and Materials Engineering (4 Years, Bachelor of Technology) 	CHANDIGARH (UT) 	Gender-Neutral 	18 	1 	3 	0 	5 	0 	0 	0 	0 	0 	27 	
+27 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Punjab Engineering College, Chandigarh 	Metallurgical and Materials Engineering (4 Years, Bachelor of Technology) 	Other than CHANDIGARH (UT) 	Gender-Neutral 	18 	1 	3 	0 	5 	0 	1 	0 	0 	0 	28 	
+28 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Punjab Engineering College, Chandigarh 	Production and Industrial Engineering (4 Years, Bachelor of Technology) 	CHANDIGARH (UT) 	Gender-Neutral 	12 	1 	2 	0 	3 	0 	0 	0 	0 	0 	18 	
+18 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Punjab Engineering College, Chandigarh 	Production and Industrial Engineering (4 Years, Bachelor of Technology) 	Other than CHANDIGARH (UT) 	Gender-Neutral 	12 	1 	2 	0 	3 	0 	1 	0 	0 	0 	19 	
+19 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Punjab Engineering College, Chandigarh 	Computer Science Engineering (Artificial Intelligence) (4 Years, B. Tech / B. Tech (Hons.)) 	CHANDIGARH (UT) 	Gender-Neutral 	7 	1 	2 	0 	2 	0 	0 	0 	0 	0 	12 	
+12 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Punjab Engineering College, Chandigarh 	Computer Science Engineering (Artificial Intelligence) (4 Years, B. Tech / B. Tech (Hons.)) 	Other than CHANDIGARH (UT) 	Gender-Neutral 	8 	1 	1 	0 	2 	0 	1 	0 	0 	0 	13 	
+13 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Punjab Engineering College, Chandigarh 	Computer Science Engineering (Data Science) (4 Years, B. Tech / B. Tech (Hons.)) 	CHANDIGARH (UT) 	Gender-Neutral 	17 	1 	3 	0 	5 	0 	0 	0 	0 	0 	26 	
+26 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Punjab Engineering College, Chandigarh 	Computer Science Engineering (Data Science) (4 Years, B. Tech / B. Tech (Hons.)) 	Other than CHANDIGARH (UT) 	Gender-Neutral 	18 	1 	3 	0 	5 	0 	1 	0 	0 	0 	28 	
+28 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Jawaharlal Nehru University, Delhi 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	25 	1 	6 	0 	8 	1 	5 	0 	16 	1 	63 	
+63 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Jawaharlal Nehru University, Delhi 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	25 	1 	6 	0 	8 	1 	5 	0 	16 	1 	63 	
+63 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+International Institute of Information Technology, Bhubaneswar 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	29 	2 	7 	0 	10 	1 	6 	0 	19 	1 	75 	
+75 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+International Institute of Information Technology, Bhubaneswar 	Electrical and Electronics Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	14 	1 	3 	0 	6 	0 	3 	0 	10 	0 	37 	
+37 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+International Institute of Information Technology, Bhubaneswar 	Information Technology (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	14 	1 	3 	0 	6 	0 	3 	0 	10 	0 	37 	
+37 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+International Institute of Information Technology, Bhubaneswar 	Computer Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	14 	1 	3 	0 	6 	0 	3 	0 	10 	0 	37 	
+37 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+International Institute of Information Technology, Bhubaneswar 	Electronics and Telecommunication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	14 	1 	3 	0 	6 	0 	3 	0 	10 	0 	37 	
+37 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Central institute of Technology Kokrajar, Assam 	Civil Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	2 	0 	0 	0 	1 	0 	0 	0 	1 	0 	4 	
+4 	1
+Female-only (including Supernumerary) 	1 	0 	0 	0 	0 	0 	0 	0 	0 	0 	1
+(including "1" Supernumerary)
+Central institute of Technology Kokrajar, Assam 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	2 	1 	1 	0 	1 	0 	0 	0 	1 	0 	6 	
+6 	1
+Female-only (including Supernumerary) 	1 	0 	0 	0 	0 	0 	0 	0 	0 	0 	1
+(including "1" Supernumerary)
+Central institute of Technology Kokrajar, Assam 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	2 	0 	0 	0 	0 	0 	0 	0 	1 	0 	3 	
+3 	1
+Female-only (including Supernumerary) 	1 	0 	0 	0 	0 	0 	0 	0 	0 	0 	1
+(including "1" Supernumerary)
+Central institute of Technology Kokrajar, Assam 	Instrumentation Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	1 	0 	0 	0 	0 	0 	1 	0 	1 	0 	3 	
+3 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Central institute of Technology Kokrajar, Assam 	Food Engineering and Technology (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	1 	0 	0 	1 	1 	0 	0 	0 	1 	0 	4 	
+4 	1
+Female-only (including Supernumerary) 	1 	0 	0 	0 	0 	0 	0 	0 	0 	0 	1
+(including "1" Supernumerary)
+Puducherry Technological University, Puducherry 	Chemical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	2 	0 	1 	0 	1 	0 	0 	0 	1 	1 	6 	
+6 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Puducherry Technological University, Puducherry 	Chemical Engineering (4 Years, Bachelor of Technology) 	PUDUCHERRY (UT) 	Gender-Neutral 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	
+0 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Puducherry Technological University, Puducherry 	Civil Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	20 	1 	5 	0 	7 	0 	4 	0 	14 	0 	51 	
+51 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Puducherry Technological University, Puducherry 	Civil Engineering (4 Years, Bachelor of Technology) 	PUDUCHERRY (UT) 	Gender-Neutral 	6 	0 	1 	0 	2 	1 	1 	0 	4 	0 	15 	
+15 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Puducherry Technological University, Puducherry 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	20 	0 	4 	1 	7 	1 	4 	0 	13 	1 	51 	
+51 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Puducherry Technological University, Puducherry 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	PUDUCHERRY (UT) 	Gender-Neutral 	5 	1 	2 	0 	2 	1 	0 	0 	4 	0 	15 	
+15 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Puducherry Technological University, Puducherry 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	20 	1 	5 	0 	7 	0 	4 	0 	14 	0 	51 	
+51 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Puducherry Technological University, Puducherry 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	PUDUCHERRY (UT) 	Gender-Neutral 	6 	0 	1 	0 	2 	0 	2 	0 	4 	0 	15 	
+15 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Puducherry Technological University, Puducherry 	Mechanical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	20 	0 	4 	1 	7 	1 	3 	1 	13 	1 	51 	
+51 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Puducherry Technological University, Puducherry 	Mechanical Engineering (4 Years, Bachelor of Technology) 	PUDUCHERRY (UT) 	Gender-Neutral 	6 	0 	2 	0 	2 	0 	1 	0 	3 	1 	15 	
+15 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Puducherry Technological University, Puducherry 	Electronics and Instrumentation Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	2 	1 	0 	0 	1 	0 	1 	0 	1 	0 	6 	
+6 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Puducherry Technological University, Puducherry 	Electronics and Instrumentation Engineering (4 Years, Bachelor of Technology) 	PUDUCHERRY (UT) 	Gender-Neutral 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	
+0 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Puducherry Technological University, Puducherry 	Electrical and Electronics Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	2 	0 	1 	0 	1 	0 	0 	0 	2 	0 	6 	
+6 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Puducherry Technological University, Puducherry 	Electrical and Electronics Engineering (4 Years, Bachelor of Technology) 	PUDUCHERRY (UT) 	Gender-Neutral 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	
+0 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Puducherry Technological University, Puducherry 	Information Technology (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	2 	0 	1 	0 	1 	0 	0 	0 	2 	0 	6 	
+6 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Puducherry Technological University, Puducherry 	Information Technology (4 Years, Bachelor of Technology) 	PUDUCHERRY (UT) 	Gender-Neutral 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	
+0 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Puducherry Technological University, Puducherry 	Mechatronics Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	9 	0 	1 	1 	3 	0 	2 	0 	5 	1 	22 	
+22 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Puducherry Technological University, Puducherry 	Mechatronics Engineering (4 Years, Bachelor of Technology) 	PUDUCHERRY (UT) 	Gender-Neutral 	3 	0 	1 	0 	1 	0 	0 	0 	2 	0 	7 	
+7 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Ghani Khan Choudhary Institute of Engineering and Technology, Malda, West Bengal 	Computer Science Engineering (Artificial lntelligence and Machine Learning) (4 Years, Bachelor of Technology) 	ARUNACHAL PRADESH ASSAM MEGHALAYA MANIPUR MIZORAM NAGALAND SIKKIM TRIPURA 	Gender-Neutral 	7 	0 	2 	1 	2 	0 	2 	0 	5 	0 	19 	
+19 	1
+Female-only (including Supernumerary) 	1 	0 	0 	0 	0 	0 	0 	0 	0 	0 	1
+(including "1" Supernumerary)
+Ghani Khan Choudhary Institute of Engineering and Technology, Malda, West Bengal 	Computer Science Engineering (Artificial lntelligence and Machine Learning) (4 Years, Bachelor of Technology) 	Other than ARUNACHAL PRADESH ASSAM MEGHALAYA MANIPUR MIZORAM NAGALAND SIKKIM TRIPURA 	Gender-Neutral 	8 	0 	2 	0 	3 	0 	1 	0 	5 	0 	19 	
+19 	2
+Female-only (including Supernumerary) 	2 	0 	0 	0 	0 	0 	0 	0 	0 	0 	2
+(including "2" Supernumerary)
+Ghani Khan Choudhary Institute of Engineering and Technology, Malda, West Bengal 	Civil and Environmental Engineering (4 Years, Bachelor of Technology) 	ARUNACHAL PRADESH ASSAM MEGHALAYA MANIPUR MIZORAM NAGALAND SIKKIM TRIPURA 	Gender-Neutral 	7 	1 	2 	0 	3 	0 	1 	0 	5 	0 	19 	
+19 	3
+Female-only (including Supernumerary) 	2 	0 	0 	0 	0 	0 	0 	0 	1 	0 	3
+(including "3" Supernumerary)
+Ghani Khan Choudhary Institute of Engineering and Technology, Malda, West Bengal 	Civil and Environmental Engineering (4 Years, Bachelor of Technology) 	Other than ARUNACHAL PRADESH ASSAM MEGHALAYA MANIPUR MIZORAM NAGALAND SIKKIM TRIPURA 	Gender-Neutral 	7 	0 	2 	0 	2 	0 	2 	1 	5 	0 	19 	
+19 	3
+Female-only (including Supernumerary) 	2 	0 	0 	0 	0 	0 	0 	0 	1 	0 	3
+(including "3" Supernumerary)
+Ghani Khan Choudhary Institute of Engineering and Technology, Malda, West Bengal 	Electrical Engineering (4 Years, Bachelor of Technology) 	ARUNACHAL PRADESH ASSAM MEGHALAYA MANIPUR MIZORAM NAGALAND SIKKIM TRIPURA 	Gender-Neutral 	7 	1 	2 	0 	2 	0 	2 	0 	5 	0 	19 	
+19 	1
+Female-only (including Supernumerary) 	1 	0 	0 	0 	0 	0 	0 	0 	0 	0 	1
+(including "1" Supernumerary)
+Ghani Khan Choudhary Institute of Engineering and Technology, Malda, West Bengal 	Electrical Engineering (4 Years, Bachelor of Technology) 	Other than ARUNACHAL PRADESH ASSAM MEGHALAYA MANIPUR MIZORAM NAGALAND SIKKIM TRIPURA 	Gender-Neutral 	8 	0 	1 	0 	3 	0 	1 	0 	4 	1 	18 	
+18 	1
+Female-only (including Supernumerary) 	1 	0 	0 	0 	0 	0 	0 	0 	0 	0 	1
+(including "1" Supernumerary)
+Ghani Khan Choudhary Institute of Engineering and Technology, Malda, West Bengal 	Mechanical Engineering (4 Years, Bachelor of Technology) 	ARUNACHAL PRADESH ASSAM MEGHALAYA MANIPUR MIZORAM NAGALAND SIKKIM TRIPURA 	Gender-Neutral 	7 	1 	2 	0 	3 	0 	1 	0 	4 	1 	19 	
+19 	2
+Female-only (including Supernumerary) 	2 	0 	0 	0 	0 	0 	0 	0 	0 	0 	2
+(including "2" Supernumerary)
+Ghani Khan Choudhary Institute of Engineering and Technology, Malda, West Bengal 	Mechanical Engineering (4 Years, Bachelor of Technology) 	Other than ARUNACHAL PRADESH ASSAM MEGHALAYA MANIPUR MIZORAM NAGALAND SIKKIM TRIPURA 	Gender-Neutral 	7 	0 	1 	0 	3 	0 	1 	0 	6 	0 	18 	
+18 	1
+Female-only (including Supernumerary) 	1 	0 	0 	0 	0 	0 	0 	0 	0 	0 	1
+(including "1" Supernumerary)
+Ghani Khan Choudhary Institute of Engineering and Technology, Malda, West Bengal 	Food Technology (4 Years, Bachelor of Technology) 	ARUNACHAL PRADESH ASSAM MEGHALAYA MANIPUR MIZORAM NAGALAND SIKKIM TRIPURA 	Gender-Neutral 	7 	1 	1 	1 	3 	0 	1 	0 	4 	0 	18 	
+18 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Ghani Khan Choudhary Institute of Engineering and Technology, Malda, West Bengal 	Food Technology (4 Years, Bachelor of Technology) 	Other than ARUNACHAL PRADESH ASSAM MEGHALAYA MANIPUR MIZORAM NAGALAND SIKKIM TRIPURA 	Gender-Neutral 	7 	0 	2 	0 	3 	1 	1 	0 	5 	0 	19 	
+19 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Central University of Rajasthan, Rajasthan 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	12 	1 	3 	0 	4 	0 	2 	0 	8 	0 	30 	
+30 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Central University of Rajasthan, Rajasthan 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	12 	1 	3 	0 	4 	0 	2 	0 	8 	0 	30 	
+30 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Central University of Rajasthan, Rajasthan 	Bio Medical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	12 	1 	3 	0 	4 	0 	2 	0 	8 	0 	30 	
+30 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+National Institute of Food Technology Entrepreneurship and Management, Kundli 	Food Technology and Management (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	38 	2 	9 	1 	14 	1 	8 	0 	26 	1 	100 	
+100 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+National Institute of Food Technology Entrepreneurship and Management, Thanjavur 	Food Technology (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	34 	2 	9 	0 	13 	1 	7 	0 	23 	1 	90 	
+90 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+North Eastern Regional Institute of Science and Technology, Nirjuli-791109 (Itanagar),Arunachal Pradesh 	Civil Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	0 	0 	1 	0 	0 	0 	0 	0 	1 	0 	2 	
+2 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+North Eastern Regional Institute of Science and Technology, Nirjuli-791109 (Itanagar),Arunachal Pradesh 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	3 	0 	3 	0 	0 	0 	0 	0 	0 	0 	6 	
+6 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+North Eastern Regional Institute of Science and Technology, Nirjuli-791109 (Itanagar),Arunachal Pradesh 	Electrical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	0 	0 	1 	0 	1 	0 	0 	0 	0 	0 	2 	
+2 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+North Eastern Regional Institute of Science and Technology, Nirjuli-791109 (Itanagar),Arunachal Pradesh 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	0 	0 	1 	0 	0 	0 	0 	0 	1 	0 	2 	
+2 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+North Eastern Regional Institute of Science and Technology, Nirjuli-791109 (Itanagar),Arunachal Pradesh 	Mechanical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	0 	0 	1 	0 	0 	0 	1 	0 	0 	0 	2 	
+2 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+North Eastern Regional Institute of Science and Technology, Nirjuli-791109 (Itanagar),Arunachal Pradesh 	Agricultural Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	1 	0 	1 	0 	0 	0 	0 	0 	0 	0 	2 	
+2 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Indian Institute of Handloom Technology(IIHT), Varanasi 	Handloom and Textile Technology (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	13 	1 	3 	0 	4 	1 	2 	0 	8 	1 	33 	
+33 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Chhattisgarh Swami Vivekanada Technical University, Bhilai (CSVTU Bhilai) 	Civil Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	11 	1 	3 	0 	5 	0 	2 	0 	8 	0 	30 	
+30 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Chhattisgarh Swami Vivekanada Technical University, Bhilai (CSVTU Bhilai) 	Computer Science Engineering (Artificial Intelligence) (4 Years, B. Tech / B. Tech (Hons.)) 	All India 	Gender-Neutral 	17 	1 	5 	0 	7 	0 	3 	0 	11 	1 	45 	
+45 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Chhattisgarh Swami Vivekanada Technical University, Bhilai (CSVTU Bhilai) 	Computer Science Engineering (Data Science) (4 Years, B. Tech / B. Tech (Hons.)) 	All India 	Gender-Neutral 	17 	1 	5 	0 	7 	0 	3 	0 	11 	1 	45 	
+45 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Institute of Chemical Technology, Mumbai: Indian Oil Odisha Campus, Bhubaneswar 	Chemical Engineering (5 Years, Integrated Masters in Technology) 	All India 	Gender-Neutral 	18 	1 	4 	0 	7 	0 	3 	0 	12 	1 	46 	
+46 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Institute of Chemical Technology, Mumbai: Indian Oil Odisha Campus, Bhubaneswar 	Chemical Engineering (5 Years, Integrated Masters in Technology) 	ODISHA 	Gender-Neutral 	8 	0 	2 	0 	2 	1 	2 	0 	5 	0 	20 	
+20 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+North-Eastern Hill University, Shillong 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	7 	1 	2 	0 	3 	0 	2 	0 	5 	0 	20 	
+20 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+North-Eastern Hill University, Shillong 	Information Technology (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	7 	1 	2 	0 	3 	0 	2 	0 	5 	0 	20 	
+20 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+North-Eastern Hill University, Shillong 	Biomedical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	7 	1 	2 	0 	3 	0 	2 	0 	5 	0 	20 	
+20 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+North-Eastern Hill University, Shillong 	Energy Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	7 	1 	2 	0 	3 	0 	2 	0 	5 	0 	20 	
+20 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Central University of Jammu 	Electronics and Communication Engineering (Avionics) (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	23 	1 	6 	0 	9 	0 	5 	0 	15 	1 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Central University of Jammu 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	23 	1 	6 	0 	9 	0 	5 	0 	15 	1 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Central University of Jammu 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	23 	1 	6 	0 	9 	0 	5 	0 	15 	1 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Central University of Jammu 	Mathematics and Computing (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	23 	1 	6 	0 	9 	0 	5 	0 	15 	1 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Central University of Jammu 	Computer Science and Engineering with specialization in Cyber Security (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	23 	1 	6 	0 	9 	0 	5 	0 	15 	1 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Institute of Engineering and Technology, Dr. H. S. Gour University. Sagar (A Central University) 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	24 	0 	6 	0 	9 	0 	5 	0 	16 	0 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Institute of Engineering and Technology, Dr. H. S. Gour University. Sagar (A Central University) 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	24 	0 	6 	0 	9 	0 	5 	0 	16 	0 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Institute of Engineering and Technology, Dr. H. S. Gour University. Sagar (A Central University) 	Aeronautical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	24 	0 	6 	0 	9 	0 	5 	0 	16 	0 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Institute of Engineering and Technology, Dr. H. S. Gour University. Sagar (A Central University) 	Dairy Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	24 	0 	6 	0 	9 	0 	5 	0 	16 	0 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Institute of Engineering and Technology, Dr. H. S. Gour University. Sagar (A Central University) 	Fashion and Apparel Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	24 	0 	6 	0 	9 	0 	5 	0 	16 	0 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Institute of Engineering and Technology, Dr. H. S. Gour University. Sagar (A Central University) 	Food Engineering and Technology (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	24 	0 	6 	0 	9 	0 	5 	0 	16 	0 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Central University of Haryana 	Civil Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	23 	2 	6 	0 	9 	0 	4 	0 	15 	1 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Central University of Haryana 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	22 	2 	6 	0 	8 	1 	5 	0 	16 	0 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Central University of Haryana 	Electrical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	23 	1 	6 	0 	8 	1 	5 	0 	15 	1 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Central University of Haryana 	Printing and Packaging Technology (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	11 	1 	2 	1 	4 	0 	2 	0 	9 	0 	30 	
+30 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Birla Institute of Technology, Deoghar Off-Campus 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	22 	1 	6 	0 	8 	0 	4 	0 	14 	1 	56 	
+56 	4
+Female-only (including Supernumerary) 	4 	0 	0 	0 	0 	0 	0 	0 	0 	0 	4
+(including "4" Supernumerary)
+Birla Institute of Technology, Deoghar Off-Campus 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	JHARKHAND 	Gender-Neutral 	21 	1 	5 	1 	4 	1 	14 	1 	0 	0 	48 	
+48 	5
+Female-only (including Supernumerary) 	5 	0 	0 	0 	0 	0 	0 	0 	0 	0 	5
+(including "5" Supernumerary)
+Birla Institute of Technology, Deoghar Off-Campus 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	15 	1 	4 	0 	5 	0 	3 	0 	9 	1 	38 	
+38 	3
+Female-only (including Supernumerary) 	3 	0 	0 	0 	0 	0 	0 	0 	0 	0 	3
+(including "3" Supernumerary)
+Birla Institute of Technology, Deoghar Off-Campus 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	JHARKHAND 	Gender-Neutral 	14 	1 	4 	0 	3 	1 	9 	1 	0 	0 	33 	
+33 	3
+Female-only (including Supernumerary) 	3 	0 	0 	0 	0 	0 	0 	0 	0 	0 	3
+(including "3" Supernumerary)
+Birla Institute of Technology, Deoghar Off-Campus 	Mechanical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	7 	1 	2 	0 	2 	0 	2 	0 	4 	1 	19 	
+19 	1
+Female-only (including Supernumerary) 	1 	0 	0 	0 	0 	0 	0 	0 	0 	0 	1
+(including "1" Supernumerary)
+Birla Institute of Technology, Deoghar Off-Campus 	Mechanical Engineering (4 Years, Bachelor of Technology) 	JHARKHAND 	Gender-Neutral 	7 	1 	2 	0 	2 	0 	3 	1 	0 	0 	16 	
+16 	2
+Female-only (including Supernumerary) 	2 	0 	0 	0 	0 	0 	0 	0 	0 	0 	2
+(including "2" Supernumerary)
+Birla Institute of Technology, Deoghar Off-Campus 	Electrical and Electronics Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	15 	1 	4 	0 	5 	0 	3 	0 	9 	1 	38 	
+38 	3
+Female-only (including Supernumerary) 	3 	0 	0 	0 	0 	0 	0 	0 	0 	0 	3
+(including "3" Supernumerary)
+Birla Institute of Technology, Deoghar Off-Campus 	Electrical and Electronics Engineering (4 Years, Bachelor of Technology) 	JHARKHAND 	Gender-Neutral 	14 	1 	4 	0 	4 	0 	9 	1 	0 	0 	33 	
+33 	3
+Female-only (including Supernumerary) 	3 	0 	0 	0 	0 	0 	0 	0 	0 	0 	3
+(including "3" Supernumerary)
+Birla Institute of Technology, Patna Off-Campus 	Civil Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	15 	1 	4 	0 	5 	0 	3 	0 	8 	1 	37 	
+37 	3
+Female-only (including Supernumerary) 	3 	0 	0 	0 	0 	0 	0 	0 	0 	0 	3
+(including "3" Supernumerary)
+Birla Institute of Technology, Patna Off-Campus 	Civil Engineering (4 Years, Bachelor of Technology) 	BIHAR 	Gender-Neutral 	15 	1 	4 	0 	7 	0 	1 	0 	0 	0 	28 	
+28 	3
+Female-only (including Supernumerary) 	3 	0 	0 	0 	0 	0 	0 	0 	0 	0 	3
+(including "3" Supernumerary)
+Birla Institute of Technology, Patna Off-Campus 	Artificial Intelligence and Machine Learning (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	15 	1 	4 	0 	5 	0 	3 	0 	8 	1 	37 	
+37 	3
+Female-only (including Supernumerary) 	3 	0 	0 	0 	0 	0 	0 	0 	0 	0 	3
+(including "3" Supernumerary)
+Birla Institute of Technology, Patna Off-Campus 	Artificial Intelligence and Machine Learning (4 Years, Bachelor of Technology) 	BIHAR 	Gender-Neutral 	15 	1 	4 	0 	7 	0 	1 	0 	0 	0 	28 	
+28 	3
+Female-only (including Supernumerary) 	3 	0 	0 	0 	0 	0 	0 	0 	0 	0 	3
+(including "3" Supernumerary)
+Birla Institute of Technology, Patna Off-Campus 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	15 	1 	4 	0 	5 	0 	3 	0 	8 	1 	37 	
+37 	3
+Female-only (including Supernumerary) 	3 	0 	0 	0 	0 	0 	0 	0 	0 	0 	3
+(including "3" Supernumerary)
+Birla Institute of Technology, Patna Off-Campus 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	BIHAR 	Gender-Neutral 	15 	1 	4 	0 	7 	0 	1 	0 	0 	0 	28 	
+28 	3
+Female-only (including Supernumerary) 	3 	0 	0 	0 	0 	0 	0 	0 	0 	0 	3
+(including "3" Supernumerary)
+Birla Institute of Technology, Patna Off-Campus 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	15 	1 	4 	0 	5 	0 	3 	0 	8 	1 	37 	
+37 	3
+Female-only (including Supernumerary) 	3 	0 	0 	0 	0 	0 	0 	0 	0 	0 	3
+(including "3" Supernumerary)
+Birla Institute of Technology, Patna Off-Campus 	Electronics and Communication Engineering (4 Years, Bachelor of Technology) 	BIHAR 	Gender-Neutral 	15 	1 	4 	0 	7 	0 	1 	0 	0 	0 	28 	
+28 	3
+Female-only (including Supernumerary) 	3 	0 	0 	0 	0 	0 	0 	0 	0 	0 	3
+(including "3" Supernumerary)
+Birla Institute of Technology, Patna Off-Campus 	Mechanical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	15 	1 	4 	0 	5 	0 	3 	0 	8 	1 	37 	
+37 	3
+Female-only (including Supernumerary) 	3 	0 	0 	0 	0 	0 	0 	0 	0 	0 	3
+(including "3" Supernumerary)
+Birla Institute of Technology, Patna Off-Campus 	Mechanical Engineering (4 Years, Bachelor of Technology) 	BIHAR 	Gender-Neutral 	15 	1 	4 	0 	7 	0 	1 	0 	0 	0 	28 	
+28 	3
+Female-only (including Supernumerary) 	3 	0 	0 	0 	0 	0 	0 	0 	0 	0 	3
+(including "3" Supernumerary)
+Birla Institute of Technology, Patna Off-Campus 	Electrical and Electronics Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	15 	1 	4 	0 	5 	0 	3 	0 	8 	1 	37 	
+37 	3
+Female-only (including Supernumerary) 	3 	0 	0 	0 	0 	0 	0 	0 	0 	0 	3
+(including "3" Supernumerary)
+Birla Institute of Technology, Patna Off-Campus 	Electrical and Electronics Engineering (4 Years, Bachelor of Technology) 	BIHAR 	Gender-Neutral 	15 	1 	4 	0 	7 	0 	1 	0 	0 	0 	28 	
+28 	3
+Female-only (including Supernumerary) 	3 	0 	0 	0 	0 	0 	0 	0 	0 	0 	3
+(including "3" Supernumerary)
+Birla Institute of Technology, Patna Off-Campus 	Mathematics and Computing (5 Years, Integrated Master of Science) 	All India 	Gender-Neutral 	9 	0 	2 	0 	3 	0 	1 	0 	4 	0 	19 	
+19 	1
+Female-only (including Supernumerary) 	1 	0 	0 	0 	0 	0 	0 	0 	0 	0 	1
+(including "1" Supernumerary)
+Birla Institute of Technology, Patna Off-Campus 	Mathematics and Computing (5 Years, Integrated Master of Science) 	BIHAR 	Gender-Neutral 	8 	0 	2 	0 	1 	0 	4 	0 	0 	0 	15 	
+15 	2
+Female-only (including Supernumerary) 	2 	0 	0 	0 	0 	0 	0 	0 	0 	0 	2
+(including "2" Supernumerary)
+Indian Institute of Handloom Technology, Salem 	Handloom and Textile Technology (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	11 	1 	3 	0 	5 	0 	2 	0 	7 	1 	30 	
+30 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Gati Shakti Vishwavidyalaya, Vadodara 	B.Tech in Electronics & Communication Engineering (Rail Engineering) (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	25 	0 	6 	0 	9 	0 	4 	0 	16 	0 	60 	
+60 	9
+Female-only (including Supernumerary) 	4 	0 	1 	0 	1 	0 	1 	0 	2 	0 	9
+(including "9" Supernumerary)
+Gati Shakti Vishwavidyalaya, Vadodara 	B.Tech in Electrical Engineering ( Rail Engineering) (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	25 	0 	6 	0 	9 	0 	4 	0 	16 	0 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Gati Shakti Vishwavidyalaya, Vadodara 	B.Tech in Mechanical Engineering ( Rail Engineering) (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	25 	0 	6 	0 	9 	0 	4 	0 	16 	0 	60 	
+60 	5
+Female-only (including Supernumerary) 	2 	0 	1 	0 	1 	0 	0 	0 	1 	0 	5
+(including "5" Supernumerary)
+Gati Shakti Vishwavidyalaya, Vadodara 	B.Tech in Civil Engineering (Rail Engineering) (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	25 	0 	6 	0 	9 	0 	4 	0 	16 	0 	60 	
+60 	8
+Female-only (including Supernumerary) 	3 	0 	1 	0 	1 	0 	1 	0 	2 	0 	8
+(including "8" Supernumerary)
+Gati Shakti Vishwavidyalaya, Vadodara 	B.Tech in Artificial Intelligenece and Data Science (Transportation and Logistics) (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	25 	0 	6 	0 	9 	0 	4 	0 	16 	0 	60 	
+60 	4
+Female-only (including Supernumerary) 	2 	0 	0 	0 	1 	0 	0 	0 	1 	0 	4
+(including "4" Supernumerary)
+Gati Shakti Vishwavidyalaya, Vadodara 	B.Tech in Aviation Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	16 	0 	4 	0 	6 	0 	3 	0 	11 	0 	40 	
+40 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+CU Jharkhand 	Civil Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	10 	0 	2 	0 	3 	0 	1 	0 	5 	0 	21 	
+21 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+CU Jharkhand 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	10 	0 	2 	0 	3 	0 	1 	0 	5 	0 	21 	
+21 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+CU Jharkhand 	Electrical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	10 	0 	2 	0 	3 	0 	1 	0 	5 	0 	21 	
+21 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+CU Jharkhand 	Metallurgical and Materials Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	10 	0 	2 	0 	3 	0 	1 	0 	5 	0 	21 	
+21 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+National Institute of Electronics and Information Technology, Ropar (Punjab) 	B.Tech in CSE (AI and ML) (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	24 	1 	6 	0 	8 	1 	4 	0 	15 	1 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+National Institute of Electronics and Information Technology, Patna (Bihar) 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	24 	1 	6 	0 	8 	1 	4 	0 	15 	1 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+National Institute of Electronics and Information Technology, Ajmer (Rajasthan) 	Computer Science and Engineering (Internet of Things, Cyber Security including Block Chain Technology ) (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	24 	1 	6 	0 	8 	1 	4 	0 	15 	1 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+National Institute of Electronics and Information Technology, Gorakhpur (UP) 	Computer Science and Engineering with minor in AI and ML (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	24 	1 	6 	0 	8 	1 	4 	0 	15 	1 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+National Institute of Electronics and Information Technology, Gorakhpur (UP) 	B. Tech in Electronics and Communication Engineering with minor in Wearable Electronics (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	24 	1 	6 	0 	8 	1 	4 	0 	15 	1 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Rajiv Gandhi National Aviation University, Fursatganj, Amethi (UP) 	Aerospace Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	23 	1 	6 	0 	8 	1 	5 	0 	15 	1 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Rajiv Gandhi National Aviation University, Fursatganj, Amethi (UP) 	Electronics and Communication Engineering (Avionics) (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	23 	1 	6 	0 	8 	1 	5 	0 	15 	1 	60 	
+60 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Islamic University of Science and Technology Kashmir 	Architecture (5 Years, Bachelor of Architecture) 	All India 	Gender-Neutral 	5 	0 	0 	0 	1 	0 	2 	0 	2 	0 	10 	
+10 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Islamic University of Science and Technology Kashmir 	Architecture (5 Years, Bachelor of Architecture) 	JAMMU & KASHMIR (UT) 	Gender-Neutral 	5 	0 	0 	0 	1 	0 	2 	0 	2 	0 	10 	
+10 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Shri G. S. Institute of Technology and Science Indore 	Civil Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	4 	0 	0 	0 	0 	0 	0 	0 	0 	0 	4 	
+4 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Shri G. S. Institute of Technology and Science Indore 	Computer Science and Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	6 	0 	0 	0 	0 	0 	0 	0 	0 	0 	6 	
+6 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Shri G. S. Institute of Technology and Science Indore 	Electrical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	5 	0 	0 	0 	0 	0 	0 	0 	0 	0 	5 	
+5 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Shri G. S. Institute of Technology and Science Indore 	Mechanical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	5 	0 	0 	0 	0 	0 	0 	0 	0 	0 	5 	
+5 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Shri G. S. Institute of Technology and Science Indore 	Electronics and Instrumentation Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	5 	0 	0 	0 	0 	0 	0 	0 	0 	0 	5 	
+5 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Shri G. S. Institute of Technology and Science Indore 	Information Technology (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	6 	0 	0 	0 	0 	0 	0 	0 	0 	0 	6 	
+6 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Shri G. S. Institute of Technology and Science Indore 	Industrial and Production Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	4 	0 	0 	0 	0 	0 	0 	0 	0 	0 	4 	
+4 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Shri G. S. Institute of Technology and Science Indore 	Electronics and Telecommunication Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	5 	0 	0 	0 	0 	0 	0 	0 	0 	0 	5 	
+5 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+Shri G. S. Institute of Technology and Science Indore 	Biomedical Engineering (4 Years, Bachelor of Technology) 	All India 	Gender-Neutral 	3 	0 	0 	0 	0 	0 	0 	0 	0 	0 	3 	
+3 	0
+Female-only (including Supernumerary) 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0 	0
+(including "0" Supernumerary)
+ 	 	 	Total Seats 	4427 	207 	994 	39 	1427 	77 	845 	29 	2080 	103 	10228 	
+9980 	248

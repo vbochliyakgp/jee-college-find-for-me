@@ -1,0 +1,4690 @@
+{
+  "source": "iiits.txt",
+  "description": "IIIT / IIITM (JoSAA) seat matrix: institute, program, All India quota, Gender-Neutral and Female-only pools.",
+  "programCount": 111,
+  "grandTotals": {
+    "sourceNote": "iiits.txt footer (Total Seats row)",
+    "genderNeutral": {
+      "label": "Total Seats",
+      "seats": {
+        "OPEN": 3959,
+        "OPEN_PWD": 184,
+        "GEN_EWS": 920,
+        "GEN_EWS_PWD": 33,
+        "SC": 1404,
+        "SC_PWD": 66,
+        "ST": 713,
+        "ST_PWD": 24,
+        "OBC_NCL": 2513,
+        "OBC_NCL_PWD": 124
+      },
+      "rowTotal": 9940,
+      "programTotal": 9087,
+      "femaleSupernumerarySeats": 853
+    }
+  },
+  "programs": [
+    {
+      "institute": "Atal Bihari Vajpayee Indian Institute of Information Technology & Management Gwalior",
+      "program": "Computer Science and Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 32,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 4,
+            "GEN_EWS_PWD": 0,
+            "SC": 10,
+            "SC_PWD": 1,
+            "ST": 4,
+            "ST_PWD": 1,
+            "OBC_NCL": 18,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 72,
+          "programTotal": 90,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 7,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 3,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 5,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 18,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Atal Bihari Vajpayee Indian Institute of Information Technology & Management Gwalior",
+      "program": "Mathematics and Scientific Computing (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 21,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 2,
+            "GEN_EWS_PWD": 0,
+            "SC": 7,
+            "SC_PWD": 0,
+            "ST": 4,
+            "ST_PWD": 0,
+            "OBC_NCL": 12,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 48,
+          "programTotal": 60,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 5,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 1,
+            "SC_PWD": 1,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 3,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 12,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Atal Bihari Vajpayee Indian Institute of Information Technology & Management Gwalior",
+      "program": "Electrical and Electronics Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 21,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 2,
+            "GEN_EWS_PWD": 0,
+            "SC": 6,
+            "SC_PWD": 1,
+            "ST": 4,
+            "ST_PWD": 0,
+            "OBC_NCL": 12,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 48,
+          "programTotal": 60,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 5,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 2,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 3,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 12,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Atal Bihari Vajpayee Indian Institute of Information Technology & Management Gwalior",
+      "program": "Integrated B. Tech.(IT) and M. Tech (IT) (5 Years, Integrated B. Tech. and M. Tech.)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 32,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 4,
+            "GEN_EWS_PWD": 0,
+            "SC": 10,
+            "SC_PWD": 1,
+            "ST": 5,
+            "ST_PWD": 0,
+            "OBC_NCL": 18,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 72,
+          "programTotal": 90,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 7,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 3,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 5,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 18,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Atal Bihari Vajpayee Indian Institute of Information Technology & Management Gwalior",
+      "program": "Integrated B. Tech.(IT) and MBA (5 Years, Integrated B. Tech. and MBA)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 21,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 2,
+            "GEN_EWS_PWD": 0,
+            "SC": 7,
+            "SC_PWD": 0,
+            "ST": 3,
+            "ST_PWD": 1,
+            "OBC_NCL": 13,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 48,
+          "programTotal": 60,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 5,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 2,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 2,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 12,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology (IIIT)Kota, Rajasthan",
+      "program": "Computer Science and Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 55,
+            "OPEN_PWD": 3,
+            "GEN_EWS": 13,
+            "GEN_EWS_PWD": 1,
+            "SC": 21,
+            "SC_PWD": 1,
+            "ST": 10,
+            "ST_PWD": 1,
+            "OBC_NCL": 37,
+            "OBC_NCL_PWD": 2
+          },
+          "rowTotal": 144,
+          "programTotal": 144,
+          "femaleSupernumerarySeats": 36
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 13,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 4,
+            "GEN_EWS_PWD": 0,
+            "SC": 5,
+            "SC_PWD": 0,
+            "ST": 3,
+            "ST_PWD": 0,
+            "OBC_NCL": 9,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 36,
+          "supernumeraryNote": "(including \"36\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology (IIIT)Kota, Rajasthan",
+      "program": "Electronics and Communication Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 28,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 7,
+            "GEN_EWS_PWD": 0,
+            "SC": 10,
+            "SC_PWD": 1,
+            "ST": 5,
+            "ST_PWD": 0,
+            "OBC_NCL": 19,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 72,
+          "programTotal": 72,
+          "femaleSupernumerarySeats": 18
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 7,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 2,
+            "GEN_EWS_PWD": 0,
+            "SC": 3,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 5,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 18,
+          "supernumeraryNote": "(including \"18\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology (IIIT)Kota, Rajasthan",
+      "program": "Artificial Intelligence and Data Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 18,
+            "OPEN_PWD": 2,
+            "GEN_EWS": 5,
+            "GEN_EWS_PWD": 0,
+            "SC": 7,
+            "SC_PWD": 0,
+            "ST": 4,
+            "ST_PWD": 0,
+            "OBC_NCL": 11,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 48,
+          "programTotal": 48,
+          "femaleSupernumerarySeats": 12
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 5,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 2,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 3,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 12,
+          "supernumeraryNote": "(including \"12\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Guwahati",
+      "program": "Computer Science and Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 53,
+            "OPEN_PWD": 3,
+            "GEN_EWS": 13,
+            "GEN_EWS_PWD": 1,
+            "SC": 20,
+            "SC_PWD": 1,
+            "ST": 9,
+            "ST_PWD": 1,
+            "OBC_NCL": 35,
+            "OBC_NCL_PWD": 2
+          },
+          "rowTotal": 138,
+          "programTotal": 138,
+          "femaleSupernumerarySeats": 27
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 10,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 3,
+            "GEN_EWS_PWD": 0,
+            "SC": 4,
+            "SC_PWD": 0,
+            "ST": 2,
+            "ST_PWD": 0,
+            "OBC_NCL": 7,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 27,
+          "supernumeraryNote": "(including \"27\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Guwahati",
+      "program": "Electronics and Communication Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 28,
+            "OPEN_PWD": 2,
+            "GEN_EWS": 8,
+            "GEN_EWS_PWD": 0,
+            "SC": 10,
+            "SC_PWD": 1,
+            "ST": 6,
+            "ST_PWD": 0,
+            "OBC_NCL": 19,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 75,
+          "programTotal": 75,
+          "femaleSupernumerarySeats": 14
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 6,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 2,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 4,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 14,
+          "supernumeraryNote": "(including \"14\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology(IIIT) Kalyani, West Bengal",
+      "program": "Computer Science and Engineering (Cyber Security) (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 8,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 2,
+            "GEN_EWS_PWD": 0,
+            "SC": 3,
+            "SC_PWD": 0,
+            "ST": 2,
+            "ST_PWD": 0,
+            "OBC_NCL": 5,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 20,
+          "programTotal": 20,
+          "femaleSupernumerarySeats": 2
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 1,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 0,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 1,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 2,
+          "supernumeraryNote": "(including \"2\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology(IIIT) Kalyani, West Bengal",
+      "program": "Computer Science and Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 45,
+            "OPEN_PWD": 2,
+            "GEN_EWS": 12,
+            "GEN_EWS_PWD": 0,
+            "SC": 17,
+            "SC_PWD": 1,
+            "ST": 9,
+            "ST_PWD": 0,
+            "OBC_NCL": 30,
+            "OBC_NCL_PWD": 2
+          },
+          "rowTotal": 118,
+          "programTotal": 118,
+          "femaleSupernumerarySeats": 10
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 3,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 2,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 3,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 10,
+          "supernumeraryNote": "(including \"10\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology(IIIT) Kalyani, West Bengal",
+      "program": "Electronics and Communication Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 23,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 6,
+            "GEN_EWS_PWD": 0,
+            "SC": 9,
+            "SC_PWD": 0,
+            "ST": 5,
+            "ST_PWD": 0,
+            "OBC_NCL": 15,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 60,
+          "programTotal": 60,
+          "femaleSupernumerarySeats": 5
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 2,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 1,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 1,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 5,
+          "supernumeraryNote": "(including \"5\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology(IIIT) Kalyani, West Bengal",
+      "program": "Computer Science and Engineering ( Artificial Intelligence & Data Science) (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 8,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 2,
+            "GEN_EWS_PWD": 0,
+            "SC": 3,
+            "SC_PWD": 0,
+            "ST": 2,
+            "ST_PWD": 0,
+            "OBC_NCL": 5,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 20,
+          "programTotal": 20,
+          "femaleSupernumerarySeats": 2
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 1,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 0,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 1,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 2,
+          "supernumeraryNote": "(including \"2\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology(IIIT) Kilohrad, Sonepat, Haryana",
+      "program": "Computer Science and Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 46,
+            "OPEN_PWD": 3,
+            "GEN_EWS": 11,
+            "GEN_EWS_PWD": 1,
+            "SC": 17,
+            "SC_PWD": 1,
+            "ST": 8,
+            "ST_PWD": 1,
+            "OBC_NCL": 30,
+            "OBC_NCL_PWD": 2
+          },
+          "rowTotal": 120,
+          "programTotal": 120,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 0,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 0,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 0,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 0,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology(IIIT) Kilohrad, Sonepat, Haryana",
+      "program": "CSE ( Data Science & Analytics) (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 23,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 6,
+            "GEN_EWS_PWD": 0,
+            "SC": 9,
+            "SC_PWD": 0,
+            "ST": 5,
+            "ST_PWD": 0,
+            "OBC_NCL": 16,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 60,
+          "programTotal": 60,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 0,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 0,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 0,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 0,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology(IIIT) Kilohrad, Sonepat, Haryana",
+      "program": "Information Technology (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 23,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 6,
+            "GEN_EWS_PWD": 0,
+            "SC": 8,
+            "SC_PWD": 1,
+            "ST": 4,
+            "ST_PWD": 0,
+            "OBC_NCL": 16,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 60,
+          "programTotal": 60,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 0,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 0,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 0,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 0,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology(IIIT) Una, Himachal Pradesh",
+      "program": "Computer Science and Engineering (Cyber Security) (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 12,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 3,
+            "GEN_EWS_PWD": 0,
+            "SC": 4,
+            "SC_PWD": 0,
+            "ST": 2,
+            "ST_PWD": 0,
+            "OBC_NCL": 8,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 30,
+          "programTotal": 30,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 0,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 0,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 0,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 0,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology(IIIT) Una, Himachal Pradesh",
+      "program": "Computer Science and Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 58,
+            "OPEN_PWD": 2,
+            "GEN_EWS": 14,
+            "GEN_EWS_PWD": 1,
+            "SC": 22,
+            "SC_PWD": 2,
+            "ST": 10,
+            "ST_PWD": 1,
+            "OBC_NCL": 38,
+            "OBC_NCL_PWD": 2
+          },
+          "rowTotal": 150,
+          "programTotal": 150,
+          "femaleSupernumerarySeats": 6
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 2,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 1,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 2,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 6,
+          "supernumeraryNote": "(including \"6\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology(IIIT) Una, Himachal Pradesh",
+      "program": "Electronics and Communication Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 28,
+            "OPEN_PWD": 2,
+            "GEN_EWS": 7,
+            "GEN_EWS_PWD": 1,
+            "SC": 11,
+            "SC_PWD": 0,
+            "ST": 5,
+            "ST_PWD": 1,
+            "OBC_NCL": 19,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 75,
+          "programTotal": 75,
+          "femaleSupernumerarySeats": 3
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 1,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 1,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 1,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 3,
+          "supernumeraryNote": "(including \"3\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology(IIIT) Una, Himachal Pradesh",
+      "program": "Computer Science and Engineering (Data Science) (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 12,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 3,
+            "GEN_EWS_PWD": 0,
+            "SC": 4,
+            "SC_PWD": 0,
+            "ST": 3,
+            "ST_PWD": 0,
+            "OBC_NCL": 8,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 30,
+          "programTotal": 30,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 0,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 0,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 0,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 0,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology (IIIT), Sri City, Chittoor",
+      "program": "Computer Science and Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 87,
+            "OPEN_PWD": 5,
+            "GEN_EWS": 22,
+            "GEN_EWS_PWD": 1,
+            "SC": 33,
+            "SC_PWD": 2,
+            "ST": 17,
+            "ST_PWD": 1,
+            "OBC_NCL": 59,
+            "OBC_NCL_PWD": 3
+          },
+          "rowTotal": 230,
+          "programTotal": 230,
+          "femaleSupernumerarySeats": 46
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 18,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 5,
+            "GEN_EWS_PWD": 0,
+            "SC": 7,
+            "SC_PWD": 0,
+            "ST": 3,
+            "ST_PWD": 0,
+            "OBC_NCL": 12,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 46,
+          "supernumeraryNote": "(including \"46\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology (IIIT), Sri City, Chittoor",
+      "program": "Electronics and Communication Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 31,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 8,
+            "GEN_EWS_PWD": 0,
+            "SC": 11,
+            "SC_PWD": 1,
+            "ST": 6,
+            "ST_PWD": 0,
+            "OBC_NCL": 21,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 80,
+          "programTotal": 80,
+          "femaleSupernumerarySeats": 16
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 7,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 2,
+            "GEN_EWS_PWD": 0,
+            "SC": 2,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 4,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 16,
+          "supernumeraryNote": "(including \"16\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology (IIIT), Sri City, Chittoor",
+      "program": "Artificial Intelligence and Data Science (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 21,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 6,
+            "GEN_EWS_PWD": 0,
+            "SC": 8,
+            "SC_PWD": 0,
+            "ST": 4,
+            "ST_PWD": 0,
+            "OBC_NCL": 14,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 55,
+          "programTotal": 55,
+          "femaleSupernumerarySeats": 11
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 5,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 1,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 3,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 11,
+          "supernumeraryNote": "(including \"11\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology(IIIT), Vadodara, Gujrat",
+      "program": "Computer Science and Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 58,
+            "OPEN_PWD": 3,
+            "GEN_EWS": 15,
+            "GEN_EWS_PWD": 1,
+            "SC": 22,
+            "SC_PWD": 1,
+            "ST": 10,
+            "ST_PWD": 1,
+            "OBC_NCL": 40,
+            "OBC_NCL_PWD": 2
+          },
+          "rowTotal": 153,
+          "programTotal": 153,
+          "femaleSupernumerarySeats": 38
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 14,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 4,
+            "GEN_EWS_PWD": 0,
+            "SC": 6,
+            "SC_PWD": 0,
+            "ST": 3,
+            "ST_PWD": 0,
+            "OBC_NCL": 9,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 38,
+          "supernumeraryNote": "(including \"38\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology(IIIT), Vadodara, Gujrat",
+      "program": "Electronics and Communication Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 36,
+            "OPEN_PWD": 2,
+            "GEN_EWS": 8,
+            "GEN_EWS_PWD": 1,
+            "SC": 13,
+            "SC_PWD": 1,
+            "ST": 7,
+            "ST_PWD": 1,
+            "OBC_NCL": 26,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 96,
+          "programTotal": 96,
+          "femaleSupernumerarySeats": 24
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 10,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 2,
+            "GEN_EWS_PWD": 0,
+            "SC": 4,
+            "SC_PWD": 0,
+            "ST": 2,
+            "ST_PWD": 0,
+            "OBC_NCL": 6,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 24,
+          "supernumeraryNote": "(including \"24\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology(IIIT), Vadodara, Gujrat",
+      "program": "Information Technology (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 14,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 3,
+            "GEN_EWS_PWD": 0,
+            "SC": 6,
+            "SC_PWD": 0,
+            "ST": 2,
+            "ST_PWD": 0,
+            "OBC_NCL": 9,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 36,
+          "programTotal": 36,
+          "femaleSupernumerarySeats": 8
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 3,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 1,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 2,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 8,
+          "supernumeraryNote": "(including \"8\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology(IIIT), Vadodara, Gujrat",
+      "program": "Artificial Intelligence (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 18,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 5,
+            "GEN_EWS_PWD": 0,
+            "SC": 7,
+            "SC_PWD": 0,
+            "ST": 4,
+            "ST_PWD": 0,
+            "OBC_NCL": 12,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 48,
+          "programTotal": 48,
+          "femaleSupernumerarySeats": 12
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 5,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 2,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 3,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 12,
+          "supernumeraryNote": "(including \"12\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology, Allahabad",
+      "program": "Electronics and Communication Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 40,
+            "OPEN_PWD": 2,
+            "GEN_EWS": 10,
+            "GEN_EWS_PWD": 1,
+            "SC": 15,
+            "SC_PWD": 1,
+            "ST": 8,
+            "ST_PWD": 0,
+            "OBC_NCL": 27,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 105,
+          "programTotal": 132,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 10,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 3,
+            "GEN_EWS_PWD": 0,
+            "SC": 4,
+            "SC_PWD": 0,
+            "ST": 2,
+            "ST_PWD": 0,
+            "OBC_NCL": 7,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 27,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology, Allahabad",
+      "program": "Information Technology (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 83,
+            "OPEN_PWD": 4,
+            "GEN_EWS": 20,
+            "GEN_EWS_PWD": 1,
+            "SC": 30,
+            "SC_PWD": 2,
+            "ST": 15,
+            "ST_PWD": 1,
+            "OBC_NCL": 55,
+            "OBC_NCL_PWD": 3
+          },
+          "rowTotal": 214,
+          "programTotal": 267,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 21,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 5,
+            "GEN_EWS_PWD": 0,
+            "SC": 8,
+            "SC_PWD": 0,
+            "ST": 4,
+            "ST_PWD": 0,
+            "OBC_NCL": 13,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 53,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology, Allahabad",
+      "program": "Information Technology-Business Informatics (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 12,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 3,
+            "GEN_EWS_PWD": 0,
+            "SC": 5,
+            "SC_PWD": 0,
+            "ST": 2,
+            "ST_PWD": 0,
+            "OBC_NCL": 8,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 32,
+          "programTotal": 40,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 3,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 1,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 2,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 8,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology, Design & Manufacturing, Kancheepuram",
+      "program": "Computer Science and Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 26,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 6,
+            "GEN_EWS_PWD": 1,
+            "SC": 9,
+            "SC_PWD": 1,
+            "ST": 5,
+            "ST_PWD": 0,
+            "OBC_NCL": 18,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 68,
+          "programTotal": 68,
+          "femaleSupernumerarySeats": 17
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 6,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 2,
+            "GEN_EWS_PWD": 0,
+            "SC": 3,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 4,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 17,
+          "supernumeraryNote": "(including \"17\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology, Design & Manufacturing, Kancheepuram",
+      "program": "Electronics and Communication Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 39,
+            "OPEN_PWD": 2,
+            "GEN_EWS": 9,
+            "GEN_EWS_PWD": 1,
+            "SC": 14,
+            "SC_PWD": 1,
+            "ST": 6,
+            "ST_PWD": 1,
+            "OBC_NCL": 27,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 101,
+          "programTotal": 101,
+          "femaleSupernumerarySeats": 25
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 10,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 2,
+            "GEN_EWS_PWD": 0,
+            "SC": 4,
+            "SC_PWD": 0,
+            "ST": 2,
+            "ST_PWD": 0,
+            "OBC_NCL": 6,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 25,
+          "supernumeraryNote": "(including \"25\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology, Design & Manufacturing, Kancheepuram",
+      "program": "Engineering Physics (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 6,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 2,
+            "GEN_EWS_PWD": 0,
+            "SC": 2,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 4,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 15,
+          "programTotal": 15,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 0,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 0,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 0,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 0,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology, Design & Manufacturing, Kancheepuram",
+      "program": "Mechanical Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 27,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 6,
+            "GEN_EWS_PWD": 1,
+            "SC": 10,
+            "SC_PWD": 0,
+            "ST": 4,
+            "ST_PWD": 1,
+            "OBC_NCL": 18,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 69,
+          "programTotal": 69,
+          "femaleSupernumerarySeats": 17
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 6,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 2,
+            "GEN_EWS_PWD": 0,
+            "SC": 3,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 4,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 17,
+          "supernumeraryNote": "(including \"17\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology, Design & Manufacturing, Kancheepuram",
+      "program": "Design Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 7,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 2,
+            "GEN_EWS_PWD": 0,
+            "SC": 3,
+            "SC_PWD": 0,
+            "ST": 2,
+            "ST_PWD": 0,
+            "OBC_NCL": 5,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 20,
+          "programTotal": 20,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 0,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 0,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 0,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 0,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology, Design & Manufacturing, Kancheepuram",
+      "program": "Smart Manufacturing (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 18,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 5,
+            "GEN_EWS_PWD": 0,
+            "SC": 7,
+            "SC_PWD": 0,
+            "ST": 4,
+            "ST_PWD": 0,
+            "OBC_NCL": 12,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 48,
+          "programTotal": 48,
+          "femaleSupernumerarySeats": 12
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 4,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 2,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 3,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 12,
+          "supernumeraryNote": "(including \"12\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology, Design & Manufacturing, Kancheepuram",
+      "program": "Computer Science and Engineering with Major in Artificial Intelligence (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 14,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 4,
+            "GEN_EWS_PWD": 0,
+            "SC": 5,
+            "SC_PWD": 0,
+            "ST": 3,
+            "ST_PWD": 0,
+            "OBC_NCL": 9,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 37,
+          "programTotal": 37,
+          "femaleSupernumerarySeats": 9
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 4,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 1,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 2,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 9,
+          "supernumeraryNote": "(including \"9\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology, Design & Manufacturing, Kancheepuram",
+      "program": "Computer Science and Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 21,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 5,
+            "GEN_EWS_PWD": 0,
+            "SC": 7,
+            "SC_PWD": 1,
+            "ST": 4,
+            "ST_PWD": 0,
+            "OBC_NCL": 14,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 54,
+          "programTotal": 54,
+          "femaleSupernumerarySeats": 14
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 6,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 2,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 4,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 14,
+          "supernumeraryNote": "(including \"14\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology, Design & Manufacturing, Kancheepuram",
+      "program": "B.Tech. in Electronics and Communication Engineering and M.Tech. in Communication Systems (5 Years, Bachelor and Master of Technology (Dual Degree))",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 7,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 2,
+            "GEN_EWS_PWD": 0,
+            "SC": 2,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 4,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 16,
+          "programTotal": 16,
+          "femaleSupernumerarySeats": 4
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 2,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 1,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 1,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 4,
+          "supernumeraryNote": "(including \"4\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology, Design & Manufacturing, Kancheepuram",
+      "program": "B.Tech. in Electronics and Communication Engineering and M.Tech. in Microelectronics and VLSI Systems (5 Years, Bachelor and Master of Technology (Dual Degree))",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 6,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 2,
+            "GEN_EWS_PWD": 0,
+            "SC": 2,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 5,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 17,
+          "programTotal": 17,
+          "femaleSupernumerarySeats": 4
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 2,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 1,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 1,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 4,
+          "supernumeraryNote": "(including \"4\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology, Design & Manufacturing, Kancheepuram",
+      "program": "B.Tech in Mechanical Engineering and M.Tech in AI and Robotics (5 Years, B.Tech. + M.Tech./MS (Dual Degree))",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 14,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 4,
+            "GEN_EWS_PWD": 0,
+            "SC": 5,
+            "SC_PWD": 0,
+            "ST": 3,
+            "ST_PWD": 0,
+            "OBC_NCL": 9,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 37,
+          "programTotal": 37,
+          "femaleSupernumerarySeats": 9
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 4,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 1,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 2,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 9,
+          "supernumeraryNote": "(including \"9\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Pt. Dwarka Prasad Mishra Indian Institute of Information Technology, Design & Manufacture Jabalpur",
+      "program": "Computer Science and Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 84,
+            "OPEN_PWD": 5,
+            "GEN_EWS": 21,
+            "GEN_EWS_PWD": 1,
+            "SC": 32,
+            "SC_PWD": 1,
+            "ST": 16,
+            "ST_PWD": 1,
+            "OBC_NCL": 56,
+            "OBC_NCL_PWD": 3
+          },
+          "rowTotal": 220,
+          "programTotal": 275,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 21,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 5,
+            "GEN_EWS_PWD": 1,
+            "SC": 8,
+            "SC_PWD": 1,
+            "ST": 4,
+            "ST_PWD": 0,
+            "OBC_NCL": 14,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 55,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Pt. Dwarka Prasad Mishra Indian Institute of Information Technology, Design & Manufacture Jabalpur",
+      "program": "Electronics and Communication Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 43,
+            "OPEN_PWD": 2,
+            "GEN_EWS": 10,
+            "GEN_EWS_PWD": 1,
+            "SC": 16,
+            "SC_PWD": 1,
+            "ST": 7,
+            "ST_PWD": 0,
+            "OBC_NCL": 29,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 110,
+          "programTotal": 137,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 10,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 3,
+            "GEN_EWS_PWD": 0,
+            "SC": 4,
+            "SC_PWD": 0,
+            "ST": 2,
+            "ST_PWD": 0,
+            "OBC_NCL": 6,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 27,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Pt. Dwarka Prasad Mishra Indian Institute of Information Technology, Design & Manufacture Jabalpur",
+      "program": "Mechanical Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 21,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 5,
+            "GEN_EWS_PWD": 0,
+            "SC": 8,
+            "SC_PWD": 0,
+            "ST": 4,
+            "ST_PWD": 1,
+            "OBC_NCL": 14,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 55,
+          "programTotal": 69,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 5,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 2,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 4,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 14,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Pt. Dwarka Prasad Mishra Indian Institute of Information Technology, Design & Manufacture Jabalpur",
+      "program": "Smart Manufacturing (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 21,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 6,
+            "GEN_EWS_PWD": 0,
+            "SC": 7,
+            "SC_PWD": 1,
+            "ST": 4,
+            "ST_PWD": 0,
+            "OBC_NCL": 14,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 55,
+          "programTotal": 69,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 6,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 2,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 4,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 14,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "INDIAN INSTITUTE OF INFORMATION TECHNOLOGY SENAPATI MANIPUR",
+      "program": "Electronics and Communication Engineering with specialization in VLSI and Embedded Systems (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 51,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 10,
+            "GEN_EWS_PWD": 0,
+            "SC": 15,
+            "SC_PWD": 0,
+            "ST": 7,
+            "ST_PWD": 0,
+            "OBC_NCL": 27,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 110,
+          "programTotal": 110,
+          "femaleSupernumerarySeats": 22
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 9,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 2,
+            "GEN_EWS_PWD": 0,
+            "SC": 3,
+            "SC_PWD": 0,
+            "ST": 2,
+            "ST_PWD": 0,
+            "OBC_NCL": 6,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 22,
+          "supernumeraryNote": "(including \"22\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "INDIAN INSTITUTE OF INFORMATION TECHNOLOGY SENAPATI MANIPUR",
+      "program": "Computer Science and Engineering with specialization in Artificial Intelligence and Data Science (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 51,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 10,
+            "GEN_EWS_PWD": 0,
+            "SC": 15,
+            "SC_PWD": 0,
+            "ST": 7,
+            "ST_PWD": 0,
+            "OBC_NCL": 27,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 110,
+          "programTotal": 110,
+          "femaleSupernumerarySeats": 22
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 9,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 2,
+            "GEN_EWS_PWD": 0,
+            "SC": 3,
+            "SC_PWD": 0,
+            "ST": 2,
+            "ST_PWD": 0,
+            "OBC_NCL": 6,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 22,
+          "supernumeraryNote": "(including \"22\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "INDIAN INSTITUTE OF INFORMATION TECHNOLOGY SENAPATI MANIPUR",
+      "program": "Computer Science and Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 51,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 10,
+            "GEN_EWS_PWD": 0,
+            "SC": 15,
+            "SC_PWD": 0,
+            "ST": 7,
+            "ST_PWD": 0,
+            "OBC_NCL": 27,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 110,
+          "programTotal": 110,
+          "femaleSupernumerarySeats": 22
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 9,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 2,
+            "GEN_EWS_PWD": 0,
+            "SC": 3,
+            "SC_PWD": 0,
+            "ST": 2,
+            "ST_PWD": 0,
+            "OBC_NCL": 6,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 22,
+          "supernumeraryNote": "(including \"22\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "INDIAN INSTITUTE OF INFORMATION TECHNOLOGY SENAPATI MANIPUR",
+      "program": "Electronics and Communication Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 51,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 10,
+            "GEN_EWS_PWD": 0,
+            "SC": 15,
+            "SC_PWD": 0,
+            "ST": 7,
+            "ST_PWD": 0,
+            "OBC_NCL": 27,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 110,
+          "programTotal": 110,
+          "femaleSupernumerarySeats": 22
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 9,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 2,
+            "GEN_EWS_PWD": 0,
+            "SC": 3,
+            "SC_PWD": 0,
+            "ST": 2,
+            "ST_PWD": 0,
+            "OBC_NCL": 6,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 22,
+          "supernumeraryNote": "(including \"22\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "INDIAN INSTITUTE OF INFORMATION TECHNOLOGY SENAPATI MANIPUR",
+      "program": "Computer Science and Engineering with specialization in Quantum Technologies (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 25,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 5,
+            "GEN_EWS_PWD": 0,
+            "SC": 8,
+            "SC_PWD": 0,
+            "ST": 4,
+            "ST_PWD": 0,
+            "OBC_NCL": 13,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 55,
+          "programTotal": 55,
+          "femaleSupernumerarySeats": 11
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 5,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 1,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 3,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 11,
+          "supernumeraryNote": "(including \"11\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "INDIAN INSTITUTE OF INFORMATION TECHNOLOGY SENAPATI MANIPUR",
+      "program": "Computer Science and Engineering with specialization in Cyber Security (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 25,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 5,
+            "GEN_EWS_PWD": 0,
+            "SC": 8,
+            "SC_PWD": 0,
+            "ST": 4,
+            "ST_PWD": 0,
+            "OBC_NCL": 13,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 55,
+          "programTotal": 55,
+          "femaleSupernumerarySeats": 11
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 5,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 1,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 3,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 11,
+          "supernumeraryNote": "(including \"11\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Tiruchirappalli",
+      "program": "Computer Science and Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 19,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 5,
+            "GEN_EWS_PWD": 0,
+            "SC": 7,
+            "SC_PWD": 0,
+            "ST": 4,
+            "ST_PWD": 0,
+            "OBC_NCL": 13,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 50,
+          "programTotal": 75,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 10,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 2,
+            "GEN_EWS_PWD": 0,
+            "SC": 4,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 1,
+            "OBC_NCL": 6,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 25,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Tiruchirappalli",
+      "program": "Electronics and Communication Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 19,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 4,
+            "GEN_EWS_PWD": 1,
+            "SC": 7,
+            "SC_PWD": 1,
+            "ST": 4,
+            "ST_PWD": 0,
+            "OBC_NCL": 13,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 50,
+          "programTotal": 75,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 9,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 3,
+            "GEN_EWS_PWD": 0,
+            "SC": 4,
+            "SC_PWD": 0,
+            "ST": 2,
+            "ST_PWD": 0,
+            "OBC_NCL": 6,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 25,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Tiruchirappalli",
+      "program": "Computer Science and Engineering ( Artificial Intelligence & Data Science) (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 14,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 4,
+            "GEN_EWS_PWD": 0,
+            "SC": 6,
+            "SC_PWD": 0,
+            "ST": 3,
+            "ST_PWD": 0,
+            "OBC_NCL": 9,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 38,
+          "programTotal": 38,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 0,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 0,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 0,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 0,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Tiruchirappalli",
+      "program": "Electronics and Communication Engineering (VLSI Design) (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 15,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 4,
+            "GEN_EWS_PWD": 0,
+            "SC": 5,
+            "SC_PWD": 0,
+            "ST": 3,
+            "ST_PWD": 0,
+            "OBC_NCL": 9,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 37,
+          "programTotal": 37,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 0,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 0,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 0,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 0,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Lucknow",
+      "program": "Computer Science and Business (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 18,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 5,
+            "GEN_EWS_PWD": 0,
+            "SC": 7,
+            "SC_PWD": 0,
+            "ST": 4,
+            "ST_PWD": 0,
+            "OBC_NCL": 12,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 48,
+          "programTotal": 60,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 5,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 2,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 2,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 12,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Lucknow",
+      "program": "Information Technology (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 18,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 5,
+            "GEN_EWS_PWD": 0,
+            "SC": 7,
+            "SC_PWD": 0,
+            "ST": 4,
+            "ST_PWD": 0,
+            "OBC_NCL": 12,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 48,
+          "programTotal": 60,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 4,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 2,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 3,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 12,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Lucknow",
+      "program": "Computer Science (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 18,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 5,
+            "GEN_EWS_PWD": 0,
+            "SC": 7,
+            "SC_PWD": 0,
+            "ST": 4,
+            "ST_PWD": 0,
+            "OBC_NCL": 12,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 48,
+          "programTotal": 60,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 5,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 1,
+            "SC": 2,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 3,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 12,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Lucknow",
+      "program": "Computer Science and Artificial Intelligence (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 18,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 5,
+            "GEN_EWS_PWD": 0,
+            "SC": 7,
+            "SC_PWD": 0,
+            "ST": 4,
+            "ST_PWD": 0,
+            "OBC_NCL": 12,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 48,
+          "programTotal": 60,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 5,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 1,
+            "SC_PWD": 1,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 3,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 12,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology(IIIT) Dharwad",
+      "program": "Computer Science and Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 77,
+            "OPEN_PWD": 4,
+            "GEN_EWS": 19,
+            "GEN_EWS_PWD": 1,
+            "SC": 29,
+            "SC_PWD": 1,
+            "ST": 14,
+            "ST_PWD": 1,
+            "OBC_NCL": 51,
+            "OBC_NCL_PWD": 3
+          },
+          "rowTotal": 200,
+          "programTotal": 200,
+          "femaleSupernumerarySeats": 40
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 16,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 4,
+            "GEN_EWS_PWD": 0,
+            "SC": 6,
+            "SC_PWD": 0,
+            "ST": 3,
+            "ST_PWD": 0,
+            "OBC_NCL": 11,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 40,
+          "supernumeraryNote": "(including \"40\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology(IIIT) Dharwad",
+      "program": "Electronics and Communication Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 33,
+            "OPEN_PWD": 2,
+            "GEN_EWS": 8,
+            "GEN_EWS_PWD": 1,
+            "SC": 12,
+            "SC_PWD": 0,
+            "ST": 6,
+            "ST_PWD": 0,
+            "OBC_NCL": 22,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 85,
+          "programTotal": 85,
+          "femaleSupernumerarySeats": 17
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 6,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 2,
+            "GEN_EWS_PWD": 0,
+            "SC": 3,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 5,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 17,
+          "supernumeraryNote": "(including \"17\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology(IIIT) Dharwad",
+      "program": "Data Science and Artificial Intelligence (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 46,
+            "OPEN_PWD": 3,
+            "GEN_EWS": 11,
+            "GEN_EWS_PWD": 0,
+            "SC": 17,
+            "SC_PWD": 1,
+            "ST": 9,
+            "ST_PWD": 0,
+            "OBC_NCL": 31,
+            "OBC_NCL_PWD": 2
+          },
+          "rowTotal": 120,
+          "programTotal": 120,
+          "femaleSupernumerarySeats": 24
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 10,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 2,
+            "GEN_EWS_PWD": 0,
+            "SC": 4,
+            "SC_PWD": 0,
+            "ST": 2,
+            "ST_PWD": 0,
+            "OBC_NCL": 6,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 24,
+          "supernumeraryNote": "(including \"24\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Design & Manufacturing Kurnool, Andhra Pradesh",
+      "program": "Computer Science and Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 21,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 5,
+            "GEN_EWS_PWD": 0,
+            "SC": 8,
+            "SC_PWD": 0,
+            "ST": 4,
+            "ST_PWD": 0,
+            "OBC_NCL": 16,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 56,
+          "programTotal": 70,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 5,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 2,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 4,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 14,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Design & Manufacturing Kurnool, Andhra Pradesh",
+      "program": "Electronics and Communication Engineering with specialization in Design and Manufacturing (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 18,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 5,
+            "GEN_EWS_PWD": 0,
+            "SC": 7,
+            "SC_PWD": 1,
+            "ST": 3,
+            "ST_PWD": 0,
+            "OBC_NCL": 12,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 48,
+          "programTotal": 60,
+          "femaleSupernumerarySeats": 7
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 7,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 2,
+            "GEN_EWS_PWD": 0,
+            "SC": 3,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 5,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 19,
+          "supernumeraryNote": "(including \"7\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Design & Manufacturing Kurnool, Andhra Pradesh",
+      "program": "Mechanical Engineering with specialization in Design and Manufacturing (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 19,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 5,
+            "GEN_EWS_PWD": 0,
+            "SC": 7,
+            "SC_PWD": 0,
+            "ST": 3,
+            "ST_PWD": 0,
+            "OBC_NCL": 13,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 48,
+          "programTotal": 60,
+          "femaleSupernumerarySeats": 7
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 7,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 2,
+            "GEN_EWS_PWD": 0,
+            "SC": 2,
+            "SC_PWD": 1,
+            "ST": 2,
+            "ST_PWD": 0,
+            "OBC_NCL": 5,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 19,
+          "supernumeraryNote": "(including \"7\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Design & Manufacturing Kurnool, Andhra Pradesh",
+      "program": "Artificial Intelligence and Data Science (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 19,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 4,
+            "GEN_EWS_PWD": 0,
+            "SC": 7,
+            "SC_PWD": 0,
+            "ST": 4,
+            "ST_PWD": 0,
+            "OBC_NCL": 13,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 48,
+          "programTotal": 60,
+          "femaleSupernumerarySeats": 3
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 6,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 2,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 4,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 15,
+          "supernumeraryNote": "(including \"3\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Design & Manufacturing Kurnool, Andhra Pradesh",
+      "program": "Computer Science and Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 6,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 2,
+            "GEN_EWS_PWD": 0,
+            "SC": 2,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 4,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 16,
+          "programTotal": 20,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 2,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 1,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 1,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 4,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Design & Manufacturing Kurnool, Andhra Pradesh",
+      "program": "Mechanical Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 7,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 3,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 3,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 16,
+          "programTotal": 20,
+          "femaleSupernumerarySeats": 3
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 2,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 1,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 2,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 7,
+          "supernumeraryNote": "(including \"3\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Design & Manufacturing Kurnool, Andhra Pradesh",
+      "program": "Electronics and Communication Engineering (5 Years, Bachelor and Master of Technology (Dual Degree))",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 7,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 2,
+            "SC_PWD": 1,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 4,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 16,
+          "programTotal": 20,
+          "femaleSupernumerarySeats": 1
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 2,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 1,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 1,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 5,
+          "supernumeraryNote": "(including \"1\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology(IIIT) Kottayam",
+      "program": "Computer Science and Engineering with specialization in Artificial Intelligence and Data Science (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 26,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 5,
+            "GEN_EWS_PWD": 0,
+            "SC": 8,
+            "SC_PWD": 0,
+            "ST": 4,
+            "ST_PWD": 0,
+            "OBC_NCL": 14,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 59,
+          "programTotal": 59,
+          "femaleSupernumerarySeats": 13
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 6,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 2,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 3,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 13,
+          "supernumeraryNote": "(including \"13\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology(IIIT) Kottayam",
+      "program": "Computer Science and Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 123,
+            "OPEN_PWD": 6,
+            "GEN_EWS": 24,
+            "GEN_EWS_PWD": 1,
+            "SC": 37,
+            "SC_PWD": 2,
+            "ST": 18,
+            "ST_PWD": 1,
+            "OBC_NCL": 66,
+            "OBC_NCL_PWD": 3
+          },
+          "rowTotal": 281,
+          "programTotal": 281,
+          "femaleSupernumerarySeats": 59
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 26,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 5,
+            "GEN_EWS_PWD": 0,
+            "SC": 8,
+            "SC_PWD": 0,
+            "ST": 4,
+            "ST_PWD": 0,
+            "OBC_NCL": 14,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 59,
+          "supernumeraryNote": "(including \"59\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology(IIIT) Kottayam",
+      "program": "Electronics and Communication Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 26,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 5,
+            "GEN_EWS_PWD": 0,
+            "SC": 8,
+            "SC_PWD": 0,
+            "ST": 4,
+            "ST_PWD": 0,
+            "OBC_NCL": 14,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 59,
+          "programTotal": 59,
+          "femaleSupernumerarySeats": 13
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 6,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 2,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 3,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 13,
+          "supernumeraryNote": "(including \"13\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology(IIIT) Kottayam",
+      "program": "Computer Science and Engineering with specialization in Cyber Security (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 26,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 5,
+            "GEN_EWS_PWD": 0,
+            "SC": 8,
+            "SC_PWD": 0,
+            "ST": 4,
+            "ST_PWD": 0,
+            "OBC_NCL": 14,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 59,
+          "programTotal": 59,
+          "femaleSupernumerarySeats": 13
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 6,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 2,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 3,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 13,
+          "supernumeraryNote": "(including \"13\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology (IIIT) Ranchi",
+      "program": "Computer Science and Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 47,
+            "OPEN_PWD": 2,
+            "GEN_EWS": 11,
+            "GEN_EWS_PWD": 1,
+            "SC": 17,
+            "SC_PWD": 1,
+            "ST": 9,
+            "ST_PWD": 0,
+            "OBC_NCL": 30,
+            "OBC_NCL_PWD": 2
+          },
+          "rowTotal": 120,
+          "programTotal": 120,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 0,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 0,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 0,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 0,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology (IIIT) Ranchi",
+      "program": "Electronics and Communication Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 35,
+            "OPEN_PWD": 2,
+            "GEN_EWS": 9,
+            "GEN_EWS_PWD": 0,
+            "SC": 12,
+            "SC_PWD": 1,
+            "ST": 7,
+            "ST_PWD": 0,
+            "OBC_NCL": 23,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 90,
+          "programTotal": 90,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 0,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 0,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 0,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 0,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology (IIIT) Ranchi",
+      "program": "B.Tech in Mathematics and Computing (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 20,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 5,
+            "GEN_EWS_PWD": 0,
+            "SC": 7,
+            "SC_PWD": 0,
+            "ST": 4,
+            "ST_PWD": 0,
+            "OBC_NCL": 13,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 50,
+          "programTotal": 50,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 0,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 0,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 0,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 0,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology (IIIT) Ranchi",
+      "program": "Electronics and Communication Engineering (with Specialization of Embedded Systems and Internet of Things) (4 Years, B. Tech / B. Tech (Hons.))",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 12,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 3,
+            "GEN_EWS_PWD": 0,
+            "SC": 4,
+            "SC_PWD": 0,
+            "ST": 2,
+            "ST_PWD": 0,
+            "OBC_NCL": 7,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 30,
+          "programTotal": 30,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 0,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 0,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 0,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 0,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology (IIIT) Ranchi",
+      "program": "Computer Science and Engineering (with Specialization of Data Science and Artificial Intelligence) (4 Years, B. Tech / B. Tech (Hons.))",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 12,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 3,
+            "GEN_EWS_PWD": 0,
+            "SC": 4,
+            "SC_PWD": 0,
+            "ST": 2,
+            "ST_PWD": 0,
+            "OBC_NCL": 8,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 30,
+          "programTotal": 30,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 0,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 0,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 0,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 0,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology (IIIT) Nagpur",
+      "program": "Computer Science Engineering (Artificial lntelligence and Machine Learning) (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 32,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 6,
+            "GEN_EWS_PWD": 0,
+            "SC": 9,
+            "SC_PWD": 1,
+            "ST": 5,
+            "ST_PWD": 0,
+            "OBC_NCL": 17,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 72,
+          "programTotal": 72,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 0,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 0,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 0,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 0,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology (IIIT) Nagpur",
+      "program": "Computer Science Engineering (Data Science and Analytics) (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 32,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 6,
+            "GEN_EWS_PWD": 0,
+            "SC": 9,
+            "SC_PWD": 1,
+            "ST": 5,
+            "ST_PWD": 0,
+            "OBC_NCL": 17,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 72,
+          "programTotal": 72,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 0,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 0,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 0,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 0,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology (IIIT) Nagpur",
+      "program": "Computer Science Engineering (Human Computer lnteraction and Gaming Technology) (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 32,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 6,
+            "GEN_EWS_PWD": 0,
+            "SC": 9,
+            "SC_PWD": 1,
+            "ST": 5,
+            "ST_PWD": 0,
+            "OBC_NCL": 17,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 72,
+          "programTotal": 72,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 0,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 0,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 0,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 0,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology (IIIT) Nagpur",
+      "program": "Electronics and Communication Engineering (Internet of Things) (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 32,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 6,
+            "GEN_EWS_PWD": 0,
+            "SC": 9,
+            "SC_PWD": 1,
+            "ST": 5,
+            "ST_PWD": 0,
+            "OBC_NCL": 17,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 72,
+          "programTotal": 72,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 0,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 0,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 0,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 0,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology (IIIT) Nagpur",
+      "program": "Computer Science and Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 94,
+            "OPEN_PWD": 5,
+            "GEN_EWS": 17,
+            "GEN_EWS_PWD": 1,
+            "SC": 28,
+            "SC_PWD": 2,
+            "ST": 14,
+            "ST_PWD": 1,
+            "OBC_NCL": 51,
+            "OBC_NCL_PWD": 3
+          },
+          "rowTotal": 216,
+          "programTotal": 216,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 0,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 0,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 0,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 0,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology (IIIT) Nagpur",
+      "program": "Electronics and Communication Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 64,
+            "OPEN_PWD": 3,
+            "GEN_EWS": 11,
+            "GEN_EWS_PWD": 1,
+            "SC": 19,
+            "SC_PWD": 1,
+            "ST": 9,
+            "ST_PWD": 1,
+            "OBC_NCL": 33,
+            "OBC_NCL_PWD": 2
+          },
+          "rowTotal": 144,
+          "programTotal": 144,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 0,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 0,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 0,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 0,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology (IIIT) Pune",
+      "program": "Computer Science and Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 100,
+            "OPEN_PWD": 5,
+            "GEN_EWS": 25,
+            "GEN_EWS_PWD": 1,
+            "SC": 37,
+            "SC_PWD": 2,
+            "ST": 19,
+            "ST_PWD": 1,
+            "OBC_NCL": 66,
+            "OBC_NCL_PWD": 4
+          },
+          "rowTotal": 260,
+          "programTotal": 326,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 25,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 7,
+            "GEN_EWS_PWD": 0,
+            "SC": 9,
+            "SC_PWD": 1,
+            "ST": 5,
+            "ST_PWD": 0,
+            "OBC_NCL": 17,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 66,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology (IIIT) Pune",
+      "program": "Electronics and Communication Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 37,
+            "OPEN_PWD": 2,
+            "GEN_EWS": 8,
+            "GEN_EWS_PWD": 0,
+            "SC": 14,
+            "SC_PWD": 1,
+            "ST": 7,
+            "ST_PWD": 0,
+            "OBC_NCL": 25,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 95,
+          "programTotal": 119,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 9,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 2,
+            "GEN_EWS_PWD": 0,
+            "SC": 4,
+            "SC_PWD": 0,
+            "ST": 2,
+            "ST_PWD": 0,
+            "OBC_NCL": 6,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 24,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Bhagalpur",
+      "program": "Computer Science and Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 58,
+            "OPEN_PWD": 3,
+            "GEN_EWS": 14,
+            "GEN_EWS_PWD": 1,
+            "SC": 21,
+            "SC_PWD": 1,
+            "ST": 10,
+            "ST_PWD": 1,
+            "OBC_NCL": 39,
+            "OBC_NCL_PWD": 2
+          },
+          "rowTotal": 150,
+          "programTotal": 150,
+          "femaleSupernumerarySeats": 15
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 6,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 2,
+            "GEN_EWS_PWD": 0,
+            "SC": 2,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 4,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 15,
+          "supernumeraryNote": "(including \"15\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Bhagalpur",
+      "program": "Electronics and Communication Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 29,
+            "OPEN_PWD": 2,
+            "GEN_EWS": 7,
+            "GEN_EWS_PWD": 0,
+            "SC": 10,
+            "SC_PWD": 1,
+            "ST": 5,
+            "ST_PWD": 0,
+            "OBC_NCL": 20,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 75,
+          "programTotal": 75,
+          "femaleSupernumerarySeats": 8
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 3,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 2,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 1,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 8,
+          "supernumeraryNote": "(including \"8\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Bhagalpur",
+      "program": "Mechatronics and Automation Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 25,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 4,
+            "GEN_EWS_PWD": 1,
+            "SC": 8,
+            "SC_PWD": 1,
+            "ST": 5,
+            "ST_PWD": 0,
+            "OBC_NCL": 14,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 60,
+          "programTotal": 60,
+          "femaleSupernumerarySeats": 6
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 2,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 1,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 2,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 6,
+          "supernumeraryNote": "(including \"6\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Bhagalpur",
+      "program": "Mathematics and Computing (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 11,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 4,
+            "SC_PWD": 0,
+            "ST": 2,
+            "ST_PWD": 0,
+            "OBC_NCL": 8,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 27,
+          "programTotal": 27,
+          "femaleSupernumerarySeats": 3
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 0,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 0,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 1,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 3,
+          "supernumeraryNote": "(including \"3\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Bhopal",
+      "program": "Computer Science and Engineering (Cyber Security) (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 24,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 6,
+            "GEN_EWS_PWD": 0,
+            "SC": 8,
+            "SC_PWD": 1,
+            "ST": 4,
+            "ST_PWD": 0,
+            "OBC_NCL": 15,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 60,
+          "programTotal": 60,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 0,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 0,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 0,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 0,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Bhopal",
+      "program": "Computer Science and Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 70,
+            "OPEN_PWD": 4,
+            "GEN_EWS": 17,
+            "GEN_EWS_PWD": 1,
+            "SC": 26,
+            "SC_PWD": 1,
+            "ST": 12,
+            "ST_PWD": 1,
+            "OBC_NCL": 46,
+            "OBC_NCL_PWD": 2
+          },
+          "rowTotal": 180,
+          "programTotal": 180,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 0,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 0,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 0,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 0,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Bhopal",
+      "program": "Electronics and Communication Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 39,
+            "OPEN_PWD": 2,
+            "GEN_EWS": 10,
+            "GEN_EWS_PWD": 0,
+            "SC": 14,
+            "SC_PWD": 1,
+            "ST": 7,
+            "ST_PWD": 1,
+            "OBC_NCL": 24,
+            "OBC_NCL_PWD": 2
+          },
+          "rowTotal": 100,
+          "programTotal": 100,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 0,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 0,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 0,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 0,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Bhopal",
+      "program": "B.Tech in Mathematics and Computing (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 12,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 3,
+            "GEN_EWS_PWD": 0,
+            "SC": 4,
+            "SC_PWD": 0,
+            "ST": 2,
+            "ST_PWD": 0,
+            "OBC_NCL": 7,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 30,
+          "programTotal": 30,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 0,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 0,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 0,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 0,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Bhopal",
+      "program": "Computer Science and Engineering (Cyber Physical System) (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 24,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 6,
+            "GEN_EWS_PWD": 0,
+            "SC": 8,
+            "SC_PWD": 1,
+            "ST": 4,
+            "ST_PWD": 0,
+            "OBC_NCL": 15,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 60,
+          "programTotal": 60,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 0,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 0,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 0,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 0,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Bhopal",
+      "program": "Computer Science and Engineering (Data Science) (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 24,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 6,
+            "GEN_EWS_PWD": 0,
+            "SC": 8,
+            "SC_PWD": 1,
+            "ST": 4,
+            "ST_PWD": 0,
+            "OBC_NCL": 15,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 60,
+          "programTotal": 60,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 0,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 0,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 0,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 0,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Bhopal",
+      "program": "Computer Science and Engineering (Artificial Intelligence) (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 24,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 6,
+            "GEN_EWS_PWD": 0,
+            "SC": 8,
+            "SC_PWD": 1,
+            "ST": 4,
+            "ST_PWD": 0,
+            "OBC_NCL": 15,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 60,
+          "programTotal": 60,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 0,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 0,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 0,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 0,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Bhopal",
+      "program": "Physics and Computational Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 12,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 3,
+            "GEN_EWS_PWD": 0,
+            "SC": 4,
+            "SC_PWD": 0,
+            "ST": 2,
+            "ST_PWD": 0,
+            "OBC_NCL": 7,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 30,
+          "programTotal": 30,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 0,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 0,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 0,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 0,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Bhopal",
+      "program": "Information Technology (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 49,
+            "OPEN_PWD": 2,
+            "GEN_EWS": 12,
+            "GEN_EWS_PWD": 1,
+            "SC": 17,
+            "SC_PWD": 1,
+            "ST": 9,
+            "ST_PWD": 0,
+            "OBC_NCL": 32,
+            "OBC_NCL_PWD": 2
+          },
+          "rowTotal": 125,
+          "programTotal": 125,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 0,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 0,
+            "GEN_EWS_PWD": 0,
+            "SC": 0,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 0,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 0,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Surat",
+      "program": "Computer Science and Engineering (Cyber Security) (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 11,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 3,
+            "GEN_EWS_PWD": 0,
+            "SC": 5,
+            "SC_PWD": 0,
+            "ST": 2,
+            "ST_PWD": 0,
+            "OBC_NCL": 8,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 30,
+          "programTotal": 30,
+          "femaleSupernumerarySeats": 6
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 2,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 1,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 2,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 6,
+          "supernumeraryNote": "(including \"6\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Surat",
+      "program": "Computer Science and Engineering (Artificial Intelligence and Machine Learning) (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 11,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 3,
+            "GEN_EWS_PWD": 0,
+            "SC": 5,
+            "SC_PWD": 0,
+            "ST": 2,
+            "ST_PWD": 0,
+            "OBC_NCL": 8,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 30,
+          "programTotal": 30,
+          "femaleSupernumerarySeats": 6
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 2,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 1,
+            "SC_PWD": 0,
+            "ST": 0,
+            "ST_PWD": 0,
+            "OBC_NCL": 2,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 6,
+          "supernumeraryNote": "(including \"6\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Surat",
+      "program": "Computer Science and Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 38,
+            "OPEN_PWD": 2,
+            "GEN_EWS": 10,
+            "GEN_EWS_PWD": 0,
+            "SC": 14,
+            "SC_PWD": 1,
+            "ST": 8,
+            "ST_PWD": 0,
+            "OBC_NCL": 26,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 100,
+          "programTotal": 100,
+          "femaleSupernumerarySeats": 20
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 8,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 2,
+            "GEN_EWS_PWD": 0,
+            "SC": 3,
+            "SC_PWD": 0,
+            "ST": 2,
+            "ST_PWD": 0,
+            "OBC_NCL": 5,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 20,
+          "supernumeraryNote": "(including \"20\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology Surat",
+      "program": "Electronics and Communication Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 28,
+            "OPEN_PWD": 2,
+            "GEN_EWS": 8,
+            "GEN_EWS_PWD": 0,
+            "SC": 10,
+            "SC_PWD": 1,
+            "ST": 6,
+            "ST_PWD": 0,
+            "OBC_NCL": 19,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 75,
+          "programTotal": 75,
+          "femaleSupernumerarySeats": 15
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 6,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 2,
+            "GEN_EWS_PWD": 0,
+            "SC": 2,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 4,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 15,
+          "supernumeraryNote": "(including \"15\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology, Agartala",
+      "program": "Computer Science and Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 30,
+            "OPEN_PWD": 2,
+            "GEN_EWS": 7,
+            "GEN_EWS_PWD": 1,
+            "SC": 12,
+            "SC_PWD": 0,
+            "ST": 6,
+            "ST_PWD": 0,
+            "OBC_NCL": 21,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 80,
+          "programTotal": 80,
+          "femaleSupernumerarySeats": 20
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 7,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 2,
+            "GEN_EWS_PWD": 0,
+            "SC": 3,
+            "SC_PWD": 0,
+            "ST": 2,
+            "ST_PWD": 0,
+            "OBC_NCL": 5,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 20,
+          "supernumeraryNote": "(including \"20\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian institute of information technology, Raichur, Karnataka",
+      "program": "Computer Science and Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 24,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 5,
+            "GEN_EWS_PWD": 1,
+            "SC": 9,
+            "SC_PWD": 1,
+            "ST": 5,
+            "ST_PWD": 0,
+            "OBC_NCL": 17,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 64,
+          "programTotal": 80,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 7,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 2,
+            "GEN_EWS_PWD": 0,
+            "SC": 2,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 4,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 16,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian institute of information technology, Raichur, Karnataka",
+      "program": "Mathematics and Computing (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 18,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 5,
+            "GEN_EWS_PWD": 0,
+            "SC": 6,
+            "SC_PWD": 1,
+            "ST": 4,
+            "ST_PWD": 0,
+            "OBC_NCL": 12,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 48,
+          "programTotal": 60,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 5,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 2,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 3,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 12,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian institute of information technology, Raichur, Karnataka",
+      "program": "Artificial Intelligence and Data Science (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 24,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 5,
+            "GEN_EWS_PWD": 1,
+            "SC": 9,
+            "SC_PWD": 1,
+            "ST": 5,
+            "ST_PWD": 0,
+            "OBC_NCL": 17,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 64,
+          "programTotal": 80,
+          "femaleSupernumerarySeats": 0
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 7,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 2,
+            "GEN_EWS_PWD": 0,
+            "SC": 2,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 4,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 16,
+          "supernumeraryNote": "(including \"0\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology, Vadodara International Campus Diu (IIITVICD)",
+      "program": "Computer Science and Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 34,
+            "OPEN_PWD": 2,
+            "GEN_EWS": 8,
+            "GEN_EWS_PWD": 1,
+            "SC": 13,
+            "SC_PWD": 1,
+            "ST": 6,
+            "ST_PWD": 0,
+            "OBC_NCL": 22,
+            "OBC_NCL_PWD": 2
+          },
+          "rowTotal": 89,
+          "programTotal": 89,
+          "femaleSupernumerarySeats": 19
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 7,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 2,
+            "GEN_EWS_PWD": 0,
+            "SC": 3,
+            "SC_PWD": 0,
+            "ST": 2,
+            "ST_PWD": 0,
+            "OBC_NCL": 5,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 19,
+          "supernumeraryNote": "(including \"19\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology, Vadodara International Campus Diu (IIITVICD)",
+      "program": "Electronics and Communication Engineering (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 18,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 5,
+            "GEN_EWS_PWD": 0,
+            "SC": 7,
+            "SC_PWD": 0,
+            "ST": 4,
+            "ST_PWD": 0,
+            "OBC_NCL": 12,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 48,
+          "programTotal": 48,
+          "femaleSupernumerarySeats": 12
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 5,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 2,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 3,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 12,
+          "supernumeraryNote": "(including \"12\" Supernumerary)"
+        }
+      ]
+    },
+    {
+      "institute": "Indian Institute of Information Technology, Vadodara International Campus Diu (IIITVICD)",
+      "program": "Artificial Intelligence (4 Years, Bachelor of Technology)",
+      "seatScope": "All India",
+      "pools": [
+        {
+          "pool": "Gender-Neutral",
+          "seats": {
+            "OPEN": 18,
+            "OPEN_PWD": 1,
+            "GEN_EWS": 5,
+            "GEN_EWS_PWD": 0,
+            "SC": 7,
+            "SC_PWD": 0,
+            "ST": 4,
+            "ST_PWD": 0,
+            "OBC_NCL": 12,
+            "OBC_NCL_PWD": 1
+          },
+          "rowTotal": 48,
+          "programTotal": 48,
+          "femaleSupernumerarySeats": 12
+        },
+        {
+          "pool": "Female-only (including Supernumerary)",
+          "seats": {
+            "OPEN": 5,
+            "OPEN_PWD": 0,
+            "GEN_EWS": 1,
+            "GEN_EWS_PWD": 0,
+            "SC": 2,
+            "SC_PWD": 0,
+            "ST": 1,
+            "ST_PWD": 0,
+            "OBC_NCL": 3,
+            "OBC_NCL_PWD": 0
+          },
+          "rowTotal": 12,
+          "supernumeraryNote": "(including \"12\" Supernumerary)"
+        }
+      ]
+    }
+  ]
+}

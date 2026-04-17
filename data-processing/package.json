@@ -1,0 +1,18 @@
+{
+  "name": "jee-college-find-data-processing",
+  "private": true,
+  "description": "Offline JoSAA scraped text → JSON/CSV. Not used by the Next.js production build.",
+  "scripts": {
+    "parse:iits": "bun scripts/parse-iits-seat-matrix.ts",
+    "parse:nits": "bun scripts/parse-nits-seat-matrix.ts",
+    "parse:iiits": "bun scripts/parse-iiits-seat-matrix.ts",
+    "parse:gftis": "bun scripts/parse-gftis-seat-matrix.ts",
+    "parse:cutoffs:round1": "bun scripts/parse-josaa-cutoffs-to-csv.ts data/cutoffs/1.txt data/cutoffs/round-1-cutoffs.csv",
+    "parse:cutoffs:round2": "bun scripts/parse-josaa-cutoffs-to-csv.ts data/cutoffs/2.txt data/cutoffs/round-2-cutoffs.csv",
+    "parse:cutoffs:round3": "bun scripts/parse-josaa-cutoffs-to-csv.ts data/cutoffs/3.txt data/cutoffs/round-3-cutoffs.csv",
+    "parse:cutoffs:round4": "bun scripts/parse-josaa-cutoffs-to-csv.ts data/cutoffs/4.txt data/cutoffs/round-4-cutoffs.csv",
+    "parse:cutoffs:round5": "bun scripts/parse-josaa-cutoffs-to-csv.ts data/cutoffs/5.txt data/cutoffs/round-5-cutoffs.csv",
+    "parse:cutoffs:round6": "bun scripts/parse-josaa-cutoffs-to-csv.ts",
+    "parse:cutoffs:all": "bun run parse:cutoffs:round1 && bun run parse:cutoffs:round2 && bun run parse:cutoffs:round3 && bun run parse:cutoffs:round4 && bun run parse:cutoffs:round5 && bun run parse:cutoffs:round6"
+  }
+}
