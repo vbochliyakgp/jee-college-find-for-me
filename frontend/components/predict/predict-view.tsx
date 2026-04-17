@@ -153,7 +153,10 @@ export function PredictView({ initialParams, initialColleges, resolvedRank }: Pr
               </>
             ) : (
               <div className="py-12 text-center text-muted-foreground">
-                <p>No rows matched. Try a different rank or category.</p>
+                <p>No rows matched after expanded search attempts.</p>
+                <p className="mt-2 text-sm">
+                  Tips: verify exam type, try a nearby rank, or relax category/PwD constraints and search again.
+                </p>
                 <Button variant="outline" className="mt-4" onClick={resetFlow}>
                   Try again
                 </Button>

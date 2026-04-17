@@ -56,13 +56,24 @@ func (s *Service) Predict(ctx context.Context, req models.PredictRequest) (*mode
 		return nil, err
 	}
 
-	spread := rankSpread(normalized.Rank)
-	minRank := max(1, normalized.Rank-spread)
-	maxRank := normalized.Rank + spread
+	// Try up to 5 widening windows when no rows are found.
+	// This avoids dead-end "no rows matched" for sparse rank bands.
+	baseSpread := rankSpread(normalized.Rank)
+	multipliers := []int{1, 5, 10, 15, 20}
 
-	rows, err := s.fetchBaseGeneralRows(ctx, normalized.ExamType, normalized.Rank, minRank, maxRank, normalized.Gender)
-	if err != nil {
-		return nil, err
+	var rows []ScoredRow
+	for i, m := range multipliers {
+		spread := max(1, int(float64(baseSpread)*m))
+		minRank := max(1, normalized.Rank-spread)
+		maxRank := normalized.Rank + spread
+
+		rows, err = s.fetchBaseGeneralRows(ctx, normalized.ExamType, normalized.Rank, minRank, maxRank, normalized.Gender)
+		if err != nil {
+			return nil, err
+		}
+		if len(rows) > 0 || i == len(multipliers)-1 {
+			break
+		}
 	}
 
 	grouped := groupByCollege(rows)
