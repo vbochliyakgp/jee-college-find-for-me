@@ -19,14 +19,99 @@ export const metadata: Metadata = {
   title: "JEE College Predictor | JoSAA Rank-Based College Finder",
   description:
     "Use this JEE college predictor to explore likely IIT, NIT, IIIT, and GFTI options by rank, category, gender, and home-state quota.",
+  keywords: [
+    "JEE predictor",
+    "JEE Main college predictor",
+    "JEE Advanced college predictor",
+    "JoSAA college predictor",
+    "IIT NIT IIIT predictor",
+  ],
   alternates: {
     canonical: "/",
+  },
+  openGraph: {
+    title: "JEE College Predictor | JoSAA Rank-Based College Finder",
+    description:
+      "Explore likely IIT, NIT, IIIT, and GFTI options by rank, category, gender, and home-state quota.",
+    url: "/",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "JEE College Predictor | JoSAA Rank-Based College Finder",
+    description:
+      "Explore likely IIT, NIT, IIIT, and GFTI options by rank, category, gender, and home-state quota.",
   },
 }
 
 export default function HomePage() {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        name: "JEE College Find",
+        url: siteUrl,
+        potentialAction: {
+          "@type": "SearchAction",
+          target: `${siteUrl}/predict?exam={exam}&score={score}&gender={gender}&category={category}`,
+          "query-input": [
+            "required name=exam",
+            "required name=score",
+            "required name=gender",
+            "required name=category",
+          ],
+        },
+      },
+      {
+        "@type": "SoftwareApplication",
+        name: "JEE College Find",
+        applicationCategory: "EducationalApplication",
+        operatingSystem: "Web",
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "INR",
+        },
+        description:
+          "Rank-based JEE Main and JEE Advanced college predictor for IITs, NITs, IIITs, and GFTIs.",
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: [
+          {
+            "@type": "Question",
+            name: "Is this an official JoSAA counseling tool?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "No. It is an exploratory rank-based planning tool and not official counseling advice.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Which exams are supported?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "JEE Main and JEE Advanced prediction paths are supported.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Are PwD, B.Arch, and B.Planning flows supported?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "No, these flows are currently not supported.",
+            },
+          },
+        ],
+      },
+    ],
+  }
+
   return (
     <div className="relative isolate min-h-[calc(100vh-4rem)] overflow-hidden">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_50%_40%_at_15%_20%,hsl(var(--primary)/0.14),transparent),radial-gradient(ellipse_55%_45%_at_90%_75%,hsl(var(--primary)/0.1),transparent)]"
@@ -94,6 +179,27 @@ export default function HomePage() {
           <p className="text-sm text-muted-foreground sm:text-base">
             Current flow does not support PwD, B.Arch, or B.Planning paths yet.
           </p>
+        </section>
+
+        <section className="mt-6 space-y-3 rounded-2xl border border-border/70 bg-card/60 p-4 sm:p-6">
+          <h2 className="text-lg font-semibold tracking-tight text-foreground sm:text-xl">
+            JEE college predictor FAQs
+          </h2>
+          <div className="space-y-2">
+            <h3 className="text-sm font-semibold text-foreground sm:text-base">Can I use this for JoSAA choice filling?</h3>
+            <p className="text-sm text-muted-foreground sm:text-base">
+              Yes, as a shortlist aid. Always validate with official JoSAA counseling data before final submission.
+            </p>
+          </div>
+          <div className="space-y-2">
+            <h3 className="text-sm font-semibold text-foreground sm:text-base">
+              Does it cover IIT, NIT, IIIT, and GFTI predictions?
+            </h3>
+            <p className="text-sm text-muted-foreground sm:text-base">
+              Yes. The tool is built to help compare likely options across IITs, NITs, IIITs, and GFTIs based on your
+              submitted rank details.
+            </p>
+          </div>
         </section>
       </section>
     </div>

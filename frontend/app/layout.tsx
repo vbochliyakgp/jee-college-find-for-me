@@ -31,18 +31,22 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/",
   },
+  category: "education",
+  applicationName: "JEE College Find",
   openGraph: {
     title: "JEE College Find",
     description:
       "Predict colleges from your JEE rank with category, gender, and quota-aware filtering.",
     url: "/",
     siteName: "JEE College Find",
+    locale: "en_IN",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "JEE College Find",
     description: "Predict colleges from your JEE rank with category, gender, and quota-aware filtering.",
+    creator: "@jeecollegefind",
   },
   robots: {
     index: true,
