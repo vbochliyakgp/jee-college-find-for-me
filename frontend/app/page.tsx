@@ -1,3 +1,4 @@
+import type { Metadata } from "next"
 import { ArrowRight, CheckCircle2, Sparkles, TrendingUp } from "lucide-react"
 import { HomeForm } from "@/components/home-form"
 
@@ -13,6 +14,15 @@ const quickHighlights = [
   { icon: TrendingUp, title: "Better compare", detail: "Quickly scan realistic options." },
   { icon: ArrowRight, title: "One-click start", detail: "Enter rank and get results fast." },
 ]
+
+export const metadata: Metadata = {
+  title: "JEE College Predictor | JoSAA Rank-Based College Finder",
+  description:
+    "Use this JEE college predictor to explore likely IIT, NIT, IIIT, and GFTI options by rank, category, gender, and home-state quota.",
+  alternates: {
+    canonical: "/",
+  },
+}
 
 export default function HomePage() {
   return (
@@ -71,6 +81,20 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+
+        <section className="mt-8 space-y-4 rounded-2xl border border-border/70 bg-card/60 p-4 sm:p-6">
+          <h2 className="text-lg font-semibold tracking-tight text-foreground sm:text-xl">
+            How this JEE college predictor works
+          </h2>
+          <p className="text-sm text-muted-foreground sm:text-base">
+            We compare your submitted rank against program-level closing ranks and show practical options across JEE Main
+            and JEE Advanced counseling data. Use this shortlist as a planning aid before final JoSAA choice filling.
+          </p>
+          <h3 className="text-sm font-semibold text-foreground sm:text-base">Important note</h3>
+          <p className="text-sm text-muted-foreground sm:text-base">
+            Current flow does not support PwD, B.Arch, or B.Planning paths yet.
+          </p>
+        </section>
       </section>
     </div>
   )
