@@ -49,13 +49,13 @@ export function ShortlistItem({ institute }: ShortlistItemProps) {
           <div className="mt-3 grid gap-2 text-xs text-muted-foreground sm:grid-cols-2 sm:text-sm">
             {hasGeneralCutoff ? (
               <span className="rounded-lg bg-muted/45 px-2.5 py-1.5">
-                General closing rank: {dept.general_closing_rank}
+                OPEN (Neutral) cutoff: {dept.general_closing_rank}
               </span>
             ) : (
-              <span className="rounded-lg bg-muted/45 px-2.5 py-1.5">General closing: N/A</span>
+              <span className="rounded-lg bg-muted/45 px-2.5 py-1.5">OPEN (Neutral) cutoff: N/A</span>
             )}
             <span className="rounded-lg bg-primary/10 px-2.5 py-1.5 text-primary">
-              Closing for you: {dept.closing_rank}
+              Your pool cutoff: {dept.closing_rank}
             </span>
           </div>
 

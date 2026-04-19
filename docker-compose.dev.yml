@@ -27,7 +27,7 @@ services:
     image: golang:1.25-alpine
     container_name: jee-backend-dev
     working_dir: /src/backend
-    command: sh -c "apk add --no-cache sqlite-libs && go run ./cmd/server"
+    command: sh -c "go install github.com/air-verse/air@latest && air"
     environment:
       PORT: "8080"
       CUTOFFS_CSV_DIR: /src/data-processing/data/cutoffs
@@ -37,6 +37,7 @@ services:
       - ./backend:/src/backend
       - ./data-processing:/src/data-processing:ro
       - go_mod_cache:/go/pkg/mod
+      - go_bin_cache:/go/bin
     expose:
       - "8080"
     healthcheck:
@@ -75,5 +76,6 @@ networks:
 volumes:
   frontend_node_modules:
   go_mod_cache:
+  go_bin_cache:
   caddy_data_dev:
   caddy_config_dev:
