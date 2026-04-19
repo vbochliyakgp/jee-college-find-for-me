@@ -49,6 +49,7 @@ func (s *Service) fetchBaseGeneralRows(ctx context.Context, examType string, use
 		  AND closing_rank BETWEEN ? AND ?
 		  AND department NOT LIKE '%%Bachelor of Architecture%%'
 		  AND department NOT LIKE '%%Bachelor of Planning%%'
+		  AND department NOT LIKE '%%Preparatory%%'
 		  %s
 		  %s
 		ORDER BY closing_rank ASC;

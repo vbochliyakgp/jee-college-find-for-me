@@ -38,7 +38,8 @@ export async function fetchPredictionWithMode(params: InitialParams, mode: Predi
       category: params.category,
       categoryRank: params.categoryRank ?? null,
       isPWD: params.isPWD,
-      pwdRank: params.pwdRank?.trim() ? params.pwdRank.trim() : null,
+      openPwdRank: params.openPwdRank?.trim() ? params.openPwdRank.trim() : null,
+      categoryPwdRank: params.categoryPwdRank?.trim() ? params.categoryPwdRank.trim() : null,
     }),
   })
 

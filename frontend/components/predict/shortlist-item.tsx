@@ -22,6 +22,18 @@ export function ShortlistItem({ institute }: ShortlistItemProps) {
   const isCategorySeat = seatType !== "OPEN"
   const isCategorySelected = dept.rank_type === "category" || dept.used_category === true
   const isHomeStateSelected = dept.used_home_state === true || isStateQuota
+  const admissionPathLabel = (() => {
+    switch (dept.rank_type) {
+      case "category-pwd":
+        return "Secured via Category-PwD rank"
+      case "open-pwd":
+        return "Secured via OPEN-PwD rank"
+      case "category":
+        return "Secured via Category rank"
+      default:
+        return "Secured via OPEN rank"
+    }
+  })()
 
   return (
     <div className="card-hover rounded-2xl border border-border/80 bg-card/95 p-4 shadow-sm sm:p-5">
@@ -48,11 +60,13 @@ export function ShortlistItem({ institute }: ShortlistItemProps) {
           </div>
 
           <div className="mt-3 flex flex-wrap gap-2 text-sm text-muted-foreground">
+            <Badge variant="outline">{admissionPathLabel}</Badge>
             {isStateQuota && (
               <Badge variant="outline">Quota: {quota}</Badge>
             )}
             {isCategorySeat && <Badge variant="outline">Seat: {seatType}</Badge>}
             {isFemalePool && <Badge variant="outline">Gender: Female</Badge>}
+            {isCategorySelected && <Badge variant="outline">Category benefit used</Badge>}
             {isHomeStateSelected && <Badge variant="outline">Selected via State Quota</Badge>}
           </div>
         </div>

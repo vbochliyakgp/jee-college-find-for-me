@@ -69,7 +69,7 @@ export interface GroupedCollege {
     seat_type: string
     chance?: "dream" | "easy"
     used_rank?: number
-    rank_type?: "general" | "category"
+    rank_type?: "general" | "category" | "open-pwd" | "category-pwd"
     used_category?: boolean
     used_pwd?: boolean
     used_home_state?: boolean
@@ -79,7 +79,8 @@ export interface GroupedCollege {
 export interface PredictApiResponse {
   resolvedRank: number
   resolvedCategoryRank: number | null
-  resolvedPwdRank?: number | null
+  resolvedOpenPwdRank?: number | null
+  resolvedCategoryPwdRank?: number | null
   colleges: GroupedCollege[]
   count: number
 }

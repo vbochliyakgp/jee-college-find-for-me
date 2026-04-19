@@ -36,8 +36,8 @@ NEXT_PUBLIC_GO_PREDICTOR_API_BASE_URL=http://127.0.0.1:8080
 
 ## Not Supported Yet
 
-- PwD flow in UI and prediction journey
 - B.Arch and B.Planning focused flows
+- IIT preparatory-course admission paths
 
 ## Data Notes
 

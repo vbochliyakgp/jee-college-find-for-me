@@ -22,12 +22,17 @@ export function HomeForm() {
   const [homeState, setHomeState] = useState<IndianState | "">("")
   const [category, setCategory] = useState("General")
   const [categoryRank, setCategoryRank] = useState("")
+  const [isPWD, setIsPWD] = useState(false)
+  const [openPwdRank, setOpenPwdRank] = useState("")
+  const [categoryPwdRank, setCategoryPwdRank] = useState("")
 
   // Touched tracks fields the user has interacted with at least once.
   // Errors are only shown for touched fields OR after a submit attempt.
   const [touched, setTouched] = useState({
     score: false,
     categoryRank: false,
+    openPwdRank: false,
+    categoryPwdRank: false,
   })
   const [submitAttempted, setSubmitAttempted] = useState(false)
 
@@ -49,9 +54,27 @@ export function HomeForm() {
     return null
   })()
 
+  const openPwdRankError = (() => {
+    if (!isPWD) return null
+    if (!openPwdRank.trim()) return "Enter your OPEN-PwD rank."
+    const val = parseInt(openPwdRank.trim(), 10)
+    if (Number.isNaN(val) || val < 1 || val > 1_300_000) return "Must be 1 – 13,00,000."
+    return null
+  })()
+
+  const categoryPwdRankError = (() => {
+    if (!isPWD || !needsCategoryRank) return null
+    if (!categoryPwdRank.trim()) return "Enter your category-PwD rank."
+    const val = parseInt(categoryPwdRank.trim(), 10)
+    if (Number.isNaN(val) || val < 1 || val > 1_300_000) return "Must be 1 – 13,00,000."
+    return null
+  })()
+
   // A field shows its error when touched OR after a submit attempt
   const showScore = touched.score || submitAttempted
   const showCategoryRank = touched.categoryRank || submitAttempted
+  const showOpenPwdRank = touched.openPwdRank || submitAttempted
+  const showCategoryPwdRank = touched.categoryPwdRank || submitAttempted
 
   const touch = (field: keyof typeof touched) =>
     setTouched((prev) => ({ ...prev, [field]: true }))
@@ -62,7 +85,7 @@ export function HomeForm() {
     e.preventDefault()
     if (isNavigating) return
     setSubmitAttempted(true)
-    if (scoreError || categoryRankError) return
+    if (scoreError || categoryRankError || openPwdRankError || categoryPwdRankError) return
 
     const params = new URLSearchParams({
       exam: examType,
@@ -72,6 +95,13 @@ export function HomeForm() {
     })
     if (examType === "jee-main" && homeState) params.set("state", homeState)
     if (needsCategoryRank && categoryRank.trim()) params.set("categoryRank", categoryRank.trim())
+    if (isPWD) {
+      params.set("pwd", "true")
+      params.set("openPwdRank", openPwdRank.trim())
+      if (needsCategoryRank && categoryPwdRank.trim()) {
+        params.set("categoryPwdRank", categoryPwdRank.trim())
+      }
+    }
 
     startTransition(() => {
       router.push(`/predict?${params.toString()}`)
@@ -208,6 +238,55 @@ export function HomeForm() {
             </div>
           )}
         </div>
+      </div>
+
+      {/* PwD */}
+      <div className="space-y-2">
+        <label className="flex items-center gap-3 cursor-pointer select-none">
+          <input
+            type="checkbox"
+            checked={isPWD}
+            onChange={(e) => setIsPWD(e.target.checked)}
+            className="h-4 w-4 rounded border-border accent-primary cursor-pointer"
+          />
+          <span className="text-[11px] font-semibold uppercase tracking-widest text-muted-foreground">
+            PwD reservation
+          </span>
+        </label>
+
+        {isPWD && (
+          <div className="grid gap-2 sm:grid-cols-2">
+            <div className="flex flex-col gap-1">
+              <Input
+                placeholder="OPEN-PwD rank"
+                value={openPwdRank}
+                onChange={(e) => setOpenPwdRank(e.target.value)}
+                onBlur={() => touch("openPwdRank")}
+                inputMode="numeric"
+                className={cn("h-11", showOpenPwdRank && openPwdRankError && "border-destructive focus-visible:ring-destructive")}
+              />
+              {showOpenPwdRank && openPwdRankError && <p className="text-xs text-destructive">{openPwdRankError}</p>}
+            </div>
+            {needsCategoryRank && (
+              <div className="flex flex-col gap-1">
+                <Input
+                  placeholder={`${category}-PwD rank`}
+                  value={categoryPwdRank}
+                  onChange={(e) => setCategoryPwdRank(e.target.value)}
+                  onBlur={() => touch("categoryPwdRank")}
+                  inputMode="numeric"
+                  className={cn(
+                    "h-11",
+                    showCategoryPwdRank && categoryPwdRankError && "border-destructive focus-visible:ring-destructive",
+                  )}
+                />
+                {showCategoryPwdRank && categoryPwdRankError && (
+                  <p className="text-xs text-destructive">{categoryPwdRankError}</p>
+                )}
+              </div>
+            )}
+          </div>
+        )}
       </div>
 
       <Button

@@ -46,7 +46,7 @@ type GroupedDepartment struct {
 	SeatType           string `json:"seat_type"`                     // Seat type for selected row.
 	Chance             string `json:"chance"`                        // Classifier output: dream or easy.
 	UsedRank           int    `json:"used_rank"`                     // Rank value actually used for scoring (reserved for future logic).
-	RankType           string `json:"rank_type"`                     // Which rank type was used: general/category (reserved).
+	RankType           string `json:"rank_type"`                     // Which rank type was used: general/category/open-pwd/category-pwd.
 	UsedCategory       bool   `json:"used_category"`                 // Whether category benefit was applied (reserved).
 	UsedPWD            bool   `json:"used_pwd"`                      // Whether PwD benefit was applied (reserved).
 	UsedHomeState      bool   `json:"used_home_state"`               // Whether home-state benefit was applied (reserved).
@@ -70,19 +70,20 @@ type PredictRequest struct {
 	Category     string  `json:"category"`     // General/OBC/SC/ST/EWS.
 	CategoryRank *string `json:"categoryRank"` // Optional category rank string.
 	IsPWD        bool    `json:"isPWD"`        // Whether candidate is PwD.
-	// PwdRank: when category is General → JoSAA OPEN-PwD rank (OPEN (PwD) seats).
-	// When category is reserved → that category’s PwD rank (e.g. OBC-NCL-PwD); we use the same
-	// value for OPEN (PwD) and for … (PwD) category seats (horizontal PwD, one field). Required when isPWD.
-	PwdRank   *string `json:"pwdRank"`   // Optional PwD rank string.
-	Gender    string  `json:"gender"`    // Input gender preference routing: female or neutral flow.
-	HomeState string  `json:"homeState"` // Optional home state for HS logic (reserved for richer flow).
+	// OPEN-PwD rank used specifically for OPEN (PwD) seat pool.
+	OpenPwdRank *string `json:"openPwdRank"`
+	// Category-PwD rank (e.g. OBC-NCL-PwD) used for category-specific PwD seat pools.
+	CategoryPwdRank *string `json:"categoryPwdRank"`
+	Gender          string  `json:"gender"`    // Input gender preference routing: female or neutral flow.
+	HomeState       string  `json:"homeState"` // Optional home state for HS logic (reserved for richer flow).
 }
 
 // PredictResponse is returned by POST /api/predict.
 type PredictResponse struct {
 	ResolvedRank         int              `json:"resolvedRank"`                  // Parsed rank used for prediction.
 	ResolvedCategoryRank *int             `json:"resolvedCategoryRank"`          // Parsed category rank, when available.
-	ResolvedPwdRank      *int             `json:"resolvedPwdRank,omitempty"`     // Parsed PwD rank, when available.
+	ResolvedOpenPwdRank  *int             `json:"resolvedOpenPwdRank,omitempty"` // Parsed OPEN-PwD rank, when available.
+	ResolvedCategoryPwdRank *int          `json:"resolvedCategoryPwdRank,omitempty"` // Parsed category-PwD rank, when available.
 	Colleges             []GroupedCollege `json:"colleges"`                      // Ranked shortlist rows.
 	Count                int              `json:"count"`                         // Number of returned shortlist rows.
 }

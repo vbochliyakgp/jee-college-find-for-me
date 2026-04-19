@@ -107,7 +107,7 @@ export default function HomePage() {
             name: "Are PwD, B.Arch, and B.Planning flows supported?",
             acceptedAnswer: {
               "@type": "Answer",
-              text: "No, these flows are currently not supported.",
+              text: "PwD flow is supported. B.Arch and B.Planning flows are currently not supported.",
             },
           },
           {
@@ -191,7 +191,7 @@ export default function HomePage() {
           </p>
           <h3 className="text-sm font-semibold text-foreground sm:text-base">Important note</h3>
           <p className="text-sm text-muted-foreground sm:text-base">
-            Current flow does not support PwD, B.Arch, or B.Planning paths yet.
+            B.Arch, B.Planning, and IIT preparatory-course paths are currently not supported.
           </p>
         </section>
 

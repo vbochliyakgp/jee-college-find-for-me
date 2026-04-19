@@ -59,11 +59,12 @@ func (s *Service) Predict(ctx context.Context, req models.PredictRequest) (*mode
 	case "without-category":
 		normalized.Category = "General"
 		normalized.CategoryRank = nil
+		normalized.CategoryPwdRank = nil
 	case "category-only":
-		return s.predictWithCategory(ctx, normalized, false)
+		return s.predictWithPools(ctx, normalized, false, true)
 	}
-	if normalized.Category != "General" {
-		return s.predictWithCategory(ctx, normalized, true)
+	if normalized.Category != "General" || normalized.IsPWD {
+		return s.predictWithPools(ctx, normalized, true, normalized.Category != "General")
 	}
 
 	// Try up to 5 widening windows when no rows are found.

@@ -18,8 +18,8 @@ Full-stack JEE college predictor with a Go backend and Next.js frontend.
 
 ## Current Limitations
 
-- PwD flow is not supported in the UI yet.
 - B.Arch and B.Planning programs are not supported.
+- IIT preparatory-course admissions are not included.
 - Results are exploratory and not official counseling advice.
 
 ## Project Structure

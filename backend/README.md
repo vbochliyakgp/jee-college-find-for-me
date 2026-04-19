@@ -36,6 +36,6 @@ Go API that serves prediction data to the frontend by loading JoSAA cutoff CSVs 
 
 ## Known Limits
 
-- PwD-specific prediction flow is not supported end-to-end
 - B.Arch and B.Planning are excluded
+- IIT preparatory-course rows are excluded from prediction output
 - Output is exploratory and should not be treated as official counseling advice

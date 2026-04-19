@@ -41,7 +41,8 @@ export default async function PredictPage({ searchParams }: PageProps) {
     homeState: (str("state") as IndianState | undefined) ?? "",
     category,
     categoryRank: str("categoryRank"),
-    pwdRank: str("pwdRank"),
+    openPwdRank: str("openPwdRank"),
+    categoryPwdRank: str("categoryPwdRank"),
     isPWD: str("pwd") === "true",
   }
 

@@ -14,8 +14,18 @@ type scoredCandidate struct {
 	row          models.CutoffRow
 	usedRank     int
 	usedRankType string
+	usedCategory bool
+	usedPWD      bool
 	margin       float64
 	chance       string
+}
+
+type rankPool struct {
+	seatType     string
+	rank         int
+	rankType     string
+	usedCategory bool
+	usedPWD      bool
 }
 
 type candidateKey struct {
@@ -23,65 +33,110 @@ type candidateKey struct {
 	department string
 }
 
-func (s *Service) predictWithCategory(ctx context.Context, normalized *normalizedRequest, includeOpen bool) (*models.PredictResponse, error) {
-	if normalized.CategoryRank == nil {
-		return nil, &ValidationError{Message: "categoryRank is required when category is not General"}
+func buildEligiblePools(normalized *normalizedRequest, includeOpen bool, includeCategory bool) ([]rankPool, error) {
+	pools := make([]rankPool, 0, 4)
+	if includeOpen {
+		pools = append(pools, rankPool{
+			seatType: "OPEN",
+			rank:     normalized.Rank,
+			rankType: "general",
+		})
+		if normalized.IsPWD && normalized.OpenPwdRank != nil {
+			pools = append(pools, rankPool{
+				seatType: "OPEN (PwD)",
+				rank:     *normalized.OpenPwdRank,
+				rankType: "open-pwd",
+				usedPWD:  true,
+			})
+		}
+	}
+	if includeCategory {
+		if normalized.Category == "General" {
+			return nil, &ValidationError{Message: "category-only mode requires a reserved category"}
+		}
+		if normalized.CategoryRank == nil {
+			return nil, &ValidationError{Message: "categoryRank is required when category is not General"}
+		}
+		categorySeat := categorySeatType(normalized.Category, false)
+		if categorySeat == "OPEN" {
+			return nil, &ValidationError{Message: "invalid category seat type"}
+		}
+		pools = append(pools, rankPool{
+			seatType:     categorySeat,
+			rank:         *normalized.CategoryRank,
+			rankType:     "category",
+			usedCategory: true,
+		})
+		if normalized.IsPWD && normalized.CategoryPwdRank != nil {
+			pools = append(pools, rankPool{
+				seatType:     categorySeatType(normalized.Category, true),
+				rank:         *normalized.CategoryPwdRank,
+				rankType:     "category-pwd",
+				usedCategory: true,
+				usedPWD:      true,
+			})
+		}
+	}
+	if len(pools) == 0 {
+		return nil, &ValidationError{Message: "no eligible seat pools for selected mode"}
+	}
+	return pools, nil
+}
+
+func (s *Service) predictWithPools(ctx context.Context, normalized *normalizedRequest, includeOpen bool, includeCategory bool) (*models.PredictResponse, error) {
+	pools, err := buildEligiblePools(normalized, includeOpen, includeCategory)
+	if err != nil {
+		return nil, err
 	}
 
-	categorySeat := categorySeatType(normalized.Category, false) // ignore PwD in this phase
-	if categorySeat == "OPEN" {
-		return nil, &ValidationError{Message: "invalid category seat type"}
-	}
-
-	baseCRLSpread := rankSpread(normalized.Rank)
-	baseCatSpread := rankSpread(*normalized.CategoryRank)
 	multipliers := []int{1, 5, 10, 15, 20}
 
 	var winners map[candidateKey]scoredCandidate
 	for i, m := range multipliers {
-		crlSpread := max(1, baseCRLSpread*m)
-		catSpread := max(1, baseCatSpread*m)
-
-		minCRL := max(1, normalized.Rank-crlSpread)
-		maxCRL := normalized.Rank + crlSpread
-		minCat := max(1, *normalized.CategoryRank-catSpread)
-		maxCat := *normalized.CategoryRank + catSpread
-
-		openRows := []models.CutoffRow{}
-		if includeOpen {
-			var err error
-			openRows, err = s.fetchRowsBySeatType(ctx, normalized.ExamType, "OPEN", minCRL, maxCRL, normalized.Gender, normalized.HomeState)
+		winners = make(map[candidateKey]scoredCandidate)
+		poolMatched := make(map[string]bool, len(pools))
+		for _, pool := range pools {
+			spread := max(1, rankSpread(pool.rank)*m)
+			minRank := max(1, pool.rank-spread)
+			maxRank := pool.rank + spread
+			rows, err := s.fetchRowsBySeatType(ctx, normalized.ExamType, pool.seatType, minRank, maxRank, normalized.Gender, normalized.HomeState)
 			if err != nil {
 				return nil, err
 			}
-		}
-		categoryRows, err := s.fetchRowsBySeatType(ctx, normalized.ExamType, categorySeat, minCat, maxCat, normalized.Gender, normalized.HomeState)
-		if err != nil {
-			return nil, err
-		}
-
-		winners = make(map[candidateKey]scoredCandidate)
-		if includeOpen {
-			for _, row := range openRows {
-				candidate := scoreCandidate(row, normalized.Rank, "general")
+			if len(rows) > 0 {
+				poolMatched[pool.seatType] = true
+			}
+			for _, row := range rows {
+				candidate := scoreCandidate(row, pool)
 				mergeBestCandidate(winners, candidate)
 			}
 		}
-		for _, row := range categoryRows {
-			candidate := scoreCandidate(row, *normalized.CategoryRank, "category")
-			mergeBestCandidate(winners, candidate)
+		if i == len(multipliers)-1 {
+			break
 		}
-		if len(winners) > 0 || i == len(multipliers)-1 {
+		if len(winners) == 0 {
+			continue
+		}
+		allPoolsMatched := true
+		for _, pool := range pools {
+			if !poolMatched[pool.seatType] {
+				allPoolsMatched = false
+				break
+			}
+		}
+		if allPoolsMatched {
 			break
 		}
 	}
 
 	if len(winners) == 0 {
 		return &models.PredictResponse{
-			ResolvedRank:         normalized.Rank,
-			ResolvedCategoryRank: normalized.CategoryRank,
-			Colleges:             []models.GroupedCollege{},
-			Count:                0,
+			ResolvedRank:            normalized.Rank,
+			ResolvedCategoryRank:    normalized.CategoryRank,
+			ResolvedOpenPwdRank:     normalized.OpenPwdRank,
+			ResolvedCategoryPwdRank: normalized.CategoryPwdRank,
+			Colleges:                []models.GroupedCollege{},
+			Count:                   0,
 		}, nil
 	}
 
@@ -108,8 +163,8 @@ func (s *Service) predictWithCategory(ctx context.Context, normalized *normalize
 			Chance: winner.chance,
 			UsedRank: winner.usedRank,
 			RankType: winner.usedRankType,
-			UsedCategory: winner.usedRankType == "category",
-			UsedPWD: false,
+			UsedCategory: winner.usedCategory,
+			UsedPWD: winner.usedPWD,
 			UsedHomeState: winner.row.Quota == "HS" || winner.row.Quota == "GO" || winner.row.Quota == "JK" || winner.row.Quota == "LA",
 		}
 		grouped = append(grouped, models.GroupedCollege{
@@ -162,10 +217,12 @@ func (s *Service) predictWithCategory(ctx context.Context, normalized *normalize
 	})
 
 	return &models.PredictResponse{
-		ResolvedRank: normalized.Rank,
-		ResolvedCategoryRank: normalized.CategoryRank,
-		Colleges: grouped,
-		Count: len(grouped),
+		ResolvedRank:            normalized.Rank,
+		ResolvedCategoryRank:    normalized.CategoryRank,
+		ResolvedOpenPwdRank:     normalized.OpenPwdRank,
+		ResolvedCategoryPwdRank: normalized.CategoryPwdRank,
+		Colleges:                grouped,
+		Count:                   len(grouped),
 	}, nil
 }
 
@@ -228,16 +285,18 @@ func (s *Service) fetchRowsBySeatType(ctx context.Context, examType string, seat
 	return out, rows.Err()
 }
 
-func scoreCandidate(row models.CutoffRow, usedRank int, usedRankType string) scoredCandidate {
+func scoreCandidate(row models.CutoffRow, pool rankPool) scoredCandidate {
 	chance := ChanceDream
-	if row.ClosingRank >= usedRank {
+	if row.ClosingRank >= pool.rank {
 		chance = ChanceEasy
 	}
-	margin := float64(row.ClosingRank-usedRank) / float64(max(1, usedRank))
+	margin := float64(row.ClosingRank-pool.rank) / float64(max(1, pool.rank))
 	return scoredCandidate{
 		row: row,
-		usedRank: usedRank,
-		usedRankType: usedRankType,
+		usedRank: pool.rank,
+		usedRankType: pool.rankType,
+		usedCategory: pool.usedCategory,
+		usedPWD: pool.usedPWD,
 		margin: margin,
 		chance: chance,
 	}

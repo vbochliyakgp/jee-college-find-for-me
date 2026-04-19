@@ -19,8 +19,10 @@ export interface InitialParams {
   homeState: IndianState | ""
   category: string
   categoryRank?: string
-  /** PwD rank: OPEN-PwD (General) or category PwD rank (reserved); required when isPWD */
-  pwdRank?: string
+  /** OPEN-PwD rank used for OPEN (PwD) seat pool */
+  openPwdRank?: string
+  /** Category-PwD rank (e.g. OBC-PwD) used for category-PwD seat pool */
+  categoryPwdRank?: string
   isPWD: boolean
 }
 

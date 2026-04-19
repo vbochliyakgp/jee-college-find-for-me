@@ -17,7 +17,8 @@ type normalizedRequest struct {
 	Category     string
 	CategoryRank *int
 	IsPWD        bool
-	PwdRank      *int
+	OpenPwdRank  *int
+	CategoryPwdRank *int
 	HomeState    string
 	SeatType     string
 }
@@ -54,13 +55,39 @@ func validateRequest(req models.PredictRequest) (*normalizedRequest, error) {
 		categoryRank = &parsed
 	}
 
-	var pwdRank *int
-	if req.PwdRank != nil && strings.TrimSpace(*req.PwdRank) != "" {
-		parsed, err := parsePositiveInt(*req.PwdRank, "pwdRank")
+	var openPwdRank *int
+	openPwdRaw := ""
+	if req.OpenPwdRank != nil {
+		openPwdRaw = strings.TrimSpace(*req.OpenPwdRank)
+	}
+	if openPwdRaw != "" {
+		parsed, err := parsePositiveInt(openPwdRaw, "openPwdRank")
 		if err != nil {
 			return nil, err
 		}
-		pwdRank = &parsed
+		openPwdRank = &parsed
+	}
+
+	var categoryPwdRank *int
+	categoryPwdRaw := ""
+	if req.CategoryPwdRank != nil {
+		categoryPwdRaw = strings.TrimSpace(*req.CategoryPwdRank)
+	}
+	if categoryPwdRaw != "" {
+		parsed, err := parsePositiveInt(categoryPwdRaw, "categoryPwdRank")
+		if err != nil {
+			return nil, err
+		}
+		categoryPwdRank = &parsed
+	}
+
+	if req.IsPWD {
+		if category == "General" && openPwdRank == nil {
+			return nil, &ValidationError{Message: "openPwdRank is required for General PwD candidates"}
+		}
+		if category != "General" && categoryPwdRank == nil {
+			return nil, &ValidationError{Message: "categoryPwdRank is required when isPWD is true and category is not General"}
+		}
 	}
 
 	gender := strings.ToLower(strings.TrimSpace(req.Gender))
@@ -84,7 +111,8 @@ func validateRequest(req models.PredictRequest) (*normalizedRequest, error) {
 		Category:     category,
 		CategoryRank: categoryRank,
 		IsPWD:        req.IsPWD,
-		PwdRank:      pwdRank,
+		OpenPwdRank:  openPwdRank,
+		CategoryPwdRank: categoryPwdRank,
 		HomeState:    homeState,
 		SeatType:     categorySeatType(category, req.IsPWD),
 	}, nil

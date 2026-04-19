@@ -557,4 +557,218 @@ func TestPredictCategoryCompanionGenderRanksAndChanceOrdering(t *testing.T) {
 	}
 }
 
+func TestPredictGeneralPWDUsesOpenPwdRankScale(t *testing.T) {
+	database := newTestDB(t)
+
+	insertRow(t, database, models.CutoffRow{
+		ExamType:      "jee-main",
+		Institute:     "Inst PwD",
+		Department:    "CSE",
+		InstituteType: "NIT",
+		State:         "Delhi",
+		Quota:         "OS",
+		Gender:        "Neutral",
+		SeatType:      "OPEN",
+		OpeningRank:   1,
+		ClosingRank:   14000, // dream for CRL=20000
+	})
+	insertRow(t, database, models.CutoffRow{
+		ExamType:      "jee-main",
+		Institute:     "Inst PwD",
+		Department:    "CSE",
+		InstituteType: "NIT",
+		State:         "Delhi",
+		Quota:         "OS",
+		Gender:        "Neutral",
+		SeatType:      "OPEN (PwD)",
+		OpeningRank:   1,
+		ClosingRank:   60, // easy for openPwdRank=45
+	})
+
+	service := NewService(database)
+	resp, err := service.Predict(context.Background(), models.PredictRequest{
+		ExamType:    "jee-main",
+		Rank:        "20000",
+		Category:    "General",
+		IsPWD:       true,
+		OpenPwdRank: ptr("45"),
+	})
+	if err != nil {
+		t.Fatalf("predict: %v", err)
+	}
+	if resp.Count != 1 {
+		t.Fatalf("count = %d, want 1", resp.Count)
+	}
+	dept := resp.Colleges[0].Departments[0]
+	if dept.SeatType != "OPEN (PwD)" {
+		t.Fatalf("seat_type = %q, want OPEN (PwD)", dept.SeatType)
+	}
+	if dept.RankType != "open-pwd" {
+		t.Fatalf("rank_type = %q, want open-pwd", dept.RankType)
+	}
+	if dept.UsedRank != 45 {
+		t.Fatalf("used_rank = %d, want 45", dept.UsedRank)
+	}
+	if !dept.UsedPWD {
+		t.Fatalf("used_pwd = false, want true")
+	}
+}
+
+func TestPredictCategoryPWDChoosesBestPoolAndCarriesPathMetadata(t *testing.T) {
+	database := newTestDB(t)
+
+	insertRow(t, database, models.CutoffRow{
+		ExamType:      "jee-main",
+		Institute:     "Inst Matrix",
+		Department:    "ECE",
+		InstituteType: "NIT",
+		State:         "Delhi",
+		Quota:         "OS",
+		Gender:        "Neutral",
+		SeatType:      "OPEN",
+		OpeningRank:   1,
+		ClosingRank:   12000,
+	})
+	insertRow(t, database, models.CutoffRow{
+		ExamType:      "jee-main",
+		Institute:     "Inst Matrix",
+		Department:    "ECE",
+		InstituteType: "NIT",
+		State:         "Delhi",
+		Quota:         "OS",
+		Gender:        "Neutral",
+		SeatType:      "OBC-NCL",
+		OpeningRank:   1,
+		ClosingRank:   2500,
+	})
+	insertRow(t, database, models.CutoffRow{
+		ExamType:      "jee-main",
+		Institute:     "Inst Matrix",
+		Department:    "ECE",
+		InstituteType: "NIT",
+		State:         "Delhi",
+		Quota:         "OS",
+		Gender:        "Neutral",
+		SeatType:      "OPEN (PwD)",
+		OpeningRank:   1,
+		ClosingRank:   550,
+	})
+	insertRow(t, database, models.CutoffRow{
+		ExamType:      "jee-main",
+		Institute:     "Inst Matrix",
+		Department:    "ECE",
+		InstituteType: "NIT",
+		State:         "Delhi",
+		Quota:         "OS",
+		Gender:        "Neutral",
+		SeatType:      "OBC-NCL (PwD)",
+		OpeningRank:   1,
+		ClosingRank:   300,
+	})
+
+	service := NewService(database)
+	resp, err := service.Predict(context.Background(), models.PredictRequest{
+		ExamType:         "jee-main",
+		Rank:             "10000",
+		Category:         "OBC",
+		CategoryRank:     ptr("2000"),
+		IsPWD:            true,
+		OpenPwdRank:      ptr("500"),
+		CategoryPwdRank:  ptr("100"),
+	})
+	if err != nil {
+		t.Fatalf("predict: %v", err)
+	}
+	if resp.Count != 1 {
+		t.Fatalf("count = %d, want 1", resp.Count)
+	}
+	dept := resp.Colleges[0].Departments[0]
+	if dept.SeatType != "OBC-NCL (PwD)" {
+		t.Fatalf("seat_type = %q, want OBC-NCL (PwD)", dept.SeatType)
+	}
+	if dept.RankType != "category-pwd" {
+		t.Fatalf("rank_type = %q, want category-pwd", dept.RankType)
+	}
+	if dept.UsedRank != 100 {
+		t.Fatalf("used_rank = %d, want 100", dept.UsedRank)
+	}
+	if !dept.UsedCategory || !dept.UsedPWD {
+		t.Fatalf("expected used_category and used_pwd to be true")
+	}
+}
+
+func TestPredictFemalePWDConsidersNeutralAndFemalePools(t *testing.T) {
+	database := newTestDB(t)
+
+	insertRow(t, database, models.CutoffRow{
+		ExamType:      "jee-main",
+		Institute:     "Inst Female PwD",
+		Department:    "EE",
+		InstituteType: "NIT",
+		State:         "Delhi",
+		Quota:         "OS",
+		Gender:        "Neutral",
+		SeatType:      "OPEN (PwD)",
+		OpeningRank:   1,
+		ClosingRank:   60,
+	})
+	insertRow(t, database, models.CutoffRow{
+		ExamType:      "jee-main",
+		Institute:     "Inst Female PwD",
+		Department:    "EE",
+		InstituteType: "NIT",
+		State:         "Delhi",
+		Quota:         "OS",
+		Gender:        "Female",
+		SeatType:      "OPEN (PwD)",
+		OpeningRank:   1,
+		ClosingRank:   80, // easier; should win for female request
+	})
+
+	service := NewService(database)
+	resp, err := service.Predict(context.Background(), models.PredictRequest{
+		ExamType:    "jee-main",
+		Rank:        "15000",
+		Gender:      "female",
+		Category:    "General",
+		IsPWD:       true,
+		OpenPwdRank: ptr("50"),
+	})
+	if err != nil {
+		t.Fatalf("predict: %v", err)
+	}
+	if resp.Count != 1 {
+		t.Fatalf("count = %d, want 1", resp.Count)
+	}
+	dept := resp.Colleges[0].Departments[0]
+	if dept.Gender != "Female" {
+		t.Fatalf("selected gender = %q, want Female", dept.Gender)
+	}
+	if dept.SeatType != "OPEN (PwD)" {
+		t.Fatalf("seat_type = %q, want OPEN (PwD)", dept.SeatType)
+	}
+}
+
+func TestPredictExcludesPreparatoryRows(t *testing.T) {
+	database := newTestDB(t)
+
+	insertRow(t, database, baseRow("Inst Normal", "Computer Science and Engineering", 1200))
+	insertRow(t, database, baseRow("Inst Prep", "Preparatory Course in Engineering", 1200))
+
+	service := NewService(database)
+	resp, err := service.Predict(context.Background(), models.PredictRequest{
+		ExamType: "jee-main",
+		Rank:     "1000",
+	})
+	if err != nil {
+		t.Fatalf("predict: %v", err)
+	}
+	if resp.Count != 1 {
+		t.Fatalf("count = %d, want 1", resp.Count)
+	}
+	if resp.Colleges[0].Institute != "Inst Normal" {
+		t.Fatalf("institute = %q, want Inst Normal", resp.Colleges[0].Institute)
+	}
+}
+
 func ptr(v string) *string { return &v }
