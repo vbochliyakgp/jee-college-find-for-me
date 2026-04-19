@@ -33,8 +33,33 @@ type candidateKey struct {
 	department string
 }
 
-func buildEligiblePools(normalized *normalizedRequest, includeOpen bool, includeCategory bool) ([]rankPool, error) {
+func buildEligiblePools(normalized *normalizedRequest, includeOpen bool, includeCategory bool, pwdOnly bool) ([]rankPool, error) {
 	pools := make([]rankPool, 0, 4)
+
+	if pwdOnly {
+		if normalized.OpenPwdRank != nil {
+			pools = append(pools, rankPool{
+				seatType: "OPEN (PwD)",
+				rank:     *normalized.OpenPwdRank,
+				rankType: "open-pwd",
+				usedPWD:  true,
+			})
+		}
+		if normalized.CategoryPwdRank != nil {
+			pools = append(pools, rankPool{
+				seatType:     categorySeatType(normalized.Category, true),
+				rank:         *normalized.CategoryPwdRank,
+				rankType:     "category-pwd",
+				usedCategory: true,
+				usedPWD:      true,
+			})
+		}
+		if len(pools) == 0 {
+			return nil, &ValidationError{Message: "no eligible PwD rank pools"}
+		}
+		return pools, nil
+	}
+
 	if includeOpen {
 		pools = append(pools, rankPool{
 			seatType: "OPEN",
@@ -83,8 +108,8 @@ func buildEligiblePools(normalized *normalizedRequest, includeOpen bool, include
 	return pools, nil
 }
 
-func (s *Service) predictWithPools(ctx context.Context, normalized *normalizedRequest, includeOpen bool, includeCategory bool) (*models.PredictResponse, error) {
-	pools, err := buildEligiblePools(normalized, includeOpen, includeCategory)
+func (s *Service) predictWithPools(ctx context.Context, normalized *normalizedRequest, includeOpen bool, includeCategory bool, pwdOnly bool) (*models.PredictResponse, error) {
+	pools, err := buildEligiblePools(normalized, includeOpen, includeCategory, pwdOnly)
 	if err != nil {
 		return nil, err
 	}

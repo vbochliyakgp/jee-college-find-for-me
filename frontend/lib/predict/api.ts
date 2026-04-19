@@ -20,7 +20,7 @@ export async function fetchPrediction(params: InitialParams): Promise<PredictApi
   return fetchPredictionWithMode(params, "combined")
 }
 
-export type PredictMode = "combined" | "without-category" | "category-only"
+export type PredictMode = "combined" | "without-category" | "category-only" | "pwd-only"
 
 export async function fetchPredictionWithMode(params: InitialParams, mode: PredictMode): Promise<PredictApiResponse> {
   const response = await fetch(`${apiBaseUrl()}/api/predict`, {

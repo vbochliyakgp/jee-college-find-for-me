@@ -89,9 +89,9 @@ func validateRequest(req models.PredictRequest) (*normalizedRequest, error) {
 	homeState := strings.TrimSpace(req.HomeState)
 	mode := strings.ToLower(strings.TrimSpace(req.Mode))
 	switch mode {
-	case "", "combined", "without-category", "category-only":
+	case "", "combined", "without-category", "category-only", "pwd-only":
 	default:
-		return nil, &ValidationError{Message: "mode must be combined, without-category, or category-only"}
+		return nil, &ValidationError{Message: "mode must be combined, without-category, category-only, or pwd-only"}
 	}
 
 	return &normalizedRequest{
