@@ -1,5 +1,5 @@
-# Replace with your real domain before deployment, e.g. api.example.com
-{$API_DOMAIN:localhost} {
+# Replace with your real domain before deployment, e.g. example.com
+{$SERVICE_DOMAIN:localhost} {
   encode gzip zstd
 
   # Optional hardening headers

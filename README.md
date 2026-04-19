@@ -33,18 +33,39 @@ complete-stack/
 
 ## How To Run
 
-There are only two supported ways to run this project:
+There are three supported ways to run this project:
 
-### Option 1: Docker Compose (everything in one shot)
+### Option 1: Docker Compose (development, with hot reload)
+
+Both frontend and backend support hot reload — Next.js via Turbopack, Go via `go run`.
+
+Full stack:
+
+```bash
+docker compose -f docker-compose.dev.yml up
+```
+
+API only:
+
+```bash
+docker compose -f docker-compose.dev.yml up backend caddy
+```
+
+Source files in `backend/` and `frontend/` are mounted into the containers, so saving a file triggers a reload automatically.
+
+### Option 2: Docker Compose (production build)
+
+Full stack:
 
 ```bash
 docker compose up --build
 ```
 
-Default URLs:
+API only:
 
-- App: `https://localhost` (also available on `http://localhost`)
-- API: `https://localhost/api` (also available on `http://localhost/api`)
+```bash
+docker compose up backend caddy --build
+```
 
 Quick checks:
 
@@ -53,7 +74,13 @@ curl -k https://localhost/api/health
 curl http://localhost/api/health
 ```
 
-### Option 2: Run backend + frontend individually
+To deploy on a real domain, set in .env `SERVICE_DOMAIN` or run with this:
+
+```bash
+SERVICE_DOMAIN=api.example.com docker compose up --build -d
+```
+
+### Option 3: Run backend + frontend individually
 
 Backend (terminal 1):
 
