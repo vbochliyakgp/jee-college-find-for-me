@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s · JEE College Find",
   },
   description:
-    "JEE college predictor for JEE Main and JEE Advanced. Compare likely colleges and branches using rank, category, gender, and quota filters.",
+    "Free JEE college predictor for JEE Main and JEE Advanced. Compare likely colleges and branches using rank, category, gender, and quota filters. No signup and no personal contact info required.",
   keywords: [
     "JEE college predictor",
     "JoSAA predictor",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "JEE College Find",
     description:
-      "Predict colleges from your JEE rank with category, gender, and quota-aware filtering.",
+      "Free JEE rank predictor with no signup and no email/phone requirement.",
     url: "/",
     siteName: "JEE College Find",
     locale: "en_IN",
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "JEE College Find",
-    description: "Predict colleges from your JEE rank with category, gender, and quota-aware filtering.",
+    description: "Free JEE rank predictor. No signup, no email, no phone required.",
     creator: "@jeecollegefind",
   },
   robots: {

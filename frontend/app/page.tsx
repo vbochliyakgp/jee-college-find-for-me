@@ -18,7 +18,7 @@ const quickHighlights = [
 export const metadata: Metadata = {
   title: "JEE College Predictor | JoSAA Rank-Based College Finder",
   description:
-    "Use this JEE college predictor to explore likely IIT, NIT, IIIT, and GFTI options by rank, category, gender, and home-state quota.",
+    "Use this free JEE college predictor to explore likely IIT, NIT, IIIT, and GFTI options by rank, category, gender, and home-state quota. No signup or personal contact details required.",
   keywords: [
     "JEE predictor",
     "JEE Main college predictor",
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "JEE College Predictor | JoSAA Rank-Based College Finder",
     description:
-      "Explore likely IIT, NIT, IIIT, and GFTI options by rank, category, gender, and home-state quota.",
+      "Free JEE college predictor with no signup and no email/phone requirement.",
     url: "/",
     type: "website",
   },
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "JEE College Predictor | JoSAA Rank-Based College Finder",
     description:
-      "Explore likely IIT, NIT, IIIT, and GFTI options by rank, category, gender, and home-state quota.",
+      "Free JEE college predictor. No signup and no personal contact details required.",
   },
 }
 
@@ -69,6 +69,12 @@ export default function HomePage() {
         name: "JEE College Find",
         applicationCategory: "EducationalApplication",
         operatingSystem: "Web",
+        isAccessibleForFree: true,
+        featureList: [
+          "No signup required",
+          "No email required",
+          "No phone number required",
+        ],
         offers: {
           "@type": "Offer",
           price: "0",
@@ -102,6 +108,14 @@ export default function HomePage() {
             acceptedAnswer: {
               "@type": "Answer",
               text: "No, these flows are currently not supported.",
+            },
+          },
+          {
+            "@type": "Question",
+            name: "Is this tool free and do I need to share personal contact details?",
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: "Yes, the tool is free to use. No signup, email, or phone number is required to use prediction features.",
             },
           },
         ],
