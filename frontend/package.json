@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "build:data": "node ./scripts/build-cutoffs-demo.mjs",
     "start": "next start",
     "lint": "eslint"
   },

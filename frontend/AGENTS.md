@@ -16,18 +16,13 @@ Do not add `npm install` / `npm run` instructions for this package unless the us
 ## What this app is
 
 - **Next.js 16** (App Router) + **React 19** + **TypeScript** + **Tailwind CSS v4**.
-- **Client-only demo**: no login, payments, admin, database, or API routes. The college predictor loads **bundled JSON** (`lib/data/cutoffs-demo.json`).
+- **API-driven app**: no login, payments, admin, or database in frontend. Predictor results are fetched from the Go backend API.
 - **Production-oriented structure**: layout components under `components/layout/`, predictor UI under `components/predict/`, shared UI under `components/ui/` (shadcn-style).
 
-## Regenerating demo cutoff data
+## Data source
 
-Source CSV lives under `data-processing/data/cutoffs/`. Regenerate JSON with:
-
-```bash
-node new/scripts/build-cutoffs-demo.mjs
-```
-
-Optional npm script: `bun run build:data` (see `package.json`).
+- Source CSV lives under `data-processing/data/cutoffs/`.
+- Backend loads and serves predictions from this dataset; frontend does not bundle cutoff JSON.
 
 ## Dependency policy
 
