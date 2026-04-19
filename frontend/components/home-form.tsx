@@ -55,16 +55,14 @@ export function HomeForm() {
   })()
 
   const openPwdRankError = (() => {
-    if (!isPWD) return null
-    if (!openPwdRank.trim()) return "Enter your OPEN-PwD rank."
+    if (!isPWD || !openPwdRank.trim()) return null
     const val = parseInt(openPwdRank.trim(), 10)
     if (Number.isNaN(val) || val < 1 || val > 1_300_000) return "Must be 1 – 13,00,000."
     return null
   })()
 
   const categoryPwdRankError = (() => {
-    if (!isPWD || !needsCategoryRank) return null
-    if (!categoryPwdRank.trim()) return "Enter your category-PwD rank."
+    if (!isPWD || !needsCategoryRank || !categoryPwdRank.trim()) return null
     const val = parseInt(categoryPwdRank.trim(), 10)
     if (Number.isNaN(val) || val < 1 || val > 1_300_000) return "Must be 1 – 13,00,000."
     return null
@@ -95,12 +93,11 @@ export function HomeForm() {
     })
     if (examType === "jee-main" && homeState) params.set("state", homeState)
     if (needsCategoryRank && categoryRank.trim()) params.set("categoryRank", categoryRank.trim())
-    if (isPWD) {
+    const hasPwdRank = openPwdRank.trim() || categoryPwdRank.trim()
+    if (isPWD && hasPwdRank) {
       params.set("pwd", "true")
-      params.set("openPwdRank", openPwdRank.trim())
-      if (needsCategoryRank && categoryPwdRank.trim()) {
-        params.set("categoryPwdRank", categoryPwdRank.trim())
-      }
+      if (openPwdRank.trim()) params.set("openPwdRank", openPwdRank.trim())
+      if (needsCategoryRank && categoryPwdRank.trim()) params.set("categoryPwdRank", categoryPwdRank.trim())
     }
 
     startTransition(() => {
@@ -146,7 +143,7 @@ export function HomeForm() {
           onChange={(e) => setScore(e.target.value)}
           onBlur={() => touch("score")}
           inputMode="numeric"
-          className={cn("h-12 text-base", showScore && scoreError && "border-destructive focus-visible:ring-destructive")}
+          className={cn("h-12 text-base", showScore && scoreError && "border-destructive focus-visible:ring-0 focus-visible:ring-offset-0")}
         />
         {showScore && scoreError && (
           <p className="text-xs text-destructive">{scoreError}</p>
@@ -229,7 +226,7 @@ export function HomeForm() {
                 inputMode="numeric"
                 className={cn(
                   "h-11",
-                  showCategoryRank && categoryRankError && "border-destructive focus-visible:ring-destructive",
+                  showCategoryRank && categoryRankError && "border-destructive focus-visible:ring-0 focus-visible:ring-offset-0",
                 )}
               />
               {showCategoryRank && categoryRankError && (
@@ -263,7 +260,7 @@ export function HomeForm() {
                 onChange={(e) => setOpenPwdRank(e.target.value)}
                 onBlur={() => touch("openPwdRank")}
                 inputMode="numeric"
-                className={cn("h-11", showOpenPwdRank && openPwdRankError && "border-destructive focus-visible:ring-destructive")}
+                className={cn("h-11", showOpenPwdRank && openPwdRankError && "border-destructive focus-visible:ring-0 focus-visible:ring-offset-0")}
               />
               {showOpenPwdRank && openPwdRankError && <p className="text-xs text-destructive">{openPwdRankError}</p>}
             </div>
@@ -277,7 +274,7 @@ export function HomeForm() {
                   inputMode="numeric"
                   className={cn(
                     "h-11",
-                    showCategoryPwdRank && categoryPwdRankError && "border-destructive focus-visible:ring-destructive",
+                    showCategoryPwdRank && categoryPwdRankError && "border-destructive focus-visible:ring-0 focus-visible:ring-offset-0",
                   )}
                 />
                 {showCategoryPwdRank && categoryPwdRankError && (

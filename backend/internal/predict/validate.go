@@ -81,15 +81,6 @@ func validateRequest(req models.PredictRequest) (*normalizedRequest, error) {
 		categoryPwdRank = &parsed
 	}
 
-	if req.IsPWD {
-		if category == "General" && openPwdRank == nil {
-			return nil, &ValidationError{Message: "openPwdRank is required for General PwD candidates"}
-		}
-		if category != "General" && categoryPwdRank == nil {
-			return nil, &ValidationError{Message: "categoryPwdRank is required when isPWD is true and category is not General"}
-		}
-	}
-
 	gender := strings.ToLower(strings.TrimSpace(req.Gender))
 	if gender != "female" {
 		gender = "neutral"
