@@ -60,7 +60,12 @@ func (s *Service) Predict(ctx context.Context, req models.PredictRequest) (*mode
 		normalized.Category = "General"
 		normalized.CategoryRank = nil
 		normalized.CategoryPwdRank = nil
+		normalized.IsPWD = false
+		normalized.OpenPwdRank = nil
 	case "category-only":
+		normalized.IsPWD = false
+		normalized.OpenPwdRank = nil
+		normalized.CategoryPwdRank = nil
 		return s.predictWithPools(ctx, normalized, false, true, false)
 	case "pwd-only":
 		return s.predictWithPools(ctx, normalized, false, false, true)

@@ -59,7 +59,7 @@ function buildTabs(params: InitialParams): TabDef[] {
     tabs.push({
       id: "pwd-only",
       label: "PwD Quota",
-      description: "Colleges via PwD horizontal reservation seats only. Shows what your disability certificate adds.",
+      description: "Colleges via PwD horizontal reservation seats only — searches both OPEN (PwD) and Category (PwD) pools wherever you provided a rank.",
     })
   }
 
