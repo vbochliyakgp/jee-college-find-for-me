@@ -10,5 +10,17 @@
     Referrer-Policy "strict-origin-when-cross-origin"
   }
 
-  reverse_proxy backend:8080
+  handle /api/health {
+    uri replace /api/health /health
+    reverse_proxy backend:8080
+  }
+
+  @api path /api/*
+  handle @api {
+    reverse_proxy backend:8080
+  }
+
+  handle {
+    reverse_proxy frontend:3000
+  }
 }

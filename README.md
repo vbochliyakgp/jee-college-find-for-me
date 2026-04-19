@@ -31,14 +31,31 @@ complete-stack/
   data-processing/
 ```
 
-## Prerequisites
+## How To Run
 
-- Go (version compatible with `backend/go.mod`)
-- Bun (for `frontend/` and `data-processing/`)
+There are only two supported ways to run this project:
 
-## Quick Start
+### Option 1: Docker Compose (everything in one shot)
 
-Run the backend:
+```bash
+docker compose up --build
+```
+
+Default URLs:
+
+- App: `https://localhost` (also available on `http://localhost`)
+- API: `https://localhost/api` (also available on `http://localhost/api`)
+
+Quick checks:
+
+```bash
+curl -k https://localhost/api/health
+curl http://localhost/api/health
+```
+
+### Option 2: Run backend + frontend individually
+
+Backend (terminal 1):
 
 ```bash
 cd backend
@@ -46,7 +63,7 @@ go mod download
 go run ./cmd/server
 ```
 
-Run the frontend in another terminal:
+Frontend (terminal 2):
 
 ```bash
 cd frontend
@@ -59,16 +76,11 @@ Default URLs:
 - Frontend: `http://localhost:3000`
 - Backend: `http://127.0.0.1:8080`
 
-If backend is hosted elsewhere, set:
+When running individually, frontend requests the backend directly.
+If backend is hosted elsewhere, set this in frontend .env:
 
 ```bash
 NEXT_PUBLIC_GO_PREDICTOR_API_BASE_URL=http://127.0.0.1:8080
-```
-
-Health check:
-
-```bash
-curl http://127.0.0.1:8080/health
 ```
 
 ## Useful Commands
@@ -88,7 +100,7 @@ bun run build
 bun run lint
 ```
 
-## Data Refresh (Optional)
+## Data Refresh (no needed, it is not for you)
 
 When source files change, regenerate offline artifacts:
 

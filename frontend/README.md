@@ -2,32 +2,27 @@
 
 Next.js App Router frontend for entering rank details and viewing prediction results.
 
+> Setup and run instructions are documented in the root `README.md`.
+
 ## Stack
 
 - Next.js (App Router) + TypeScript
 - Tailwind CSS v4
 - Bun as package manager/runtime for scripts
 
-## Local Development
+## Scripts (Reference)
 
-```bash
-bun install
-bun run dev
-```
-
-Useful scripts:
-
-```bash
-bun run build
-bun run start
-bun run lint
-```
-
-Default app URL: `http://localhost:3000`
+- `bun run dev`
+- `bun run build`
+- `bun run start`
+- `bun run lint`
 
 ## Backend Connection
 
-This app calls the Go predictor backend. Configure base URL when needed:
+This app calls the Go predictor backend. By default it uses same-origin `/api`
+(works with Docker Compose + Caddy).
+
+Configure base URL when needed:
 
 ```bash
 NEXT_PUBLIC_GO_PREDICTOR_API_BASE_URL=http://127.0.0.1:8080

@@ -2,20 +2,7 @@
 
 Go API that serves prediction data to the frontend by loading JoSAA cutoff CSVs into an in-memory SQLite database.
 
-## Run Locally
-
-```bash
-go mod download
-go run ./cmd/server
-```
-
-Default URL: `http://127.0.0.1:8080`
-
-Health check:
-
-```bash
-curl http://127.0.0.1:8080/health
-```
+> Setup and run instructions are documented in the root `README.md`.
 
 ## Endpoints
 
@@ -52,9 +39,3 @@ curl http://127.0.0.1:8080/health
 - PwD-specific prediction flow is not supported end-to-end
 - B.Arch and B.Planning are excluded
 - Output is exploratory and should not be treated as official counseling advice
-
-## Testing
-
-```bash
-go test ./...
-```

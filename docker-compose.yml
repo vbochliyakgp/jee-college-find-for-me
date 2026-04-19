@@ -1,4 +1,19 @@
 services:
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    container_name: jee-frontend
+    restart: unless-stopped
+    environment:
+      PORT: "3000"
+      HOSTNAME: "0.0.0.0"
+      NEXT_PUBLIC_GO_PREDICTOR_API_BASE_URL: ${NEXT_PUBLIC_GO_PREDICTOR_API_BASE_URL:-}
+    expose:
+      - "3000"
+    networks:
+      - app-net
+
   backend:
     build:
       context: .
@@ -21,6 +36,7 @@ services:
     environment:
       API_DOMAIN: ${API_DOMAIN:-localhost}
     depends_on:
+      - frontend
       - backend
     ports:
       - "80:80"

@@ -1,10 +1,19 @@
 import type { InitialParams } from "@/components/predict/predict-view"
 import type { PredictApiResponse } from "@/lib/predict/types"
 
-const DEFAULT_API_BASE_URL = "http://127.0.0.1:8080"
+const DEFAULT_API_BASE_URL = ""
+const DEFAULT_INTERNAL_API_BASE_URL = "http://backend:8080"
 
 function apiBaseUrl() {
-  return process.env.NEXT_PUBLIC_GO_PREDICTOR_API_BASE_URL ?? process.env.GO_PREDICTOR_API_BASE_URL ?? DEFAULT_API_BASE_URL
+  const configuredPublic = process.env.NEXT_PUBLIC_GO_PREDICTOR_API_BASE_URL
+  const configuredServer = process.env.GO_PREDICTOR_API_BASE_URL
+
+  if (configuredPublic) return configuredPublic
+  if (configuredServer) return configuredServer
+
+  // Next.js server runtime requires absolute URLs for fetch().
+  if (typeof window === "undefined") return DEFAULT_INTERNAL_API_BASE_URL
+  return DEFAULT_API_BASE_URL
 }
 
 export async function fetchPrediction(params: InitialParams): Promise<PredictApiResponse> {
