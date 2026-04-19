@@ -144,9 +144,9 @@ export default function HomePage() {
 
             <div>
               <h1 className="text-balance text-[1.7rem] font-bold tracking-tight text-foreground sm:text-5xl lg:text-[3.15rem] lg:leading-tight">
-                Find Better-Fit Colleges with{" "}
+              Find Better-Fit Colleges for Free{" "}
                 <span className="bg-gradient-to-r from-primary to-violet-500 bg-clip-text text-transparent">
-                  JEE + JoSAA Insights
+                — No Signup Needed!
                 </span>
               </h1>
               <p className="mt-2 max-w-xl text-pretty text-sm text-muted-foreground sm:mt-4 sm:text-lg">
