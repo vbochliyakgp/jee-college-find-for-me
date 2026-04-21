@@ -7,6 +7,7 @@ import (
 )
 
 const maxRank = 1_300_000
+const maxPageSize = 100
 
 var (
 	examTypes       = []string{"jee-main", "jee-advanced"}
@@ -135,6 +136,21 @@ func Validate(req Request) []string {
 		}
 		if band.ClosingRankMin != nil && band.ClosingRankMax != nil && *band.ClosingRankMin > *band.ClosingRankMax {
 			add(fmt.Sprintf("%s: closingRankMin must be <= closingRankMax", prefix))
+		}
+	}
+	if req.Pagination != nil {
+		p := req.Pagination
+		if !slices.Contains(targetPools, p.TargetPool) {
+			add(fmt.Sprintf("pagination.targetPool must be one of %v", targetPools))
+		}
+		if p.Page < 1 {
+			add("pagination.page must be >= 1")
+		}
+		if p.PageSize < 1 || p.PageSize > maxPageSize {
+			add(fmt.Sprintf("pagination.pageSize must be between 1 and %d", maxPageSize))
+		}
+		if slices.Contains(targetPools, p.TargetPool) && !RankBandAllowed(p.TargetPool, req.Category, req.IsPwd) {
+			add(fmt.Sprintf("pagination.targetPool %q is not allowed for category=%q isPwd=%v", p.TargetPool, req.Category, req.IsPwd))
 		}
 	}
 

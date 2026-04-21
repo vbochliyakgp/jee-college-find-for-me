@@ -9,6 +9,7 @@ import (
 
 // DefaultCutoffTable is the live JoSAA snapshot table populated by the importer.
 const DefaultCutoffTable = "cutoff_rows"
+const maxRowsPerPool = 1000
 
 // PoolQueryInput carries global filters plus one tab’s seat types and closing-rank OR clauses.
 type PoolQueryInput struct {
@@ -21,29 +22,38 @@ type PoolQueryInput struct {
 	ClosingRankBands []ClosingRankBand
 	// HomeState is set for JEE Main when the client sent a domicile; it refines HS/OS/GO/JK/LA rows (ALGORITHM.md §5).
 	HomeState *string
+	Page      int
+	PageSize  int
+}
+
+type PoolQueryOutput struct {
+	Rows       []ResultRow
+	Truncated  bool
+	TotalShown int
+	HasMore    bool
 }
 
 // QueryCutoffPool returns DISTINCT rows matching global filters, seat types for this tab,
 // and any of the closing-rank bands (OR). Empty bands yields nil without querying.
-func QueryCutoffPool(ctx context.Context, db *sql.DB, in PoolQueryInput) ([]ResultRow, error) {
+func QueryCutoffPool(ctx context.Context, db *sql.DB, in PoolQueryInput) (PoolQueryOutput, error) {
 	if len(in.ClosingRankBands) == 0 {
-		return nil, nil
+		return PoolQueryOutput{Rows: []ResultRow{}}, nil
 	}
 	if len(in.SeatTypes) == 0 {
-		return nil, fmt.Errorf("seat types required for pool query")
+		return PoolQueryOutput{}, fmt.Errorf("seat types required for pool query")
 	}
 	if len(in.Quotas) == 0 {
-		return nil, fmt.Errorf("quotas required")
+		return PoolQueryOutput{}, fmt.Errorf("quotas required")
 	}
 	if len(in.InstituteTypes) == 0 {
 		// Defensive fallback: if caller passes no institute filters, answer is empty.
 		// Normal HTTP flow validates this and returns 400 before service/query.
-		return []ResultRow{}, nil
+		return PoolQueryOutput{Rows: []ResultRow{}}, nil
 	}
 
 	closingParts, closingArgs := buildClosingRankOr(in.ClosingRankBands)
 	if closingParts == "" {
-		return nil, nil
+		return PoolQueryOutput{Rows: []ResultRow{}}, nil
 	}
 
 	qIn := SQLIn(len(in.Quotas))
@@ -51,6 +61,15 @@ func QueryCutoffPool(ctx context.Context, db *sql.DB, in PoolQueryInput) ([]Resu
 	sIn := SQLIn(len(in.SeatTypes))
 
 	homeSQL, homeArgs := homeStateQuotaSQL(in.HomeState)
+	page := in.Page
+	if page < 1 {
+		page = 1
+	}
+	pageSize := in.PageSize
+	if pageSize < 1 {
+		pageSize = maxRowsPerPool
+	}
+	offset := (page - 1) * pageSize
 
 	query := fmt.Sprintf(`
 SELECT DISTINCT exam_type, institute, department, institute_type, state, nirf, quota, gender, seat_type, opening_rank, closing_rank
@@ -62,9 +81,11 @@ WHERE exam_type = ?
   AND seat_type IN (%s)
 %s  AND (%s)
 ORDER BY closing_rank ASC, institute ASC, department ASC
+LIMIT ?
+OFFSET ?
 `, in.Table, qIn, iIn, sIn, homeSQL, closingParts)
 
-	args := make([]any, 0, 2+len(in.Quotas)+len(in.InstituteTypes)+len(in.SeatTypes)+len(homeArgs)+len(closingArgs))
+	args := make([]any, 0, 2+len(in.Quotas)+len(in.InstituteTypes)+len(in.SeatTypes)+len(homeArgs)+len(closingArgs)+2)
 	args = append(args, in.ExamType, in.GenderDB)
 	for _, q := range in.Quotas {
 		args = append(args, q)
@@ -77,10 +98,11 @@ ORDER BY closing_rank ASC, institute ASC, department ASC
 	}
 	args = append(args, homeArgs...)
 	args = append(args, closingArgs...)
+	args = append(args, pageSize+1, offset)
 
 	rows, err := db.QueryContext(ctx, query, args...)
 	if err != nil {
-		return nil, fmt.Errorf("query pool: %w", err)
+		return PoolQueryOutput{}, fmt.Errorf("query pool: %w", err)
 	}
 	defer rows.Close()
 
@@ -101,7 +123,7 @@ ORDER BY closing_rank ASC, institute ASC, department ASC
 			&r.OpeningRank,
 			&r.ClosingRank,
 		); err != nil {
-			return nil, fmt.Errorf("scan row: %w", err)
+			return PoolQueryOutput{}, fmt.Errorf("scan row: %w", err)
 		}
 		if nirf.Valid {
 			s := nirf.String
@@ -110,12 +132,19 @@ ORDER BY closing_rank ASC, institute ASC, department ASC
 		out = append(out, r)
 	}
 	if err := rows.Err(); err != nil {
-		return nil, err
+		return PoolQueryOutput{}, err
+	}
+	truncated := false
+	hasMore := false
+	if len(out) > pageSize {
+		out = out[:pageSize]
+		truncated = pageSize >= maxRowsPerPool
+		hasMore = true
 	}
 	if len(out) == 0 {
-		return []ResultRow{}, nil
+		return PoolQueryOutput{Rows: []ResultRow{}, Truncated: false, TotalShown: 0, HasMore: false}, nil
 	}
-	return out, nil
+	return PoolQueryOutput{Rows: out, Truncated: truncated, TotalShown: len(out), HasMore: hasMore}, nil
 }
 
 // homeStateQuotaSQL adds domicile-aware row filters when JEE Main sends homeState (ALGORITHM.md §5).

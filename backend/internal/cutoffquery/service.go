@@ -39,23 +39,37 @@ func (s *Service) QueryPools(ctx context.Context, req Request) (*QueryResponse, 
 	pools := []struct {
 		key string
 		dst *[]ResultRow
+		mt  *PoolMetaItem
 	}{
-		{"open", &out.Pools.Open},
-		{"category", &out.Pools.Category},
-		{"open_pwd", &out.Pools.OpenPwd},
-		{"category_pwd", &out.Pools.CategoryPwd},
+		{"open", &out.Pools.Open, &out.Meta.Open},
+		{"category", &out.Pools.Category, &out.Meta.Category},
+		{"open_pwd", &out.Pools.OpenPwd, &out.Meta.OpenPwd},
+		{"category_pwd", &out.Pools.CategoryPwd, &out.Meta.CategoryPwd},
 	}
 
 	for _, p := range pools {
+		page := 1
+		pageSize := maxRowsPerPool
+		if req.Pagination != nil {
+			page = req.Pagination.Page
+			pageSize = req.Pagination.PageSize
+			if p.key != req.Pagination.TargetPool {
+				*p.dst = []ResultRow{}
+				*p.mt = PoolMetaItem{ReturnedRows: 0, Truncated: false, HasMore: false, Page: page, PageSize: pageSize}
+				continue
+			}
+		}
 		clauses := grouped[p.key]
 		if len(clauses) == 0 {
 			*p.dst = []ResultRow{}
+			*p.mt = PoolMetaItem{ReturnedRows: 0, Truncated: false, HasMore: false, Page: page, PageSize: pageSize}
 			continue
 		}
 		if !RankBandAllowed(p.key, req.Category, req.IsPwd) {
 			// Defensive fallback: skip ineligible pools instead of failing whole request.
 			// Normal HTTP flow validates this earlier.
 			*p.dst = []ResultRow{}
+			*p.mt = PoolMetaItem{ReturnedRows: 0, Truncated: false, HasMore: false, Page: page, PageSize: pageSize}
 			continue
 		}
 
@@ -64,7 +78,7 @@ func (s *Service) QueryPools(ctx context.Context, req Request) (*QueryResponse, 
 			return nil, fmt.Errorf("pool %s: %w", p.key, err)
 		}
 
-		rows, err := QueryCutoffPool(ctx, s.db, PoolQueryInput{
+		res, err := QueryCutoffPool(ctx, s.db, PoolQueryInput{
 			Table:            table,
 			ExamType:         req.ExamType,
 			GenderDB:         genderDB,
@@ -73,11 +87,20 @@ func (s *Service) QueryPools(ctx context.Context, req Request) (*QueryResponse, 
 			SeatTypes:        seatTypes,
 			ClosingRankBands: clauses,
 			HomeState:        req.HomeState,
+			Page:             page,
+			PageSize:         pageSize,
 		})
 		if err != nil {
 			return nil, fmt.Errorf("pool %s: %w", p.key, err)
 		}
-		*p.dst = rows
+		*p.dst = res.Rows
+		*p.mt = PoolMetaItem{
+			ReturnedRows: res.TotalShown,
+			Truncated:    res.Truncated,
+			HasMore:      res.HasMore,
+			Page:         page,
+			PageSize:     pageSize,
+		}
 	}
 
 	return out, nil

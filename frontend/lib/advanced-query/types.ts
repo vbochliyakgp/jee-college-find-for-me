@@ -62,6 +62,11 @@ export interface AdvancedCutoffQueryV1 {
     combine: "union"
     closingRankBands: ClosingRankBandClause[]
   }
+  pagination?: {
+    targetPool: RankBandTargetPool
+    page: number
+    pageSize: number
+  }
 }
 
 export type CategoryOption = AdvancedCutoffQueryV1["category"]
@@ -89,5 +94,11 @@ export interface CutoffQueryResponse {
     category: CutoffResultRow[]
     openPwd: CutoffResultRow[]
     categoryPwd: CutoffResultRow[]
+  }
+  meta?: {
+    open: { returnedRows: number; truncated: boolean; hasMore: boolean; page: number; pageSize: number }
+    category: { returnedRows: number; truncated: boolean; hasMore: boolean; page: number; pageSize: number }
+    openPwd: { returnedRows: number; truncated: boolean; hasMore: boolean; page: number; pageSize: number }
+    categoryPwd: { returnedRows: number; truncated: boolean; hasMore: boolean; page: number; pageSize: number }
   }
 }

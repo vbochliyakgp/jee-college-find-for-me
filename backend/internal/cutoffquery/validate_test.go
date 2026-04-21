@@ -84,4 +84,29 @@ func TestValidate_main_rejectsIITInstitute(t *testing.T) {
 	}
 }
 
+func TestValidate_paginationBounds(t *testing.T) {
+	req := Request{
+		Version:        1,
+		ExamType:       "jee-main",
+		GenderPool:     "neutral",
+		Category:       "General",
+		Quotas:         []string{"AI", "OS"},
+		InstituteTypes: []string{"NIT"},
+		PowerMode: PowerMode{
+			Combine: "union",
+			ClosingRankBands: []ClosingRankBand{
+				{TargetPool: "open", ClosingRankMin: ptr(1), ClosingRankMax: ptr(5000)},
+			},
+		},
+		Pagination: &Pagination{
+			TargetPool: "open",
+			Page:       0,
+			PageSize:   101,
+		},
+	}
+	if v := Validate(req); len(v) == 0 {
+		t.Fatal("expected pagination validation errors")
+	}
+}
+
 func ptr(n int) *int { return &n }

@@ -199,7 +199,10 @@ export function AdvancedQueryProvider({ children }: { children: React.ReactNode 
       return
     }
     try {
-      const res = await postCutoffQuery(payload)
+      const res = await postCutoffQuery({
+        ...payload,
+        pagination: { targetPool: "open", page: 1, pageSize: 100 },
+      })
       if (res.ok) {
         setLastSuccessResponse(res.data)
         setLastErrorDetails(null)
@@ -245,7 +248,10 @@ export function AdvancedQueryProvider({ children }: { children: React.ReactNode 
 
       startTransition(async () => {
         try {
-          const res = await postCutoffQuery(payload)
+          const res = await postCutoffQuery({
+            ...payload,
+            pagination: { targetPool: "open", page: 1, pageSize: 100 },
+          })
           if (res.ok) {
             const encoded = encodeCutoffQueryForUrl(payload)
             setLastSuccessResponse(res.data)

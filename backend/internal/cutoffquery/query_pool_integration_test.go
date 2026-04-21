@@ -2,6 +2,7 @@ package cutoffquery
 
 import (
 	"context"
+	"fmt"
 	"testing"
 
 	"jee-college-find-for-me/complete-stack/backend/internal/db"
@@ -23,7 +24,7 @@ VALUES ('jee-main', 'Test NIT', 'CSE', 'NIT', 'TestState', NULL, 'AI', 'Neutral'
 		t.Fatal(err)
 	}
 
-	rows, err := QueryCutoffPool(ctx, database, PoolQueryInput{
+	res, err := QueryCutoffPool(ctx, database, PoolQueryInput{
 		Table:          DefaultCutoffTable,
 		ExamType:       "jee-main",
 		GenderDB:       "Neutral",
@@ -37,11 +38,11 @@ VALUES ('jee-main', 'Test NIT', 'CSE', 'NIT', 'TestState', NULL, 'AI', 'Neutral'
 	if err != nil {
 		t.Fatal(err)
 	}
-	if len(rows) != 1 {
-		t.Fatalf("want 1 row, got %d", len(rows))
+	if len(res.Rows) != 1 {
+		t.Fatalf("want 1 row, got %d", len(res.Rows))
 	}
-	if rows[0].ClosingRank != 5000 {
-		t.Fatalf("closing rank: %d", rows[0].ClosingRank)
+	if res.Rows[0].ClosingRank != 5000 {
+		t.Fatalf("closing rank: %d", res.Rows[0].ClosingRank)
 	}
 }
 
@@ -67,7 +68,7 @@ INSERT INTO cutoff_rows (exam_type, institute, department, institute_type, state
 	}
 
 	home := "Bihar"
-	rows, err := QueryCutoffPool(ctx, database, PoolQueryInput{
+	res, err := QueryCutoffPool(ctx, database, PoolQueryInput{
 		Table:            DefaultCutoffTable,
 		ExamType:         "jee-main",
 		GenderDB:         "Neutral",
@@ -80,12 +81,12 @@ INSERT INTO cutoff_rows (exam_type, institute, department, institute_type, state
 	if err != nil {
 		t.Fatal(err)
 	}
-	if len(rows) != 2 {
-		t.Fatalf("want 2 rows (HS@Bihar + OS@non-home), got %d: %+v", len(rows), rows)
+	if len(res.Rows) != 2 {
+		t.Fatalf("want 2 rows (HS@Bihar + OS@non-home), got %d: %+v", len(res.Rows), res.Rows)
 	}
 	seenHSBihar := false
 	seenOSKarnataka := false
-	for _, r := range rows {
+	for _, r := range res.Rows {
 		switch {
 		case r.Quota == "HS" && r.State == "Bihar" && r.ClosingRank == 1000:
 			seenHSBihar = true
@@ -94,7 +95,7 @@ INSERT INTO cutoff_rows (exam_type, institute, department, institute_type, state
 		}
 	}
 	if !seenHSBihar || !seenOSKarnataka {
-		t.Fatalf("unexpected row set: %+v", rows)
+		t.Fatalf("unexpected row set: %+v", res.Rows)
 	}
 }
 
@@ -116,7 +117,7 @@ INSERT INTO cutoff_rows (exam_type, institute, department, institute_type, state
 	}
 
 	nonGoa := "Bihar"
-	rows, err := QueryCutoffPool(ctx, database, PoolQueryInput{
+	res, err := QueryCutoffPool(ctx, database, PoolQueryInput{
 		Table:            DefaultCutoffTable,
 		ExamType:         "jee-main",
 		GenderDB:         "Neutral",
@@ -129,12 +130,12 @@ INSERT INTO cutoff_rows (exam_type, institute, department, institute_type, state
 	if err != nil {
 		t.Fatal(err)
 	}
-	if len(rows) != 1 || rows[0].Quota != "AI" {
-		t.Fatalf("non-Goa domicile should drop GO rows; got %+v", rows)
+	if len(res.Rows) != 1 || res.Rows[0].Quota != "AI" {
+		t.Fatalf("non-Goa domicile should drop GO rows; got %+v", res.Rows)
 	}
 
 	goaHome := "Goa"
-	rowsGoa, err := QueryCutoffPool(ctx, database, PoolQueryInput{
+	resGoa, err := QueryCutoffPool(ctx, database, PoolQueryInput{
 		Table:            DefaultCutoffTable,
 		ExamType:         "jee-main",
 		GenderDB:         "Neutral",
@@ -147,8 +148,8 @@ INSERT INTO cutoff_rows (exam_type, institute, department, institute_type, state
 	if err != nil {
 		t.Fatal(err)
 	}
-	if len(rowsGoa) != 2 {
-		t.Fatalf("Goa domicile should keep GO+AI; got %d %+v", len(rowsGoa), rowsGoa)
+	if len(resGoa.Rows) != 2 {
+		t.Fatalf("Goa domicile should keep GO+AI; got %d %+v", len(resGoa.Rows), resGoa.Rows)
 	}
 }
 
@@ -160,7 +161,7 @@ func TestQueryCutoffPool_emptyInstituteTypesReturnsEmpty(t *testing.T) {
 	}
 	defer database.Close()
 
-	rows, err := QueryCutoffPool(ctx, database, PoolQueryInput{
+	res, err := QueryCutoffPool(ctx, database, PoolQueryInput{
 		Table:            DefaultCutoffTable,
 		ExamType:         "jee-main",
 		GenderDB:         "Neutral",
@@ -172,7 +173,48 @@ func TestQueryCutoffPool_emptyInstituteTypesReturnsEmpty(t *testing.T) {
 	if err != nil {
 		t.Fatalf("expected no error, got %v", err)
 	}
-	if len(rows) != 0 {
-		t.Fatalf("expected empty rows for empty institute filters, got %+v", rows)
+	if len(res.Rows) != 0 {
+		t.Fatalf("expected empty rows for empty institute filters, got %+v", res.Rows)
+	}
+}
+
+func TestQueryCutoffPool_truncatesAtHardLimit(t *testing.T) {
+	ctx := context.Background()
+	database, err := db.OpenInMemory(ctx)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer database.Close()
+
+	for i := 1; i <= maxRowsPerPool+5; i++ {
+		_, err = database.ExecContext(ctx, `
+INSERT INTO cutoff_rows (exam_type, institute, department, institute_type, state, nirf, quota, gender, seat_type, opening_rank, closing_rank)
+VALUES (?, ?, ?, 'NIT', 'Bihar', NULL, 'AI', 'Neutral', 'OPEN', 1, ?)
+`, "jee-main", fmt.Sprintf("NIT %d", i), "CSE", i+1000)
+		if err != nil {
+			t.Fatal(err)
+		}
+	}
+
+	res, err := QueryCutoffPool(ctx, database, PoolQueryInput{
+		Table:            DefaultCutoffTable,
+		ExamType:         "jee-main",
+		GenderDB:         "Neutral",
+		Quotas:           []string{"AI", "OS"},
+		InstituteTypes:   []string{"NIT"},
+		SeatTypes:        []string{"OPEN"},
+		ClosingRankBands: []ClosingRankBand{{TargetPool: "open", ClosingRankMin: ptrI(1), ClosingRankMax: ptrI(500000)}},
+	})
+	if err != nil {
+		t.Fatalf("query failed: %v", err)
+	}
+	if !res.Truncated {
+		t.Fatal("expected truncated=true when rows exceed hard limit")
+	}
+	if got := len(res.Rows); got != maxRowsPerPool {
+		t.Fatalf("expected %d rows, got %d", maxRowsPerPool, got)
+	}
+	if res.TotalShown != maxRowsPerPool {
+		t.Fatalf("expected total shown %d, got %d", maxRowsPerPool, res.TotalShown)
 	}
 }

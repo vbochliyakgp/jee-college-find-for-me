@@ -12,6 +12,7 @@ type Request struct {
 	Quotas           []string       `json:"quotas"`
 	InstituteTypes   []string       `json:"instituteTypes"`
 	PowerMode        PowerMode      `json:"powerMode"`
+	Pagination       *Pagination    `json:"pagination,omitempty"`
 }
 
 type PowerMode struct {
@@ -23,4 +24,10 @@ type ClosingRankBand struct {
 	TargetPool      string `json:"targetPool"`
 	ClosingRankMin  *int   `json:"closingRankMin"`
 	ClosingRankMax  *int   `json:"closingRankMax"`
+}
+
+type Pagination struct {
+	TargetPool string `json:"targetPool"`
+	Page       int    `json:"page"`
+	PageSize   int    `json:"pageSize"`
 }

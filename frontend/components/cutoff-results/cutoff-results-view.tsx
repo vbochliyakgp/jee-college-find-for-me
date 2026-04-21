@@ -2,12 +2,15 @@
 
 import { useEffect, useMemo, useRef, useState } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
-import type { CutoffQueryResponse, CutoffResultRow } from "@/lib/advanced-query/types"
+import type { AdvancedCutoffQueryV1, CutoffQueryResponse, CutoffResultRow } from "@/lib/advanced-query/types"
+import { decodeCutoffQueryFromUrl } from "@/lib/advanced-query/query-url"
+import { postCutoffQuery } from "@/lib/advanced-query/api"
 import { useAdvancedQuery } from "@/components/advanced-query/advanced-query-context"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 
 type PoolKey = keyof CutoffQueryResponse["pools"]
+const PAGE_SIZE = 100
 
 const TABS: ReadonlyArray<{ key: PoolKey; label: string }> = [
   { key: "open", label: "Open" },
@@ -16,9 +19,22 @@ const TABS: ReadonlyArray<{ key: PoolKey; label: string }> = [
   { key: "categoryPwd", label: "Cat PwD" },
 ]
 
+function toTargetPool(k: PoolKey): AdvancedCutoffQueryV1["powerMode"]["closingRankBands"][number]["targetPool"] {
+  switch (k) {
+    case "open":
+      return "open"
+    case "category":
+      return "category"
+    case "openPwd":
+      return "open_pwd"
+    case "categoryPwd":
+      return "category_pwd"
+  }
+}
+
 function PoolTable({ rows }: { rows: CutoffResultRow[] }) {
   if (rows.length === 0) {
-    return <p className="py-8 text-center text-sm text-muted-foreground">No rows for this band.</p>
+    return <p className="py-8 text-center text-sm text-muted-foreground">No rows for this page.</p>
   }
   return (
     <div className="overflow-x-auto rounded-lg border border-border/70">
@@ -56,36 +72,99 @@ export function CutoffResultsView() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const q = useAdvancedQuery()
-  const data = q.lastSuccessResponse
   const enc = searchParams.get("q")
-  const lastHydrated = q.lastHydratedEncodedQuery
-  const runQueryFromEncodedUrl = q.runQueryFromEncodedUrl
+  const payload = useMemo(() => (enc ? decodeCutoffQueryFromUrl(enc) : null), [enc])
+
   const [tab, setTab] = useState<PoolKey>("open")
-  const inFlightEnc = useRef<string | null>(null)
+  const [pageByTab, setPageByTab] = useState<Record<PoolKey, number>>({
+    open: 1,
+    category: 1,
+    openPwd: 1,
+    categoryPwd: 1,
+  })
+  const [rowsByTab, setRowsByTab] = useState<Record<PoolKey, CutoffResultRow[]>>({
+    open: [],
+    category: [],
+    openPwd: [],
+    categoryPwd: [],
+  })
+  const [hasMoreByTab, setHasMoreByTab] = useState<Record<PoolKey, boolean>>({
+    open: false,
+    category: false,
+    openPwd: false,
+    categoryPwd: false,
+  })
+  const [truncatedByTab, setTruncatedByTab] = useState<Record<PoolKey, boolean>>({
+    open: false,
+    category: false,
+    openPwd: false,
+    categoryPwd: false,
+  })
+  const [loadedKey, setLoadedKey] = useState<Record<PoolKey, string | null>>({
+    open: null,
+    category: null,
+    openPwd: null,
+    categoryPwd: null,
+  })
+  const [loading, setLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+  const inFlightKey = useRef<string | null>(null)
+
+  const currentPage = pageByTab[tab]
+  const rows = rowsByTab[tab]
+  const hasMore = hasMoreByTab[tab]
+  const truncated = truncatedByTab[tab]
 
   useEffect(() => {
-    if (!enc && !data) {
+    if (!enc) {
       router.replace("/")
       return
     }
-    if (!enc) return
+    if (!payload) {
+      setError("This results link is invalid or outdated.")
+    }
+  }, [enc, payload, router])
 
-    const needsFetch = enc !== lastHydrated
-    if (!needsFetch) return
-    if (inFlightEnc.current === enc) return
+  useEffect(() => {
+    if (!payload) return
+    const page = pageByTab[tab]
+    const key = `${tab}:${page}`
+    if (loadedKey[tab] === key) return
+    if (inFlightKey.current === key) return
 
-    inFlightEnc.current = enc
-    void runQueryFromEncodedUrl(enc).finally(() => {
-      if (inFlightEnc.current === enc) inFlightEnc.current = null
+    inFlightKey.current = key
+    setLoading(true)
+    setError(null)
+
+    void postCutoffQuery({
+      ...payload,
+      pagination: {
+        targetPool: toTargetPool(tab),
+        page,
+        pageSize: PAGE_SIZE,
+      },
     })
-  }, [data, enc, lastHydrated, router, runQueryFromEncodedUrl])
+      .then((res) => {
+        if (!res.ok) {
+          setError(res.error)
+          return
+        }
+        const meta = res.data.meta?.[tab]
+        setRowsByTab((prev) => ({ ...prev, [tab]: res.data.pools[tab] }))
+        setHasMoreByTab((prev) => ({ ...prev, [tab]: meta?.hasMore ?? res.data.pools[tab].length === PAGE_SIZE }))
+        setTruncatedByTab((prev) => ({ ...prev, [tab]: Boolean(meta?.truncated) }))
+        setLoadedKey((prev) => ({ ...prev, [tab]: key }))
+      })
+      .catch((e: unknown) => {
+        setError(e instanceof Error ? e.message : "Network error")
+      })
+      .finally(() => {
+        if (inFlightKey.current === key) inFlightKey.current = null
+        setLoading(false)
+      })
+  }, [payload, tab, pageByTab, loadedKey])
 
-  const rows = useMemo(() => {
-    if (!data) return []
-    return data.pools[tab]
-  }, [data, tab])
-
-  if (!enc && !data) {
+  if (!enc) {
     return (
       <div className="container max-w-4xl py-16 text-center text-sm text-muted-foreground">
         Loading…
@@ -93,36 +172,13 @@ export function CutoffResultsView() {
     )
   }
 
-  if (enc && !data && !q.clientError) {
-    return (
-      <div className="container max-w-4xl py-16 text-center text-sm text-muted-foreground">
-        Loading results…
-      </div>
-    )
-  }
-
-  if (enc && !data && q.clientError) {
+  if (!payload) {
     return (
       <div className="container max-w-md py-16 text-center">
-        <p className="text-sm text-destructive">{q.clientError}</p>
-        {q.lastErrorDetails && q.lastErrorDetails.length > 0 ? (
-          <ul className="mt-3 list-inside list-disc text-left text-xs text-destructive">
-            {q.lastErrorDetails.map((d) => (
-              <li key={d}>{d}</li>
-            ))}
-          </ul>
-        ) : null}
+        <p className="text-sm text-destructive">{error ?? "Invalid results link."}</p>
         <Button type="button" className="mt-6" onClick={() => router.replace("/")}>
           Back to search
         </Button>
-      </div>
-    )
-  }
-
-  if (!data) {
-    return (
-      <div className="container max-w-4xl py-16 text-center text-sm text-muted-foreground">
-        Loading…
       </div>
     )
   }
@@ -133,8 +189,7 @@ export function CutoffResultsView() {
         <div>
           <h1 className="text-xl font-semibold tracking-tight text-foreground md:text-2xl">Cutoff results</h1>
           <p className="mt-1 text-sm text-muted-foreground">
-            Four pools · same global filters · each tab uses its own seat types and rank band. This view can be refreshed or
-            shared via the URL.
+            Four pools · backend pagination at 100 rows/page · each tab maintains its own page.
           </p>
         </div>
         <Button
@@ -152,7 +207,6 @@ export function CutoffResultsView() {
 
       <div className="mb-4 flex flex-wrap gap-1 border-b border-border/70 pb-px">
         {TABS.map(({ key, label }) => {
-          const n = data.pools[key].length
           const active = tab === key
           return (
             <button
@@ -167,13 +221,45 @@ export function CutoffResultsView() {
               )}
             >
               {label}
-              <span className="ml-1.5 tabular-nums text-xs text-muted-foreground">({n})</span>
+              <span className="ml-1.5 tabular-nums text-xs text-muted-foreground">(p{pageByTab[key]})</span>
             </button>
           )
         })}
       </div>
 
-      <PoolTable rows={rows} />
+      <div className="mb-3 h-6 text-xs text-muted-foreground">
+        {loading ? "Loading page…" : error ? <span className="text-destructive">{error}</span> : `Page ${currentPage} · ${rows.length} rows`}
+      </div>
+
+      <div className="min-h-[420px]">
+        <PoolTable rows={rows} />
+      </div>
+
+      {truncated ? (
+        <p className="mt-3 text-xs text-amber-600">This pool hit the backend hard cap. Narrow filters for complete results.</p>
+      ) : null}
+
+      <div className="mt-4 flex items-center justify-end gap-2">
+        <Button
+          type="button"
+          variant="outline"
+          size="sm"
+          disabled={loading || currentPage <= 1}
+          onClick={() => setPageByTab((prev) => ({ ...prev, [tab]: Math.max(1, prev[tab] - 1) }))}
+        >
+          Previous
+        </Button>
+        <span className="min-w-20 text-center text-sm tabular-nums">{currentPage}</span>
+        <Button
+          type="button"
+          variant="outline"
+          size="sm"
+          disabled={loading || !hasMore}
+          onClick={() => setPageByTab((prev) => ({ ...prev, [tab]: prev[tab] + 1 }))}
+        >
+          Next
+        </Button>
+      </div>
     </div>
   )
 }
