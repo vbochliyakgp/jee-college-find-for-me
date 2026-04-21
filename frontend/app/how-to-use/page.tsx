@@ -24,8 +24,8 @@ const steps = [
     text: "Choose IIT, NIT, IIIT, and/or GFTI based on what you want to explore.",
   },
   {
-    title: "5) Set optional rank ranges",
-    text: "Use Min/Max in each row to narrow results. Leave blank to keep that row broad.",
+    title: "5) Set rank ranges",
+    text: "Enter at least one number (Min or Max) in any enabled row. Use more rows to narrow results further.",
   },
   {
     title: "6) Search and compare",

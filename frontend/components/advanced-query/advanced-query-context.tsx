@@ -235,6 +235,10 @@ export function AdvancedQueryProvider({ children }: { children: React.ReactNode 
         setClientError("Select at least one institute type.")
         return
       }
+      if (activeBandCount === 0) {
+        setClientError("Enter at least one rank number (min or max) in any enabled row.")
+        return
+      }
 
       const payload = buildAdvancedCutoffQueryV1({
         examType,
@@ -268,7 +272,7 @@ export function AdvancedQueryProvider({ children }: { children: React.ReactNode 
         }
       })
     },
-    [bands, category, examType, genderPool, hasBandErrors, homeState, instituteTypesList, isPwd],
+    [activeBandCount, bands, category, examType, genderPool, hasBandErrors, homeState, instituteTypesList, isPwd],
   )
 
   const value = useMemo<AdvancedQueryContextValue>(

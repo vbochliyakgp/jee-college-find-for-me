@@ -109,4 +109,22 @@ func TestValidate_paginationBounds(t *testing.T) {
 	}
 }
 
+func TestValidate_requiresAtLeastOneClosingRankBand(t *testing.T) {
+	req := Request{
+		Version:        1,
+		ExamType:       "jee-main",
+		GenderPool:     "neutral",
+		Category:       "General",
+		Quotas:         []string{"AI", "OS"},
+		InstituteTypes: []string{"NIT"},
+		PowerMode: PowerMode{
+			Combine:          "union",
+			ClosingRankBands: []ClosingRankBand{},
+		},
+	}
+	if v := Validate(req); len(v) == 0 {
+		t.Fatal("expected validation error when closingRankBands is empty")
+	}
+}
+
 func ptr(n int) *int { return &n }

@@ -84,7 +84,7 @@ export default function HomePage() {
                 </span>
               </h1>
               <p className="mt-2 max-w-xl text-pretty text-sm text-muted-foreground sm:mt-4 sm:text-lg">
-                Pick your exam and filters, then add optional rank ranges. We show matching cutoff rows in simple tables so
+                Pick your exam and filters, then add at least one rank number (min or max). We show matching cutoff rows in simple tables so
                 comparison is easier.
               </p>
             </div>

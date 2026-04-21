@@ -138,6 +138,9 @@ func Validate(req Request) []string {
 			add(fmt.Sprintf("%s: closingRankMin must be <= closingRankMax", prefix))
 		}
 	}
+	if len(req.PowerMode.ClosingRankBands) == 0 {
+		add("powerMode.closingRankBands must include at least one band with closingRankMin or closingRankMax")
+	}
 	if req.Pagination != nil {
 		p := req.Pagination
 		if !slices.Contains(targetPools, p.TargetPool) {
