@@ -12,6 +12,9 @@ export function SiteFooter() {
           <Link href="/" className="hover:text-foreground">
             Go to Main Page
           </Link>
+          <Link href="/how-to-use" className="hover:text-foreground">
+            How to use
+          </Link>
         </div>
       </div>
     </footer>

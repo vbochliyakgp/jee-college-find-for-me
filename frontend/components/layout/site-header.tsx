@@ -11,8 +11,16 @@ export function SiteHeader() {
           <span className="hidden sm:inline text-foreground">JEE College Find</span>
         </Link>
 
-        <div className="hidden sm:inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-[11px] font-medium tracking-wide text-primary">
-          JoSAA cutoff search
+        <div className="flex items-center gap-2">
+          <Link
+            href="/how-to-use"
+            className="rounded-full border border-border/70 px-3 py-1 text-xs font-medium text-muted-foreground transition-colors hover:text-foreground"
+          >
+            How to use
+          </Link>
+          <div className="hidden sm:inline-flex items-center rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-[11px] font-medium tracking-wide text-primary">
+            JEE cutoff finder
+          </div>
         </div>
       </div>
     </header>

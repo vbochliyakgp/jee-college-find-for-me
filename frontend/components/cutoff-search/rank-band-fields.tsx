@@ -22,8 +22,8 @@ export function RankBandFields({ q }: { q: AdvancedQueryContextValue }) {
         {ROWS.map(({ key, title }) => {
           const enabled = q.bandKeyEnabled[key]
           return (
-            <div key={key} className={cn("grid gap-2 sm:grid-cols-[7.5rem_1fr_1fr] sm:items-center", !enabled && "opacity-40")}>
-              <span className="pt-2 text-sm font-medium text-foreground sm:pt-0">{title}</span>
+            <div key={key} className={cn("grid grid-cols-[5.75rem_1fr_1fr] items-center gap-2", !enabled && "opacity-40")}>
+              <span className="text-sm font-medium text-foreground">{title}</span>
               <Input
                 inputMode="numeric"
                 placeholder="Min"
@@ -40,7 +40,7 @@ export function RankBandFields({ q }: { q: AdvancedQueryContextValue }) {
                 value={q.bands[key].max}
                 onChange={(e) => q.setBandEdge(key, "max", e.target.value)}
               />
-              {q.bandErrors[key] ? <p className="text-xs text-destructive sm:col-span-3">{q.bandErrors[key]}</p> : null}
+              {q.bandErrors[key] ? <p className="col-span-3 text-xs text-destructive">{q.bandErrors[key]}</p> : null}
             </div>
           )
         })}
