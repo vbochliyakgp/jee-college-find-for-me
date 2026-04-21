@@ -13,7 +13,6 @@ import (
 	"jee-college-find-for-me/complete-stack/backend/internal/db"
 	httpapi "jee-college-find-for-me/complete-stack/backend/internal/http"
 	"jee-college-find-for-me/complete-stack/backend/internal/importer"
-	"jee-college-find-for-me/complete-stack/backend/internal/predict"
 )
 
 func main() {
@@ -32,8 +31,7 @@ func main() {
 		log.Fatalf("csv import failed: %v", err)
 	}
 
-	service := predict.NewService(database)
-	handler := httpapi.NewHandler(service)
+	handler := httpapi.NewHandler(database)
 
 	mux := http.NewServeMux()
 	handler.Register(mux)

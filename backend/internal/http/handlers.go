@@ -1,30 +1,30 @@
 package httpapi
 
 import (
+	"context"
+	"database/sql"
 	"encoding/json"
-	"errors"
 	"io"
 	"log"
 	"net/http"
+	"time"
 
-	"jee-college-find-for-me/complete-stack/backend/internal/models"
-	"jee-college-find-for-me/complete-stack/backend/internal/predict"
+	"jee-college-find-for-me/complete-stack/backend/internal/cutoffquery"
 )
 
 type Handler struct {
-	service *predict.Service
+	svc *cutoffquery.Service
 }
 
-const maxPredictBodyBytes int64 = 64 << 10 // 64 KiB
-
-func NewHandler(service *predict.Service) *Handler {
-	return &Handler{service: service}
+func NewHandler(db *sql.DB) *Handler {
+	return &Handler{svc: cutoffquery.NewService(db)}
 }
+
+const maxCutoffQueryBodyBytes int64 = 64 << 10 // 64 KiB
 
 func (h *Handler) Register(mux *http.ServeMux) {
 	mux.HandleFunc("/health", h.handleHealth)
-	mux.HandleFunc("/api/meta/filters", h.handleFilters)
-	mux.HandleFunc("/api/predict", h.handlePredict)
+	mux.HandleFunc("/api/cutoffs/query", h.handleCutoffsQuery)
 }
 
 func (h *Handler) handleHealth(w http.ResponseWriter, r *http.Request) {
@@ -36,68 +36,58 @@ func (h *Handler) handleHealth(w http.ResponseWriter, r *http.Request) {
 	writeJSON(w, http.StatusOK, map[string]string{"status": "ok"})
 }
 
-func (h *Handler) handleFilters(w http.ResponseWriter, r *http.Request) {
-	if r.Method != http.MethodGet {
-		writeError(w, http.StatusMethodNotAllowed, "method not allowed")
-		return
-	}
-
-	response, err := h.service.Filters(r.Context())
-	if err != nil {
-		log.Printf("filters failed: %v", err)
-		writeError(w, http.StatusInternalServerError, "internal server error")
-		return
-	}
-
-	writeJSON(w, http.StatusOK, response)
-}
-
-func (h *Handler) handlePredict(w http.ResponseWriter, r *http.Request) {
+func (h *Handler) handleCutoffsQuery(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodPost {
 		writeError(w, http.StatusMethodNotAllowed, "method not allowed")
 		return
 	}
 
-	var req models.PredictRequest
-	r.Body = http.MaxBytesReader(w, r.Body, maxPredictBodyBytes)
-	decoder := json.NewDecoder(r.Body)
-	decoder.DisallowUnknownFields()
-	if err := decoder.Decode(&req); err != nil {
+	var req cutoffquery.Request
+	r.Body = http.MaxBytesReader(w, r.Body, maxCutoffQueryBodyBytes)
+	dec := json.NewDecoder(r.Body)
+	dec.DisallowUnknownFields()
+	if err := dec.Decode(&req); err != nil {
 		writeError(w, http.StatusBadRequest, "invalid json body")
 		return
 	}
-	if err := decoder.Decode(&struct{}{}); err != io.EOF {
+	if err := dec.Decode(&struct{}{}); err != io.EOF {
 		writeError(w, http.StatusBadRequest, "invalid json body")
 		return
 	}
 
-	response, err := h.service.Predict(r.Context(), req)
+	if details := cutoffquery.Validate(req); len(details) > 0 {
+		writeJSON(w, http.StatusBadRequest, map[string]any{
+			"error":   "validation failed",
+			"details": details,
+		})
+		return
+	}
+
+	ctx := r.Context()
+	resp, err := h.queryWithTimeout(ctx, req)
 	if err != nil {
-		status := http.StatusInternalServerError
-		if isValidationError(err) {
-			status = http.StatusBadRequest
-		}
-		if status >= 500 {
-			log.Printf("predict failed: %v", err)
-			writeError(w, status, "internal server error")
-			return
-		}
-		writeError(w, status, err.Error())
+		log.Printf("cutoffs query: %v", err)
+		writeError(w, http.StatusInternalServerError, "internal server error")
 		return
 	}
 
-	writeJSON(w, http.StatusOK, response)
+	writeJSON(w, http.StatusOK, resp)
 }
 
-func isValidationError(err error) bool {
-	var validationErr *predict.ValidationError
-	return errors.As(err, &validationErr)
+func (h *Handler) queryWithTimeout(ctx context.Context, req cutoffquery.Request) (*cutoffquery.QueryResponse, error) {
+	ctx, cancel := context.WithTimeout(ctx, defaultQueryTimeout)
+	defer cancel()
+	return h.svc.QueryPools(ctx, req)
 }
+
+const defaultQueryTimeout = 15 * time.Second
 
 func writeJSON(w http.ResponseWriter, status int, payload any) {
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(status)
-	_ = json.NewEncoder(w).Encode(payload)
+	if err := json.NewEncoder(w).Encode(payload); err != nil {
+		log.Printf("write json: %v", err)
+	}
 }
 
 func writeError(w http.ResponseWriter, status int, message string) {
