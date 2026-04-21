@@ -30,7 +30,8 @@ bun run parse:cutoffs:all
 - Inputs/outputs are under `data/`
 - Common folders include `data/seat-matix/` and `data/cutoffs/`
 
-## Integration Notes
+## Integration notes
 
-- Backend reads generated cutoff CSV files from `data/cutoffs/`
-- Keep this package as an offline maintenance tool; deploy only processed artifacts required by backend/frontend
+- The **Go backend** reads generated cutoff CSVs from `data/cutoffs/` (or `CUTOFFS_CSV_DIR`).
+- The **Next.js app** does not read these files; it only talks to the HTTP API.
+- Treat this package as an offline maintenance tool: ship the backend plus CSV artifacts, not necessarily this folder, in production.

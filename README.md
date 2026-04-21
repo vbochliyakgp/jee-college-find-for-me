@@ -1,88 +1,65 @@
-# JEE College Find For Me (Complete Stack)
+# JEE College Find For Me (complete stack)
 
-Full-stack JEE college predictor with a Go backend and Next.js frontend.
+Go API + Next.js app for **JoSAA-style cutoff row search**: filter official-style snapshots by exam, quotas, institute types, category context, and closing-rank bands. No signup.
 
-## Monorepo Apps
+## Monorepo layout
 
-- `backend/` - Go API that loads JoSAA cutoff CSV data into in-memory SQLite at startup.
-- `frontend/` - Next.js UI for entering rank and viewing shortlist results.
-- `data-processing/` - Offline parsers for converting scraped JoSAA text files to structured artifacts.
+| Path | Role |
+|------|------|
+| `backend/` | HTTP API, loads cutoff CSVs into in-memory SQLite at startup |
+| `frontend/` | Next.js UI: home form → results tables |
+| `data-processing/` | Offline parsers: scraped JoSAA text → CSV artifacts |
 
-## Current Product Scope
+## Product (current)
 
-- Rank-based prediction for `jee-main` and `jee-advanced`.
-- Two outcome bands: `dream` and `easy`.
-- Branch-level shortlist rows grouped by institute.
-- Female + gender-neutral pool handling.
-- Category-based views when category rank is provided.
+- **Home (`/`)** — `CutoffSearchForm`: JEE Main vs Advanced, gender pool, category, PwD, home state (Main only), institute types, optional rank bands per logical pool (open / category / open PwD / category PwD).
+- **Results (`/results?q=…`)** — Four result pools; **`q`** is base64url(JSON) of `AdvancedCutoffQueryV1` so links are refreshable and shareable.
+- **Redirects** — `/predict` and `/advanced` send users to `/`.
 
-## Current Limitations
+Backend: **`POST /api/cutoffs/query`** validates the payload, maps seat types per pool, runs SQL (including domicile-aware HS/OS/GO/JK/LA when `homeState` is set on JEE Main), returns row lists per pool.
 
-- B.Arch and B.Planning programs are not supported.
-- IIT preparatory-course admissions are not included.
-- Results are exploratory and not official counseling advice.
+## Limits
 
-## Project Structure
+- B.Arch / B.Planning not modeled.
+- IIT preparatory rows excluded at import where applicable.
+- Not official JoSAA software; exploratory planning only.
 
-```text
-complete-stack/
-  backend/
-  frontend/
-  data-processing/
-```
+## Run
 
-## How To Run
-
-There are three supported ways to run this project:
-
-### Option 1: Docker Compose (development, with hot reload)
-
-Both frontend and backend support hot reload — Next.js via Turbopack, Go via `go run`.
-
-Full stack:
+### Docker Compose (dev, hot reload)
 
 ```bash
 docker compose -f docker-compose.dev.yml up
 ```
 
-API only:
+API-only:
 
 ```bash
 docker compose -f docker-compose.dev.yml up backend caddy
 ```
 
-Source files in `backend/` and `frontend/` are mounted into the containers, so saving a file triggers a reload automatically.
-
-### Option 2: Docker Compose (production build)
-
-Full stack:
+### Docker Compose (production build)
 
 ```bash
 docker compose up --build
 ```
 
-API only:
-
-```bash
-docker compose up backend caddy --build
-```
-
-Quick checks:
+Health (behind Caddy, `/api` is proxied to the Go server):
 
 ```bash
 curl -k https://localhost/api/health
 curl http://localhost/api/health
 ```
 
-To deploy on a real domain, set in .env `SERVICE_DOMAIN` or run with this:
+Deploy with a real host:
 
 ```bash
 SERVICE_DOMAIN=api.example.com docker compose up --build -d
 ```
 
-### Option 3: Run backend + frontend individually
+### Local: backend + frontend separately
 
-Backend (terminal 1):
+**Terminal 1 — backend**
 
 ```bash
 cd backend
@@ -90,7 +67,9 @@ go mod download
 go run ./cmd/server
 ```
 
-Frontend (terminal 2):
+Listens on `:8080` by default (`PORT` supported).
+
+**Terminal 2 — frontend**
 
 ```bash
 cd frontend
@@ -98,41 +77,37 @@ bun install
 bun run dev
 ```
 
-Default URLs:
+Defaults: frontend `http://localhost:3000`, backend `http://127.0.0.1:8080`.
 
-- Frontend: `http://localhost:3000`
-- Backend: `http://127.0.0.1:8080`
-
-When running individually, frontend requests the backend directly.
-If backend is hosted elsewhere, set this in frontend .env:
+When the browser must call the API on another origin, set in `frontend/.env.local`:
 
 ```bash
-NEXT_PUBLIC_GO_PREDICTOR_API_BASE_URL=http://127.0.0.1:8080
+NEXT_PUBLIC_BACKEND_API_URL=http://127.0.0.1:8080
 ```
 
-## Useful Commands
-
-Backend tests:
+## Commands
 
 ```bash
-cd backend
-go test ./...
+cd backend && go test ./...
 ```
-
-Frontend checks:
 
 ```bash
-cd frontend
-bun run build
-bun run lint
+cd frontend && bun run build && bun run lint
 ```
 
-## Data Refresh (no needed, it is not for you)
+## Regenerate cutoff CSVs
 
-When source files change, regenerate offline artifacts:
+When raw inputs under `data-processing/data/cutoffs/` change:
 
 ```bash
 cd data-processing
 bun install
 bun run parse:cutoffs:all
 ```
+
+Then restart the backend so it reloads CSVs from `data-processing/data/cutoffs/` (see `CUTOFFS_CSV_DIR` in `backend/cmd/server`).
+
+## Further reading
+
+- `ALGORITHM.md` — Quota / home-state rules and cutoff-query behavior (no legacy rank predictor).
+- `backend/README.md`, `frontend/README.md`, `frontend/AGENTS.md` — stack details for humans and agents.

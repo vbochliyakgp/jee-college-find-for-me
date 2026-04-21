@@ -263,7 +263,7 @@ func normalizeGender(value string) string {
 	return string(models.GenderNeutral)
 }
 
-// normalizeQuota keeps the raw JoSAA quota bucket used by prediction logic.
+// normalizeQuota keeps the raw JoSAA quota bucket used by cutoff import and query filters.
 //
 // Supported core and regional buckets:
 //   - "AI", "HS", "OS"

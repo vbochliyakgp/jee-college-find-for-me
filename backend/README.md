@@ -1,41 +1,37 @@
-# Backend (Go Predictor API)
+# Backend (Go cutoff API)
 
-Go API that serves prediction data to the frontend by loading JoSAA cutoff CSVs into an in-memory SQLite database.
+Serves **`POST /api/cutoffs/query`**: loads JoSAA-style cutoff CSVs into **in-memory SQLite** at process start, validates JSON, runs one query per non-empty rank-band pool, returns distinct rows.
 
-> Setup and run instructions are documented in the root `README.md`.
+Monorepo run instructions: root **`../README.md`**.
 
-## Endpoints
+## HTTP routes
 
-- `GET /health`
-- `GET /api/meta/filters`
-- `POST /api/predict`
+| Method | Path | Description |
+|--------|------|-------------|
+| `GET` | `/health` | Liveness JSON `{"status":"ok"}` |
+| `POST` | `/api/cutoffs/query` | Body: `cutoffquery.Request` (JSON). Success: pools `open`, `category`, `openPwd`, `categoryPwd` |
 
-## Data Loading
+## Data loading
 
-- Source: `../data-processing/data/cutoffs/round-*-cutoffs.csv`
-- Latest round is loaded into `cutoff_rows` (prediction source)
-- Older rounds are loaded into history tables
-- Values are normalized during import (gender/quota/state/seat formatting)
+- **Source directory**: `CUTOFFS_CSV_DIR` or defaults under `data-processing/data/cutoffs` (see `cmd/server/main.go`).
+- **Table**: `cutoff_rows` (and optional round history tables from the importer).
+- **Normalization**: gender, quota, state, seat type, etc. in `internal/importer`.
 
-## Prediction Behavior (Current)
+## Cutoff query behavior (summary)
 
-- Input requires exam type and rank (rank can come via `rank` or `score`)
-- Rank window centered around user rank
-- Rows filtered by exam type and supported seat constraints
-- Output labels use two bands:
-  - `dream`
-  - `easy`
-- Female requests can combine female and gender-neutral pools, then keep the better row per branch
+- **Validation** — `internal/cutoffquery/validate.go` (exam, quotas vs `homeState`, institute types, rank bands vs category/PwD).
+- **Seat types** — `seat_types.go` maps each logical pool + category to JoSAA `seat_type` strings.
+- **SQL** — `query_pool.go`: global filters + closing-rank OR bands per pool; when JEE Main sends **`homeState`**, extra predicates match **ALGORITHM.md §5** (HS vs institute `state`, OS other-state, GO/JK/LA vs domicile).
 
-## Canonical Values
+## Canonical string values
 
 - `examType`: `jee-main` | `jee-advanced`
-- `gender`: `Neutral` | `Female`
-- `chance`: `dream` | `easy`
+- `genderPool` (request) / DB `gender`: `neutral` → `Neutral`, `female` → `Female`
 - `category`: `General` | `OBC` | `SC` | `ST` | `EWS`
+- Quotas: `AI`, `OS`, `HS`, `GO`, `JK`, `LA`
+- `instituteTypes`: `IIT`, `NIT`, `IIIT`, `GFTI`
 
-## Known Limits
+## Known limits
 
-- B.Arch and B.Planning are excluded
-- IIT preparatory-course rows are excluded from prediction output
-- Output is exploratory and should not be treated as official counseling advice
+- B.Arch / B.Planning excluded from the snapshot pipeline as configured.
+- Exploratory output only — not official counseling.

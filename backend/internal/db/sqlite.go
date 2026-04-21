@@ -65,6 +65,6 @@ func baseTableStatements(tableName string, indexPrefix string) []string {
 		fmt.Sprintf(`CREATE INDEX IF NOT EXISTS %s_quota_state ON %s (quota, state)`, indexPrefix, tableName),
 		fmt.Sprintf(`CREATE INDEX IF NOT EXISTS %s_gender_seat_type ON %s (gender, seat_type)`, indexPrefix, tableName),
 		fmt.Sprintf(`CREATE INDEX IF NOT EXISTS %s_closing_rank ON %s (closing_rank)`, indexPrefix, tableName),
-		fmt.Sprintf(`CREATE INDEX IF NOT EXISTS %s_predict_lookup ON %s (exam_type, quota, state, gender, seat_type, closing_rank)`, indexPrefix, tableName),
+		fmt.Sprintf(`CREATE INDEX IF NOT EXISTS %s_cutoff_lookup ON %s (exam_type, quota, state, gender, seat_type, closing_rank)`, indexPrefix, tableName),
 	}
 }

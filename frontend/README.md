@@ -1,45 +1,52 @@
 # Frontend (Next.js)
 
-Next.js App Router frontend for entering rank details and viewing prediction results.
+Next.js **App Router** UI for the **cutoff query** flow: home form → **`/results?q=…`** (shareable, re-fetches from encoded query).
 
-> Setup and run instructions are documented in the root `README.md`.
+Monorepo run instructions: root **`../README.md`**.
 
 ## Stack
 
-- Next.js (App Router) + TypeScript
-- Tailwind CSS v4
-- Bun as package manager/runtime for scripts
+- Next.js 16+, React 19, TypeScript, Tailwind CSS v4
+- **Bun** for install/scripts (`packageManager` in `package.json`)
 
-## Scripts (Reference)
+## Scripts
 
-- `bun run dev`
-- `bun run build`
-- `bun run start`
-- `bun run lint`
+- `bun run dev` — dev server (Turbopack)
+- `bun run build` — production build
+- `bun run start` — serve production build
+- `bun run lint` — ESLint
 
-## Backend Connection
+## API base URL
 
-This app calls the Go predictor backend. By default it uses same-origin `/api`
-(works with Docker Compose + Caddy).
+Client code posts to **`{base}/api/cutoffs/query`** (`lib/advanced-query/api.ts`).
 
-Configure base URL when needed:
+Resolution order:
+
+1. `NEXT_PUBLIC_BACKEND_API_URL`
+2. **Browser**: empty string → same origin (typical with Docker + Caddy)
+3. **Server** (SSR): internal default for compose (`http://backend:8080`)
+
+Example local `.env.local` when frontend and API run on different ports:
 
 ```bash
-NEXT_PUBLIC_GO_PREDICTOR_API_BASE_URL=http://127.0.0.1:8080
+NEXT_PUBLIC_BACKEND_API_URL=http://127.0.0.1:8080
 ```
 
-## Feature Coverage (Current)
+## App structure (high level)
 
-- Home form for exam, rank, gender, home state, and category inputs
-- Results page with shortlist cards and category mode tabs
-- Mobile-friendly responsive UI
+| Area | Path |
+|------|------|
+| Home search | `app/page.tsx`, `components/cutoff-search/` |
+| Results | `app/results/page.tsx`, `components/cutoff-results/` |
+| Query state | `components/advanced-query/advanced-query-context.tsx` |
+| Types + payload builder | `lib/advanced-query/types.ts`, `build-payload.ts` |
+| Share link codec | `lib/advanced-query/query-url.ts` |
+| Layout / chrome | `components/layout/`, `components/providers/` |
+| shadcn-style UI | `components/ui/` |
 
-## Not Supported Yet
+## Not modeled
 
-- B.Arch and B.Planning focused flows
-- IIT preparatory-course admission paths
+- B.Arch / B.Planning–specific UX
+- Official JoSAA choice filling or eligibility
 
-## Data Notes
-
-- Raw scraped files and parsers are maintained in `../data-processing/`.
-- This frontend does not run those parsers at build/runtime.
+Raw parsers live in **`../data-processing/`**; the web app does not run them at build time.

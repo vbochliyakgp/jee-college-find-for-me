@@ -1,44 +1,42 @@
-# Agent notes — `new/` web app
+# Agent notes — `frontend/`
 
 ## Package manager
 
-Use **Bun** for this project, not npm or pnpm.
-
-```bash
-cd new
-bun install
-bun run dev
-bun run build
-```
-
-Do not add `npm install` / `npm run` instructions for this package unless the user explicitly asks for npm.
+Use **Bun** (`bun install`, `bun run dev`, `bun run build`). Do not switch this package to npm/pnpm unless the user asks.
 
 ## What this app is
 
 - **Next.js 16** (App Router) + **React 19** + **TypeScript** + **Tailwind CSS v4**.
-- **API-driven app**: no login, payments, admin, or database in frontend. Predictor results are fetched from the Go backend API.
-- **Production-oriented structure**: layout components under `components/layout/`, predictor UI under `components/predict/`, shared UI under `components/ui/` (shadcn-style).
+- **No auth, no payments, no DB in the browser.** Results come from the Go backend **`POST /api/cutoffs/query`**.
+- **Primary UX**: cutoff search form on `/`, tabbed result tables on **`/results?q=<base64url JSON>`** (encoded `AdvancedCutoffQueryV1`). The `q` param is required for refresh/share; in-session navigation from home sets it on success.
 
-## Data source
+## Layout
 
-- Source CSV lives under `data-processing/data/cutoffs/`.
-- Backend loads and serves predictions from this dataset; frontend does not bundle cutoff JSON.
+- **`components/layout/`** — site header/footer.
+- **`components/cutoff-search/`** — home form (exam, gender, category, PwD, home state, institute types, rank bands).
+- **`components/cutoff-results/`** — results page (hydrates from `q` when needed).
+- **`components/advanced-query/`** — React context for form state, submit, URL re-query helpers.
+- **`components/providers/`** — e.g. `AppProviders` wrapping `AdvancedQueryProvider`.
+- **`components/ui/`** — shadcn-style primitives.
 
-## Dependency policy
+There is **no** `components/predict/` in this stack; ignore old docs that reference it.
+
+## API wiring
+
+- **`lib/advanced-query/api.ts`** — `postCutoffQuery`, base URL from `NEXT_PUBLIC_BACKEND_API_URL`.
+- **`lib/advanced-query/types.ts`** — request/response TypeScript contracts (mirror `internal/cutoffquery` JSON).
+
+## Data
+
+- Cutoffs live in the **Go process** (SQLite loaded from CSV). The frontend does not bundle cutoff JSON.
+
+## Dependency / tooling notes
 
 - Prefer **current stable** versions when adding packages (`bun add <pkg>`).
-- **ESLint**: `eslint-config-next` is not compatible with ESLint 10 yet — keep **ESLint 9.x** until Next’s flat-config story catches up.
-- A few libraries are **pinned** because the copied shadcn components target older APIs:
-  - `react-day-picker@8` — Calendar component
-  - `recharts@2` — Chart component
-  - `react-resizable-panels@2` — Resizable component  
-  If you upgrade these, update the matching `components/ui/*` files or expect type/runtime breakage.
-
-## Next.js specifics
-
-Per upstream guidance: this repo may use Next 16 conventions that differ from older docs. Prefer project-local patterns and compiler errors over assumptions from training data.
+- **ESLint**: keep versions aligned with `eslint-config-next` (see `package.json`).
+- Per Next 16: prefer project-local patterns and compiler errors over older generic Next docs.
 
 ## Styling
 
-- Global tokens and shadcn mapping live in `app/globals.css` (`@import "tailwindcss"`, `@plugin "tailwindcss-animate"`, `@theme inline`).
-- Favor clear typography and spacing over cloning the legacy `/old` site pixel-perfectly; match branding only when it does not hurt UX.
+- Tokens and Tailwind v4 entry: `app/globals.css`.
+- Reuse existing spacing/typography patterns from `cutoff-search` / results before inventing new layout systems.

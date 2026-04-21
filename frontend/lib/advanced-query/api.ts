@@ -4,11 +4,9 @@ const DEFAULT_API_BASE_URL = ""
 const DEFAULT_INTERNAL_API_BASE_URL = "http://backend:8080"
 
 function apiBaseUrl() {
-  const configuredPublic = process.env.NEXT_PUBLIC_GO_PREDICTOR_API_BASE_URL
-  const configuredServer = process.env.GO_PREDICTOR_API_BASE_URL
+  const configuredPublic = process.env.NEXT_PUBLIC_BACKEND_API_URL?.trim()
 
   if (configuredPublic) return configuredPublic
-  if (configuredServer) return configuredServer
 
   if (typeof window === "undefined") return DEFAULT_INTERNAL_API_BASE_URL
   return DEFAULT_API_BASE_URL
