@@ -93,27 +93,29 @@ export function CutoffSearchForm() {
         </label>
       </div>
 
-      {isMain ? (
-        <div className="space-y-2">
-          <Label className={FIELD_LABEL}>Home state</Label>
-          <Select
-            value={q.homeState || "__none__"}
-            onValueChange={(v) => q.setHomeState(v === "__none__" ? "" : (v as IndianState))}
+      <div className={cn("space-y-2", isAdvanced && "opacity-60")}>
+        <Label className={FIELD_LABEL}>Home state</Label>
+        <Select
+          value={q.homeState || "__none__"}
+          onValueChange={(v) => q.setHomeState(v === "__none__" ? "" : (v as IndianState))}
+          disabled={isAdvanced}
+        >
+          <SelectTrigger
+            className="h-11"
+            title={isAdvanced ? "Home state applies to JEE Main only" : `Quotas: ${q.quotasPreview}`}
           >
-            <SelectTrigger className="h-11" title={`Quotas: ${q.quotasPreview}`}>
-              <SelectValue placeholder="Optional — AI + OS only" />
-            </SelectTrigger>
-            <SelectContent className="max-h-72">
-              <SelectItem value="__none__">Not set (AI + OS)</SelectItem>
-              {INDIAN_STATES.map((s) => (
-                <SelectItem key={s} value={s}>
-                  {s}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
-        </div>
-      ) : null}
+            <SelectValue placeholder={isAdvanced ? "Not used for JEE Advanced" : "Optional — AI + OS only"} />
+          </SelectTrigger>
+          <SelectContent className="max-h-72">
+            <SelectItem value="__none__">Not set (AI + OS)</SelectItem>
+            {INDIAN_STATES.map((s) => (
+              <SelectItem key={s} value={s}>
+                {s}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      </div>
 
       <div
         className={cn(
@@ -124,15 +126,27 @@ export function CutoffSearchForm() {
       >
         <Label className={FIELD_LABEL}>Institute type</Label>
         <div className="flex flex-wrap gap-3">
-          {ADVANCED_QUERY_INSTITUTE_TYPES.map((t: InstituteType) => (
-            <label
-              key={t}
-              className={cn("flex items-center gap-2 text-sm", isMain && "cursor-pointer", isAdvanced && "cursor-default")}
-            >
-              <Checkbox checked={q.instituteSelected[t]} disabled={isAdvanced} onCheckedChange={(v) => q.toggleInstitute(t, v === true)} />
-              {t}
-            </label>
-          ))}
+          {ADVANCED_QUERY_INSTITUTE_TYPES.map((t: InstituteType) => {
+            const iitDisabledOnMain = isMain && t === "IIT"
+            return (
+              <label
+                key={t}
+                className={cn(
+                  "flex items-center gap-2 text-sm",
+                  isMain && !iitDisabledOnMain && "cursor-pointer",
+                  isAdvanced && "cursor-default",
+                  iitDisabledOnMain && "cursor-not-allowed opacity-60",
+                )}
+              >
+                <Checkbox
+                  checked={q.instituteSelected[t]}
+                  disabled={isAdvanced || iitDisabledOnMain}
+                  onCheckedChange={(v) => q.toggleInstitute(t, v === true)}
+                />
+                {t}
+              </label>
+            )
+          })}
         </div>
       </div>
 

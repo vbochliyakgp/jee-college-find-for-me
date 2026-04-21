@@ -87,7 +87,7 @@ export function AdvancedQueryProvider({ children }: { children: React.ReactNode 
   const [homeState, setHomeState] = useState<IndianState | "">("")
 
   const [instituteSelected, setInstituteSelected] = useState<Record<InstituteType, boolean>>({
-    IIT: true,
+    IIT: false,
     NIT: true,
     IIIT: true,
     GFTI: true,
@@ -104,7 +104,8 @@ export function AdvancedQueryProvider({ children }: { children: React.ReactNode 
       setInstituteSelected({ IIT: true, NIT: false, IIIT: false, GFTI: false })
       setHomeState("")
     } else {
-      setInstituteSelected({ IIT: true, NIT: true, IIIT: true, GFTI: true })
+      // JEE Main snapshot has no IIT rows (IITs are jee-advanced); keep IIT off.
+      setInstituteSelected({ IIT: false, NIT: true, IIIT: true, GFTI: true })
     }
   }, [examType])
 
@@ -160,6 +161,7 @@ export function AdvancedQueryProvider({ children }: { children: React.ReactNode 
 
   const toggleInstitute = useCallback((t: InstituteType, checked: boolean) => {
     if (examType === "jee-advanced") return
+    if (examType === "jee-main" && t === "IIT") return
     setInstituteSelected((prev) => ({ ...prev, [t]: checked }))
   }, [examType])
 

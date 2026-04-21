@@ -9,7 +9,7 @@ func TestValidate_minimalOK_main(t *testing.T) {
 		GenderPool:     "neutral",
 		Category:       "General",
 		Quotas:         []string{"AI", "OS"},
-		InstituteTypes: []string{"IIT", "NIT"},
+		InstituteTypes: []string{"NIT", "IIIT"},
 		PowerMode: PowerMode{
 			Combine: "union",
 			ClosingRankBands: []ClosingRankBand{
@@ -61,6 +61,26 @@ func TestValidate_categoryBand_general(t *testing.T) {
 	}
 	if v := Validate(req); len(v) == 0 {
 		t.Fatal("expected errors for category band with General")
+	}
+}
+
+func TestValidate_main_rejectsIITInstitute(t *testing.T) {
+	req := Request{
+		Version:        1,
+		ExamType:       "jee-main",
+		GenderPool:     "neutral",
+		Category:       "General",
+		Quotas:         []string{"AI", "OS"},
+		InstituteTypes: []string{"IIT", "NIT"},
+		PowerMode: PowerMode{
+			Combine: "union",
+			ClosingRankBands: []ClosingRankBand{
+				{TargetPool: "open", ClosingRankMin: ptr(1), ClosingRankMax: ptr(5000)},
+			},
+		},
+	}
+	if v := Validate(req); len(v) == 0 {
+		t.Fatal("expected errors for jee-main with IIT in instituteTypes")
 	}
 }
 

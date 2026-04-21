@@ -101,6 +101,8 @@ func Validate(req Request) []string {
 		}
 		if !containsOnly(req.InstituteTypes, allowedInst) {
 			add("instituteTypes contains unknown value (allowed: IIT, NIT, IIIT, GFTI)")
+		} else if req.ExamType == "jee-main" && slices.Contains(req.InstituteTypes, "IIT") {
+			add("instituteTypes must not include IIT for jee-main (IIT cutoffs use jee-advanced)")
 		} else if req.ExamType == "jee-advanced" {
 			if len(req.InstituteTypes) != 1 || req.InstituteTypes[0] != "IIT" {
 				add("for jee-advanced, instituteTypes must be exactly [\"IIT\"]")
