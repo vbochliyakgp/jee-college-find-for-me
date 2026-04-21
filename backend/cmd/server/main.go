@@ -43,6 +43,7 @@ func main() {
 		ReadTimeout:       10 * time.Second,
 		WriteTimeout:      20 * time.Second,
 		IdleTimeout:       60 * time.Second,
+		MaxHeaderBytes:    1 << 20, // 1 MiB
 	}
 
 	log.Printf("loaded %d rows from %d files", stats.Rows, stats.Files)
@@ -134,7 +135,10 @@ func buildAllowedOrigins() map[string]struct{} {
 		return allowed
 	}
 
+	// Production origin should be HTTPS. Keep HTTP only for local development.
 	allowed["https://"+domain] = struct{}{}
-	allowed["http://"+domain] = struct{}{}
+	if domain == "localhost" || strings.HasPrefix(domain, "127.0.0.1") {
+		allowed["http://"+domain] = struct{}{}
+	}
 	return allowed
 }
