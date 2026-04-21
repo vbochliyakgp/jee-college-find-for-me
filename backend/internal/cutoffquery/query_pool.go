@@ -15,7 +15,7 @@ const maxRowsPerPool = 1000
 type PoolQueryInput struct {
 	Table            string
 	ExamType         string
-	GenderDB         string
+	GenderDBs        []string
 	Quotas           []string
 	InstituteTypes   []string
 	SeatTypes        []string
@@ -45,6 +45,9 @@ func QueryCutoffPool(ctx context.Context, db *sql.DB, in PoolQueryInput) (PoolQu
 	if len(in.Quotas) == 0 {
 		return PoolQueryOutput{}, fmt.Errorf("quotas required")
 	}
+	if len(in.GenderDBs) == 0 {
+		return PoolQueryOutput{}, fmt.Errorf("at least one gender required")
+	}
 	if len(in.InstituteTypes) == 0 {
 		// Defensive fallback: if caller passes no institute filters, answer is empty.
 		// Normal HTTP flow validates this and returns 400 before service/query.
@@ -56,6 +59,7 @@ func QueryCutoffPool(ctx context.Context, db *sql.DB, in PoolQueryInput) (PoolQu
 		return PoolQueryOutput{Rows: []ResultRow{}}, nil
 	}
 
+	gIn := SQLIn(len(in.GenderDBs))
 	qIn := SQLIn(len(in.Quotas))
 	iIn := SQLIn(len(in.InstituteTypes))
 	sIn := SQLIn(len(in.SeatTypes))
@@ -75,7 +79,7 @@ func QueryCutoffPool(ctx context.Context, db *sql.DB, in PoolQueryInput) (PoolQu
 SELECT DISTINCT exam_type, institute, department, institute_type, state, nirf, quota, gender, seat_type, opening_rank, closing_rank
 FROM %s
 WHERE exam_type = ?
-  AND gender = ?
+  AND gender IN (%s)
   AND quota IN (%s)
   AND institute_type IN (%s)
   AND seat_type IN (%s)
@@ -83,10 +87,13 @@ WHERE exam_type = ?
 ORDER BY closing_rank ASC, institute ASC, department ASC
 LIMIT ?
 OFFSET ?
-`, in.Table, qIn, iIn, sIn, homeSQL, closingParts)
+`, in.Table, gIn, qIn, iIn, sIn, homeSQL, closingParts)
 
-	args := make([]any, 0, 2+len(in.Quotas)+len(in.InstituteTypes)+len(in.SeatTypes)+len(homeArgs)+len(closingArgs)+2)
-	args = append(args, in.ExamType, in.GenderDB)
+	args := make([]any, 0, 1+len(in.GenderDBs)+len(in.Quotas)+len(in.InstituteTypes)+len(in.SeatTypes)+len(homeArgs)+len(closingArgs)+2)
+	args = append(args, in.ExamType)
+	for _, g := range in.GenderDBs {
+		args = append(args, g)
+	}
 	for _, q := range in.Quotas {
 		args = append(args, q)
 	}

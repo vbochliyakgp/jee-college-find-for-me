@@ -28,7 +28,7 @@ func (s *Service) QueryPools(ctx context.Context, req Request) (*QueryResponse, 
 		table = DefaultCutoffTable
 	}
 
-	genderDB, err := ToDBGender(req.GenderPool)
+	genderDBs, err := ToDBGenders(req.GenderPool)
 	if err != nil {
 		return nil, err
 	}
@@ -81,7 +81,7 @@ func (s *Service) QueryPools(ctx context.Context, req Request) (*QueryResponse, 
 		res, err := QueryCutoffPool(ctx, s.db, PoolQueryInput{
 			Table:            table,
 			ExamType:         req.ExamType,
-			GenderDB:         genderDB,
+			GenderDBs:        genderDBs,
 			Quotas:           req.Quotas,
 			InstituteTypes:   req.InstituteTypes,
 			SeatTypes:        seatTypes,

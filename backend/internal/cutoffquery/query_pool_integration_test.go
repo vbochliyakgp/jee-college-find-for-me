@@ -27,7 +27,7 @@ VALUES ('jee-main', 'Test NIT', 'CSE', 'NIT', 'TestState', NULL, 'AI', 'Neutral'
 	res, err := QueryCutoffPool(ctx, database, PoolQueryInput{
 		Table:          DefaultCutoffTable,
 		ExamType:       "jee-main",
-		GenderDB:       "Neutral",
+		GenderDBs:      []string{"Neutral"},
 		Quotas:         []string{"AI", "OS"},
 		InstituteTypes: []string{"NIT"},
 		SeatTypes:      []string{"OPEN"},
@@ -71,7 +71,7 @@ INSERT INTO cutoff_rows (exam_type, institute, department, institute_type, state
 	res, err := QueryCutoffPool(ctx, database, PoolQueryInput{
 		Table:            DefaultCutoffTable,
 		ExamType:         "jee-main",
-		GenderDB:         "Neutral",
+		GenderDBs:        []string{"Neutral"},
 		Quotas:           []string{"HS", "OS"},
 		InstituteTypes:   []string{"NIT"},
 		SeatTypes:        []string{"OPEN"},
@@ -120,7 +120,7 @@ INSERT INTO cutoff_rows (exam_type, institute, department, institute_type, state
 	res, err := QueryCutoffPool(ctx, database, PoolQueryInput{
 		Table:            DefaultCutoffTable,
 		ExamType:         "jee-main",
-		GenderDB:         "Neutral",
+		GenderDBs:        []string{"Neutral"},
 		Quotas:           []string{"AI", "GO"},
 		InstituteTypes:   []string{"GFTI"},
 		SeatTypes:        []string{"OPEN"},
@@ -138,7 +138,7 @@ INSERT INTO cutoff_rows (exam_type, institute, department, institute_type, state
 	resGoa, err := QueryCutoffPool(ctx, database, PoolQueryInput{
 		Table:            DefaultCutoffTable,
 		ExamType:         "jee-main",
-		GenderDB:         "Neutral",
+		GenderDBs:        []string{"Neutral"},
 		Quotas:           []string{"AI", "GO"},
 		InstituteTypes:   []string{"GFTI"},
 		SeatTypes:        []string{"OPEN"},
@@ -164,7 +164,7 @@ func TestQueryCutoffPool_emptyInstituteTypesReturnsEmpty(t *testing.T) {
 	res, err := QueryCutoffPool(ctx, database, PoolQueryInput{
 		Table:            DefaultCutoffTable,
 		ExamType:         "jee-main",
-		GenderDB:         "Neutral",
+		GenderDBs:        []string{"Neutral"},
 		Quotas:           []string{"AI", "OS"},
 		InstituteTypes:   []string{},
 		SeatTypes:        []string{"OPEN"},
@@ -199,7 +199,7 @@ VALUES (?, ?, ?, 'NIT', 'Bihar', NULL, 'AI', 'Neutral', 'OPEN', 1, ?)
 	res, err := QueryCutoffPool(ctx, database, PoolQueryInput{
 		Table:            DefaultCutoffTable,
 		ExamType:         "jee-main",
-		GenderDB:         "Neutral",
+		GenderDBs:        []string{"Neutral"},
 		Quotas:           []string{"AI", "OS"},
 		InstituteTypes:   []string{"NIT"},
 		SeatTypes:        []string{"OPEN"},

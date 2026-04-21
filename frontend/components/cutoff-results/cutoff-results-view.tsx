@@ -34,7 +34,7 @@ function toTargetPool(k: PoolKey): AdvancedCutoffQueryV1["powerMode"]["closingRa
 
 function PoolTable({ rows }: { rows: CutoffResultRow[] }) {
   if (rows.length === 0) {
-    return <p className="py-8 text-center text-sm text-muted-foreground">No rows for this page.</p>
+    return <p className="py-8 text-center text-sm text-muted-foreground">No results found for this page.</p>
   }
   return (
     <div className="overflow-x-auto rounded-lg border border-border/70">
@@ -109,6 +109,21 @@ export function CutoffResultsView() {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const inFlightKey = useRef<string | null>(null)
+  const enabledByTab = useMemo<Record<PoolKey, boolean>>(() => {
+    if (!payload) {
+      return { open: true, category: true, openPwd: true, categoryPwd: true }
+    }
+    const hasBand = (targetPool: AdvancedCutoffQueryV1["powerMode"]["closingRankBands"][number]["targetPool"]) =>
+      payload.powerMode.closingRankBands.some(
+        (b) => b.targetPool === targetPool && (b.closingRankMin !== null || b.closingRankMax !== null),
+      )
+    return {
+      open: hasBand("open"),
+      category: hasBand("category"),
+      openPwd: hasBand("open_pwd"),
+      categoryPwd: hasBand("category_pwd"),
+    }
+  }, [payload])
 
   const currentPage = pageByTab[tab]
   const rows = rowsByTab[tab]
@@ -127,6 +142,7 @@ export function CutoffResultsView() {
 
   useEffect(() => {
     if (!payload) return
+    if (!enabledByTab[tab]) return
     const page = pageByTab[tab]
     const key = `${tab}:${page}`
     if (loadedKey[tab] === key) return
@@ -162,7 +178,13 @@ export function CutoffResultsView() {
         if (inFlightKey.current === key) inFlightKey.current = null
         setLoading(false)
       })
-  }, [payload, tab, pageByTab, loadedKey])
+  }, [payload, tab, pageByTab, loadedKey, enabledByTab])
+
+  useEffect(() => {
+    if (enabledByTab[tab]) return
+    const firstEnabled = TABS.find((t) => enabledByTab[t.key])
+    if (firstEnabled) setTab(firstEnabled.key)
+  }, [enabledByTab, tab])
 
   if (!enc) {
     return (
@@ -212,13 +234,19 @@ export function CutoffResultsView() {
             <button
               key={key}
               type="button"
-              onClick={() => setTab(key)}
+              disabled={!enabledByTab[key]}
+              onClick={() => {
+                if (!enabledByTab[key]) return
+                setTab(key)
+              }}
               className={cn(
                 "rounded-t-lg border border-b-0 px-3 py-2 text-sm font-medium transition-colors",
                 active
                   ? "border-border bg-background text-foreground"
                   : "border-transparent text-muted-foreground hover:text-foreground",
+                !enabledByTab[key] && "cursor-not-allowed opacity-50 line-through hover:text-muted-foreground",
               )}
+              title={enabledByTab[key] ? undefined : "No rank range selected for this pool"}
             >
               {label}
               <span className="ml-1.5 tabular-nums text-xs text-muted-foreground">(p{pageByTab[key]})</span>
@@ -232,7 +260,13 @@ export function CutoffResultsView() {
       </div>
 
       <div className="min-h-[420px]">
-        <PoolTable rows={rows} />
+        {enabledByTab[tab] ? (
+          <PoolTable rows={rows} />
+        ) : (
+          <p className="py-8 text-center text-sm text-muted-foreground">
+            This pool is disabled because no rank range was selected for it.
+          </p>
+        )}
       </div>
 
       {truncated ? (
@@ -244,7 +278,7 @@ export function CutoffResultsView() {
           type="button"
           variant="outline"
           size="sm"
-          disabled={loading || currentPage <= 1}
+          disabled={loading || !enabledByTab[tab] || currentPage <= 1}
           onClick={() => setPageByTab((prev) => ({ ...prev, [tab]: Math.max(1, prev[tab] - 1) }))}
         >
           Previous
@@ -254,7 +288,7 @@ export function CutoffResultsView() {
           type="button"
           variant="outline"
           size="sm"
-          disabled={loading || !hasMore}
+          disabled={loading || !enabledByTab[tab] || !hasMore}
           onClick={() => setPageByTab((prev) => ({ ...prev, [tab]: prev[tab] + 1 }))}
         >
           Next
