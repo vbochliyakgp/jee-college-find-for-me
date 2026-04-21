@@ -15,21 +15,28 @@ const sans = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
   title: {
-    default: "JEE College Find",
+    default: "JEE College Cutoff Finder",
     template: "%s · JEE College Find",
   },
   description:
-    "Search JoSAA-style JEE Main and JEE Advanced cutoffs by institute type, quota, category, and closing-rank bands. No signup.",
-  keywords: ["JoSAA cutoffs", "JEE cutoff search", "IIT closing rank", "NIT cutoffs", "JEE Main", "JEE Advanced"],
+    "Find JEE Main and JEE Advanced cutoff trends in simple tables. Filter by exam, category, quota, institute type, and rank range. Free and easy to use.",
+  keywords: [
+    "JEE cutoff finder",
+    "JEE Main cutoff",
+    "JEE Advanced cutoff",
+    "IIT NIT IIIT GFTI cutoff",
+    "college cutoff by rank",
+    "JoSAA cutoff trends",
+  ],
   alternates: {
     canonical: "/",
   },
   category: "education",
   applicationName: "JEE College Find",
   openGraph: {
-    title: "JEE College Find",
+    title: "JEE College Cutoff Finder",
     description:
-      "JoSAA-style cutoff search. No signup or email required.",
+      "Check JEE cutoffs quickly with clear filters and simple tables. No signup required.",
     url: "/",
     siteName: "JEE College Find",
     locale: "en_IN",
@@ -37,8 +44,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "JEE College Find",
-    description: "Filter cutoff rows by exam, quota, and rank bands. No signup.",
+    title: "JEE College Cutoff Finder",
+    description: "Search JEE Main and JEE Advanced cutoffs with easy filters. Free, no signup.",
     creator: "@jeecollegefind",
   },
   robots: {

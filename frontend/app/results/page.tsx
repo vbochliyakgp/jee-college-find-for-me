@@ -4,7 +4,7 @@ import { CutoffResultsView } from "@/components/cutoff-results/cutoff-results-vi
 
 export const metadata: Metadata = {
   title: "Cutoff results",
-  description: "JoSAA-style cutoff rows by pool.",
+  description: "Tabbed cutoff results for your selected filters and rank ranges.",
   robots: { index: false, follow: true },
 }
 

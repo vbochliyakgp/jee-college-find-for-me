@@ -3,28 +3,35 @@ import { CheckCircle2 } from "lucide-react"
 import { CutoffSearchForm } from "@/components/cutoff-search/cutoff-search-form"
 
 const trustPoints = [
-  "JEE Main and JEE Advanced cutoff snapshots",
-  "Filter by exam, gender pool, category, PwD, home state, institute type, and closing-rank bands",
-  "Results split into Open, Category, Open PwD, and Category PwD pools",
-  "No signup and no personal contact details",
+  "See JEE Main and JEE Advanced cutoff data in one place",
+  "Use simple filters: exam, category, quota, institute type, home state, and rank range",
+  "View results in clear tabs: Open, Category, Open PwD, and Category PwD",
+  "Free to use with no signup",
 ]
 
 export const metadata: Metadata = {
-  title: "JoSAA cutoff search | JEE College Find",
+  title: "JEE Main & Advanced Cutoff Finder",
   description:
-    "Search JoSAA-style cutoffs across IITs, NITs, IIITs, and GFTIs with quota, institute, and closing-rank filters. Free, no signup.",
-  keywords: ["JoSAA cutoffs", "JEE Main cutoffs", "JEE Advanced cutoffs", "IIT closing rank", "NIT cutoffs"],
+    "Search cutoff trends for IITs, NITs, IIITs, and GFTIs with easy filters. Compare programs by closing-rank ranges in seconds.",
+  keywords: [
+    "JEE college cutoff finder",
+    "IIT cutoff",
+    "NIT cutoff",
+    "IIIT cutoff",
+    "GFTI cutoff",
+    "closing rank search",
+  ],
   alternates: { canonical: "/" },
   openGraph: {
-    title: "JoSAA cutoff search | JEE College Find",
-    description: "Filter official-style cutoff rows and compare programs. No signup.",
+    title: "JEE Main & Advanced Cutoff Finder",
+    description: "Search and compare cutoff trends across IIT, NIT, IIIT, and GFTI programs.",
     url: "/",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "JoSAA cutoff search | JEE College Find",
-    description: "Filter cutoff rows by exam, quota, institute type, and rank bands.",
+    title: "JEE Main & Advanced Cutoff Finder",
+    description: "Find college cutoff trends quickly with clear filters and tabbed results.",
   },
 }
 
@@ -45,7 +52,7 @@ export default function HomePage() {
         operatingSystem: "Web",
         isAccessibleForFree: true,
         offers: { "@type": "Offer", price: "0", priceCurrency: "INR" },
-        description: "JoSAA-style cutoff search for JEE Main and JEE Advanced counseling data.",
+        description: "Simple web tool to explore JEE Main and JEE Advanced cutoff trends by filters and rank ranges.",
       },
     ],
   }
@@ -66,19 +73,19 @@ export default function HomePage() {
         <div className="grid grid-cols-1 items-start gap-6 lg:grid-cols-2 lg:gap-14">
           <div className="space-y-4 sm:space-y-6">
             <span className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-3 py-1 text-[10px] font-semibold tracking-wide text-primary sm:px-4 sm:py-1.5 sm:text-xs">
-              Cutoff snapshot search
+              Easy cutoff search
             </span>
 
             <div>
               <h1 className="text-balance text-[1.7rem] font-bold tracking-tight text-foreground sm:text-5xl lg:text-[3.15rem] lg:leading-tight">
-                Explore cutoffs by rank band{" "}
+                Find colleges by cutoff range{" "}
                 <span className="bg-gradient-to-r from-primary to-violet-500 bg-clip-text text-transparent">
-                  — free &amp; simple
+                  — fast &amp; simple
                 </span>
               </h1>
               <p className="mt-2 max-w-xl text-pretty text-sm text-muted-foreground sm:mt-4 sm:text-lg">
-                Set exam, quotas, institute types, and optional closing-rank windows for each seat pool. We return matching
-                rows from the loaded counseling snapshot.
+                Pick your exam and filters, then add optional rank ranges. We show matching cutoff rows in simple tables so
+                comparison is easier.
               </p>
             </div>
 
@@ -102,7 +109,8 @@ export default function HomePage() {
         <section className="mt-8 space-y-3 rounded-2xl border border-border/70 bg-card/60 p-4 sm:p-6">
           <h2 className="text-lg font-semibold tracking-tight text-foreground sm:text-xl">Note</h2>
           <p className="text-sm text-muted-foreground sm:text-base">
-            This is not official JoSAA software. Use official counseling portals for choice filling and eligibility rules.
+            This is an independent helper tool, not an official JoSAA platform. Always confirm final choices and eligibility
+            on official counseling portals.
           </p>
         </section>
       </section>
