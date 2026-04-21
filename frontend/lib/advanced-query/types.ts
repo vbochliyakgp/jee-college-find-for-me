@@ -21,7 +21,8 @@
  * - `examType === "jee-advanced"`: `homeState` must be absent or null; `quotas` must be only AI+OS;
  *   `instituteTypes` must be exactly IIT counseling scope (client sends `["IIT"]`).
  * - `examType === "jee-main"`: `homeState` optional; if set, quotas may include HS/GO/JK/LA per product rules;
- *   if unset, quotas AI+OS only.
+ *   if unset, quotas AI+OS only. When set, the server applies domicile rules (ALGORITHM.md §5): HS vs institute `state`,
+ *   OS for other-state institutes, GO/JK/LA only for matching home states.
  * - `powerMode.closingRankBands`: drop or reject clauses for pools that are not allowed for the given
  *   `category` / `isPwd` (see `isRankBandRowEnabled` in build-payload): `category` row only when category ≠ General;
  *   `open_pwd` only when `isPwd`; `category_pwd` only when `isPwd` and category ≠ General; `open` always allowed.

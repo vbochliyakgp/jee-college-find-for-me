@@ -19,7 +19,7 @@ export async function GET() {
     "",
     "## URLs",
     "- Home: /",
-    "- Results (session): /results",
+    "- Results (shareable): /results?q=<base64url JSON of AdvancedCutoffQueryV1>",
     "- Sitemap: /sitemap.xml",
   ].join("\n")
 

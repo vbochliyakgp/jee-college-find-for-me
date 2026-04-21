@@ -1,7 +1,7 @@
 "use client"
 
-import { useEffect, useMemo, useState } from "react"
-import { useRouter } from "next/navigation"
+import { useEffect, useMemo, useRef, useState } from "react"
+import { useRouter, useSearchParams } from "next/navigation"
 import type { CutoffQueryResponse, CutoffResultRow } from "@/lib/advanced-query/types"
 import { useAdvancedQuery } from "@/components/advanced-query/advanced-query-context"
 import { Button } from "@/components/ui/button"
@@ -54,20 +54,70 @@ function PoolTable({ rows }: { rows: CutoffResultRow[] }) {
 
 export function CutoffResultsView() {
   const router = useRouter()
+  const searchParams = useSearchParams()
   const q = useAdvancedQuery()
   const data = q.lastSuccessResponse
+  const enc = searchParams.get("q")
+  const lastHydrated = q.lastHydratedEncodedQuery
+  const runQueryFromEncodedUrl = q.runQueryFromEncodedUrl
   const [tab, setTab] = useState<PoolKey>("open")
+  const inFlightEnc = useRef<string | null>(null)
 
   useEffect(() => {
-    if (!data) {
+    if (!enc && !data) {
       router.replace("/")
+      return
     }
-  }, [data, router])
+    if (!enc) return
+
+    const needsFetch = enc !== lastHydrated
+    if (!needsFetch) return
+    if (inFlightEnc.current === enc) return
+
+    inFlightEnc.current = enc
+    void runQueryFromEncodedUrl(enc).finally(() => {
+      if (inFlightEnc.current === enc) inFlightEnc.current = null
+    })
+  }, [data, enc, lastHydrated, router, runQueryFromEncodedUrl])
 
   const rows = useMemo(() => {
     if (!data) return []
     return data.pools[tab]
   }, [data, tab])
+
+  if (!enc && !data) {
+    return (
+      <div className="container max-w-4xl py-16 text-center text-sm text-muted-foreground">
+        Loading…
+      </div>
+    )
+  }
+
+  if (enc && !data && !q.clientError) {
+    return (
+      <div className="container max-w-4xl py-16 text-center text-sm text-muted-foreground">
+        Loading results…
+      </div>
+    )
+  }
+
+  if (enc && !data && q.clientError) {
+    return (
+      <div className="container max-w-md py-16 text-center">
+        <p className="text-sm text-destructive">{q.clientError}</p>
+        {q.lastErrorDetails && q.lastErrorDetails.length > 0 ? (
+          <ul className="mt-3 list-inside list-disc text-left text-xs text-destructive">
+            {q.lastErrorDetails.map((d) => (
+              <li key={d}>{d}</li>
+            ))}
+          </ul>
+        ) : null}
+        <Button type="button" className="mt-6" onClick={() => router.replace("/")}>
+          Back to search
+        </Button>
+      </div>
+    )
+  }
 
   if (!data) {
     return (
@@ -82,7 +132,10 @@ export function CutoffResultsView() {
       <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-xl font-semibold tracking-tight text-foreground md:text-2xl">Cutoff results</h1>
-          <p className="mt-1 text-sm text-muted-foreground">Four pools · same global filters · each tab uses its own seat types and rank band.</p>
+          <p className="mt-1 text-sm text-muted-foreground">
+            Four pools · same global filters · each tab uses its own seat types and rank band. This view can be refreshed or
+            shared via the URL.
+          </p>
         </div>
         <Button
           type="button"

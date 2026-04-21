@@ -19,6 +19,8 @@ type PoolQueryInput struct {
 	InstituteTypes   []string
 	SeatTypes        []string
 	ClosingRankBands []ClosingRankBand
+	// HomeState is set for JEE Main when the client sent a domicile; it refines HS/OS/GO/JK/LA rows (ALGORITHM.md §5).
+	HomeState *string
 }
 
 // QueryCutoffPool returns DISTINCT rows matching global filters, seat types for this tab,
@@ -43,6 +45,8 @@ func QueryCutoffPool(ctx context.Context, db *sql.DB, in PoolQueryInput) ([]Resu
 	iIn := SQLIn(len(in.InstituteTypes))
 	sIn := SQLIn(len(in.SeatTypes))
 
+	homeSQL, homeArgs := homeStateQuotaSQL(in.HomeState)
+
 	query := fmt.Sprintf(`
 SELECT DISTINCT exam_type, institute, department, institute_type, state, nirf, quota, gender, seat_type, opening_rank, closing_rank
 FROM %s
@@ -51,11 +55,11 @@ WHERE exam_type = ?
   AND quota IN (%s)
   AND institute_type IN (%s)
   AND seat_type IN (%s)
-  AND (%s)
+%s  AND (%s)
 ORDER BY closing_rank ASC, institute ASC, department ASC
-`, in.Table, qIn, iIn, sIn, closingParts)
+`, in.Table, qIn, iIn, sIn, homeSQL, closingParts)
 
-	args := make([]any, 0, 2+len(in.Quotas)+len(in.InstituteTypes)+len(in.SeatTypes)+len(closingArgs))
+	args := make([]any, 0, 2+len(in.Quotas)+len(in.InstituteTypes)+len(in.SeatTypes)+len(homeArgs)+len(closingArgs))
 	args = append(args, in.ExamType, in.GenderDB)
 	for _, q := range in.Quotas {
 		args = append(args, q)
@@ -66,6 +70,7 @@ ORDER BY closing_rank ASC, institute ASC, department ASC
 	for _, st := range in.SeatTypes {
 		args = append(args, st)
 	}
+	args = append(args, homeArgs...)
 	args = append(args, closingArgs...)
 
 	rows, err := db.QueryContext(ctx, query, args...)
@@ -106,6 +111,22 @@ ORDER BY closing_rank ASC, institute ASC, department ASC
 		return []ResultRow{}, nil
 	}
 	return out, nil
+}
+
+// homeStateQuotaSQL adds domicile-aware row filters when JEE Main sends homeState (ALGORITHM.md §5).
+func homeStateQuotaSQL(h *string) (sql string, args []any) {
+	if !HomeStatePresent(h) {
+		return "", nil
+	}
+	hs := strings.TrimSpace(*h)
+	const frag = `
+  AND (quota != 'HS' OR state = ?)
+  AND (quota != 'OS' OR state != ?)
+  AND (quota != 'GO' OR ? = 'Goa')
+  AND (quota != 'JK' OR ? = 'Jammu and Kashmir')
+  AND (quota != 'LA' OR ? = 'Ladakh')
+`
+	return frag, []any{hs, hs, hs, hs, hs}
 }
 
 func buildClosingRankOr(bands []ClosingRankBand) (sqlExpr string, args []any) {

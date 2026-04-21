@@ -66,6 +66,7 @@ func (s *Service) QueryPools(ctx context.Context, req Request) (*QueryResponse, 
 			InstituteTypes:   req.InstituteTypes,
 			SeatTypes:        seatTypes,
 			ClosingRankBands: clauses,
+			HomeState:        req.HomeState,
 		})
 		if err != nil {
 			return nil, fmt.Errorf("pool %s: %w", p.key, err)

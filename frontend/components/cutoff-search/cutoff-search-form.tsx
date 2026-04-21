@@ -27,7 +27,9 @@ export function CutoffSearchForm() {
 
   const onSubmit = (e: React.FormEvent) => {
     q.submitQuery(e, {
-      onSuccess: () => router.push("/results"),
+      onSuccess: (_payload, encoded) => {
+        router.push(`/results?q=${encodeURIComponent(encoded)}`)
+      },
     })
   }
 

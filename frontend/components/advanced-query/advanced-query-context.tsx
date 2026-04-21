@@ -19,6 +19,7 @@ import {
   type BandFields,
 } from "@/lib/advanced-query/build-payload"
 import type { AdvancedCutoffQueryV1, CategoryOption, CutoffQueryResponse, ExamType, GenderPool, InstituteType } from "@/lib/advanced-query/types"
+import { decodeCutoffQueryFromUrl, encodeCutoffQueryForUrl } from "@/lib/advanced-query/query-url"
 
 const DEFAULT_QUOTAS_LABEL = ["AI", "OS"].join(", ")
 const EXPANDED_QUOTAS_LABEL = ["AI", "OS", "HS", "GO", "JK", "LA"].join(", ")
@@ -52,7 +53,8 @@ export interface AdvancedQueryDerived {
 }
 
 export type SubmitQueryOptions = {
-  onSuccess?: () => void
+  /** Called after a successful API response; `encodedQuery` matches the `q` param for `/results`. */
+  onSuccess?: (payload: AdvancedCutoffQueryV1, encodedQuery: string) => void
 }
 
 export interface AdvancedQueryContextValue extends AdvancedQueryRequestState, AdvancedQueryDerived {
@@ -73,6 +75,10 @@ export interface AdvancedQueryContextValue extends AdvancedQueryRequestState, Ad
   resetBands: () => void
   clearResults: () => void
   submitQuery: (e: React.FormEvent, opts?: SubmitQueryOptions) => void
+  /** Same search param used on `/results?q=…`; set after successful submit or URL hydration. */
+  lastHydratedEncodedQuery: string | null
+  /** Re-run POST /api/cutoffs/query from a share-link payload; updates errors or results. */
+  runQueryFromEncodedUrl: (encoded: string) => Promise<void>
 }
 
 const AdvancedQueryContext = createContext<AdvancedQueryContextValue | null>(null)
@@ -98,6 +104,7 @@ export function AdvancedQueryProvider({ children }: { children: React.ReactNode 
   const [lastSuccessResponse, setLastSuccessResponse] = useState<CutoffQueryResponse | null>(null)
   const [lastErrorDetails, setLastErrorDetails] = useState<string[] | null>(null)
   const [clientError, setClientError] = useState<string | null>(null)
+  const [lastHydratedEncodedQuery, setLastHydratedEncodedQuery] = useState<string | null>(null)
 
   useEffect(() => {
     if (examType === "jee-advanced") {
@@ -177,6 +184,38 @@ export function AdvancedQueryProvider({ children }: { children: React.ReactNode 
   const clearResults = useCallback(() => {
     setLastSuccessResponse(null)
     setLastErrorDetails(null)
+    setLastHydratedEncodedQuery(null)
+    setClientError(null)
+  }, [])
+
+  const runQueryFromEncodedUrl = useCallback(async (encoded: string) => {
+    setClientError(null)
+    setLastErrorDetails(null)
+    const payload = decodeCutoffQueryFromUrl(encoded)
+    if (!payload) {
+      setClientError("This results link is invalid or outdated.")
+      setLastSuccessResponse(null)
+      setLastHydratedEncodedQuery(encoded)
+      return
+    }
+    try {
+      const res = await postCutoffQuery(payload)
+      if (res.ok) {
+        setLastSuccessResponse(res.data)
+        setLastErrorDetails(null)
+        setLastHydratedEncodedQuery(encoded)
+        return
+      }
+      setLastSuccessResponse(null)
+      setLastErrorDetails(res.details ?? null)
+      setClientError(res.error)
+      setLastHydratedEncodedQuery(encoded)
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Network error"
+      setLastSuccessResponse(null)
+      setClientError(message)
+      setLastHydratedEncodedQuery(encoded)
+    }
   }, [])
 
   const submitQuery = useCallback(
@@ -208,9 +247,11 @@ export function AdvancedQueryProvider({ children }: { children: React.ReactNode 
         try {
           const res = await postCutoffQuery(payload)
           if (res.ok) {
+            const encoded = encodeCutoffQueryForUrl(payload)
             setLastSuccessResponse(res.data)
+            setLastHydratedEncodedQuery(encoded)
             setLastErrorDetails(null)
-            opts?.onSuccess?.()
+            opts?.onSuccess?.(payload, encoded)
             return
           }
           setLastErrorDetails(res.details ?? null)
@@ -243,6 +284,8 @@ export function AdvancedQueryProvider({ children }: { children: React.ReactNode 
       resetBands,
       clearResults,
       submitQuery,
+      lastHydratedEncodedQuery,
+      runQueryFromEncodedUrl,
       lastSuccessResponse,
       lastErrorDetails,
       clientError,
@@ -261,6 +304,8 @@ export function AdvancedQueryProvider({ children }: { children: React.ReactNode 
       bands,
       category,
       clearResults,
+      lastHydratedEncodedQuery,
+      runQueryFromEncodedUrl,
       clientError,
       examType,
       genderPool,

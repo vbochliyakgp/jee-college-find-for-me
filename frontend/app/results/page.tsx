@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import { Suspense } from "react"
 import { CutoffResultsView } from "@/components/cutoff-results/cutoff-results-view"
 
 export const metadata: Metadata = {
@@ -8,5 +9,13 @@ export const metadata: Metadata = {
 }
 
 export default function ResultsPage() {
-  return <CutoffResultsView />
+  return (
+    <Suspense
+      fallback={
+        <div className="container max-w-4xl py-16 text-center text-sm text-muted-foreground">Loading…</div>
+      }
+    >
+      <CutoffResultsView />
+    </Suspense>
+  )
 }
