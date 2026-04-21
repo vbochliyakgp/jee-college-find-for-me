@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import { Plus_Jakarta_Sans } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
+import { AppProviders } from "@/components/providers/app-providers"
 import { SiteHeader } from "@/components/layout/site-header"
 import { SiteFooter } from "@/components/layout/site-footer"
 
@@ -18,16 +19,8 @@ export const metadata: Metadata = {
     template: "%s · JEE College Find",
   },
   description:
-    "Free JEE college predictor for JEE Main and JEE Advanced. Compare likely colleges and branches using rank, category, gender, and quota filters. No signup and no personal contact info required.",
-  keywords: [
-    "JEE college predictor",
-    "JoSAA predictor",
-    "JEE Main college predictor",
-    "JEE Advanced college predictor",
-    "NIT predictor",
-    "IIIT predictor",
-    "IIT predictor",
-  ],
+    "Search JoSAA-style JEE Main and JEE Advanced cutoffs by institute type, quota, category, and closing-rank bands. No signup.",
+  keywords: ["JoSAA cutoffs", "JEE cutoff search", "IIT closing rank", "NIT cutoffs", "JEE Main", "JEE Advanced"],
   alternates: {
     canonical: "/",
   },
@@ -36,7 +29,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "JEE College Find",
     description:
-      "Free JEE rank predictor with no signup and no email/phone requirement.",
+      "JoSAA-style cutoff search. No signup or email required.",
     url: "/",
     siteName: "JEE College Find",
     locale: "en_IN",
@@ -45,7 +38,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "JEE College Find",
-    description: "Free JEE rank predictor. No signup, no email, no phone required.",
+    description: "Filter cutoff rows by exam, quota, and rank bands. No signup.",
     creator: "@jeecollegefind",
   },
   robots: {
@@ -63,11 +56,13 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={`${sans.variable} min-h-screen font-sans antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
-          <div className="flex min-h-screen flex-col">
-            <SiteHeader />
-            <main className="flex-1">{children}</main>
-            <SiteFooter />
-          </div>
+          <AppProviders>
+            <div className="flex min-h-screen flex-col">
+              <SiteHeader />
+              <main className="flex-1">{children}</main>
+              <SiteFooter />
+            </div>
+          </AppProviders>
         </ThemeProvider>
       </body>
     </html>

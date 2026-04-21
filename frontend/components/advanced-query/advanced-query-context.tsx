@@ -10,15 +10,15 @@ import {
   useState,
   useTransition,
 } from "react"
-import type { IndianState } from "@/lib/predict/types"
-import { postAdvancedCutoffQuery } from "@/lib/advanced-query/api"
+import type { IndianState } from "@/lib/geo/indian-states"
+import { postCutoffQuery } from "@/lib/advanced-query/api"
 import {
   bandFieldErrors,
   buildAdvancedCutoffQueryV1,
   isRankBandRowEnabled,
   type BandFields,
 } from "@/lib/advanced-query/build-payload"
-import type { AdvancedCutoffQueryV1, CategoryOption, ExamType, GenderPool, InstituteType } from "@/lib/advanced-query/types"
+import type { AdvancedCutoffQueryV1, CategoryOption, CutoffQueryResponse, ExamType, GenderPool, InstituteType } from "@/lib/advanced-query/types"
 
 const DEFAULT_QUOTAS_LABEL = ["AI", "OS"].join(", ")
 const EXPANDED_QUOTAS_LABEL = ["AI", "OS", "HS", "GO", "JK", "LA"].join(", ")
@@ -36,8 +36,8 @@ function emptyBands(): BandFields {
 }
 
 export interface AdvancedQueryRequestState {
-  lastPayloadJson: string | null
-  lastResult: { ok: boolean; status: number; preview: string } | null
+  lastSuccessResponse: CutoffQueryResponse | null
+  lastErrorDetails: string[] | null
   clientError: string | null
   isPending: boolean
 }
@@ -48,8 +48,11 @@ export interface AdvancedQueryDerived {
   activeBandCount: number
   quotasPreview: string
   instituteTypesList: InstituteType[]
-  builtPayload: AdvancedCutoffQueryV1 | null
   bandKeyEnabled: Record<keyof BandFields, boolean>
+}
+
+export type SubmitQueryOptions = {
+  onSuccess?: () => void
 }
 
 export interface AdvancedQueryContextValue extends AdvancedQueryRequestState, AdvancedQueryDerived {
@@ -68,7 +71,8 @@ export interface AdvancedQueryContextValue extends AdvancedQueryRequestState, Ad
   bands: BandFields
   setBandEdge: (key: keyof BandFields, edge: "min" | "max", value: string) => void
   resetBands: () => void
-  submitQuery: (e: React.FormEvent) => void
+  clearResults: () => void
+  submitQuery: (e: React.FormEvent, opts?: SubmitQueryOptions) => void
 }
 
 const AdvancedQueryContext = createContext<AdvancedQueryContextValue | null>(null)
@@ -91,8 +95,8 @@ export function AdvancedQueryProvider({ children }: { children: React.ReactNode 
 
   const [bands, setBands] = useState<BandFields>(emptyBands)
 
-  const [lastPayloadJson, setLastPayloadJson] = useState<string | null>(null)
-  const [lastResult, setLastResult] = useState<{ ok: boolean; status: number; preview: string } | null>(null)
+  const [lastSuccessResponse, setLastSuccessResponse] = useState<CutoffQueryResponse | null>(null)
+  const [lastErrorDetails, setLastErrorDetails] = useState<string[] | null>(null)
   const [clientError, setClientError] = useState<string | null>(null)
 
   useEffect(() => {
@@ -154,19 +158,6 @@ export function AdvancedQueryProvider({ children }: { children: React.ReactNode 
     [instituteSelected],
   )
 
-  const builtPayload = useMemo(() => {
-    if (hasBandErrors || instituteTypesList.length === 0) return null
-    return buildAdvancedCutoffQueryV1({
-      examType,
-      genderPool,
-      category,
-      isPwd,
-      homeState,
-      instituteTypes: instituteTypesList,
-      bandFields: bands,
-    })
-  }, [bands, category, examType, genderPool, hasBandErrors, homeState, instituteTypesList, isPwd])
-
   const toggleInstitute = useCallback((t: InstituteType, checked: boolean) => {
     if (examType === "jee-advanced") return
     setInstituteSelected((prev) => ({ ...prev, [t]: checked }))
@@ -181,11 +172,16 @@ export function AdvancedQueryProvider({ children }: { children: React.ReactNode 
     setBands(emptyBands())
   }, [])
 
+  const clearResults = useCallback(() => {
+    setLastSuccessResponse(null)
+    setLastErrorDetails(null)
+  }, [])
+
   const submitQuery = useCallback(
-    (e: React.FormEvent) => {
+    (e: React.FormEvent, opts?: SubmitQueryOptions) => {
       e.preventDefault()
       setClientError(null)
-      setLastResult(null)
+      setLastErrorDetails(null)
 
       if (hasBandErrors) {
         setClientError("Fix closing rank band errors before sending.")
@@ -206,23 +202,20 @@ export function AdvancedQueryProvider({ children }: { children: React.ReactNode 
         bandFields: bands,
       })
 
-      setLastPayloadJson(JSON.stringify(payload, null, 2))
-
       startTransition(async () => {
         try {
-          const res = await postAdvancedCutoffQuery(payload)
-          const preview =
-            res.json != null
-              ? JSON.stringify(res.json, null, 2).slice(0, 24_000)
-              : res.bodyText.slice(0, 24_000)
-          setLastResult({ ok: res.ok, status: res.status, preview })
-          if (!res.ok) {
-            setClientError(`Request finished with HTTP ${res.status}. Response is shown below when available.`)
+          const res = await postCutoffQuery(payload)
+          if (res.ok) {
+            setLastSuccessResponse(res.data)
+            setLastErrorDetails(null)
+            opts?.onSuccess?.()
+            return
           }
+          setLastErrorDetails(res.details ?? null)
+          setClientError(res.error)
         } catch (err) {
           const message = err instanceof Error ? err.message : "Network error"
           setClientError(message)
-          setLastResult({ ok: false, status: 0, preview: "" })
         }
       })
     },
@@ -246,9 +239,10 @@ export function AdvancedQueryProvider({ children }: { children: React.ReactNode 
       bands,
       setBandEdge,
       resetBands,
+      clearResults,
       submitQuery,
-      lastPayloadJson,
-      lastResult,
+      lastSuccessResponse,
+      lastErrorDetails,
       clientError,
       isPending,
       bandErrors,
@@ -256,7 +250,6 @@ export function AdvancedQueryProvider({ children }: { children: React.ReactNode 
       activeBandCount,
       quotasPreview,
       instituteTypesList,
-      builtPayload,
       bandKeyEnabled,
     }),
     [
@@ -264,8 +257,8 @@ export function AdvancedQueryProvider({ children }: { children: React.ReactNode 
       bandErrors,
       bandKeyEnabled,
       bands,
-      builtPayload,
       category,
+      clearResults,
       clientError,
       examType,
       genderPool,
@@ -275,8 +268,8 @@ export function AdvancedQueryProvider({ children }: { children: React.ReactNode 
       isPending,
       isPwd,
       instituteTypesList,
-      lastPayloadJson,
-      lastResult,
+      lastErrorDetails,
+      lastSuccessResponse,
       quotasPreview,
       resetBands,
       setBandEdge,

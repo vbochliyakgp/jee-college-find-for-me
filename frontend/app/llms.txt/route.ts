@@ -4,7 +4,7 @@ export async function GET() {
   const content = [
     "# JEE College Find",
     "",
-    "> Free JEE college predictor for planning.",
+    "> JoSAA-style cutoff row search for planning.",
     "",
     "## Access",
     "- Free to use.",
@@ -13,13 +13,13 @@ export async function GET() {
     "- No phone number required.",
     "",
     "## Scope",
-    "- Supports JEE Main and JEE Advanced prediction flows.",
-    "- Uses rank, category, gender, and quota-related inputs.",
+    "- Supports JEE Main and JEE Advanced cutoff snapshots.",
+    "- Uses exam, gender pool, category, PwD, home state, institute types, and closing-rank bands.",
     "- Not official JoSAA counseling advice.",
     "",
     "## URLs",
     "- Home: /",
-    "- Predict: /predict",
+    "- Results (session): /results",
     "- Sitemap: /sitemap.xml",
   ].join("\n")
 

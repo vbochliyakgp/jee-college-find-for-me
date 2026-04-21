@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "JEE College Find",
     short_name: "JCF",
-    description: "JEE college predictor for JEE Main and JEE Advanced aspirants.",
+    description: "JoSAA-style cutoff search for JEE Main and JEE Advanced.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",

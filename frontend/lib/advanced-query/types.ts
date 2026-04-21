@@ -64,3 +64,29 @@ export interface AdvancedCutoffQueryV1 {
 }
 
 export type CategoryOption = AdvancedCutoffQueryV1["category"]
+
+/** Row returned from POST /api/cutoffs/query pools.* */
+export interface CutoffResultRow {
+  exam_type: string
+  institute: string
+  department: string
+  institute_type: string
+  state: string
+  NIRF?: string | null
+  quota: string
+  gender: string
+  seat_type: string
+  opening_rank: number
+  closing_rank: number
+}
+
+/** Successful API body from POST /api/cutoffs/query */
+export interface CutoffQueryResponse {
+  ok: true
+  pools: {
+    open: CutoffResultRow[]
+    category: CutoffResultRow[]
+    openPwd: CutoffResultRow[]
+    categoryPwd: CutoffResultRow[]
+  }
+}
