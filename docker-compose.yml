@@ -12,7 +12,8 @@ services:
     expose:
       - "3000"
     healthcheck:
-      test: ["CMD", "wget", "-qO-", "http://localhost:3000"]
+      # 127.0.0.1: Alpine/musl may prefer ::1 for `localhost`; Next binds IPv4.
+      test: ["CMD", "wget", "-qO-", "http://127.0.0.1:3000/"]
       interval: 5s
       timeout: 3s
       retries: 10
