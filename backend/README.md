@@ -33,5 +33,6 @@ Monorepo run instructions: root **`../README.md`**.
 
 ## Known limits
 
-- B.Arch / B.Planning excluded from the snapshot pipeline as configured.
+- B.Arch / B.Planning rows are excluded during backend DB import.
+- IIT preparatory (`P`-suffix rank) rows are excluded during backend DB import.
 - Exploratory output only — not official counseling.

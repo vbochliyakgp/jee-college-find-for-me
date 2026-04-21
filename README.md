@@ -20,8 +20,8 @@ Backend: **`POST /api/cutoffs/query`** validates the payload, maps seat types pe
 
 ## Limits
 
-- B.Arch / B.Planning not modeled.
-- IIT preparatory rows excluded at import where applicable.
+- B.Arch / B.Planning rows are excluded during backend DB import.
+- IIT preparatory (`P`-suffix rank) rows are excluded during backend DB import.
 - Not official JoSAA software; exploratory planning only.
 
 ## Run

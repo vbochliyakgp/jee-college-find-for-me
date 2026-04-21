@@ -214,6 +214,13 @@ func normalizeRecord(record []string) (models.CutoffRow, bool) {
 	openStr := strings.TrimSpace(record[7])
 	closeStr := strings.TrimSpace(record[8])
 
+	if isExcludedProgram(department) {
+		return models.CutoffRow{}, false
+	}
+	if isPreparatoryRank(openStr) || isPreparatoryRank(closeStr) {
+		return models.CutoffRow{}, false
+	}
+
 	openingRank, err := strconv.Atoi(openStr)
 	if err != nil {
 		return models.CutoffRow{}, false
@@ -241,6 +248,21 @@ func normalizeRecord(record []string) (models.CutoffRow, bool) {
 		OpeningRank:   openingRank,
 		ClosingRank:   closingRank,
 	}, true
+}
+
+func isExcludedProgram(program string) bool {
+	p := strings.ToLower(strings.TrimSpace(program))
+	return strings.Contains(p, "b.arch") ||
+		strings.Contains(p, "b. arch") ||
+		strings.Contains(p, "bachelor of architecture") ||
+		strings.Contains(p, "b.planning") ||
+		strings.Contains(p, "b. planning") ||
+		strings.Contains(p, "bachelor of planning")
+}
+
+func isPreparatoryRank(rank string) bool {
+	r := strings.ToUpper(strings.TrimSpace(rank))
+	return strings.HasSuffix(r, "P")
 }
 
 func instituteType(name string) string {
