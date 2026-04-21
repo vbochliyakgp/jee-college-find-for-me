@@ -26,6 +26,8 @@ Backend: **`POST /api/cutoffs/query`** validates the payload, maps seat types pe
 
 ## Run
 
+Caddy access logs (JSON) are written to **`logs/caddy/access.log`** on the host (bind mount from Compose). If the Caddy container cannot create the file, fix permissions on `logs/caddy` once (e.g. make it writable by the container user).
+
 ### Docker Compose (dev, hot reload)
 
 ```bash

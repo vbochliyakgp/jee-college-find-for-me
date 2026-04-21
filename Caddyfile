@@ -1,5 +1,14 @@
 # Replace with your real domain before deployment, e.g. example.com
 {$SERVICE_DOMAIN:localhost} {
+  # Persisted via docker-compose: ./logs/caddy -> /var/log/caddy
+  log {
+    output file /var/log/caddy/access.log {
+      roll_size 10mb
+      roll_keep 14
+    }
+    format json
+  }
+
   encode gzip zstd
 
   # Optional hardening headers
