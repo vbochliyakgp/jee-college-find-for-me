@@ -52,6 +52,12 @@ func (s *Service) QueryPools(ctx context.Context, req Request) (*QueryResponse, 
 			*p.dst = []ResultRow{}
 			continue
 		}
+		if !RankBandAllowed(p.key, req.Category, req.IsPwd) {
+			// Defensive fallback: skip ineligible pools instead of failing whole request.
+			// Normal HTTP flow validates this earlier.
+			*p.dst = []ResultRow{}
+			continue
+		}
 
 		seatTypes, err := SeatTypesForTargetPool(p.key, req.Category)
 		if err != nil {

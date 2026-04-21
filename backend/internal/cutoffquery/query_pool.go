@@ -32,8 +32,13 @@ func QueryCutoffPool(ctx context.Context, db *sql.DB, in PoolQueryInput) ([]Resu
 	if len(in.SeatTypes) == 0 {
 		return nil, fmt.Errorf("seat types required for pool query")
 	}
-	if len(in.Quotas) == 0 || len(in.InstituteTypes) == 0 {
-		return nil, fmt.Errorf("quotas and instituteTypes required")
+	if len(in.Quotas) == 0 {
+		return nil, fmt.Errorf("quotas required")
+	}
+	if len(in.InstituteTypes) == 0 {
+		// Defensive fallback: if caller passes no institute filters, answer is empty.
+		// Normal HTTP flow validates this and returns 400 before service/query.
+		return []ResultRow{}, nil
 	}
 
 	closingParts, closingArgs := buildClosingRankOr(in.ClosingRankBands)

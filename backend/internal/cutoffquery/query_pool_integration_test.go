@@ -151,3 +151,28 @@ INSERT INTO cutoff_rows (exam_type, institute, department, institute_type, state
 		t.Fatalf("Goa domicile should keep GO+AI; got %d %+v", len(rowsGoa), rowsGoa)
 	}
 }
+
+func TestQueryCutoffPool_emptyInstituteTypesReturnsEmpty(t *testing.T) {
+	ctx := context.Background()
+	database, err := db.OpenInMemory(ctx)
+	if err != nil {
+		t.Fatal(err)
+	}
+	defer database.Close()
+
+	rows, err := QueryCutoffPool(ctx, database, PoolQueryInput{
+		Table:            DefaultCutoffTable,
+		ExamType:         "jee-main",
+		GenderDB:         "Neutral",
+		Quotas:           []string{"AI", "OS"},
+		InstituteTypes:   []string{},
+		SeatTypes:        []string{"OPEN"},
+		ClosingRankBands: []ClosingRankBand{{TargetPool: "open", ClosingRankMin: ptrI(1), ClosingRankMax: ptrI(100)}},
+	})
+	if err != nil {
+		t.Fatalf("expected no error, got %v", err)
+	}
+	if len(rows) != 0 {
+		t.Fatalf("expected empty rows for empty institute filters, got %+v", rows)
+	}
+}
