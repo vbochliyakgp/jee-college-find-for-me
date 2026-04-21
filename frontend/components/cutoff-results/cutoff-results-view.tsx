@@ -19,6 +19,16 @@ const TABS: ReadonlyArray<{ key: PoolKey; label: string }> = [
   { key: "categoryPwd", label: "Cat PwD" },
 ]
 
+function toFriendlyApiError(error: string, status?: number, retryAfterSeconds?: number): string {
+  if (status === 429) {
+    if (retryAfterSeconds && retryAfterSeconds > 0) {
+      return `Too many requests. Please retry in ${retryAfterSeconds}s.`
+    }
+    return "Too many requests. Please retry after some time."
+  }
+  return error
+}
+
 function toTargetPool(k: PoolKey): AdvancedCutoffQueryV1["powerMode"]["closingRankBands"][number]["targetPool"] {
   switch (k) {
     case "open":
@@ -166,7 +176,7 @@ export function CutoffResultsView() {
     })
       .then((res) => {
         if (!res.ok) {
-          setError(res.error)
+          setError(toFriendlyApiError(res.error, res.status, res.retryAfterSeconds))
           return
         }
         const meta = res.data.meta?.[tab]

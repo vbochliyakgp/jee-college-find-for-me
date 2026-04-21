@@ -14,7 +14,7 @@ function apiBaseUrl() {
 
 export type PostCutoffQueryResult =
   | { ok: true; data: CutoffQueryResponse }
-  | { ok: false; status: number; error: string; details?: string[]; raw?: string }
+  | { ok: false; status: number; error: string; details?: string[]; raw?: string; retryAfterSeconds?: number }
 
 function isCutoffQueryResponse(v: unknown): v is CutoffQueryResponse {
   if (!v || typeof v !== "object") return false
@@ -47,10 +47,13 @@ export async function postCutoffQuery(payload: AdvancedCutoffQueryV1): Promise<P
   if (!response.ok) {
     const errObj = json && typeof json === "object" ? (json as Record<string, unknown>) : null
     const msg = typeof errObj?.error === "string" ? errObj.error : `HTTP ${response.status}`
+    const retryAfterHeader = response.headers.get("Retry-After")
+    const retryAfter = retryAfterHeader ? Number.parseInt(retryAfterHeader, 10) : Number.NaN
+    const retryAfterSeconds = Number.isFinite(retryAfter) && retryAfter > 0 ? retryAfter : undefined
     const details = Array.isArray(errObj?.details)
       ? (errObj.details as unknown[]).filter((x): x is string => typeof x === "string")
       : undefined
-    return { ok: false, status: response.status, error: msg, details, raw: bodyText.slice(0, 4000) }
+    return { ok: false, status: response.status, error: msg, details, raw: bodyText.slice(0, 4000), retryAfterSeconds }
   }
 
   if (!isCutoffQueryResponse(json)) {

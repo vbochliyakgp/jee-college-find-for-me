@@ -2,12 +2,16 @@ package main
 
 import (
 	"context"
+	"encoding/json"
 	"log"
+	"net"
 	"net/http"
 	"net/url"
 	"os"
 	"path/filepath"
+	"strconv"
 	"strings"
+	"sync"
 	"time"
 
 	"jee-college-find-for-me/complete-stack/backend/internal/db"
@@ -38,7 +42,7 @@ func main() {
 
 	server := &http.Server{
 		Addr:              listenAddr(),
-		Handler:           withCORS(mux),
+		Handler:           withCORS(withRateLimit(mux)),
 		ReadHeaderTimeout: 5 * time.Second,
 		ReadTimeout:       10 * time.Second,
 		WriteTimeout:      20 * time.Second,
@@ -52,6 +56,93 @@ func main() {
 	if err := server.ListenAndServe(); err != nil && err != http.ErrServerClosed {
 		log.Fatalf("server exited with error: %v", err)
 	}
+}
+
+const (
+	apiLimitPerMinute = 100
+	apiWindow         = time.Minute
+)
+
+type rateWindow struct {
+	count   int
+	expires time.Time
+}
+
+type fixedWindowLimiter struct {
+	mu      sync.Mutex
+	windows map[string]rateWindow
+}
+
+func newFixedWindowLimiter() *fixedWindowLimiter {
+	return &fixedWindowLimiter{
+		windows: make(map[string]rateWindow),
+	}
+}
+
+func (l *fixedWindowLimiter) allow(key string, now time.Time) (allowed bool, retryAfterSec int) {
+	l.mu.Lock()
+	defer l.mu.Unlock()
+
+	w, ok := l.windows[key]
+	if !ok || now.After(w.expires) {
+		l.windows[key] = rateWindow{count: 1, expires: now.Add(apiWindow)}
+		return true, 0
+	}
+	if w.count >= apiLimitPerMinute {
+		retry := int(time.Until(w.expires).Seconds())
+		if retry < 1 {
+			retry = 1
+		}
+		return false, retry
+	}
+	w.count++
+	l.windows[key] = w
+	return true, 0
+}
+
+func withRateLimit(next http.Handler) http.Handler {
+	limiter := newFixedWindowLimiter()
+
+	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		if !strings.HasPrefix(r.URL.Path, "/api/") {
+			next.ServeHTTP(w, r)
+			return
+		}
+
+		key := clientKey(r)
+		ok, retryAfterSec := limiter.allow(key, time.Now())
+		if ok {
+			next.ServeHTTP(w, r)
+			return
+		}
+
+		w.Header().Set("Content-Type", "application/json")
+		w.Header().Set("Retry-After", strconv.Itoa(retryAfterSec))
+		w.WriteHeader(http.StatusTooManyRequests)
+		_ = json.NewEncoder(w).Encode(map[string]string{
+			"error": "rate limit exceeded, retry after some time",
+		})
+	})
+}
+
+func clientKey(r *http.Request) string {
+	if ip := strings.TrimSpace(r.Header.Get("CF-Connecting-IP")); ip != "" {
+		return ip
+	}
+	if xff := strings.TrimSpace(r.Header.Get("X-Forwarded-For")); xff != "" {
+		parts := strings.Split(xff, ",")
+		if len(parts) > 0 {
+			first := strings.TrimSpace(parts[0])
+			if first != "" {
+				return first
+			}
+		}
+	}
+	host, _, err := net.SplitHostPort(strings.TrimSpace(r.RemoteAddr))
+	if err == nil && host != "" {
+		return host
+	}
+	return strings.TrimSpace(r.RemoteAddr)
 }
 
 func envOrDefault(key string, fallback string) string {

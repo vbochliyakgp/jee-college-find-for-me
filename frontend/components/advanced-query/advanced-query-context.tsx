@@ -27,6 +27,16 @@ const EXPANDED_QUOTAS_LABEL = ["AI", "OS", "HS", "GO", "JK", "LA"].join(", ")
 export const ADVANCED_QUERY_CATEGORIES: CategoryOption[] = ["General", "OBC", "SC", "ST", "EWS"]
 export const ADVANCED_QUERY_INSTITUTE_TYPES: InstituteType[] = ["IIT", "NIT", "IIIT", "GFTI"]
 
+function toFriendlyApiError(error: string, status?: number, retryAfterSeconds?: number): string {
+  if (status === 429) {
+    if (retryAfterSeconds && retryAfterSeconds > 0) {
+      return `Too many requests. Please retry in ${retryAfterSeconds}s.`
+    }
+    return "Too many requests. Please retry after some time."
+  }
+  return error
+}
+
 function emptyBands(): BandFields {
   return {
     open: { min: "", max: "" },
@@ -211,7 +221,7 @@ export function AdvancedQueryProvider({ children }: { children: React.ReactNode 
       }
       setLastSuccessResponse(null)
       setLastErrorDetails(res.details ?? null)
-      setClientError(res.error)
+      setClientError(toFriendlyApiError(res.error, res.status, res.retryAfterSeconds))
       setLastHydratedEncodedQuery(encoded)
     } catch (err) {
       const message = err instanceof Error ? err.message : "Network error"
@@ -265,7 +275,7 @@ export function AdvancedQueryProvider({ children }: { children: React.ReactNode 
             return
           }
           setLastErrorDetails(res.details ?? null)
-          setClientError(res.error)
+          setClientError(toFriendlyApiError(res.error, res.status, res.retryAfterSeconds))
         } catch (err) {
           const message = err instanceof Error ? err.message : "Network error"
           setClientError(message)
