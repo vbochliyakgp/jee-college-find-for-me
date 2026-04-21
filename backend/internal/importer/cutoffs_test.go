@@ -84,3 +84,42 @@ func TestNormalizeRecord_ExcludedRowsAreSkipped(t *testing.T) {
 		t.Fatal("expected preparatory rank record to be skipped")
 	}
 }
+
+func TestShortInstituteName(t *testing.T) {
+	tests := []struct {
+		in   string
+		want string
+	}{
+		{"Indian Institute of Technology Bombay", "IIT Bombay"},
+		{"Indian Institute of Information Technology Guwahati", "IIIT Guwahati"},
+		{"National Institute of Technology, Trichy", "NIT, Trichy"},
+	}
+	for _, tc := range tests {
+		got := shortInstituteName(tc.in)
+		if got != tc.want {
+			t.Fatalf("shortInstituteName(%q) = %q, want %q", tc.in, got, tc.want)
+		}
+	}
+}
+
+func TestShortProgramName(t *testing.T) {
+	tests := []struct {
+		in   string
+		want string
+	}{
+		{
+			"Computer Science and Engineering (4 Years, Bachelor of Technology)",
+			"Computer Science and Engineering (4 Years, BTech)",
+		},
+		{
+			"Mechanical Engineering (4 Years, Bachelor of Engineering)",
+			"Mechanical Engineering (4 Years, BE)",
+		},
+	}
+	for _, tc := range tests {
+		got := shortProgramName(tc.in)
+		if got != tc.want {
+			t.Fatalf("shortProgramName(%q) = %q, want %q", tc.in, got, tc.want)
+		}
+	}
+}

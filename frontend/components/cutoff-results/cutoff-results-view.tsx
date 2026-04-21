@@ -38,28 +38,32 @@ function PoolTable({ rows }: { rows: CutoffResultRow[] }) {
   }
   return (
     <div className="overflow-x-auto rounded-lg border border-border/70">
-      <table className="w-full min-w-[720px] text-left text-sm">
-        <thead className="border-b border-border/80 bg-muted/50 text-[11px] font-semibold uppercase tracking-wide text-muted-foreground">
+      <table className="w-full min-w-[640px] text-left text-xs sm:min-w-[700px] sm:text-sm">
+        <thead className="border-b border-border/80 bg-muted/50 text-[10px] font-semibold uppercase tracking-wide text-muted-foreground sm:text-[11px]">
           <tr>
-            <th className="px-3 py-2.5">Institute</th>
-            <th className="px-3 py-2.5">Program</th>
-            <th className="px-3 py-2.5">Seat</th>
-            <th className="px-3 py-2.5">Quota</th>
-            <th className="px-3 py-2.5">Gender</th>
-            <th className="px-3 py-2.5 text-right">Open</th>
-            <th className="px-3 py-2.5 text-right">Close</th>
+            <th className="px-2 py-2 sm:px-3 sm:py-2.5">Institute</th>
+            <th className="px-2 py-2 sm:px-3 sm:py-2.5">Program</th>
+            <th className="px-2 py-2 sm:px-3 sm:py-2.5">Seat</th>
+            <th className="px-2 py-2 sm:px-3 sm:py-2.5">Quota</th>
+            <th className="px-2 py-2 sm:px-3 sm:py-2.5">Gender</th>
+            <th className="px-2 py-2 text-right sm:px-3 sm:py-2.5">Open</th>
+            <th className="px-2 py-2 text-right sm:px-3 sm:py-2.5">Close</th>
           </tr>
         </thead>
         <tbody>
           {rows.map((r, i) => (
             <tr key={`${r.institute}-${r.department}-${r.seat_type}-${r.quota}-${r.closing_rank}-${i}`} className="border-b border-border/40 last:border-0">
-              <td className="max-w-[220px] px-3 py-2 align-top text-foreground">{r.institute}</td>
-              <td className="max-w-[200px] px-3 py-2 align-top text-muted-foreground">{r.department}</td>
-              <td className="whitespace-nowrap px-3 py-2">{r.seat_type}</td>
-              <td className="whitespace-nowrap px-3 py-2">{r.quota}</td>
-              <td className="whitespace-nowrap px-3 py-2">{r.gender}</td>
-              <td className="whitespace-nowrap px-3 py-2 text-right tabular-nums">{r.opening_rank}</td>
-              <td className="whitespace-nowrap px-3 py-2 text-right tabular-nums font-medium">{r.closing_rank}</td>
+              <td className="max-w-[165px] px-2 py-2 align-top leading-snug text-foreground sm:max-w-[220px] sm:px-3">
+                {r.institute}
+              </td>
+              <td className="max-w-[160px] px-2 py-2 align-top leading-snug text-muted-foreground sm:max-w-[220px] sm:px-3">
+                {r.department}
+              </td>
+              <td className="whitespace-nowrap px-2 py-2 sm:px-3">{r.seat_type}</td>
+              <td className="whitespace-nowrap px-2 py-2 sm:px-3">{r.quota}</td>
+              <td className="whitespace-nowrap px-2 py-2 sm:px-3">{r.gender}</td>
+              <td className="whitespace-nowrap px-2 py-2 text-right tabular-nums sm:px-3">{r.opening_rank}</td>
+              <td className="whitespace-nowrap px-2 py-2 text-right tabular-nums font-medium sm:px-3">{r.closing_rank}</td>
             </tr>
           ))}
         </tbody>
@@ -211,7 +215,7 @@ export function CutoffResultsView() {
         <div>
           <h1 className="text-xl font-semibold tracking-tight text-foreground md:text-2xl">Cutoff results</h1>
           <p className="mt-1 text-sm text-muted-foreground">
-            Four pools · backend pagination at 100 rows/page · each tab maintains its own page.
+            Compare results in four simple tabs, and move page by page in each tab.
           </p>
         </div>
         <Button
@@ -227,32 +231,38 @@ export function CutoffResultsView() {
         </Button>
       </div>
 
-      <div className="mb-4 flex flex-wrap gap-1 border-b border-border/70 pb-px">
-        {TABS.map(({ key, label }) => {
-          const active = tab === key
-          return (
-            <button
-              key={key}
-              type="button"
-              disabled={!enabledByTab[key]}
-              onClick={() => {
-                if (!enabledByTab[key]) return
-                setTab(key)
-              }}
-              className={cn(
-                "rounded-t-lg border border-b-0 px-3 py-2 text-sm font-medium transition-colors",
-                active
-                  ? "border-border bg-background text-foreground"
-                  : "border-transparent text-muted-foreground hover:text-foreground",
-                !enabledByTab[key] && "cursor-not-allowed opacity-50 line-through hover:text-muted-foreground",
-              )}
-              title={enabledByTab[key] ? undefined : "No rank range selected for this pool"}
-            >
-              {label}
-              <span className="ml-1.5 tabular-nums text-xs text-muted-foreground">(p{pageByTab[key]})</span>
-            </button>
-          )
-        })}
+      <div className="mb-4 border-b border-border/70 pb-px">
+        <div className="-mx-1 overflow-x-auto [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden">
+          <div className="flex min-w-max flex-nowrap gap-1 px-1">
+            {TABS.map(({ key, label }) => {
+              const active = tab === key
+              return (
+                <button
+                  key={key}
+                  type="button"
+                  disabled={!enabledByTab[key]}
+                  onClick={() => {
+                    if (!enabledByTab[key]) return
+                    setTab(key)
+                  }}
+                  className={cn(
+                    "shrink-0 rounded-t-lg border border-b-0 px-2.5 py-2 text-xs font-medium transition-colors sm:px-3 sm:text-sm",
+                    active
+                      ? "border-border bg-background text-foreground"
+                      : "border-transparent text-muted-foreground hover:text-foreground",
+                    !enabledByTab[key] && "cursor-not-allowed opacity-50 line-through hover:text-muted-foreground",
+                  )}
+                  title={enabledByTab[key] ? undefined : "No rank range selected for this pool"}
+                >
+                  {label}
+                  <span className="ml-1 tabular-nums text-[10px] text-muted-foreground sm:ml-1.5 sm:text-xs">
+                    (p{pageByTab[key]})
+                  </span>
+                </button>
+              )
+            })}
+          </div>
+        </div>
       </div>
 
       <div className="mb-3 h-6 text-xs text-muted-foreground">
@@ -273,21 +283,23 @@ export function CutoffResultsView() {
         <p className="mt-3 text-xs text-amber-600">This pool hit the backend hard cap. Narrow filters for complete results.</p>
       ) : null}
 
-      <div className="mt-4 flex items-center justify-end gap-2">
+      <div className="mt-4 grid grid-cols-3 items-center gap-2 sm:flex sm:flex-wrap sm:items-center sm:justify-between">
         <Button
           type="button"
           variant="outline"
           size="sm"
+          className="h-9"
           disabled={loading || !enabledByTab[tab] || currentPage <= 1}
           onClick={() => setPageByTab((prev) => ({ ...prev, [tab]: Math.max(1, prev[tab] - 1) }))}
         >
           Previous
         </Button>
-        <span className="min-w-20 text-center text-sm tabular-nums">{currentPage}</span>
+        <span className="min-w-20 text-center text-sm tabular-nums">Page {currentPage}</span>
         <Button
           type="button"
           variant="outline"
           size="sm"
+          className="h-9"
           disabled={loading || !enabledByTab[tab] || !hasMore}
           onClick={() => setPageByTab((prev) => ({ ...prev, [tab]: prev[tab] + 1 }))}
         >

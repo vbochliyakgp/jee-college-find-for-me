@@ -72,9 +72,7 @@ export default function HowToUsePage() {
         </div>
       </section>
 
-      <p className="mt-6 text-xs text-muted-foreground">
-        This tool is for guidance. Always verify final decisions on official counseling portals.
-      </p>
+      <p className="mt-6 text-xs text-muted-foreground">Use filters step by step and compare tabs to shortlist faster.</p>
     </div>
   )
 }

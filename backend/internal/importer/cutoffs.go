@@ -206,15 +206,15 @@ func loadFile(ctx context.Context, stmt *sql.Stmt, path string) (int, error) {
 }
 
 func normalizeRecord(record []string) (models.CutoffRow, bool) {
-	institute := strings.TrimSpace(record[2])
-	department := strings.TrimSpace(record[3])
+	rawInstitute := strings.TrimSpace(record[2])
+	rawDepartment := strings.TrimSpace(record[3])
 	quota := strings.TrimSpace(record[4])
 	seatType := strings.TrimSpace(record[5])
 	gender := strings.TrimSpace(record[6])
 	openStr := strings.TrimSpace(record[7])
 	closeStr := strings.TrimSpace(record[8])
 
-	if isExcludedProgram(department) {
+	if isExcludedProgram(rawDepartment) {
 		return models.CutoffRow{}, false
 	}
 	if isPreparatoryRank(openStr) || isPreparatoryRank(closeStr) {
@@ -231,16 +231,18 @@ func normalizeRecord(record []string) (models.CutoffRow, bool) {
 	}
 
 	examType := models.ExamTypeJEEMain
-	if instituteType(institute) == "IIT" {
+	if instituteType(rawInstitute) == "IIT" {
 		examType = models.ExamTypeJEEAdvanced
 	}
+	institute := shortInstituteName(rawInstitute)
+	department := shortProgramName(rawDepartment)
 
 	return models.CutoffRow{
 		ExamType:      string(examType),
 		Institute:     institute,
 		Department:    department,
-		InstituteType: instituteType(institute),
-		State:         inferState(institute),
+		InstituteType: instituteType(rawInstitute),
+		State:         inferState(rawInstitute),
 		NIRF:          nil,
 		Quota:         normalizeQuota(quota),
 		Gender:        normalizeGender(gender),
@@ -276,6 +278,28 @@ func instituteType(name string) string {
 	default:
 		return "GFTI"
 	}
+}
+
+var instituteShortReplacer = strings.NewReplacer(
+	"Indian Institute of Information Technology", "IIIT",
+	"Indian Institute of Technology", "IIT",
+	"National Institute of Technology", "NIT",
+)
+
+func shortInstituteName(name string) string {
+	return strings.TrimSpace(instituteShortReplacer.Replace(name))
+}
+
+var programShortReplacer = strings.NewReplacer(
+	"Bachelor of Technology", "BTech",
+	"Bachelor of Engineering", "BE",
+	"Bachelor of Science", "BSc",
+	"Master of Technology", "MTech",
+	"Master of Science", "MSc",
+)
+
+func shortProgramName(name string) string {
+	return strings.TrimSpace(programShortReplacer.Replace(name))
 }
 
 func normalizeGender(value string) string {
