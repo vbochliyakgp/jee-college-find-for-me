@@ -13,6 +13,10 @@
     "parse:cutoffs:round4": "bun scripts/parse-josaa-cutoffs-to-csv.ts data/cutoffs/4.txt data/cutoffs/round-4-cutoffs.csv",
     "parse:cutoffs:round5": "bun scripts/parse-josaa-cutoffs-to-csv.ts data/cutoffs/5.txt data/cutoffs/round-5-cutoffs.csv",
     "parse:cutoffs:round6": "bun scripts/parse-josaa-cutoffs-to-csv.ts",
-    "parse:cutoffs:all": "bun run parse:cutoffs:round1 && bun run parse:cutoffs:round2 && bun run parse:cutoffs:round3 && bun run parse:cutoffs:round4 && bun run parse:cutoffs:round5 && bun run parse:cutoffs:round6"
+    "parse:cutoffs:all": "bun run parse:cutoffs:round1 && bun run parse:cutoffs:round2 && bun run parse:cutoffs:round3 && bun run parse:cutoffs:round4 && bun run parse:cutoffs:round5 && bun run parse:cutoffs:round6",
+    "parse:csab:round1": "bun scripts/parse-csab-cutoffs-to-csv.ts \"data/dasa&csab/1.txt\" \"data/dasa&csab/round-1-cutoffs.csv\"",
+    "parse:csab:round2": "bun scripts/parse-csab-cutoffs-to-csv.ts \"data/dasa&csab/2.txt\" \"data/dasa&csab/round-2-cutoffs.csv\"",
+    "parse:csab:round3": "bun scripts/parse-csab-cutoffs-to-csv.ts \"data/dasa&csab/3.txt\" \"data/dasa&csab/round-3-cutoffs.csv\"",
+    "parse:csab:all": "bun run parse:csab:round1 && bun run parse:csab:round2 && bun run parse:csab:round3"
   }
 }
