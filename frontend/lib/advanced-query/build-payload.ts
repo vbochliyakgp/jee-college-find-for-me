@@ -103,6 +103,7 @@ export function bandFieldErrors(
 }
 
 export interface BuildPayloadInput {
+  counseling: "josaa" | "csab"
   examType: ExamType
   genderPool: GenderPool
   category: CategoryOption
@@ -125,6 +126,7 @@ export function buildAdvancedCutoffQueryV1(input: BuildPayloadInput): AdvancedCu
 
   const core = {
     version: 1 as const,
+    counseling: input.counseling,
     examType: input.examType,
     genderPool: input.genderPool,
     category: input.category,

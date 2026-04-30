@@ -4,6 +4,7 @@ package cutoffquery
 
 type Request struct {
 	Version          int            `json:"version"`
+	Counseling       string         `json:"counseling"` // "josaa" or "csab"
 	ExamType         string         `json:"examType"`
 	GenderPool       string         `json:"genderPool"`
 	Category         string         `json:"category"`

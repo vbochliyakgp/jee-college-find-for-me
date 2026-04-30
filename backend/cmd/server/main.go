@@ -29,10 +29,26 @@ func main() {
 	defer database.Close()
 
 	csvDir := envOrDefault("CUTOFFS_CSV_DIR", defaultCSVDir())
-	loader := importer.CSVLoader{Directory: csvDir}
-	stats, err := loader.Load(ctx, database)
+	josaaLoader := importer.CSVLoader{
+		Directory:      csvDir,
+		CounselingType: importer.CounselingJOSAA,
+	}
+	josaaStats, err := josaaLoader.Load(ctx, database)
 	if err != nil {
-		log.Fatalf("csv import failed: %v", err)
+		log.Fatalf("josaa csv import failed: %v", err)
+	}
+
+	csabDir := envOrDefault("CSAB_CSV_DIR", defaultCSABDir())
+	csabLoader := importer.CSVLoader{
+		Directory:      csabDir,
+		CounselingType: importer.CounselingCSAB,
+	}
+	csabStats, err := csabLoader.Load(ctx, database)
+	if err != nil {
+		// Log error but don't fail if CSAB data is missing (it might be optional in some envs)
+		log.Printf("csab csv import failed (skipping): %v", err)
+	} else {
+		log.Printf("loaded %d CSAB rows from %d files", csabStats.Rows, csabStats.Files)
 	}
 
 	handler := httpapi.NewHandler(database)
@@ -50,7 +66,7 @@ func main() {
 		MaxHeaderBytes:    1 << 20, // 1 MiB
 	}
 
-	log.Printf("loaded %d rows from %d files", stats.Rows, stats.Files)
+	log.Printf("loaded %d JOSAA rows from %d files", josaaStats.Rows, josaaStats.Files)
 	log.Printf("backend listening on %s", server.Addr)
 
 	if err := server.ListenAndServe(); err != nil && err != http.ErrServerClosed {
@@ -170,6 +186,21 @@ func defaultCSVDir() string {
 	candidates := []string{
 		filepath.Clean("data-processing/data/cutoffs"),
 		filepath.Clean("../data-processing/data/cutoffs"),
+	}
+
+	for _, candidate := range candidates {
+		if info, err := os.Stat(candidate); err == nil && info.IsDir() {
+			return candidate
+		}
+	}
+
+	return candidates[0]
+}
+
+func defaultCSABDir() string {
+	candidates := []string{
+		filepath.Clean("data-processing/data/dasa&csab"),
+		filepath.Clean("../data-processing/data/dasa&csab"),
 	}
 
 	for _, candidate := range candidates {

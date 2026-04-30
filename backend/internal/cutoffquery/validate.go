@@ -11,6 +11,7 @@ const maxPageSize = 100
 
 var (
 	examTypes       = []string{"jee-main", "jee-advanced"}
+	counselingTypes = []string{"josaa", "csab"}
 	genderPools     = []string{"neutral", "female"}
 	categories      = []string{"General", "OBC", "SC", "ST", "EWS"}
 	quotaCodes      = []string{"AI", "OS", "HS", "GO", "JK", "LA"}
@@ -49,6 +50,9 @@ func Validate(req Request) []string {
 	if req.Version != 1 {
 		add(fmt.Sprintf("version must be 1, got %d", req.Version))
 	}
+	if req.Counseling != "" && !slices.Contains(counselingTypes, req.Counseling) {
+		add(fmt.Sprintf("counseling must be one of %v", counselingTypes))
+	}
 	if !slices.Contains(examTypes, req.ExamType) {
 		add(fmt.Sprintf("examType must be one of %v", examTypes))
 	}
@@ -64,6 +68,12 @@ func Validate(req Request) []string {
 
 	if req.ExamType == "jee-advanced" && HomeStatePresent(req.HomeState) {
 		add("homeState must not be set for jee-advanced")
+	}
+
+	if req.Counseling == "csab" {
+		if req.ExamType == "jee-advanced" {
+			add("CSAB counseling only supports jee-main exam type")
+		}
 	}
 
 	quotaSet := make(map[string]struct{}, len(quotaCodes))
@@ -104,6 +114,8 @@ func Validate(req Request) []string {
 			add("instituteTypes contains unknown value (allowed: IIT, NIT, IIIT, GFTI)")
 		} else if req.ExamType == "jee-main" && slices.Contains(req.InstituteTypes, "IIT") {
 			add("instituteTypes must not include IIT for jee-main (IIT cutoffs use jee-advanced)")
+		} else if req.Counseling == "csab" && slices.Contains(req.InstituteTypes, "IIT") {
+			add("instituteTypes must not include IIT for csab counseling")
 		} else if req.ExamType == "jee-advanced" {
 			if len(req.InstituteTypes) != 1 || req.InstituteTypes[0] != "IIT" {
 				add("for jee-advanced, instituteTypes must be exactly [\"IIT\"]")

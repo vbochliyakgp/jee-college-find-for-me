@@ -38,8 +38,16 @@ type LoadStats struct {
 	Rows  int `json:"rows"`
 }
 
+type CounselingType string
+
+const (
+	CounselingJOSAA CounselingType = "josaa"
+	CounselingCSAB  CounselingType = "csab"
+)
+
 type CSVLoader struct {
-	Directory string
+	Directory      string
+	CounselingType CounselingType
 }
 
 func (l CSVLoader) Load(ctx context.Context, database *sql.DB) (*LoadStats, error) {
@@ -64,20 +72,27 @@ func (l CSVLoader) Load(ctx context.Context, database *sql.DB) (*LoadStats, erro
 	}
 	defer tx.Rollback()
 
-	for round := 1; round <= 5; round++ {
-		if _, err := tx.ExecContext(ctx, fmt.Sprintf(`DELETE FROM cutoff_rows_round_%d`, round)); err != nil {
-			return nil, fmt.Errorf("clear cutoff_rows_round_%d: %w", round, err)
+	tablePrefix := "cutoff_rows"
+	maxRounds := 5
+	if l.CounselingType == CounselingCSAB {
+		tablePrefix = "csab_cutoff_rows"
+		maxRounds = 3
+	}
+
+	for round := 1; round <= maxRounds; round++ {
+		if _, err := tx.ExecContext(ctx, fmt.Sprintf(`DELETE FROM %s_round_%d`, tablePrefix, round)); err != nil {
+			return nil, fmt.Errorf("clear %s_round_%d: %w", tablePrefix, round, err)
 		}
 	}
-	if _, err := tx.ExecContext(ctx, `DELETE FROM cutoff_rows`); err != nil {
-		return nil, fmt.Errorf("clear cutoff_rows: %w", err)
+	if _, err := tx.ExecContext(ctx, fmt.Sprintf(`DELETE FROM %s`, tablePrefix)); err != nil {
+		return nil, fmt.Errorf("clear %s: %w", tablePrefix, err)
 	}
 
 	stats := &LoadStats{}
 	for round, roundPaths := range pathsByRound {
-		tableName := "cutoff_rows"
+		tableName := tablePrefix
 		if round != latestRound {
-			tableName = fmt.Sprintf("cutoff_rows_round_%d", round)
+			tableName = fmt.Sprintf("%s_round_%d", tablePrefix, round)
 		}
 
 		stmt, err := prepareInsertStatement(ctx, tx, tableName)
@@ -316,7 +331,13 @@ func normalizeGender(value string) string {
 //   - "GO", "JK", "LA" (regional quotas that should not be collapsed into OS)
 func normalizeQuota(value string) string {
 	switch value {
-	case "HS", "AI", "OS", "GO", "JK", "LA":
+	case "HS", "Home State":
+		return "HS"
+	case "AI", "All India":
+		return "AI"
+	case "OS", "Other State":
+		return "OS"
+	case "GO", "JK", "LA":
 		return value
 	default:
 		return "OS"

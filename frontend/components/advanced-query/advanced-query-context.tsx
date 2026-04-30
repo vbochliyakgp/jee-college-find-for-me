@@ -68,6 +68,8 @@ export type SubmitQueryOptions = {
 }
 
 export interface AdvancedQueryContextValue extends AdvancedQueryRequestState, AdvancedQueryDerived {
+  counseling: "josaa" | "csab"
+  setCounseling: (v: "josaa" | "csab") => void
   examType: ExamType
   setExamType: (v: ExamType) => void
   genderPool: GenderPool
@@ -96,6 +98,7 @@ const AdvancedQueryContext = createContext<AdvancedQueryContextValue | null>(nul
 export function AdvancedQueryProvider({ children }: { children: React.ReactNode }) {
   const [isPending, startTransition] = useTransition()
 
+  const [counseling, setCounseling] = useState<"josaa" | "csab">("josaa")
   const [examType, setExamType] = useState<ExamType>("jee-main")
   const [genderPool, setGenderPool] = useState<GenderPool>("neutral")
   const [category, setCategory] = useState<CategoryOption>("General")
@@ -115,6 +118,12 @@ export function AdvancedQueryProvider({ children }: { children: React.ReactNode 
   const [lastErrorDetails, setLastErrorDetails] = useState<string[] | null>(null)
   const [clientError, setClientError] = useState<string | null>(null)
   const [lastHydratedEncodedQuery, setLastHydratedEncodedQuery] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (counseling === "csab") {
+      setExamType("jee-main")
+    }
+  }, [counseling])
 
   useEffect(() => {
     if (examType === "jee-advanced") {
@@ -251,6 +260,7 @@ export function AdvancedQueryProvider({ children }: { children: React.ReactNode 
       }
 
       const payload = buildAdvancedCutoffQueryV1({
+        counseling,
         examType,
         genderPool,
         category,
@@ -282,11 +292,13 @@ export function AdvancedQueryProvider({ children }: { children: React.ReactNode 
         }
       })
     },
-    [activeBandCount, bands, category, examType, genderPool, hasBandErrors, homeState, instituteTypesList, isPwd],
+    [counseling, activeBandCount, bands, category, examType, genderPool, hasBandErrors, homeState, instituteTypesList, isPwd],
   )
 
   const value = useMemo<AdvancedQueryContextValue>(
     () => ({
+      counseling,
+      setCounseling,
       examType,
       setExamType,
       genderPool,
@@ -318,6 +330,7 @@ export function AdvancedQueryProvider({ children }: { children: React.ReactNode 
       bandKeyEnabled,
     }),
     [
+      counseling,
       activeBandCount,
       bandErrors,
       bandKeyEnabled,

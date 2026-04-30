@@ -42,7 +42,7 @@ function toTargetPool(k: PoolKey): AdvancedCutoffQueryV1["powerMode"]["closingRa
   }
 }
 
-function PoolTable({ rows }: { rows: CutoffResultRow[] }) {
+function PoolTable({ rows, isCsab }: { rows: CutoffResultRow[]; isCsab?: boolean }) {
   if (rows.length === 0) {
     return <p className="py-8 text-center text-sm text-muted-foreground">No results found for this page.</p>
   }
@@ -56,8 +56,8 @@ function PoolTable({ rows }: { rows: CutoffResultRow[] }) {
             <th className="px-2 py-2 sm:px-3 sm:py-2.5">Seat</th>
             <th className="px-2 py-2 sm:px-3 sm:py-2.5">Quota</th>
             <th className="px-2 py-2 sm:px-3 sm:py-2.5">Gender</th>
-            <th className="px-2 py-2 text-right sm:px-3 sm:py-2.5">Open</th>
-            <th className="px-2 py-2 text-right sm:px-3 sm:py-2.5">Close</th>
+            <th className="px-2 py-2 text-right sm:px-3 sm:py-2.5">{isCsab ? "Open CRL" : "Open"}</th>
+            <th className="px-2 py-2 text-right sm:px-3 sm:py-2.5">{isCsab ? "Close CRL" : "Close"}</th>
           </tr>
         </thead>
         <tbody>
@@ -131,18 +131,35 @@ export function CutoffResultsView() {
       payload.powerMode.closingRankBands.some(
         (b) => b.targetPool === targetPool && (b.closingRankMin !== null || b.closingRankMax !== null),
       )
-    return {
+
+    const base = {
       open: hasBand("open"),
       category: hasBand("category"),
       openPwd: hasBand("open_pwd"),
       categoryPwd: hasBand("category_pwd"),
     }
+
+    // In CSAB mode, we mirror the "open" band to other pools on the backend.
+    // So if "open" has a band, we should enable the other tabs if they are eligible for the user's category/isPwd.
+    if (payload.counseling === "csab" && base.open) {
+      const isOBCPlus = payload.category !== "General"
+      const isPwd = payload.isPwd
+      return {
+        open: true,
+        category: isOBCPlus,
+        openPwd: isPwd,
+        categoryPwd: isOBCPlus && isPwd,
+      }
+    }
+
+    return base
   }, [payload])
 
   const currentPage = pageByTab[tab]
   const rows = rowsByTab[tab]
   const hasMore = hasMoreByTab[tab]
   const truncated = truncatedByTab[tab]
+  const isCsab = payload?.counseling === "csab"
 
   useEffect(() => {
     if (!enc) {
@@ -281,7 +298,7 @@ export function CutoffResultsView() {
 
       <div className="min-h-[420px]">
         {enabledByTab[tab] ? (
-          <PoolTable rows={rows} />
+          <PoolTable rows={rows} isCsab={isCsab} />
         ) : (
           <p className="py-8 text-center text-sm text-muted-foreground">
             This pool is disabled because no rank range was selected for it.

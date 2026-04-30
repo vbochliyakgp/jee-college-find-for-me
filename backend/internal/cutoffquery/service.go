@@ -23,8 +23,11 @@ func (s *Service) QueryPools(ctx context.Context, req Request) (*QueryResponse, 
 	if s.db == nil {
 		return nil, fmt.Errorf("nil db")
 	}
+
 	table := s.table
-	if table == "" {
+	if req.Counseling == "csab" {
+		table = "csab_cutoff_rows"
+	} else if table == "" {
 		table = DefaultCutoffTable
 	}
 
@@ -34,6 +37,23 @@ func (s *Service) QueryPools(ctx context.Context, req Request) (*QueryResponse, 
 	}
 
 	grouped := GroupClosingBands(req.PowerMode.ClosingRankBands)
+
+	// Auto-fill logical pools from "open" if they are empty but allowed for this user (CSAB only).
+	if req.Counseling == "csab" {
+		if openBands, ok := grouped["open"]; ok && len(openBands) > 0 {
+			targets := []string{"category", "open_pwd", "category_pwd"}
+			for _, t := range targets {
+				if len(grouped[t]) == 0 && RankBandAllowed(t, req.Category, req.IsPwd) {
+					for _, b := range openBands {
+						nb := b
+						nb.TargetPool = t
+						grouped[t] = append(grouped[t], nb)
+					}
+				}
+			}
+		}
+	}
+
 	out := &QueryResponse{OK: true}
 
 	pools := []struct {

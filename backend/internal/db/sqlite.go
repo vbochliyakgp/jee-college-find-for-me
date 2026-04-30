@@ -28,10 +28,19 @@ func OpenInMemory(ctx context.Context) (*sql.DB, error) {
 }
 
 func createSchema(ctx context.Context, database *sql.DB) error {
+	// JoSAA tables (Rounds 1-5 + final)
 	statements := baseTableStatements("cutoff_rows", "idx_cutoff")
 	for round := 1; round <= 5; round++ {
 		tableName := fmt.Sprintf("cutoff_rows_round_%d", round)
 		indexPrefix := fmt.Sprintf("idx_cutoff_r%d", round)
+		statements = append(statements, baseTableStatements(tableName, indexPrefix)...)
+	}
+
+	// CSAB tables (Rounds 1-3 + final)
+	statements = append(statements, baseTableStatements("csab_cutoff_rows", "idx_csab_cutoff")...)
+	for round := 1; round <= 3; round++ {
+		tableName := fmt.Sprintf("csab_cutoff_rows_round_%d", round)
+		indexPrefix := fmt.Sprintf("idx_csab_cutoff_r%d", round)
 		statements = append(statements, baseTableStatements(tableName, indexPrefix)...)
 	}
 

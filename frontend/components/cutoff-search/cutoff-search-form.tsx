@@ -22,6 +22,8 @@ import { FIELD_LABEL } from "@/components/cutoff-search/form-styles"
 export function CutoffSearchForm() {
   const q = useAdvancedQuery()
   const router = useRouter()
+  const isJosaa = q.counseling === "josaa"
+  const isCsab = q.counseling === "csab"
   const isMain = q.examType === "jee-main"
   const isAdvanced = q.examType === "jee-advanced"
 
@@ -35,16 +37,42 @@ export function CutoffSearchForm() {
 
   return (
     <form onSubmit={onSubmit} className="space-y-4 sm:space-y-5">
+      <div className="space-y-2">
+        <Label className={FIELD_LABEL}>Counseling mode</Label>
+        <div className="grid grid-cols-2 gap-2">
+          <Button
+            type="button"
+            variant={isJosaa ? "default" : "outline"}
+            className={cn("h-11 rounded-full", isJosaa && "shadow-sm")}
+            onClick={() => q.setCounseling("josaa")}
+          >
+            JoSAA (IIT/NIT+)
+          </Button>
+          <Button
+            type="button"
+            variant={isCsab ? "default" : "outline"}
+            className={cn("h-11 rounded-full", isCsab && "shadow-sm")}
+            onClick={() => q.setCounseling("csab")}
+          >
+            CSAB (NIT+ only)
+          </Button>
+        </div>
+      </div>
+
       <div className="grid grid-cols-2 gap-3 sm:gap-4">
-        <div className="space-y-2">
+        <div className={cn("space-y-2", isCsab && "opacity-60")}>
           <Label className={FIELD_LABEL}>Exam</Label>
-          <Select value={q.examType} onValueChange={(v) => q.setExamType(v as "jee-main" | "jee-advanced")}>
+          <Select
+            value={q.examType}
+            onValueChange={(v) => q.setExamType(v as "jee-main" | "jee-advanced")}
+            disabled={isCsab}
+          >
             <SelectTrigger className="h-11">
               <SelectValue />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="jee-main">JEE Main</SelectItem>
-              <SelectItem value="jee-advanced">JEE Advanced</SelectItem>
+              {!isCsab && <SelectItem value="jee-advanced">JEE Advanced</SelectItem>}
             </SelectContent>
           </Select>
         </div>

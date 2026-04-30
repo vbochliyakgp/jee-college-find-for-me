@@ -15,6 +15,37 @@ const ROWS: ReadonlyArray<{ key: keyof BandFields; title: string }> = [
 ]
 
 export function RankBandFields({ q }: { q: AdvancedQueryContextValue }) {
+  const isCsab = q.counseling === "csab"
+
+  if (isCsab) {
+    const handleCrlChange = (edge: "min" | "max", value: string) => {
+      q.setBandEdge("open", edge, value)
+    }
+
+    return (
+      <div className="space-y-2">
+        <Label className={FIELD_LABEL}>Rank range (CRL only for all categories)</Label>
+        <div className="grid grid-cols-2 gap-2">
+          <Input
+            inputMode="numeric"
+            placeholder="Min CRL Rank"
+            className={cn("h-11", q.hasBandErrors && "border-destructive")}
+            value={q.bands.open.min}
+            onChange={(e) => handleCrlChange("min", e.target.value)}
+          />
+          <Input
+            inputMode="numeric"
+            placeholder="Max CRL Rank"
+            className={cn("h-11", q.hasBandErrors && "border-destructive")}
+            value={q.bands.open.max}
+            onChange={(e) => handleCrlChange("max", e.target.value)}
+          />
+        </div>
+        {q.hasBandErrors && <p className="text-xs text-destructive">Enter valid positive integers; min must be ≤ max.</p>}
+      </div>
+    )
+  }
+
   return (
     <div className="space-y-2">
       <Label className={FIELD_LABEL}>Closing rank bands (optional, OR within each row)</Label>

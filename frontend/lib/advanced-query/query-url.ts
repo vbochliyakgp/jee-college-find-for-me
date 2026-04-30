@@ -18,6 +18,7 @@ function base64UrlToUtf8(b64url: string): string {
 }
 
 const examTypes = new Set(["jee-main", "jee-advanced"])
+const counselingTypes = new Set(["josaa", "csab"])
 const genderPools = new Set(["neutral", "female"])
 const categories = new Set(["General", "OBC", "SC", "ST", "EWS"])
 const quotas = new Set(["AI", "OS", "HS", "GO", "JK", "LA"])
@@ -32,6 +33,9 @@ function isRecord(x: unknown): x is Record<string, unknown> {
 function looksLikeAdvancedCutoffQueryV1(x: unknown): boolean {
   if (!isRecord(x)) return false
   if (x.version !== 1) return false
+  if (x.counseling !== undefined && (typeof x.counseling !== "string" || !counselingTypes.has(x.counseling))) {
+    return false
+  }
   if (typeof x.examType !== "string" || !examTypes.has(x.examType)) return false
   if (typeof x.genderPool !== "string" || !genderPools.has(x.genderPool)) return false
   if (typeof x.category !== "string" || !categories.has(x.category)) return false
@@ -71,5 +75,11 @@ export function decodeCutoffQueryFromUrl(encoded: string): AdvancedCutoffQueryV1
   } catch {
     return null
   }
-  return looksLikeAdvancedCutoffQueryV1(json) ? (json as AdvancedCutoffQueryV1) : null
+  if (!looksLikeAdvancedCutoffQueryV1(json)) return null
+
+  const payload = json as any
+  if (!payload.counseling) {
+    payload.counseling = "josaa"
+  }
+  return payload as AdvancedCutoffQueryV1
 }

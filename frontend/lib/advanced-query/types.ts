@@ -48,6 +48,7 @@ export interface ClosingRankBandClause {
 
 export interface AdvancedCutoffQueryV1 {
   version: 1
+  counseling: "josaa" | "csab"
   examType: ExamType
   genderPool: GenderPool
   category: "General" | "OBC" | "SC" | "ST" | "EWS"
