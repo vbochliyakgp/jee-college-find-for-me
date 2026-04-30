@@ -119,6 +119,44 @@ export function AdvancedQueryProvider({ children }: { children: React.ReactNode 
   const [clientError, setClientError] = useState<string | null>(null)
   const [lastHydratedEncodedQuery, setLastHydratedEncodedQuery] = useState<string | null>(null)
 
+  // -- Persistence Logic --
+  const PERSIST_KEY = "jee_college_find_form_state"
+
+  // Load state from sessionStorage on mount
+  useEffect(() => {
+    const saved = sessionStorage.getItem(PERSIST_KEY)
+    if (saved) {
+      try {
+        const data = JSON.parse(saved)
+        if (data.counseling) setCounseling(data.counseling)
+        if (data.examType) setExamType(data.examType)
+        if (data.genderPool) setGenderPool(data.genderPool)
+        if (data.category) setCategory(data.category)
+        if (data.isPwd !== undefined) setIsPwd(data.isPwd)
+        if (data.homeState !== undefined) setHomeState(data.homeState)
+        if (data.instituteSelected) setInstituteSelected(data.instituteSelected)
+        if (data.bands) setBands(data.bands)
+      } catch (err) {
+        console.error("Failed to restore form state:", err)
+      }
+    }
+  }, [])
+
+  // Save state to sessionStorage on changes
+  useEffect(() => {
+    const state = {
+      counseling,
+      examType,
+      genderPool,
+      category,
+      isPwd,
+      homeState,
+      instituteSelected,
+      bands,
+    }
+    sessionStorage.setItem(PERSIST_KEY, JSON.stringify(state))
+  }, [counseling, examType, genderPool, category, isPwd, homeState, instituteSelected, bands])
+
   useEffect(() => {
     if (counseling === "csab") {
       setExamType("jee-main")
