@@ -2,6 +2,10 @@
 
 Next.js **App Router** UI for the **cutoff query** flow: home form → **`/results?q=…`** (shareable, re-fetches from encoded query).
 
+**Search Mode**: Supports both **JoSAA** (Category Ranks) and **CSAB** (CRL Ranks) counseling modes.
+
+**State Persistence**: Search criteria are automatically saved to `sessionStorage`, preserving the form state during back-navigation or page refreshes.
+
 Monorepo run instructions: root **`../README.md`**.
 
 ## Stack
@@ -38,7 +42,7 @@ NEXT_PUBLIC_BACKEND_API_URL=http://127.0.0.1:8080
 |------|------|
 | Home search | `app/page.tsx`, `components/cutoff-search/` |
 | Results | `app/results/page.tsx`, `components/cutoff-results/` |
-| Query state | `components/advanced-query/advanced-query-context.tsx` |
+| Query state | `components/advanced-query/advanced-query-context.tsx` (includes persistence logic) |
 | Types + payload builder | `lib/advanced-query/types.ts`, `build-payload.ts` |
 | Share link codec | `lib/advanced-query/query-url.ts` |
 | Layout / chrome | `components/layout/`, `components/providers/` |

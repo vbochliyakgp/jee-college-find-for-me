@@ -1,6 +1,6 @@
 # Backend (Go cutoff API)
 
-Serves **`POST /api/cutoffs/query`**: loads JoSAA-style cutoff CSVs into **in-memory SQLite** at process start, validates JSON, runs one query per non-empty rank-band pool, returns distinct rows.
+Serves **`POST /api/cutoffs/query`**: loads JoSAA and CSAB cutoff CSVs into **in-memory SQLite** at process start, validates JSON, runs one query per non-empty rank-band pool, returns distinct rows.
 
 Monorepo run instructions: root **`../README.md`**.
 
@@ -9,13 +9,13 @@ Monorepo run instructions: root **`../README.md`**.
 | Method | Path | Description |
 |--------|------|-------------|
 | `GET` | `/health` | Liveness JSON `{"status":"ok"}` |
-| `POST` | `/api/cutoffs/query` | Body: `cutoffquery.Request` (JSON). Success: pools `open`, `category`, `openPwd`, `categoryPwd` |
+| `POST` | `/api/cutoffs/query` | Body: `cutoffquery.Request` (JSON). Includes `counseling` ("josaa" | "csab"). Success: pools `open`, `category`, `openPwd`, `categoryPwd` |
 
 ## Data loading
 
-- **Source directory**: `CUTOFFS_CSV_DIR` or defaults under `data-processing/data/cutoffs` (see `cmd/server/main.go`).
-- **Table**: `cutoff_rows` (and optional round history tables from the importer).
-- **Normalization**: gender, quota, state, seat type, etc. in `internal/importer`.
+- **Source directories**: `CUTOFFS_CSV_DIR` (JoSAA) and `CSAB_CSV_DIR` (CSAB) or defaults under `data-processing/data/`.
+- **Tables**: `cutoff_rows` and `csab_cutoff_rows` (and round history tables from the importer).
+- **Normalization**: gender, quota, state, seat type, etc. in `internal/importer`. Supports CSAB full-string quota labels.
 
 ## Cutoff query behavior (summary)
 

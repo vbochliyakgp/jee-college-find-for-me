@@ -12,19 +12,34 @@ The browser sends **`AdvancedCutoffQueryV1`** (see `frontend/lib/advanced-query/
 
 | Area | Role |
 |------|------|
+| `counseling` | `josaa` vs `csab` — decides the target database table and ranking logic |
 | `examType` | `jee-main` vs `jee-advanced` — drives allowed quotas, `homeState`, institute types |
 | `genderPool` | `neutral` / `female` — maps to DB `gender` |
 | `category`, `isPwd` | Decide which **logical pools** may have rank bands and how seat types are resolved |
-| `homeState` | JEE Main only, optional — expands quotas and turns on **domicile row filters** (§3) |
+| `homeState` | JEE Main only, optional — expands quotas and turns on **domicile row filters** (§4) |
 | `quotas` | Usually derived on the client from exam + `homeState`; server validates |
 | `instituteTypes` | `IIT` / `NIT` / `IIIT` / `GFTI` — Advanced is IIT-only; Main disallows IIT in the payload |
 | `powerMode.closingRankBands` | Union of rank windows; each clause targets `open` / `category` / `open_pwd` / `category_pwd` |
 
-For each logical pool that has at least one active band, the server runs a **distinct** `SELECT` on `cutoff_rows` with that pool’s seat types and the shared global filters.
+For each logical pool that has at least one active band, the server runs a **distinct** `SELECT` on the chosen table (`cutoff_rows` or `csab_cutoff_rows`) with that pool’s seat types and the shared global filters.
 
 ---
 
-## 2. Seat types per pool
+## 2. Counseling modes
+
+Implementation: `backend/internal/cutoffquery/service.go`.
+
+### JoSAA (`josaa`)
+*   Uses **JoSAA category ranks** for category-specific seats (OBC, SC, ST, etc.).
+*   Each logical pool (Open, Category, PwD) requires its own explicit rank range in the request.
+
+### CSAB (`csab`)
+*   Uses **Common Rank List (CRL)** for ALL seats, including reserved categories.
+*   **Auto-fill logic**: If the `open` logical pool has a rank range, the server automatically applies that same range to the `category`, `open_pwd`, and `category_pwd` pools if they are eligible for the user. This simplifies the frontend to a single CRL input.
+
+---
+
+## 3. Seat types per pool
 
 Implementation: `backend/internal/cutoffquery/seat_types.go`.
 
@@ -32,7 +47,7 @@ The server maps **`targetPool` + `category`** to exact `seat_type` strings (e.g.
 
 ---
 
-## 3. Quota and home state (domicile)
+## 4. Quota and home state (domicile)
 
 When **`homeState` is absent** on JEE Main, only **AI** and **OS** quotas are allowed on the request, and the SQL path does **not** add extra row predicates beyond `quota IN (...)`.
 
@@ -53,18 +68,18 @@ JEE Advanced: **`homeState` must not be sent**; quotas are **AI + OS** only; ins
 
 ---
 
-## 4. Rank bands
+## 5. Rank bands
 
 Each `closingRankBandClause` contributes `(closing_rank >= min OR min null) AND (closing_rank <= max OR max null)`; multiple clauses for the same `targetPool` are OR’d inside that pool’s query. Pools with no active bands return an empty array without hitting the DB for that pool.
 
 ---
 
-## 5. Sorting
+## 6. Sorting
 
 Pool results are ordered by **`closing_rank` ASC**, then institute, then department (`query_pool.go`).
 
 ---
 
-## 6. Shareable results
+## 7. Shareable results
 
 The frontend encodes the same JSON body into **`/results?q=`** (base64url) so opening or refreshing the page can **replay** the query against the API. There is no server-side session store for results.

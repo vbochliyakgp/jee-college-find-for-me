@@ -1,18 +1,19 @@
 # JEE College Find For Me (complete stack)
 
-Go API + Next.js app for **JoSAA-style cutoff row search**: filter official-style snapshots by exam, quotas, institute types, category context, and closing-rank bands. No signup.
+Go API + Next.js app for **JoSAA and CSAB cutoff row search**: filter official-style snapshots by exam, quotas, institute types, category context, and closing-rank bands. No signup.
 
 ## Monorepo layout
 
 | Path | Role |
 |------|------|
-| `backend/` | HTTP API, loads cutoff CSVs into in-memory SQLite at startup |
-| `frontend/` | Next.js UI: home form → results tables |
-| `data-processing/` | Offline parsers: scraped JoSAA text → CSV artifacts |
+| `backend/` | HTTP API, loads JoSAA and CSAB cutoff CSVs into in-memory SQLite at startup |
+| `frontend/` | Next.js UI: home form → results tables (supports state persistence) |
+| `data-processing/` | Offline parsers: scraped JoSAA/CSAB text → CSV artifacts |
 
 ## Product (current)
 
-- **Home (`/`)** — `CutoffSearchForm`: JEE Main vs Advanced, gender pool, category, PwD, home state (Main only), institute types, optional rank bands per logical pool (open / category / open PwD / category PwD).
+- **Home (`/`)** — `CutoffSearchForm`: JoSAA vs CSAB mode, JEE Main vs Advanced, gender pool, category, PwD, home state (Main only), institute types, optional rank bands per logical pool.
+- **Persistence** — Search criteria are saved to `sessionStorage` and restored on back-navigation or refresh.
 - **Results (`/results?q=…`)** — Four result pools; **`q`** is base64url(JSON) of `AdvancedCutoffQueryV1` so links are refreshable and shareable.
 - **Redirects** — `/predict` and `/advanced` send users to `/`.
 
@@ -107,7 +108,7 @@ bun install
 bun run parse:cutoffs:all
 ```
 
-Then restart the backend so it reloads CSVs from `data-processing/data/cutoffs/` (see `CUTOFFS_CSV_DIR` in `backend/cmd/server`).
+Then restart the backend so it reloads CSVs from `data-processing/data/cutoffs/` and `data-processing/data/dasa&csab/` (see `CUTOFFS_CSV_DIR` and `CSAB_CSV_DIR` in `backend/cmd/server`).
 
 ## Further reading
 
