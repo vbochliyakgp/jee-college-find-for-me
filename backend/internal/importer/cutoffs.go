@@ -470,9 +470,11 @@ var cityToState = map[string]string{
 	"Raichur":           "Karnataka",
 	"Sagar":             "Madhya Pradesh",
 	"Ahmedabad":         "Gujarat",
+	"Gandhinagar":       "Gujarat",
 	"Kashmir":           "Jammu and Kashmir",
 	"Ajmer":             "Rajasthan",
 	"Aurangabad":        "Maharashtra",
+	"Greater Noida":     "Uttar Pradesh",
 	"Gorakhpur":         "Uttar Pradesh",
 	"Kundli":            "Haryana",
 	"Thanjavur":         "Tamil Nadu",
@@ -483,7 +485,9 @@ var cityToState = map[string]string{
 	"Longowal":          "Punjab",
 	"Tezpur":            "Assam",
 	"Vijayawada":        "Andhra Pradesh",
+	"Visakhapatnam":     "Andhra Pradesh",
 	"Bilaspur":          "Chhattisgarh",
+	"Manipal":           "Karnataka",
 }
 
 var iitCampusToState = map[string]string{
