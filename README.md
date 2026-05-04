@@ -1,116 +1,72 @@
-# JEE College Find For Me (complete stack)
+# JEE College Find For Me
 
-Go API + Next.js app for **JoSAA and CSAB cutoff row search**: filter official-style snapshots by exam, quotas, institute types, category context, and closing-rank bands. No signup.
+A fast, no-signup search engine for exploring JoSAA and CSAB past cutoffs. Built with a Go API and Next.js frontend, it helps students filter official-style cutoff data by exam, closing rank, quotas, category, and institute type.
 
-## Monorepo layout
+## Getting Started
 
-| Path | Role |
-|------|------|
-| `backend/` | HTTP API, loads JoSAA and CSAB cutoff CSVs into in-memory SQLite at startup |
-| `frontend/` | Next.js UI: home form → results tables (supports state persistence) |
-| `data-processing/` | Offline parsers: scraped JoSAA/CSAB text → CSV artifacts |
-
-## Product (current)
-
-- **Home (`/`)** — `CutoffSearchForm`: JoSAA vs CSAB mode, JEE Main vs Advanced, gender pool, category, PwD, home state (Main only), institute types, optional rank bands per logical pool.
-- **Persistence** — Search criteria are saved to `sessionStorage` and restored on back-navigation or refresh.
-- **Results (`/results?q=…`)** — Four result pools; **`q`** is base64url(JSON) of `AdvancedCutoffQueryV1` so links are refreshable and shareable.
-- **Redirects** — `/predict` and `/advanced` send users to `/`.
-
-Backend: **`POST /api/cutoffs/query`** validates the payload, maps seat types per pool, runs SQL (including domicile-aware HS/OS/GO/JK/LA when `homeState` is set on JEE Main), returns row lists per pool.
-
-## Limits
-
-- B.Arch / B.Planning rows are excluded during backend DB import.
-- IIT preparatory (`P`-suffix rank) rows are excluded during backend DB import.
-- Not official JoSAA software; exploratory planning only.
-
-## Run
-
-Caddy access logs (JSON) are written to **`logs/caddy/access.log`** on the host (bind mount from Compose). If the Caddy container cannot create the file, fix permissions on `logs/caddy` once (e.g. make it writable by the container user).
-
-### Docker Compose (dev, hot reload)
+The easiest way to run the full stack (backend API, frontend UI, and Caddy reverse proxy) is using Docker Compose.
 
 ```bash
+# Start the full stack in development mode with hot reload
 docker compose -f docker-compose.dev.yml up
 ```
 
-API-only:
+- **Frontend:** [http://localhost:3000](http://localhost:3000)
+- **API Health:** [http://localhost:8080/api/health](http://localhost:8080/api/health)
 
-```bash
-docker compose -f docker-compose.dev.yml up backend caddy
-```
+## Monorepo Layout
 
-### Docker Compose (production build)
+| Path | Role |
+|------|------|
+| `backend/` | Go HTTP API, loads JoSAA/CSAB CSVs into an in-memory SQLite DB at startup |
+| `frontend/` | Next.js UI with a search form, results tables, and state persistence |
+| `data-processing/` | Offline scripts to parse scraped JoSAA/CSAB text data into CSV artifacts |
 
-```bash
-docker compose up --build
-```
+## Features
 
-Health (behind Caddy, `/api` is proxied to the Go server):
+- **Search:** JoSAA (Category Ranks) vs CSAB (CRL Ranks), JEE Main vs Advanced, quotas, categories, and rank bands.
+- **State Persistence:** Form state is preserved via `sessionStorage` for seamless navigation.
+- **Shareable Links:** Results URLs contain the query state encoded in base64url, allowing for easy sharing.
+- **No Sign-up Required:** Fully open access to data exploration.
 
-```bash
-curl -k https://localhost/api/health
-curl http://localhost/api/health
-```
+## Known Limits
 
-Deploy with a real host:
+- B.Arch / B.Planning rows are excluded during backend DB import.
+- IIT preparatory (`P`-suffix rank) rows are excluded during backend DB import.
+- *Disclaimer:* Not official JoSAA software; meant for exploratory planning only.
 
-```bash
-SERVICE_DOMAIN=api.example.com docker compose up --build -d
-```
+## Running Separately (Without Docker)
 
-### Local: backend + frontend separately
+You can run the API and frontend independently for local development.
 
-**Terminal 1 — backend**
-
+**Terminal 1 — Backend:**
 ```bash
 cd backend
 go mod download
 go run ./cmd/server
 ```
 
-Listens on `:8080` by default (`PORT` supported).
-
-**Terminal 2 — frontend**
-
+**Terminal 2 — Frontend:**
 ```bash
 cd frontend
 bun install
 bun run dev
 ```
 
-Defaults: frontend `http://localhost:3000`, backend `http://127.0.0.1:8080`.
+*Note: If the frontend and backend are on different origins, set `NEXT_PUBLIC_BACKEND_API_URL=http://127.0.0.1:8080` in `frontend/.env.local`.*
 
-When the browser must call the API on another origin, set in `frontend/.env.local`:
+## Regenerating Data
 
-```bash
-NEXT_PUBLIC_BACKEND_API_URL=http://127.0.0.1:8080
-```
-
-## Commands
-
-```bash
-cd backend && go test ./...
-```
-
-```bash
-cd frontend && bun run build && bun run lint
-```
-
-## Regenerate cutoff CSVs
-
-When raw inputs under `data-processing/data/cutoffs/` change:
+When raw text inputs change under `data-processing/data/cutoffs/` or `data-processing/data/dasa&csab/`:
 
 ```bash
 cd data-processing
 bun install
 bun run parse:cutoffs:all
 ```
+Restart the backend to load the updated CSV artifacts.
 
-Then restart the backend so it reloads CSVs from `data-processing/data/cutoffs/` and `data-processing/data/dasa&csab/` (see `CUTOFFS_CSV_DIR` and `CSAB_CSV_DIR` in `backend/cmd/server`).
+## Further Reading
 
-## Further reading
-
-- `ALGORITHM.md` — Quota / home-state rules and cutoff-query behavior (no legacy rank predictor).
-- `backend/README.md`, `frontend/README.md`, `frontend/AGENTS.md` — stack details for humans and agents.
+- `ALGORITHM.md` — Quota/home-state rules and backend cutoff-query logic.
+- `backend/README.md` & `frontend/README.md` — Detailed documentation for specific stack elements.

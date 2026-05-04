@@ -11,6 +11,10 @@ Monorepo run instructions: root **`../README.md`**.
 | `GET` | `/health` | Liveness JSON `{"status":"ok"}` |
 | `POST` | `/api/cutoffs/query` | Body: `cutoffquery.Request` (JSON). Includes `counseling` ("josaa" | "csab"). Success: pools `open`, `category`, `openPwd`, `categoryPwd` |
 
+**Security & Limits:**
+- **Rate Limiting:** A basic fixed-window rate limiter per IP is enforced.
+- **CORS & Headers:** Strict CORS origins are configured based on the environment, along with robust security headers (CSP, HSTS, Permissions-Policy).
+
 ## Data loading
 
 - **Source directories**: `CUTOFFS_CSV_DIR` (JoSAA) and `CSAB_CSV_DIR` (CSAB) or defaults under `data-processing/data/`.

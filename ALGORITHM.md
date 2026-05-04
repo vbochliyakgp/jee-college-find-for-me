@@ -70,7 +70,7 @@ JEE Advanced: **`homeState` must not be sent**; quotas are **AI + OS** only; ins
 
 ## 5. Rank bands
 
-Each `closingRankBandClause` contributes `(closing_rank >= min OR min null) AND (closing_rank <= max OR max null)`; multiple clauses for the same `targetPool` are OR’d inside that pool’s query. Pools with no active bands return an empty array without hitting the DB for that pool.
+Each `closingRankBandClause` contributes `(closing_rank >= min OR min null) AND (closing_rank <= max OR max null)`; multiple clauses for the same `targetPool` are OR’d inside that pool’s query. Pools with no active bands return an empty array without hitting the DB for that pool. **At least one rank value (min or max) must be provided across all active bands; otherwise, the API rejects the request.**
 
 ---
 
