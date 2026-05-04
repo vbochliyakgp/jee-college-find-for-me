@@ -8,39 +8,44 @@ export const metadata: Metadata = {
 
 const steps = [
   {
-    title: "1) Choose exam and gender",
+    title: "1) Choose counseling mode",
+    text: "Select JoSAA (for IITs/NITs/IIITs/GFTIs using category rank) or CSAB (for NITs/IIITs/GFTIs vacant seats using CRL).",
+  },
+  {
+    title: "2) Choose exam and gender",
     text: "Pick JEE Main or JEE Advanced. Then choose your gender pool.",
   },
   {
-    title: "2) Choose category and PwD",
+    title: "3) Choose category and PwD",
     text: "Select your category and PwD status exactly as applicable.",
   },
   {
-    title: "3) Add home state (for JEE Main)",
+    title: "4) Add home state (for JEE Main)",
     text: "Home state helps show state-wise quota cutoffs where relevant.",
   },
   {
-    title: "4) Select institute types",
+    title: "5) Select institute types",
     text: "Choose IIT, NIT, IIIT, and/or GFTI based on what you want to explore.",
   },
   {
-    title: "5) Set rank ranges",
-    text: "Enter at least one number (Min or Max) in any enabled row. Use more rows to narrow results further.",
+    title: "6) Set rank ranges",
+    text: "Enter at least one number (Min or Max). For CSAB, you only need to enter your Common Rank List (CRL) rank.",
   },
   {
-    title: "6) Search and compare",
+    title: "7) Search and compare",
     text: "Open results and switch tabs (Open, Category, Open PwD, Cat PwD) to compare options.",
   },
 ]
 
 const fieldHelp = [
+  ["Counseling", "JoSAA uses Category ranks for reserved categories; CSAB uses Common Rank List (CRL) for everything."],
   ["Exam", "Main for NIT/IIIT/GFTI style counseling, Advanced for IIT counseling."],
   ["Gender pool", "Controls which gender cutoff pool you want to see."],
   ["Category", "General, OBC, SC, ST, or EWS."],
   ["PwD", "Enable if you want PwD-based rows included."],
   ["Home state", "Used for state quota logic in JEE Main."],
   ["Institute type", "Which institute groups to include in your search."],
-  ["Min / Max rank", "Your cutoff window for each tab row."],
+  ["Min / Max rank", "Your cutoff window. For CSAB, the 'Open' CRL rank you enter is automatically applied to all eligible category pools."],
 ]
 
 export default function HowToUsePage() {

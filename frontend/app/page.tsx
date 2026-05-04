@@ -105,13 +105,6 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-
-        <section className="mt-8 space-y-3 rounded-2xl border border-border/70 bg-card/60 p-4 sm:p-6">
-          <h2 className="text-lg font-semibold tracking-tight text-foreground sm:text-xl">Tip</h2>
-          <p className="text-sm text-muted-foreground sm:text-base">
-            Start with broad filters, then narrow your rank ranges tab-by-tab to compare options faster.
-          </p>
-        </section>
       </section>
     </div>
   )

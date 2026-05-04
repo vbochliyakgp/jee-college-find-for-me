@@ -1,18 +1,35 @@
 # JEE College Find For Me
 
-A fast, no-signup search engine for exploring JoSAA and CSAB past cutoffs. Built with a Go API and Next.js frontend, it helps students filter official-style cutoff data by exam, closing rank, quotas, category, and institute type.
+![JEE College Find For Me Screenshot](./Docs/screenshot.png)
+
+**JEE College Find For Me** is an advanced, fast, and open-source search engine tailored for Indian engineering aspirants. It helps students explore, filter, and analyze past cutoffs for **JoSAA** (Joint Seat Allocation Authority) and **CSAB** (Central Seat Allocation Board) counseling processes. Whether you are aiming for an IIT, NIT, IIIT, or GFTI via JEE Main or JEE Advanced, this tool streamlines your college research. 
+
+Built with a high-performance **Go API** and a modern **Next.js frontend**, it lets you filter official-style cutoff data seamlessly. You can search by exam type, category, quotas (Home State, Other State, All India, etc.), gender pool, and closing-rank bands—all without the hassle of signing up. Leverage accurate category ranks for JoSAA and Common Rank List (CRL) for CSAB to make data-driven decisions for your college choices.
 
 ## Getting Started
 
 The easiest way to run the full stack (backend API, frontend UI, and Caddy reverse proxy) is using Docker Compose.
 
+### Development Mode
+Runs the frontend with hot-reload and exposes the API locally.
 ```bash
-# Start the full stack in development mode with hot reload
 docker compose -f docker-compose.dev.yml up
 ```
-
 - **Frontend:** [http://localhost:3000](http://localhost:3000)
 - **API Health:** [http://localhost:8080/api/health](http://localhost:8080/api/health)
+
+### Production Mode
+Builds optimized production images and serves everything behind Caddy.
+```bash
+docker compose up --build -d
+```
+- The frontend will be available at `http://localhost` (or `https://localhost` with local certificates).
+- The API is proxy-routed to `/api/*`.
+
+To deploy on a real host with a domain:
+```bash
+SERVICE_DOMAIN=yourdomain.com docker compose up --build -d
+```
 
 ## Monorepo Layout
 
