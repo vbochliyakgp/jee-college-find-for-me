@@ -70,3 +70,11 @@ Restart the backend to load the updated CSV artifacts.
 
 - `ALGORITHM.md` — Quota/home-state rules and backend cutoff-query logic.
 - `backend/README.md` & `frontend/README.md` — Detailed documentation for specific stack elements.
+
+## Contributing
+
+Feel free to fork, make changes, and open a PR. If you find a bug or have an idea, drop an issue. This project is for everyone, so jump right in!
+
+## License
+
+Use it man, it is for you. Do whatever you want with it.
